@@ -1,0 +1,21 @@
+@startuml
+
+!theme reddress-darkblue
+skinparam BackgroundColor lavender
+skinparam ArrowColor black
+skinparam ArrowThickness 1.0
+skinparam RoundCorner 7
+skinparam ClassAttributeFontColor FFFFFF
+skinparam ClassFontSize 12
+skinparam ArrowFontColor black
+
+!include clase_detective.plantuml
+!include clase_tiempo.plantuml
+!include clase_visita.plantuml
+!include clase_pais.plantuml
+!include clase_edificio.plantuml
+!include clase_pista.plantuml
+
+Detective *-> Tiempo
+
+@enduml

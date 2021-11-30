@@ -1,0 +1,17 @@
+@startuml
+
+!theme reddress-darkblue
+skinparam BackgroundColor lavender
+skinparam ArrowColor black
+skinparam ArrowThickness 1.0
+skinparam RoundCorner 7
+skinparam ClassAttributeFontColor FFFFFF
+skinparam ClassFontSize 12
+skinparam ArrowFontColor black
+
+Interface Pais{
+
+    + visitarEdificio(edificio:Edificio):Pista
+}
+
+@enduml
