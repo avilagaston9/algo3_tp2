@@ -11,6 +11,7 @@ skinparam ArrowFontColor black
 
 class Visita{
 
+    - visitasRealizadas : Integer
     + visitarEdificio(edificio:Edificio, tiempo:Tiempo):Pista
 
 }

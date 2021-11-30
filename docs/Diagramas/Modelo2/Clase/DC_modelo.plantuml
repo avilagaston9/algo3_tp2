@@ -16,6 +16,9 @@ skinparam ArrowFontColor black
 !include clase_edificio.plantuml
 !include clase_pista.plantuml
 
-Detective *-> Tiempo
-
+Detective "1" *-down->"1" Tiempo
+Detective "1" *-down->"1" Visita
+Visita "1" *-down->"1" Pais
+Pais "1" *-down->"1" Edificio
+Edificio "1" *-down->"1" Pista
 @enduml
