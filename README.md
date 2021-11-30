@@ -4,7 +4,7 @@
 
 Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUBA
 
-## Grupo {N}
+## Grupo 10
 
 * **Integrante 1** - [Avila Cabrera, Gastón](https://github.com/avilagaston9)
 * **Integrante 2** - [Cantero, Alan](https://github.com/CanteroAlann)
@@ -12,7 +12,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 4** - [Vagó, Nicolás Esteban](https://github.com/nicolas2000fiuba)
 * **Integrante 5** - [Vargas, Alejandro](https://github.com/alevargas-gif)
 
-Corrector: **{Corrector}**
+Corrector: **Pablo Rodríguez Massuh**
 
 ## Aplicación
 
