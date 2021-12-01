@@ -22,7 +22,7 @@ pais --> visita : pista
 visita --> detective : pista
 
 detective -> visita: restarHoras(tiempo:Tiempo)
-visita -> "tiempo:Tiempo" as tiempo : restarHoras(cantidadHoras)
+visita -> "tiempo:Tiempo" as tiempo : restarHoras(1)
 
 detective --> TestCase : pista
 
