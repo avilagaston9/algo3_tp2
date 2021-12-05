@@ -11,7 +11,7 @@ skinparam ArrowFontColor black
 
 class Detective{
 
-    + visitarEdificio(edificio:Edificio):Pista
+    + visitarEdificio(nombreEdificio:String):Pista
 }
 
 @enduml

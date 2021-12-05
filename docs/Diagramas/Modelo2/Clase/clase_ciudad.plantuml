@@ -9,9 +9,11 @@ skinparam ClassAttributeFontColor FFFFFF
 skinparam ClassFontSize 12
 skinparam ArrowFontColor black
 
-Interface Pais{
+Interface Ciudad{
 
-    + visitarEdificio(edificio:Edificio):Pista
+    - visitasRealizadas : Integer
+    
+    + visitarEdificio(nombreEdificio:String, tiempoRestante:TiempoRestante):Pista
 }
 
 @enduml
