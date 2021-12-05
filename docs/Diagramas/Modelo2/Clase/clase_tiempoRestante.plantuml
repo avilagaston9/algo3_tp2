@@ -9,7 +9,7 @@ skinparam ClassAttributeFontColor FFFFFF
 skinparam ClassFontSize 12
 skinparam ArrowFontColor black
 
-class Tiempo{
+class TiempoRestante{
 
     - horas : Integer
     
