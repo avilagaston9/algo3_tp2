@@ -14,15 +14,15 @@ skinparam participantFontSize 12
 skinparam SequenceLifeLineBackGroundColor 2e2e2e
 
 TestCase -> "detective:Detective" as detective : visitarEdificio(nombreEdificio:String)
-detective -> "visita:Visita" as visita: visitarEdificio(nombreEdificio)
-visita -> ":Pais" as pais: visitarEdificio(nombreEdificio)
-pais -> "edificio:Edificio" as edificio: serVisitado()
-pais <-- edificio : pista
-pais --> visita : pista
-visita --> detective : pista
+detective -> "Montreal:Ciudad" as ciudad: visitarEdificio(nombreEdificio, tiempoRestante)
+ciudad -> "banco:Edificio" as edificio: serVisitado(siguienteCiudad)
+edificio -> "siguienteCiudad:Ciudad" as siguiente : pistaBanco() 
+siguiente -->  edificio : pista
+ciudad <-- edificio : pista
+ciudad --> detective : pista
 
-detective -> visita: restarHoras(tiempo:Tiempo)
-visita -> "tiempo:Tiempo" as tiempo : restarHoras(1)
+detective -> ciudad: restarHoras(tiempo:Tiempo)
+ciudad -> "tiempoRestante:TiempoRestante" as tiempo : restarHoras(1)
 
 detective --> TestCase : pista
 
