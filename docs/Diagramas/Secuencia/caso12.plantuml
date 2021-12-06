@@ -2,7 +2,7 @@
 !theme reddress-darkblue
 autonumber
 skinparam style strictuml
-skinparam BackGroundColor lavender
+skinparam BackGroundColor white
 skinparam RoundCorner 7
 skinparam SequenceGroupFontColor black
 skinparam SequenceGroupBorderColor black
@@ -13,10 +13,9 @@ skinparam ActorFontColor black
 skinparam participantFontSize 12
 skinparam SequenceLifeLineBackGroundColor 2e2e2e
 
-TestCase -> "detective:Detective" as detective : visitarEdificio(edificio)
-detective -> ":Visita" as visita : restarHoras(tiempo:Tiempo)
-visita -> "tiempo:Tiempo" as tiempo : restarHoras(cantidadHoras)
-detective -> "edificio:Edificio" as edificio : serVisitado()
-detective <-- edificio : pista
-TestCase <-- detective : pista
+
+
+
+
+
 @enduml

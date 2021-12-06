@@ -2,9 +2,16 @@ package clases;
 
 public class Detective {
     private Tiempo plazo;
+    private String grado;
+    private Ciudad ciudadActual;
 
-    public Detective() {
-        plazo=null;
+    public Detective(Ciudad ciudad) {
+        //plazo=null;
+        ciudadActual = ciudad;
+    }
+
+    public void establecerRango(String rango){
+        grado=rango;
     }
 
     public void asignarHoras(Tiempo horas) {

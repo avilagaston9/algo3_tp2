@@ -1,0 +1,35 @@
+@startuml
+
+!theme reddress-darkblue
+autonumber
+skinparam style strictuml
+skinparam BackGroundColor white
+skinparam RoundCorner 7
+skinparam SequenceGroupFontColor black
+skinparam SequenceGroupBorderColor black
+skinparam SequenceGroupBorderThickness 0.5
+skinparam ArrowFontColor black
+skinparam ArrowColor black
+skinparam ActorFontColor black
+skinparam participantFontSize 12
+skinparam SequenceLifeLineBackGroundColor 2e2e2e
+
+TestCase -> "algothieft:AlgoThieft" as algothieft: visitarEdificio(Banco:Edificio)
+algothieft -> "unPolicia:Policia" as unPolicia: visitarEdificio(Banco)
+
+unPolicia -> "ciudadActual:Ciudad" as ciudadInstancia : visitarEdificio(Banco)
+
+ciudadInstancia ->"unEdificio: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad)
+edificio -> "proximaCiudad:Ciudad" as proximaCiudad : pistaBanco()
+proximaCiudad -->edificio : unaPista
+
+ciudadInstancia <-- edificio: unaPista
+unPolicia <-- ciudadInstancia: unaPista
+unPolicia --> algothieft: unaPista
+
+unPolicia -> unPolicia : sumarVisita
+unPolicia -> "tiempo:TiempoRestante" as tiempo: restarHoras(cantidadHoras)
+
+TestCase <-- algothieft: unaPista
+
+@enduml

@@ -9,9 +9,15 @@ skinparam ClassAttributeFontColor FFFFFF
 skinparam ClassFontSize 12
 skinparam ArrowFontColor black
 
-class Detective{
+class AlgoThieft{
 
-    + visitarEdificio(nombreEdificio:String):Pista
+    - detective: Detective
+    - ladron: Ladron
+    - objetoRobado: ObjetoRobado
+
+    + visitarEdificio(unEdificio: Edificio)
 }
+
+
 
 @enduml

@@ -1,0 +1,37 @@
+@startuml
+!theme reddress-darkblue
+autonumber
+skinparam style strictuml
+skinparam BackGroundColor lavender
+skinparam RoundCorner 7
+skinparam SequenceGroupFontColor black
+skinparam SequenceGroupBorderColor black
+skinparam SequenceGroupBorderThickness 0.5
+skinparam ArrowFontColor black
+skinparam ArrowColor black
+skinparam ActorFontColor black
+skinparam participantFontSize 12
+skinparam SequenceLifeLineBackGroundColor 2e2e2e
+
+TestCase -> "algoThieft:AlgoThieft" as algothieft : iniciarPartida(nombrePolicia:String, nroArrestos:Int, nombreCiudadInicial: string)
+
+algothieft -> "Parser" as parser: crearCiudad(nombre:Ciudad, archivoCiudades)
+
+create "ciudad:Ciudad" as ciudad
+parser -> "ciudad:Ciudad" as ciudad : new(nombre:String)
+ciudad --> parser : primerCiudad
+
+create "ciudadAdyacente:Ciudad" as ciudadAdyacente
+parser -> "ciudadAdyacente:Ciudad" as ciudadAdyacente : new(nombre:String)
+ciudadAdyacente --> parser : ciudadAdyacente
+
+parser --> ciudad: gregarLimitrofe(ciudadAdyacente) 
+
+algothieft -> "Policia" as policia: nuevoPolicia(nombrePolicia: String, nroDeArrestos: int, ubicacion: unaCiudadInicial)
+algothieft <-- policia: unPolicia
+
+algothieft -> "Ladron": crearLadronDeUnObjetoRobado(unObjetoRobado: ObjetoRobado)
+algothieft <-- "Ladron": unLadron
+
+
+@enduml

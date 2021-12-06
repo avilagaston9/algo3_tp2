@@ -9,9 +9,13 @@ skinparam ClassAttributeFontColor FFFFFF
 skinparam ClassFontSize 12
 skinparam ArrowFontColor black
 
-Interface Pista{
+class Detective{
+    
+    -nroArrestos:Int
+    -nombre: String
+    -ciudadActual: Ciudad
 
-    - texto: String
+    + visitarEdificio(nombreEdificio:String):Pista
 }
 
 @enduml

@@ -1,0 +1,29 @@
+@startuml
+
+!theme reddress-darkblue
+skinparam BackgroundColor white
+skinparam ArrowColor black
+skinparam ArrowThickness 1.0
+skinparam RoundCorner 7
+skinparam ClassAttributeFontColor FFFFFF
+skinparam ClassFontSize 12
+skinparam ArrowFontColor black
+
+!include Detective.plantuml
+!include Tiempo.plantuml
+!include Ciudad.plantuml
+!include Edificio.plantuml
+!include AlgoThieft.plantuml
+!include Ladron.plantuml
+
+AlgoThieft "1" o--down-"1" Detective
+
+AlgoThieft "1" o--down-"1" Ladron
+Detective "1" *--down-"1" TiempoRestante
+
+Detective "1" o--down-"1" Ciudad
+Ladron "1" o--down-"1" Ciudad
+
+Ciudad "1" *-down-"3" Edificio
+
+@enduml

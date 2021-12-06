@@ -9,11 +9,12 @@ skinparam ClassAttributeFontColor FFFFFF
 skinparam ClassFontSize 12
 skinparam ArrowFontColor black
 
-Interface Ciudad{
+class Ladron{
 
-    - visitasRealizadas : Integer
-    
-    + visitarEdificio(nombreEdificio:String, tiempoRestante:TiempoRestante):Pista
+    -nombre: String
+    -ciudadActual: Ciudad
+
+    + visitarEdificio(nombreEdificio:String):Pista
 }
 
 @enduml

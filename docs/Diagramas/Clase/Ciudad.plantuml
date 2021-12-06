@@ -9,11 +9,12 @@ skinparam ClassAttributeFontColor FFFFFF
 skinparam ClassFontSize 12
 skinparam ArrowFontColor black
 
-class Visita{
+Class Ciudad{
 
     - visitasRealizadas : Integer
-    + visitarEdificio(nombreEdificio:String, tiempo:Tiempo):Pista
-
+    - nombreCiudad : String
+    
+    + visitarEdificio(nombreEdificio:String, tiempoRestante:TiempoRestante):Pista
 }
 
 @enduml

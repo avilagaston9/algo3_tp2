@@ -3,21 +3,20 @@ package clases;
 import java.util.Collection;
 
 public class Ciudad {
-    private Edificio edificios;
+    //private Edificio edificios;
+    public String nombre;
 
-    public Ciudad(){
-        edificios=null;
+    public Ciudad(String nombreCiudad){
+        //edificios=null;
+        nombre = nombreCiudad;
     }
 
-    public void asignarEdificio(Edificio banco) {
-        edificios=banco;
-    }
+    //public void asignarEdificio(Edificio banco) {
+        //edificios=banco;
+    //}
 
-    public void visitarEdificio(Edificio banco, Detective detective) {
-        banco.serVisitado(detective);
+    //public void visitarEdificio(Edificio banco, Detective detective) {
+      //  banco.serVisitado(detective);
 
-
-
-
-    }
+    //}
 }
