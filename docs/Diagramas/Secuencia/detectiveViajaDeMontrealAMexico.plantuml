@@ -1,0 +1,27 @@
+@startuml Detective viaja de Montreal a Mexico
+!theme reddress-darkblue
+autonumber
+skinparam style strictuml
+skinparam BackGroundColor lavender
+skinparam RoundCorner 7
+skinparam SequenceGroupFontColor black
+skinparam SequenceGroupBorderColor black
+skinparam SequenceGroupBorderThickness 0.5
+skinparam ArrowFontColor black
+skinparam ArrowColor black
+skinparam ActorFontColor black
+skinparam participantFontSize 12
+skinparam SequenceLifeLineBackGroundColor 2e2e2e
+
+TestCase -> ":AlgoThieft" as juego: hacerViaje(detective:Policia,nuevaCiudad:Ciudad)
+juego -> "detective:Policia" as detective: viajarA(nuevaCiudad:Ciudad)
+detective -> "ciuadadActual:Ciudad" as ciudadActual: viajar(nuevaCiudad:Ciudad, detective)
+
+ciudadActual -> detective: restarHoras(distancia:Integer)
+detective -> "tiempo:TiempoRestante" as tiempo: restar(cantidadHoras:Integer)
+'OPCION 2 
+ciudadActual --> detective: nuevaCiudad:Ciudad
+detective -> detective: nuevaCiudad(nuevaCiudad:Ciudad)
+
+
+@enduml

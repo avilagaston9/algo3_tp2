@@ -19,10 +19,9 @@ ciudad -> "banco:Edificio" as edificio: serVisitado(siguienteCiudad)
 edificio -> "siguienteCiudad:Ciudad" as siguiente : pistaBanco() 
 siguiente -->  edificio : pista
 ciudad <-- edificio : pista
-ciudad --> detective : pista
 
-detective -> ciudad: restarHoras(tiempo:Tiempo)
 ciudad -> "tiempoRestante:TiempoRestante" as tiempo : restarHoras(1)
+ciudad --> detective : pista
 
 detective --> TestCase : pista
 
