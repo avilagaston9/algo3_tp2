@@ -1,14 +1,13 @@
 package edu.fiuba.algo3.entrega1;
 
 
-<<<<<<< HEAD
 import clases.Edificio;
 import clases.Pista;
 import clases.Ciudad
-=======
 import clases.*;
->>>>>>> 5007e1aaaa0d861cb15c72944186271e89ed5821
 import org.junit.jupiter.api.Test;
+
+import java.util.Collections;
 
 public class Caso1 {
 
@@ -35,15 +34,8 @@ public class Caso1 {
         int cantArrestos = 0;
         Policia policia = new Policia(cantArrestos, montreal); // crear tiempo y rango
 
-        Pista pista =policia.visitar(banco);
+        List pistas = policia.visitar(banco);
 
-        assertEquals(pista.revelar(), pistaBuenosAires.revelar());
-
-
-
-
-
-
-
+        assertEquals(pistas.get(0).revelar(), pistaBuenosAires.revelar());
     }
 }
