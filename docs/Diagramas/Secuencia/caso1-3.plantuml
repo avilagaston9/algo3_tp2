@@ -17,8 +17,10 @@ TestCase -> ":AlgoThieft" as juego: hacerViaje(detective:Policia,nuevaCiudad:Ciu
 juego -> "detective:Policia" as detective: viajarA(nuevaCiudad:Ciudad)
 detective -> "ciuadadActual:Ciudad" as ciudadActual: viajar(nuevaCiudad:Ciudad, tiempo:TiempoRestante)
 
-ciudadActual -> "tiempo:TiempoRestante" as tiempo: restarHoras(distancia:Integer)
+ciudadActual -> "tiempo:TiempoRestante" as tiempo: restarHoras(tiempo:Integer)
 detective -> detective: nuevaCiudad(nuevaCiudad:Ciudad)
 
+detective -> "nuevaCiudad:Ciudad" as nuevaCiudad: recibirPolicia()
+nuevaCiudad -> "tercerCiudad:Ciudad" : recibirLadron(ladron)
 
 @enduml

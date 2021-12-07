@@ -25,6 +25,7 @@ rango --> proximaCiudad: pistasDevueltas
 proximaCiudad -->edificio : pistasDevueltas
 
 montreal <-- edificio: pistasDevueltas
+note right: notar que no se restan horas por ser un Edificio de Transporte
 montreal -> montreal : sumarVisita()
 policia <-- montreal: pistasDevueltas
 policia --> TestCase: pistasDevueltas

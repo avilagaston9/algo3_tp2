@@ -34,7 +34,7 @@ rango --> proximaCiudad: pistasDevueltas
 
 proximaCiudad -->edificio : pistasDevueltas
 
-edificio -> "tiempo:TiempoRestante" as tiempo: restarHoras(cantidadHoras)
+edificio -> "tiempo:TiempoRestante" as tiempo: restarHoras(1)
 
 montreal <-- edificio: pistasDevueltas
 montreal -> montreal : sumarVisita()
