@@ -14,7 +14,13 @@ Class Ciudad{
     - visitasRealizadas : Integer
     - nombreCiudad : String
     
-    + visitarEdificio(nombreEdificio:String, tiempoRestante:TiempoRestante):Pista
+    + visitarEdificio(edificio:Edificio, rangoDetective:Rango,tiempoRestante:TiempoRestante):Pista
+    - sumarVisita()
+    + pistaEconomia(rangoDetective:Rango)
+    + pistaBiblioteca(rangoDetective:Rango)
+    + pistaTransporte(rangoDetective:Rango)
+    + pistaBanco(rangoDetective:Rango)
+
 }
 
 @enduml

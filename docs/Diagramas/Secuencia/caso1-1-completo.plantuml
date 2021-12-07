@@ -21,14 +21,14 @@ montreal ->"banco: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad, nova
 edificio -> "proximaCiudad:Ciudad" as proximaCiudad : pistaBanco(novato:Rango)
 proximaCiudad -> "novato:Rango" as rango : pedirPista(pistasBanco:Pistas, ladron:Ladron)
 
-create "pistasDevueltas:Pistas" as pistasDevueltas
+create "pistasDevueltas:Collection" as pistasDevueltas
 rango -> pistasDevueltas : new
-rango -> "pistasBanco:Collection" as pistas: pistaFacil()
-pistas --> rango :pistaFacil:Pistas
+rango -> "pistasBanco:Pistas" as pistas: pistaFacil()
+pistas --> rango :pistaFacil:Pista
 rango -> pistasDevueltas : add(pistaFacil)
 rango -> "ladrona:Ladron" as ladron: darPista()
 note left: Hay cierta probabilidad de\n que este mensaje se mande
-ladron --> rango: pistaLadron:Pistas
+ladron --> rango: pistaLadron:Pista
 rango -> pistasDevueltas : add(pistaLadron)
 rango --> proximaCiudad: pistasDevueltas
 
