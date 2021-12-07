@@ -11,6 +11,8 @@ public class Ciudad {
     private Ciudad siguienteCiudad;
     private int visitas;
     private Pistas pistasBanco;
+    private Pistas pistaBiblioteca;
+    private Pistas pistaAeropuerto;
 
     public Ciudad(String nombreCiudad){
         edificios=null;
@@ -35,11 +37,23 @@ public class Ciudad {
         pistasBanco=unasPistas;
     }
 
-    public Pista visitarEdificio(Edificio unEdificio, Rango rango, Tiempo plazo) {
-        return (edificios.get(edificios.indexOf(unEdificio))).serVisitado(this.siguienteCiudad,rango,plazo,this.visitas);
+
+    public List visitarEdificio(Edificio unEdificio, Rango rango, Tiempo plazo) {
+        List pistas = (edificios.get(edificios.indexOf(unEdificio))).serVisitado(this.siguienteCiudad,rango,plazo,this.visitas);
+        this.sumarVisita();
+        return pistas;
     }
 
-    public Pistas pistaBanco(Rango rango) {
+    private void sumarVisita() {
+        visitas++;
+    }
+
+    public List pistaBanco(Rango rango) {
         return rango.pedirPista(this.pistasBanco,this.ladron);
     }
+
+    public void agregarPistasBiblioteca(Pistas unasPistas) {pistaBiblioteca=unasPistas;}
+
+    public List pistaBiblioteca(Rango rango) {return rango.pedirPista(this.pistaBiblioteca,this.ladron);}
+
 }

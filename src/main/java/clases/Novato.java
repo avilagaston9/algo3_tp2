@@ -1,15 +1,17 @@
 package clases;
 
+import java.util.List;
+
 public class Novato implements Rango {
-    private Pistas pistasDevueltas;
+    private List <Pista> pistasDevueltas;
 
     public Novato(){
     }
 
     @Override
-    public Pistas pedirPista(Pistas pistasBanco, Ladron ladron) {
-        pistasDevueltas.agregarPistaFacil(pistasBanco.pistaFacil());
-        pistasDevueltas.agregarPistaLadron(ladron.darPista());
+    public List<Pista> pedirPista(Pistas pistasBanco, Ladron ladron) {
+        pistasDevueltas.add(0,pistasBanco.pistaFacil());
+        pistasDevueltas.add(1,ladron.darPista());
         return pistasDevueltas;
     }
 }

@@ -2,10 +2,9 @@ package clases;
 
 import java.util.List;
 
-public class Banco implements Edificio {
+public class Biblioteca implements Edificio {
     @Override
     public List serVisitado(Ciudad siguienteCiudad, Rango rango, Tiempo plazo, int visitas) {
-        return siguienteCiudad.pistaBanco(rango);
-
+        return siguienteCiudad.pistaBiblioteca(rango);
     }
 }

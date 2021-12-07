@@ -37,6 +37,6 @@ public class Caso1 {
 
         List pistas = policia.visitar(banco);
 
-        assertEquals(pistas.get(0).revelar(), pistaBuenosAires.revelar());
+        assertEquals(pistas.get(0).revelar(),pistaBuenosAires.revelar());
     }
 }

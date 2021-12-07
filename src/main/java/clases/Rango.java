@@ -1,6 +1,8 @@
 package clases;
 
+import java.util.List;
+
 public interface Rango {
 
-    Pistas pedirPista(Pistas pistasBanco, Ladron ladron);
+    List<Pista> pedirPista(Pistas pistasBanco, Ladron ladron);
 }

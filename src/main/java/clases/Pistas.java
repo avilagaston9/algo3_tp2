@@ -7,32 +7,36 @@ public class Pistas {
     private Pista pistaMedia;
     private Pista pistaDificil;
 
-    public Pistas(){
+    public Pistas() {
     }
 
     public Pista pistaFacil() {
-        return  pistaFacil;
+        return pistaFacil;
     }
 
     public void agregarPistaFacil(Pista pistaLugar) {
-        pistaFacil=pistaLugar;
+        pistaFacil = pistaLugar;
     }
 
     public Pista PistaMedia() {
-        return  pistaMedia;
+        return pistaMedia;
     }
 
     public void agregarPistaMedia(Pista pistaLugar) {
-        pistaFacil=pistaLugar;
+        pistaMedia = pistaLugar;
     }
 
     public Pista pistaDificil() {
-        return  pistaFacil;
+        return pistaDificil;
     }
 
     public void agregarPistadificil(Pista pistaLugar) {
-        pistaFacil=pistaLugar;
+        pistaDificil = pistaLugar;
     }
+
+}
+
+
 
 
 
