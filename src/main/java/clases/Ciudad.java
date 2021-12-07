@@ -1,22 +1,31 @@
 package clases;
 
-import java.util.Collection;
+
+import java.util.List;
 
 public class Ciudad {
-    //private Edificio edificios;
+
+    public List edificios;
     public String nombre;
+    public Ladron ladron;
+    public Ciudad siguienteCiudad;
 
     public Ciudad(String nombreCiudad){
-        //edificios=null;
+        edificios=null;
         nombre = nombreCiudad;
     }
 
-    //public void asignarEdificio(Edificio banco) {
-        //edificios=banco;
-    //}
+    public void agregarEdificio(Edificio banco) {
+        edificios.add(banco);
+    }
 
-    //public void visitarEdificio(Edificio banco, Detective detective) {
-      //  banco.serVisitado(detective);
+    public void agregarLadron(Ladron ladron){
+        ladron = ladron;
+    }
 
-    //}
+    public void agregarSiguiente(Ciudad ciudadSiguiente, int distancia){
+        siguienteCiudad= ciudadSiguiente;
+    }
+
+
 }
