@@ -15,12 +15,9 @@ skinparam SequenceLifeLineBackGroundColor 2e2e2e
 
 TestCase -> ":AlgoThieft" as juego: hacerViaje(detective:Policia,nuevaCiudad:Ciudad)
 juego -> "detective:Policia" as detective: viajarA(nuevaCiudad:Ciudad)
-detective -> "ciuadadActual:Ciudad" as ciudadActual: viajar(nuevaCiudad:Ciudad, detective)
+detective -> "ciuadadActual:Ciudad" as ciudadActual: viajar(nuevaCiudad:Ciudad, tiempo:TiempoRestante)
 
-ciudadActual -> detective: restarHoras(distancia:Integer)
-detective -> "tiempo:TiempoRestante" as tiempo: restar(cantidadHoras:Integer)
-'OPCION 2 
-ciudadActual --> detective: nuevaCiudad:Ciudad
+ciudadActual -> "tiempo:TiempoRestante" as tiempo: restarHoras(distancia:Integer)
 detective -> detective: nuevaCiudad(nuevaCiudad:Ciudad)
 
 
