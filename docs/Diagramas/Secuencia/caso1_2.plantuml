@@ -14,23 +14,65 @@ skinparam ActorFontColor black
 skinparam participantFontSize 12
 skinparam SequenceLifeLineBackGroundColor 2e2e2e
 
-TestCase -> "algothieft:AlgoThieft" as algothieft: visitarEdificio(Banco:Edificio)
-algothieft -> "unPolicia:Policia" as unPolicia: visitarEdificio(Banco)
+TestCase -> "algothieft:AlgoThieft" as algothieft: visitarEdificio(banco:Edificio)
+algothieft -> "novato:Policia" as unPolicia: visitarEdificio(banco)
 
-unPolicia -> "ciudadActual:Ciudad" as ciudadInstancia : visitarEdificio(Banco)
+unPolicia -> "Montreal:Ciudad" as montreal : visitarEdificio(banco, novato:Rango, tiempo:TiempoRestante)
 
-ciudadInstancia ->"unEdificio: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad)
-edificio -> "proximaCiudad:Ciudad" as proximaCiudad : pistaBanco()
-proximaCiudad -->edificio : unaPista
+montreal ->"unEdificio: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad, novato:Rango, tiempo:TiempoRestante, numeroVisita:Integer)
+edificio -> "proximaCiudad:Ciudad" as proximaCiudad : pistaBanco(novato:Rango)
+proximaCiudad -> "novato:Rango" as rango : pedirPista(pistasBanco:Pistas, ladron:Ladron)
+create "pistasDevueltas:Pistas" as pistasDevueltas
+rango -> pistasDevueltas : new
+rango -> "pistasBanco:Pistas" as pistas: pistaFacil()
+pistas --> rango :pistaFacil:Pistas
+rango -> pistasDevueltas : agregarPista(pistaFacil)
+rango -> "ladrona:Ladron" as ladron: darPista()
+note left: Hay cierta probabilidad de\n que este mensaje se mande
+ladron --> rango: pistaLadron:Pistas
+rango -> pistasDevueltas : agregarPista(pistaLadron)
+rango --> proximaCiudad: pistasDevueltas
+proximaCiudad -->edificio : pistasDevueltas
 
-ciudadInstancia <-- edificio: unaPista
-unPolicia <-- ciudadInstancia: unaPista
 
-unPolicia -> unPolicia : sumarVisita
-unPolicia -> "tiempo:TiempoRestante" as tiempo: restarHoras(cantidadHoras)
+edificio -> "tiempo:TiempoRestante" as tiempo: restarHoras(cantidadHoras)
 
-unPolicia --> algothieft: unaPista
+montreal <-- edificio: pistasDevueltas
+montreal -> montreal : sumarVisita()
+unPolicia <-- montreal: pistasDevueltas
+unPolicia --> algothieft: pistasDevueltas
 
-TestCase <-- algothieft: unaPista
+TestCase <-- algothieft: pistasDevueltas
+
+TestCase -> "algothieft:AlgoThieft" as algothieft: visitarEdificio(banco:Edificio)
+algothieft -> "novato:Policia" as unPolicia: visitarEdificio(banco)
+
+unPolicia -> "Montreal:Ciudad" as montreal : visitarEdificio(banco, novato:Rango, tiempo:TiempoRestante)
+
+montreal ->"unEdificio: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad, novato:Rango, tiempo:TiempoRestante, numeroVisita:Integer)
+edificio -> "proximaCiudad:Ciudad" as proximaCiudad : pistaBanco(novato:Rango)
+proximaCiudad -> "novato:Rango" as rango : pedirPista(pistasBanco:Pistas, ladron:Ladron)
+create "pistasDevueltas:Pistas" as pistasDevueltas
+rango -> pistasDevueltas : new
+rango -> "pistasBanco:Pistas" as pistas: pistaFacil()
+pistas --> rango :pistaFacil:Pistas
+rango -> pistasDevueltas : agregarPista(pistaFacil)
+rango -> "ladrona:Ladron" as ladron: darPista()
+note left: Hay cierta probabilidad de\n que este mensaje se mande
+ladron --> rango: pistaLadron:Pistas
+rango -> pistasDevueltas : agregarPista(pistaLadron)
+rango --> proximaCiudad: pistasDevueltas
+proximaCiudad -->edificio : pistasDevueltas
+
+
+edificio -> "tiempo:TiempoRestante" as tiempo: restarHoras(cantidadHoras)
+
+montreal <-- edificio: pistasDevueltas
+montreal -> montreal : sumarVisita()
+unPolicia <-- montreal: pistasDevueltas
+unPolicia --> algothieft: pistasDevueltas
+
+TestCase <-- algothieft: pistasDevueltas
+
 
 @enduml

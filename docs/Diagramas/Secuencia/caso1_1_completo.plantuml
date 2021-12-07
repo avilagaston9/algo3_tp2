@@ -16,24 +16,23 @@ skinparam SequenceLifeLineBackGroundColor 2e2e2e
 
 TestCase -> "algothieft:AlgoThieft" as algothieft: visitarEdificio(banco:Edificio)
 algothieft -> "novato:Policia" as unPolicia: visitarEdificio(banco)
-
 unPolicia -> "Montreal:Ciudad" as montreal : visitarEdificio(banco, novato:Rango, tiempo:TiempoRestante)
-
-montreal ->"unEdificio: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad, novato:Rango, tiempo:TiempoRestante, numeroVisita:Integer)
+montreal ->"banco: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad, novato:Rango, tiempo:TiempoRestante, numeroVisita:Integer)
 edificio -> "proximaCiudad:Ciudad" as proximaCiudad : pistaBanco(novato:Rango)
 proximaCiudad -> "novato:Rango" as rango : pedirPista(pistasBanco:Pistas, ladron:Ladron)
+
 create "pistasDevueltas:Pistas" as pistasDevueltas
 rango -> pistasDevueltas : new
-rango -> "pistasBanco:Pistas" as pistas: pistaFacil()
+rango -> "pistasBanco:Collection" as pistas: pistaFacil()
 pistas --> rango :pistaFacil:Pistas
-rango -> pistasDevueltas : agregarPista(pistaFacil)
+rango -> pistasDevueltas : add(pistaFacil)
 rango -> "ladrona:Ladron" as ladron: darPista()
 note left: Hay cierta probabilidad de\n que este mensaje se mande
 ladron --> rango: pistaLadron:Pistas
-rango -> pistasDevueltas : agregarPista(pistaLadron)
+rango -> pistasDevueltas : add(pistaLadron)
 rango --> proximaCiudad: pistasDevueltas
-proximaCiudad -->edificio : pistasDevueltas
 
+proximaCiudad -->edificio : pistasDevueltas
 
 edificio -> "tiempo:TiempoRestante" as tiempo: restarHoras(cantidadHoras)
 

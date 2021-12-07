@@ -13,8 +13,10 @@ public class Caso1 {
         Ciudad montreal = new Ciudad("Montreal");
         Ciudad buenosAires = new Ciudad("Buenos Aires");
 
+        Pistas pistasBanco = new Pistas();
         Pista pistaBuenosAires = new Pista("pesos");
-        buenosAires.agregarPistaBanco(pistaBuenosAires);
+        pistasBanco.agregarPistaFacil(pistaBuenosAires);
+        buenosAires.agregarPistasBanco(pistasBanco);
 
         Edificio banco = new Banco();
         montreal.agregarEdificio(banco);
