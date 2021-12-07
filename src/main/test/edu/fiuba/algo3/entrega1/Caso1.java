@@ -6,8 +6,7 @@ import clases.Pista;
 import clases.Ciudad
 import clases.*;
 import org.junit.jupiter.api.Test;
-
-import java.util.Collections;
+import java.util.List;
 
 public class Caso1 {
 
