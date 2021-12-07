@@ -28,4 +28,8 @@ public class Policia {
     public void viajarA(Ciudad nuevaCiudad){
         ciudadActual.viajar(nuevaCiudad, plazo, rango);
     }
+
+    public Ciudad getCiudadActual(){
+        return ciudadActual;
+    }
 }
