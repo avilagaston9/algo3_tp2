@@ -17,9 +17,9 @@ skinparam SequenceLifeLineBackGroundColor 2e2e2e
 TestCase -> "algothieft:AlgoThieft" as algothieft: visitarEdificio(banco:Edificio)
 algothieft -> "novato:Policia" as unPolicia: visitarEdificio(banco)
 
-unPolicia -> "Montreal:Ciudad" as montreal : visitarEdificio(banco, novato:Rango, tiempo:TiempoRestante)
+unPolicia -> "Montreal:Ciudad" as montreal : visitarEdificio(banco, novato:Rango, tiempo:Tiempo)
 
-montreal ->"unEdificio: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad, novato:Rango, tiempo:TiempoRestante, numeroVisita:Integer)
+montreal ->"unEdificio: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad, novato:Rango, tiempo:Tiempo, numeroVisita:Integer)
 edificio -> "proximaCiudad:Ciudad" as proximaCiudad : pistaBanco(novato:Rango)
 proximaCiudad -> "novato:Rango" as rango : pedirPista(pistasBanco:Pistas, ladron:Ladron)
 create "pistasDevueltas:Collection" as pistasDevueltas
@@ -35,7 +35,7 @@ rango --> proximaCiudad: pistasDevueltas
 proximaCiudad -->edificio : pistasDevueltas
 
 
-edificio -> "tiempo:TiempoRestante" as tiempo: restarHoras(2)
+edificio -> "tiempo:Tiempo" as tiempo: sumarHoras(2)
 
 montreal <-- edificio: pistasDevueltas
 montreal -> montreal : sumarVisita()
@@ -47,9 +47,9 @@ TestCase <-- algothieft: pistasDevueltas
 TestCase -> "algothieft:AlgoThieft" as algothieft: visitarEdificio(banco:Edificio)
 algothieft -> "novato:Policia" as unPolicia: visitarEdificio(banco)
 
-unPolicia -> "Montreal:Ciudad" as montreal : visitarEdificio(banco, novato:Rango, tiempo:TiempoRestante)
+unPolicia -> "Montreal:Ciudad" as montreal : visitarEdificio(banco, novato:Rango, tiempo:Tiempo)
 
-montreal ->"unEdificio: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad, novato:Rango, tiempo:TiempoRestante, numeroVisita:Integer)
+montreal ->"unEdificio: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad, novato:Rango, tiempo:Tiempo, numeroVisita:Integer)
 edificio -> "proximaCiudad:Ciudad" as proximaCiudad : pistaBanco(novato:Rango)
 proximaCiudad -> "novato:Rango" as rango : pedirPista(pistasBanco:Pistas, ladron:Ladron)
 create "pistasDevueltas:Collection" as pistasDevueltas
@@ -65,7 +65,7 @@ rango --> proximaCiudad: pistasDevueltas
 proximaCiudad -->edificio : pistasDevueltas
 
 
-edificio -> "tiempo:TiempoRestante" as tiempo: restarHoras(3)
+edificio -> "tiempo:Tiempo" as tiempo: sumarHoras(3)
 
 montreal <-- edificio: pistasDevueltas
 montreal -> montreal : sumarVisita()

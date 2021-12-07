@@ -16,9 +16,9 @@ skinparam SequenceLifeLineBackGroundColor 2e2e2e
 loop 55 visitas
 TestCase -> "novato:Policia" as policia: visitarEdificio(puerto:EdificioTransporte)
 
-policia -> "Montreal:Ciudad" as montreal : visitarEdificio(puerto, novato:Rango, tiempo:TiempoRestante)
+policia -> "Montreal:Ciudad" as montreal : visitarEdificio(puerto, novato:Rango, tiempo:Tiempo)
 
-montreal ->"puerto: EdificioTransporte" as edificio: serVisitado(proximaCiudad:Ciudad, novato:Rango, tiempo:TiempoRestante, numeroVisita:Integer)
+montreal ->"puerto: EdificioTransporte" as edificio: serVisitado(proximaCiudad:Ciudad, novato:Rango, tiempo:Tiempo, numeroVisita:Integer)
 edificio -> "proximaCiudad:Ciudad" as proximaCiudad : pistaAeropuerto(novato:Rango)
 proximaCiudad -> "novato:Rango" as rango : pedirPista(pistasBanco:Pistas, ladron:Ladron)
 rango --> proximaCiudad: pistasDevueltas
