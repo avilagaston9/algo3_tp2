@@ -14,4 +14,12 @@ public class Novato implements Rango {
         pistasDevueltas.add(1,ladron.darPista());
         return pistasDevueltas;
     }
+    @Override
+    public void viajar(int cantidadKms, Tiempo tiempo){
+        tiempo.sumarHoras(cantidadKms*1/900);
+    }
+
+
+
+
 }

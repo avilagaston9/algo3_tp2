@@ -3,7 +3,18 @@ package clases;
 public class Tiempo {
     private int horas;
 
-    public void restarHoras(int cantidad){
-        horas-=cantidad;
+    public Tiempo(){
+        horas = 0;
     }
+
+    public void sumarHoras(int cantidad){
+        horas+=cantidad;
+    }
+
+    public int getHoras(){
+        return horas;
+    }
+
+
+
 }

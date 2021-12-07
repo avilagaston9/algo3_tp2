@@ -1,7 +1,5 @@
 package clases;
 
-import java.util.List;
-
 public class Policia {
     private Ciudad ciudadInicial;
     private int cantidadArrestos;
@@ -15,7 +13,7 @@ public class Policia {
         ciudadInicial=montreal;
     }
 
-    public List visitar(Edificio unEdificio) {
+    public Pista visitar(Edificio unEdificio) {
        return ciudadInicial.visitarEdificio(unEdificio,this.rango,this.plazo);
 
     }

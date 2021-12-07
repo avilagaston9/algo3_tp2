@@ -33,6 +33,7 @@ public class Pistas {
     public void agregarPistadificil(Pista pistaLugar) {
         pistaDificil = pistaLugar;
     }
+}
 
 }
 
