@@ -20,6 +20,9 @@ Class Ciudad{
     + pistaBiblioteca(rangoDetective:Rango)
     + pistaTransporte(rangoDetective:Rango)
     + pistaBanco(rangoDetective:Rango)
+    + viajar(nuevaCiudad:Ciudad, tiempo:Tiempo, rango:Rango)
+    + recibirPolicia()
+    + recibirLadron(ladron:Ladron)
 
 }
 
