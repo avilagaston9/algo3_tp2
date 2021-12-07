@@ -1,9 +1,13 @@
 package edu.fiuba.algo3.entrega1;
 
 
+<<<<<<< HEAD
 import clases.Edificio;
 import clases.Pista;
 import clases.Ciudad
+=======
+import clases.*;
+>>>>>>> 5007e1aaaa0d861cb15c72944186271e89ed5821
 import org.junit.jupiter.api.Test;
 
 public class Caso1 {
