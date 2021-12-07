@@ -7,16 +7,12 @@ import java.util.Map;
 
 public class Ciudad {
 
-    private List edificios;
     private String nombre;
     private Ladron ladron;
     private Ciudad siguienteCiudad;
     private Map distancias;
 
     private List <Edificio> edificios;
-    private String nombre;
-    private Ladron ladron;
-    private Ciudad siguienteCiudad;
     private int visitas;
     private Pistas pistasBanco;
 
