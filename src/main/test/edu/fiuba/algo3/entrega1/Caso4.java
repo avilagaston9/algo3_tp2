@@ -32,16 +32,17 @@ public class Caso4 {
 
         //act
         List pistas;
-        for(int i = 1; i < 4; i++){
+        for(int i = 0; i < 3; i++){
 
             pistas = policia.visitar(aeropuerto);
+            //Chequea que siempre sea la misma pista
             assertEquals(pistas.get(0).revelar(), pistaBuenosAires.revelar());
         }
         assertEquals(policia.tiempoTranscurrido(), 0);
     }
 
     @Test
-    public void NovatoVisitaUnAeropuertoTresVeces(){
+    public void NovatoVisitaUnAeropuerto55Veces(){
 
         //arrange
         Ciudad montreal = new Ciudad("Montreal");
@@ -65,12 +66,13 @@ public class Caso4 {
 
         //act
         List pistas;
-        for(int i = 1; i < 4; i++){
+        for(int i = 0; i < 55; i++){
 
             pistas = policia.visitar(aeropuerto);
+            //Chequea que siempre sea la misma pista
             assertEquals(pistas.get(0).revelar(), pistaBuenosAires.revelar());
-            assertEquals(policia.tiempoTranscurrido(), i);
         }
+        assertEquals(policia.tiempoTranscurrido(), 0);
     }
 
 }
