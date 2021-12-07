@@ -14,6 +14,7 @@ public class Policia {
     }
 
     public Pista visitar(Edificio unEdificio) {
-        return null;
+       return ciudadInicial.visitarEdificio(unEdificio,this.rango,this.plazo);
+
     }
 }

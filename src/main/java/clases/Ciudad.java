@@ -5,14 +5,17 @@ import java.util.List;
 
 public class Ciudad {
 
-    public List edificios;
-    public String nombre;
-    public Ladron ladron;
-    public Ciudad siguienteCiudad;
+    private List <Edificio> edificios;
+    private String nombre;
+    private Ladron ladron;
+    private Ciudad siguienteCiudad;
+    private int visitas;
+    private Pistas pistasBanco;
 
     public Ciudad(String nombreCiudad){
         edificios=null;
         nombre = nombreCiudad;
+        visitas=0;
     }
 
     public void agregarEdificio(Edificio banco) {
@@ -28,4 +31,15 @@ public class Ciudad {
     }
 
 
+    public void agregarPistasBanco(Pistas unasPistas) {
+        pistasBanco=unasPistas;
+    }
+
+    public Pista visitarEdificio(Edificio unEdificio, Rango rango, Tiempo plazo) {
+        return (edificios.get(edificios.indexOf(unEdificio))).serVisitado(this.siguienteCiudad,rango,plazo,this.visitas);
+    }
+
+    public Pistas pistaBanco(Rango rango) {
+        return rango.pedirPista(this.pistasBanco,this.ladron);
+    }
 }
