@@ -3,7 +3,7 @@ package clases;
 public class Policia {
     private Ciudad ciudadActual;
     private int cantidadArrestos;
-    private Tiempo tiempo;
+    private Tiempo plazo;
     private Rango rango;
 
     public Policia(int arrestos, Ciudad montreal) {
@@ -14,8 +14,11 @@ public class Policia {
     }
 
     public Pista visitar(Edificio unEdificio) {
-       return ciudadInicial.visitarEdificio(unEdificio,this.rango,this.plazo);
+       return ciudadActual.visitarEdificio(unEdificio,this.rango,this.plazo);
+    }
 
+    public int tiempoTranscurrido(){
+        return plazo.getHoras();
     }
 
     public void nuevaCiudad(Ciudad unaCiudad){
@@ -23,6 +26,6 @@ public class Policia {
     }
 
     public void viajarA(Ciudad nuevaCiudad){
-        ciudadActual.viajar(nuevaCiudad, tiempo, rango);
+        ciudadActual.viajar(nuevaCiudad, plazo, rango);
     }
 }

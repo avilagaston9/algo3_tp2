@@ -14,7 +14,7 @@ public class Novato implements Rango {
     }
     @Override
     public void viajar(int cantidadKms, Tiempo tiempo){
-        tiempo.restarHoras(cantidadKms*1/900);
+        tiempo.sumarHoras(cantidadKms*1/900);
     }
 
 

@@ -20,5 +20,7 @@ public class Caso3 {
 
         policia.viajarA(mexico);
 
+        assertEquals(policia.tiempoTranscurrido(), 1);
+
     }
 }
