@@ -2,6 +2,7 @@ package edu.fiuba.algo3.entrega1;
 
 import clases.*;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Caso3 {
 
