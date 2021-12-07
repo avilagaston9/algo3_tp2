@@ -1,5 +1,5 @@
 package clases;
 
- public  interface Edificio {
-     Pista serVisitado(Detective detective);
+public interface Edificio {
+    public Pista serVisitado();
 }
