@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Caso2 {
 
     @Test
-    public void NovatoComienzaEnMontrealVisitaBancoYDespliegaPistaCorrecta(){
+    public void NovatoComienzaEnMontrealVisitaBancoYBibliotecaDespliegaPistaCorrecta(){
         //set up
         Ciudad montreal = new Ciudad("Montreal");
         Ciudad buenosAires = new Ciudad("Buenos Aires");
