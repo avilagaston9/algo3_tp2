@@ -43,8 +43,8 @@ public class Caso2 {
         Policia policia = new Policia(cantArrestos, montreal); // crear tiempo y rango
 
         //act
-        List pistasPrimeraVisita = policia.visitar(banco);
-        List pistasSegundaVisita = policia.visitar(biblioteca);
+        List <Pista> pistasPrimeraVisita = policia.visitar(banco);
+        List <Pista> pistasSegundaVisita = policia.visitar(biblioteca);
 
         //assert
         assertEquals((pistasPrimeraVisita.get(0)).revelar(), pistaBuenosAires.revelar());

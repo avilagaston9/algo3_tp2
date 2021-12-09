@@ -35,7 +35,7 @@ public class Caso1 {
         int cantArrestos = 0;
         Policia policia = new Policia(cantArrestos, montreal); // crear tiempo y rango
 
-        List pistas = policia.visitar(banco);
+        List <Pista> pistas = policia.visitar(banco);
 
         assertEquals(pistas.get(0).revelar(),pistaBuenosAires.revelar());
     }
