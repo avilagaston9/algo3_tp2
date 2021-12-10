@@ -1,8 +1,12 @@
 package edu.fiuba.algo3.entrega1;
 
+import clases.Arma;
 import clases.Ciudad;
+import clases.Cuchillo;
 import clases.Policia;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Caso5 {
 

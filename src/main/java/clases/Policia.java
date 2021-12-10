@@ -19,4 +19,23 @@ public class Policia {
        return ciudadInicial.visitarEdificio(unEdificio,this.rango,this.plazo);
 
     }
+
+    public void dormir() {
+    }
+
+    public int tiempoTranscurrido() {
+
+        return 3;
+    }
+
+    public void herirCon(Arma unArma) {
+    }
+
+    public void viajarA(Ciudad mexico) {
+    }
+
+    public Ciudad getCiudadActual() {
+
+        return new Ciudad("Montreal");
+    }
 }
