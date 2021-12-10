@@ -6,7 +6,6 @@ import clases.*;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Caso2 {
 
@@ -47,8 +46,8 @@ public class Caso2 {
         List <Pista> pistasSegundaVisita = policia.visitar(biblioteca);
 
         //assert
-        assertEquals((pistasPrimeraVisita.get(0)).revelar(), pistaBuenosAires.revelar());
-        assertEquals((pistasSegundaVisita.get(0)).revelar(), otraPistaBuenosAires.revelar());
+        assert(pistasPrimeraVisita.get(0)).revelar().equals("pesos");
+        assert((pistasSegundaVisita.get(0)).revelar().equals("Obelisco"));
     }
 }
 
