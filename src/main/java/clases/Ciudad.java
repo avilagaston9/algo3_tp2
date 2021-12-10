@@ -2,6 +2,7 @@ package clases;
 
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,20 +21,20 @@ public class Ciudad {
 
 
     public Ciudad(String nombreCiudad) {
-        edificios = null;
+
+        edificios = new LinkedList<Edificio>();
         nombre = nombreCiudad;
-        Map distancias = new HashMap();
-
+        this.distancias = new HashMap();
         visitas = 0;
-
     }
 
-    public void agregarEdificio(Edificio banco) {
-        edificios.add(banco);
+    public void agregarEdificio(Edificio unEdificio) {
+        edificios.add(unEdificio);
     }
 
     public void agregarLadron(Ladron ladron) {
-        ladron = ladron;
+
+        this.ladron = ladron;
     }
 
     public void agregarSiguiente(Ciudad ciudadSiguiente, int distancia) {
@@ -52,8 +53,8 @@ public class Ciudad {
     }
 
 
-    public List<Pista> visitarEdificio (Edificio unEdificio, Rango rango, Tiempo plazo){
-        List<Pista> pistas = (edificios.get(edificios.indexOf(unEdificio))).serVisitado(this.siguienteCiudad, rango, plazo, this.visitas);
+    public List<Pista> visitarEdificio (Edificio unEdificio, Rango rango, Tiempo tiempoTranscurrido){
+        List<Pista> pistas = (edificios.get(edificios.indexOf(unEdificio))).serVisitado(this.siguienteCiudad, rango, tiempoTranscurrido, this.visitas);
         this.sumarVisita();
         return pistas;
     }

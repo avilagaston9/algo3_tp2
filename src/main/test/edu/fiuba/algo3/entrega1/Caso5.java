@@ -19,7 +19,7 @@ public class Caso5 {
         //act
         policia.dormir();
         //assert
-        assertEquals(policia.tiempoTranscurrido(), 8);
+        assertEquals(policia.tiempoTranscurridoEnHoras(), 8);
     }
     @Test
     public void DetectiveRecibeHeridaDeCuchillo(){
@@ -31,6 +31,6 @@ public class Caso5 {
         //act
         policia.herirCon(cuchillo);
         //assert
-        assertEquals(policia.tiempoTranscurrido(), 2);
+        assertEquals(policia.tiempoTranscurridoEnHoras(), 2);
     }
 }

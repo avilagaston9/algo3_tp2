@@ -3,8 +3,8 @@ package clases;
 public class Pista {
     private String caracteristica;
 
-    public Pista(String moneda) {
-        caracteristica=moneda;
+    public Pista(String datos) {
+        caracteristica=datos;
     }
 
     public String revelar() {

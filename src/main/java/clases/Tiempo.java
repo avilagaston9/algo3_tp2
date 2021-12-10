@@ -11,7 +11,7 @@ public class Tiempo {
         horas+=cantidad;
     }
 
-    public int getHoras(){
+    public int tiempoTranscurridoEnHoras(){
         return horas;
     }
 

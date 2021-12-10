@@ -5,27 +5,27 @@ import java.util.List;
 public class Policia {
     private Ciudad ciudadInicial;
     private int cantidadArrestos;
-    private Tiempo plazo;
+    private Tiempo tiempoTranscurrido;
     private Rango rango;
 
     public Policia(int arrestos, Ciudad montreal) {
-        plazo= new Tiempo();
+        tiempoTranscurrido= new Tiempo();
         rango= new Novato();
         cantidadArrestos=arrestos;
         ciudadInicial=montreal;
     }
 
     public List<Pista> visitar(Edificio unEdificio) {
-       return ciudadInicial.visitarEdificio(unEdificio,this.rango,this.plazo);
+       return ciudadInicial.visitarEdificio(unEdificio,this.rango,this.tiempoTranscurrido);
 
     }
 
     public void dormir() {
     }
 
-    public int tiempoTranscurrido() {
+    public int tiempoTranscurridoEnHoras() {
 
-        return 3;
+        return this.tiempoTranscurrido.tiempoTranscurridoEnHoras();
     }
 
     public void herirCon(Arma unArma) {
