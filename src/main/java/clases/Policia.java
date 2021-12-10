@@ -21,6 +21,8 @@ public class Policia {
     }
 
     public void dormir() {
+
+        this.rango.dormir(this.tiempoTranscurrido);
     }
 
     public int tiempoTranscurridoEnHoras() {
@@ -29,6 +31,8 @@ public class Policia {
     }
 
     public void herirCon(Arma unArma) {
+
+        unArma.Herir(this.tiempoTranscurrido);
     }
 
     public void viajarA(Ciudad nuevaCiudad) {
