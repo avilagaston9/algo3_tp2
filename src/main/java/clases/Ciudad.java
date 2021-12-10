@@ -47,12 +47,6 @@ public class Ciudad {
     }
 
 
-    public void viajar(Ciudad nuevaCiudad, Tiempo tiempo, Rango rango) {
-        rango.viajar((Integer) distancias.get(nuevaCiudad), tiempo);
-
-    }
-
-
     public List<Pista> visitarEdificio (Edificio unEdificio, Rango rango, Tiempo tiempoTranscurrido){
         List<Pista> pistas = (edificios.get(edificios.indexOf(unEdificio))).serVisitado(this.siguienteCiudad, rango, tiempoTranscurrido, this.visitas);
         this.sumarVisita();
@@ -62,15 +56,15 @@ public class Ciudad {
 
 
     public void sumarVisita() {
-        visitas++;
+        this.visitas++;
     }
 
     public void agregarPistasBanco(Pistas pistas) {
-        pistasBanco=pistas;
+        this.pistasBanco=pistas;
     }
 
     public void agregarPistasBiblioteca(Pistas pistas) {
-        pistaBiblioteca=pistas;
+        this.pistaBiblioteca=pistas;
     }
 
     public List<Pista> pistaBiblioteca(Rango rango) {
@@ -80,5 +74,7 @@ public class Ciudad {
     public List<Pista> pistaBanco(Rango rango) {
         return rango.pedirPista(this.pistasBanco,this.ladron);
     }
+
+    public int distanciaEnKmsHasta(Ciudad unaCiudad) { return  (int)this.distancias.get(unaCiudad);  }
 }
 

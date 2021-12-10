@@ -3,20 +3,20 @@ package clases;
 import java.util.List;
 
 public class Policia {
-    private Ciudad ciudadInicial;
+    private Ciudad ciudadActual;
     private int cantidadArrestos;
     private Tiempo tiempoTranscurrido;
     private Rango rango;
 
     public Policia(int arrestos, Ciudad montreal) {
-        tiempoTranscurrido= new Tiempo();
-        rango= new Novato();
-        cantidadArrestos=arrestos;
-        ciudadInicial=montreal;
+        this.tiempoTranscurrido= new Tiempo();
+        this.rango= new Novato();
+        this.cantidadArrestos=arrestos;
+        this.ciudadActual=montreal;
     }
 
     public List<Pista> visitar(Edificio unEdificio) {
-       return ciudadInicial.visitarEdificio(unEdificio,this.rango,this.tiempoTranscurrido);
+       return ciudadActual.visitarEdificio(unEdificio,this.rango,this.tiempoTranscurrido);
 
     }
 
@@ -31,11 +31,20 @@ public class Policia {
     public void herirCon(Arma unArma) {
     }
 
-    public void viajarA(Ciudad mexico) {
+    public void viajarA(Ciudad nuevaCiudad) {
+
+        int kilometros = this.ciudadActual.distanciaEnKmsHasta(nuevaCiudad);
+        this.rango.viajar(kilometros, this.tiempoTranscurrido);
+        setCiudadActual(nuevaCiudad);
     }
 
-    public Ciudad getCiudadActual() {
+    public void setCiudadActual(Ciudad unaCiudad){
 
-        return new Ciudad("Montreal");
+        this.ciudadActual = unaCiudad;
+    }
+
+    public boolean esCiudadActual(Ciudad unaCiudad) {
+
+        return unaCiudad == this.ciudadActual;
     }
 }

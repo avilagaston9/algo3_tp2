@@ -4,15 +4,15 @@ public class Tiempo {
     private int horas;
 
     public Tiempo(){
-        horas = 0;
+        this.horas = 0;
     }
 
     public void sumarHoras(int cantidad){
-        horas+=cantidad;
+        this.horas+=cantidad;
     }
 
     public int tiempoTranscurridoEnHoras(){
-        return horas;
+        return this.horas;
     }
 
 
