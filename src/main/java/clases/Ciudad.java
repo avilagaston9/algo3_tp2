@@ -67,6 +67,8 @@ public class Ciudad {
         this.pistaBiblioteca=pistas;
     }
 
+    public void agregarPistasAeropuerto(Pistas pistas) {this.pistaAeropuerto=pistas;}
+
     public List<Pista> pistaBiblioteca(Rango rango) {
         return rango.pedirPista(this.pistaBiblioteca,this.ladron);
     }
@@ -75,6 +77,9 @@ public class Ciudad {
         return rango.pedirPista(this.pistasBanco,this.ladron);
     }
 
+    public List<Pista> pistaAeropuerto(Rango rango) { return  rango.pedirPista(this.pistaAeropuerto,this.ladron);}
+
     public int distanciaEnKmsHasta(Ciudad unaCiudad) { return  (int)this.distancias.get(unaCiudad);  }
+
 }
 

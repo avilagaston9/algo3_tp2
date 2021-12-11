@@ -51,4 +51,8 @@ public class Policia {
 
         return unaCiudad == this.ciudadActual;
     }
+
+    public int tiempoTranscurrido() {
+        return this.tiempoTranscurrido.tiempoTranscurridoEnHoras();
+    }
 }

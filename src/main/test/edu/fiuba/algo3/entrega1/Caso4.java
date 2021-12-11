@@ -5,7 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class Caso4 {/*
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class Caso4 {
 
     @Test
     public void NovatoVisitaUnAeropuertoTresVeces(){
@@ -31,7 +33,7 @@ public class Caso4 {/*
         Policia policia = new Policia(cantArrestos, montreal); // crear tiempo y rango
 
         //act
-        List pistas;
+        List <Pista> pistas;
         for(int i = 0; i < 3; i++){
 
             pistas = policia.visitar(aeropuerto);
@@ -65,7 +67,7 @@ public class Caso4 {/*
         Policia policia = new Policia(cantArrestos, montreal); // crear tiempo y rango
 
         //act
-        List pistas;
+        List<Pista> pistas;
         for(int i = 0; i < 55; i++){
 
             pistas = policia.visitar(aeropuerto);
@@ -74,5 +76,5 @@ public class Caso4 {/*
         }
         assertEquals(policia.tiempoTranscurrido(), 0);
     }
-*/
+
 }
