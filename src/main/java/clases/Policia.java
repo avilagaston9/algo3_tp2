@@ -8,10 +8,9 @@ public class Policia {
     private Tiempo tiempoTranscurrido;
     private Rango rango;
 
-    public Policia(int arrestos, Ciudad montreal) {
+    public Policia(Rango rango, Ciudad montreal) {
         this.tiempoTranscurrido= new Tiempo();
-        this.rango= new Novato();
-        this.cantidadArrestos=arrestos;
+        this.rango= rango;
         this.ciudadActual=montreal;
     }
 
