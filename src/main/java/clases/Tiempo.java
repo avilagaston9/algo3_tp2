@@ -16,5 +16,8 @@ public class Tiempo {
     }
 
 
+    public void dormir() {
 
+        sumarHoras(8);
+    }
 }

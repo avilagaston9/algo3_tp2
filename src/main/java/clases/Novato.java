@@ -23,11 +23,5 @@ public class Novato implements Rango {
         tiempo.sumarHoras(cantidadKms*1/900);
     }
 
-    @Override
-    public void dormir(Tiempo tiempoTranscurrido) {
-
-        tiempoTranscurrido.sumarHoras(8);
-    }
-
 
 }

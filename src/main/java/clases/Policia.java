@@ -21,7 +21,7 @@ public class Policia {
 
     public void dormir() {
 
-        this.rango.dormir(this.tiempoTranscurrido);
+        tiempoTranscurrido.dormir();
     }
 
     public int tiempoTranscurridoEnHoras() {

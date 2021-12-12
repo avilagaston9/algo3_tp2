@@ -8,5 +8,4 @@ public interface Rango {
 
     void viajar(int cantidadKms, Tiempo tiempo);
 
-    void dormir(Tiempo tiempoTranscurrido);
 }
