@@ -11,7 +11,8 @@ public class Caso5 {
     public void DetectiveDuerme(){
 
         //arrange
-        Policia policia = new Policia(new Novato(), new Ciudad("Montreal")); // crea tiempo y rango
+        Rango rango= new Novato();
+        Policia policia = new Policia(rango, new Ciudad("Montreal")); // crea tiempo y rango
         //act
         policia.dormir();
         //assert
@@ -22,7 +23,8 @@ public class Caso5 {
 
         //arrange
         Arma cuchillo = new Cuchillo();
-        Policia policia = new Policia(new Novato(), new Ciudad("Montreal")); // crea tiempo y rango
+        Rango rango= new Novato();
+        Policia policia = new Policia(rango, new Ciudad("Montreal")); // crea tiempo y rango
         //act
         policia.herirCon(cuchillo);
         //assert

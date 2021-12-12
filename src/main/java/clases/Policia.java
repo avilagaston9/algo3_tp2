@@ -8,20 +8,21 @@ public class Policia {
     private Tiempo tiempoTranscurrido;
     private Rango rango;
 
-    public Policia(Rango rango, Ciudad montreal) {
+    public Policia(Rango rango, Ciudad actual) {
         this.tiempoTranscurrido= new Tiempo();
-        this.rango= rango;
-        this.ciudadActual=montreal;
+        this.rango=rango;
+        this.cantidadArrestos=0;
+        this.ciudadActual=actual;
     }
 
-    public List<Pista> visitar(Edificio unEdificio) {
-       return ciudadActual.visitarEdificio(unEdificio,this.rango,this.tiempoTranscurrido);
+    public Pista visitar(Edificio unEdificio) {
+       return ciudadActual.visitarEdificio(unEdificio,this.tiempoTranscurrido);
 
     }
 
     public void dormir() {
 
-        tiempoTranscurrido.dormir();
+        this.rango.dormir(this.tiempoTranscurrido);
     }
 
     public int tiempoTranscurridoEnHoras() {

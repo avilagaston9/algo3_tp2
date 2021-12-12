@@ -15,7 +15,8 @@ public class Caso3 {
         int distancia = 9000;
         montreal.agregarSiguiente(mexico, distancia);
 
-        Policia policia = new Policia(new Novato(), montreal); // crear tiempo y rango
+        Rango rango=new Novato();
+        Policia policia = new Policia(rango, montreal); // crear tiempo y rango
 
         policia.viajarA(mexico);
 

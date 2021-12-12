@@ -15,9 +15,6 @@ public class Ciudad {
 
     private List<Edificio> edificios;
     private int visitas;
-    private Pistas pistasBanco;
-    private Pistas pistaBiblioteca;
-    private Pistas pistaAeropuerto;
 
 
     public Ciudad(String nombreCiudad) {
@@ -47,39 +44,25 @@ public class Ciudad {
     }
 
 
-    public List<Pista> visitarEdificio (Edificio unEdificio, Rango rango, Tiempo tiempoTranscurrido){
-        List<Pista> pistas = (edificios.get(edificios.indexOf(unEdificio))).serVisitado(this.siguienteCiudad, rango, tiempoTranscurrido, this.visitas);
+    public Pista visitarEdificio (Edificio unEdificio,Tiempo tiempoTranscurrido){
+        Pista pista = (edificios.get(edificios.indexOf(unEdificio))).serVisitado(unEdificio,this.siguienteCiudad,tiempoTranscurrido,this.visitas);
         this.sumarVisita();
-        return pistas;
+        return pista;
     }
-
-
 
     public void sumarVisita() {
         this.visitas++;
     }
 
-    public void agregarPistasBanco(Pistas pistas) {
-        this.pistasBanco=pistas;
-    }
-
-    public void agregarPistasBiblioteca(Pistas pistas) {
-        this.pistaBiblioteca=pistas;
-    }
-
-    public void agregarPistasAeropuerto(Pistas pistas) {this.pistaAeropuerto=pistas;}
-
-    public List<Pista> pistaBiblioteca(Rango rango) {
-        return rango.pedirPista(this.pistaBiblioteca,this.ladron);
-    }
-
-    public List<Pista> pistaBanco(Rango rango) {
-        return rango.pedirPista(this.pistasBanco,this.ladron);
-    }
-
-    public List<Pista> pistaAeropuerto(Rango rango) { return  rango.pedirPista(this.pistaAeropuerto,this.ladron);}
-
     public int distanciaEnKmsHasta(Ciudad unaCiudad) { return  (int)this.distancias.get(unaCiudad);  }
 
+    public Pista darPistaDe(Edificio edificio) {
+        for (int i=0;i< edificios.size();i++){
+            if(edificios.get(i).sosIgual(edificio)){
+                return edificios.get(i).darPista();
+            }
+        }
+        return null;
+    }
 }
 

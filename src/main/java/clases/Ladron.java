@@ -1,16 +1,13 @@
 package clases;
 
 public class Ladron {
+    private FabricaDePistas fabrica;
     private String nombre;
     private Pista pista;
 
-    ///cambiar
-    public Ladron(String unNombre) {
-
-        this.pista = new Pista(unNombre);
-    }
-
-    public Pista darPista() {
-        return pista;
+    public Ladron(String deNombre) {
+        this.nombre=deNombre;
     }
 }
+
+

@@ -8,6 +8,8 @@ import clases.*;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class Caso1 {
 
     @Test
@@ -16,13 +18,16 @@ public class Caso1 {
         Ciudad montreal = new Ciudad("Montreal");
         Ciudad buenosAires = new Ciudad("Buenos Aires");
 
-        Pistas pistasBanco = new Pistas();
-        Pista pistaBuenosAires = new Pista("pesos");
-        pistasBanco.agregarPistaFacil(pistaBuenosAires);
-        buenosAires.agregarPistasBanco(pistasBanco);
+        Rango rango= new Novato();
+        FabricaDePistas fabrica= new FabricaDePistas();
 
-        Edificio banco = new Banco();
-        montreal.agregarEdificio(banco);
+        Edificio bancoFrances = new Banco(fabrica);
+        Edificio bancoProvincia= new Banco(fabrica);
+
+        bancoProvincia.agregarPista("pesos",rango);
+        bancoFrances.agregarPista("euros",rango);
+        montreal.agregarEdificio(bancoFrances);
+        buenosAires.agregarEdificio(bancoProvincia);
 
         Ladron maria = new Ladron("Maria");
         buenosAires.agregarLadron(maria);
@@ -30,11 +35,12 @@ public class Caso1 {
         int distancia = 9000;
         montreal.agregarSiguiente(buenosAires, distancia);
 
-        Rango rango = new Novato();
-        Policia policia = new Policia(rango, montreal); // crear tiempo y rango
+        Policia policia = new Policia(rango, montreal); // crear tiempo
 
-        List <Pista> pistas = policia.visitar(banco);
+        Pista pistaDevuelta = policia.visitar(bancoFrances);
+        Pista pistaEsperada = new PistaFacil();
+        pistaEsperada.agregarCaracteristica("pesos");
 
-        assert(pistas.get(0).revelar().equals("pesos"));
+        assertEquals(pistaDevuelta.revelar(),pistaEsperada.revelar());
     }
 }

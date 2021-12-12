@@ -3,9 +3,42 @@ package clases;
 import java.util.List;
 
 public class Banco implements Edificio {
-    @Override
-    public List<Pista> serVisitado(Ciudad siguienteCiudad, Rango rango, Tiempo plazo, int visitas) {
-        return siguienteCiudad.pistaBanco(rango);
+    private String tipo="Banco";
+    private FabricaDePistas fabrica;
+    private Pista pista;
 
+    public Banco(FabricaDePistas unafabrica){
+        this.fabrica=unafabrica;
+        this.pista=null;
     }
+
+    @Override
+    public void agregarPista(String caracteristica, Rango rango) {
+        this.pista=fabrica.crearPista(rango);
+        this.pista.agregarCaracteristica(caracteristica);
+    }
+
+    @Override
+    public Pista serVisitado(Edificio edificio,Ciudad siguienteCiudad,Tiempo tiempo,int visitas) {
+        Pista pista = siguienteCiudad.darPistaDe(edificio);
+        tiempo.sumarHoras(visitas);
+        return pista;
+    }
+
+    @Override
+    public Pista darPista() {
+        return pista;
+    }
+
+    @Override
+    public boolean sosIgual(Edificio edificio) {
+        return this.tipo.equals(edificio.tipo());
+    }
+
+    @Override
+    public String tipo() {
+        return this.tipo;
+    }
+
+
 }

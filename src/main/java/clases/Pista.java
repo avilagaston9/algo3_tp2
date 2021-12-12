@@ -1,13 +1,8 @@
 package clases;
 
-public class Pista {
-    private String caracteristica;
+public interface Pista {
 
-    public Pista(String datos) {
-        caracteristica=datos;
-    }
+    void agregarCaracteristica(String caracteristica);
 
-    public String revelar() {
-        return caracteristica;
-    }
+    String revelar();
 }
