@@ -1,6 +1,6 @@
 package clases;
 
-public class PistaMedia implements Pista {
+public class PistaMedia extends Pista {
     private String descripcion;
     @Override
     public void agregarCaracteristica(String caracteristica) {

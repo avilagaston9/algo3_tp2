@@ -1,6 +1,6 @@
 package clases;
 
-public class PistaFacil implements Pista {
+public class PistaFacil extends Pista {
     private String descripcion;
 
     public PistaFacil(){}

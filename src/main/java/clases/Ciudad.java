@@ -24,6 +24,7 @@ public class Ciudad {
         this.distancias = new HashMap();
         visitas = 0;
     }
+    /*
 
     public void agregarEdificio(Edificio unEdificio) {
         edificios.add(unEdificio);
@@ -64,5 +65,7 @@ public class Ciudad {
         }
         return null;
     }
+
+     */
 }
 

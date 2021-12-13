@@ -6,6 +6,6 @@ public class Cuchillo implements Arma {
     @Override
     public void Herir(Tiempo tiempoTranscurrido) {
 
-        tiempoTranscurrido.sumarHoras(2);
+        tiempoTranscurrido.heridaDeCuchillo();
     }
 }

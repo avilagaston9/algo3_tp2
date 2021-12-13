@@ -2,7 +2,7 @@ package clases;
 
 import java.util.List;
 
-public class Aeropuerto implements Edificio {
+public class Aeropuerto extends Edificio {/*
     private String tipo="Aeropuerto";
     private FabricaDePistas fabrica;
     private Pista pista;
@@ -38,4 +38,5 @@ public class Aeropuerto implements Edificio {
     public String tipo() {
         return this.tipo;
     }
+    */
 }
