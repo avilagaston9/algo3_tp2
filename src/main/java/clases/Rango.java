@@ -18,6 +18,9 @@ public abstract class Rango {
     }
 
     public abstract Rango siguienteRango();
+    public abstract Pista visitar(Edificio unEdificio);
+
+    public abstract Pista pedirPistaLadron(Ladron ladron);
 
     /*
 

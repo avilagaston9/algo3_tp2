@@ -1,6 +1,6 @@
 package clases;
 
-public class FabricaDePistas {
+public class FabricaDePistas {/*
 
     public FabricaDePistas(){}
 
@@ -20,4 +20,5 @@ public class FabricaDePistas {
         }
         return pista;
     }
+    */
 }

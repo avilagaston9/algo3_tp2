@@ -2,38 +2,32 @@ package clases;
 
 public class LadronBuilder{
 
-    public FabricaDePistas(){
-        this.cabello = null;
-        this.hobby = null;
-        this.sexo = null;
-        this.senia = null;
-        this.vehiculo = null;
+    private CaracteristicaLadron cabello;
+    private CaracteristicaLadron hobby;
+    private CaracteristicaLadron sexo;
+    private CaracteristicaLadron senia;
+    private CaracteristicaLadron vehiculo;
+
+    public void setCabello(CaracteristicaLadron cabello){
+        this.cabello = cabello;
     }
 
-    public void setCabello(Cabello c){
-        this.cabello = c;
+    public void setHobby(CaracteristicaLadron hobby){
+        this.hobby = hobby;
     }
 
-    public void setHobby(Hobby h){
-        this.hobby = h;
+    public void setSexo(CaracteristicaLadron sexo){ this.sexo = sexo;  }
+
+    public void setSenia(CaracteristicaLadron senia){
+        this.senia = senia;
     }
 
-    public void setSexo(Sexo s){
-        this.sexo = s;
-    }
-
-    public void setSenia(Senia s){
-        this.senia = s;
-    }
-
-    public void setVehiculo(Vehiculo v){
-        this.vehiculo = v;
+    public void setVehiculo(CaracteristicaLadron vehiculo){
+        this.vehiculo = vehiculo;
     }
 
     public Ladron getLadron(){
-        Ladron ladron = new Ladron(this.setCabello, this.hobby, this.sexo, this.senia, this.vehiculo);
-        return ladron;
-
+        return  new Ladron(this.cabello, this.hobby, this.sexo, this.senia, this.vehiculo);
     }
 
 }

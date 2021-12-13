@@ -6,9 +6,8 @@ import clases.Pista;
 import clases.Ciudad;
 import clases.*;
 import org.junit.jupiter.api.Test;
-import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.LinkedList;
 
 public class Caso1 {
 
@@ -50,7 +49,7 @@ public class Caso1 {
         builder.setCabello(new Rubio());
         builder.setHobby(new Tenis());
         builder.setSexo(new Femenino());
-        builder.setSeña(new Tatuaje());
+        builder.setSenia(new Tatuaje());
         builder.setVehiculo(new Moto());
         Ladron maria = builder.getLadron();
 
@@ -58,16 +57,15 @@ public class Caso1 {
         Policia policia = new Policia(new Novato(), new Ciudad("Montreal"));
 
         //se crea la pista
-        Pista pistaPrueba = new Pista();
-        pistaPrueba.agregarCaracteristica("Pesos");
+        Pista pistaPrueba = new PistaConInformacion("Pesos");
 
         //se crea banco y se guarda la pista
         Edificio banco = new Edificio();
         banco.setPistaFacil(pistaPrueba);
 
         //policia visita banco
-        Pista pistaDevuelta = policia.visitar(banco);
+        LinkedList<Pista> pistasDevueltas = policia.visitar(banco, maria);
 
-        assert(pistaDevuelta.revelar().equals("Pesos"));
+        assert(pistasDevueltas.get(0).revelar().equals("Pesos"));
     }
 }

@@ -1,6 +1,6 @@
 package clases;
 
-public class Coordenadas {
+public class Coordenadas {/*
 
     private float latitud;
     private float longitud;
@@ -33,5 +33,6 @@ public class Coordenadas {
 
         return(c * r);
     }
+    */
 
 }
