@@ -1,14 +1,16 @@
 package clases;
 
-public class PistaDificil extends Pista {
-    private String descripcion;
+public class PistaSinInformacion implements Pista {
+    private String pista;
+
     @Override
     public void agregarCaracteristica(String caracteristica) {
-        this.descripcion=caracteristica;
 
+        this.pista = caracteristica;
     }
+
     @Override
     public String revelar() {
-        return descripcion;
+        return this.pista;
     }
 }

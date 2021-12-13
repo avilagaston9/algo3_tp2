@@ -1,8 +1,10 @@
 package clases;
 
-public interface Pista {
+public class Pista {
 
-    void agregarCaracteristica(String caracteristica);
+    private String pista;
 
-    String revelar();
+    public void agregarCaracteristica(String caracteristica) {  this.pista=caracteristica;  }
+
+    public String revelar() {  return this.pista;  }
 }
