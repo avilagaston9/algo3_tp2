@@ -12,10 +12,9 @@ public class Ciudad {
     private Ladron ladron;
     private Ciudad siguienteCiudad;
     private Map distancias;
-
     private List<Edificio> edificios;
     private int visitas;
-
+    private Coordenadas coordenadas;
 
     public Ciudad(String nombreCiudad) {
 
