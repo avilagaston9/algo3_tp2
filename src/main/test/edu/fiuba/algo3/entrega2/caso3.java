@@ -42,6 +42,8 @@ public class caso3 {
         ladrones.add(ricardo);
         ladrones.add(juan);
 
+        Tiempo tiempo= new Tiempo();
+
         Computadora compu = new Computadora(ladrones);
 
         CaracteristicaLadron colorDePelo= new Negro();
@@ -52,11 +54,12 @@ public class caso3 {
         caracteristicas.add(colorDePelo);
         caracteristicas.add(sexo);
 
-        ArrayList<Ladron> sospechosos = compu.cargarDatosYBuscar(caracteristicas);
+        ArrayList<Ladron> sospechosos = compu.cargarDatosYBuscar(caracteristicas,tiempo);
 
         assert (sospechosos.contains(juan));
         assert (sospechosos.contains(ricardo));
         assert (sospechosos.size()==2);
+        assert (tiempo.tiempoTranscurridoEnHoras()==3);
 
     }
 }
