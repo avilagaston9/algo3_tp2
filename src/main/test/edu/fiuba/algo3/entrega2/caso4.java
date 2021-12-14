@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.entrega2;
 
 import clases.*;
+import clases.caracteristicasLadron.*;
+import clases.rangos.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
