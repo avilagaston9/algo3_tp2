@@ -1,6 +1,11 @@
 package edu.fiuba.algo3.entrega1;
 
 import clases.*;
+import clases.armas.Arma;
+import clases.armas.Cuchillo;
+import clases.rangos.Novato;
+import clases.Policia;
+import clases.rangos.Rango;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

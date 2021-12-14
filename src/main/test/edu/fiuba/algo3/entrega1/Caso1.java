@@ -1,10 +1,16 @@
 package edu.fiuba.algo3.entrega1;
 
 
-import clases.Edificio;
-import clases.Pista;
+import clases.edificios.Edificio;
+import clases.edificios.Banco;
+import clases.pistas.Pista;
 import clases.Ciudad;
 import clases.*;
+import clases.pistas.PistaConInformacion;
+import clases.caracteristicasLadron.*;
+import clases.pistas.PistaFacil;
+import clases.rangos.Novato;
+import clases.Policia;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
@@ -42,6 +48,7 @@ public class Caso1 {
         pistaEsperada.agregarCaracteristica("pesos");
 
         assertEquals(pistaDevuelta.revelar(),pistaEsperada.revelar());
+        */
 
 
         //se crea al ladrón
@@ -57,17 +64,15 @@ public class Caso1 {
         Policia policia = new Policia(new Novato(), new Ciudad("Montreal"));
 
         //se crea la pista
-        Pista pistaPrueba = new PistaConInformacion("Pesos");
+        PistaFacil pistaPrueba = new PistaFacil("Pesos");
 
         //se crea banco y se guarda la pista
         Edificio banco = new Banco();
-        banco.setPistaFacil(pistaPrueba);
+        banco.setPista(pistaPrueba);
 
         //policia visita banco
         LinkedList<Pista> pistasDevueltas = policia.visitar(banco, maria);
 
         assert(pistasDevueltas.get(0).revelar().equals("Pesos"));
-    }
-}*/
     }
 }

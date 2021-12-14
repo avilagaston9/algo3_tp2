@@ -1,10 +1,10 @@
 package edu.fiuba.algo3.entrega2;
 
 import clases.*;
+import clases.caracteristicasLadron.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
-import java.util.concurrent.Callable;
 
 public class caso3 {
     @Test

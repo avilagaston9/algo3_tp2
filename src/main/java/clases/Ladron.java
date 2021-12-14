@@ -1,7 +1,14 @@
 package clases;
 
+import clases.pistas.Pista;
+import clases.pistas.PistaSinInformacion;
+import clases.caracteristicasLadron.CaracteristicaLadron;
+import clases.rangos.Detective;
+import clases.rangos.Investigador;
+import clases.rangos.Novato;
+import clases.rangos.Sargento;
+
 import java.util.LinkedList;
-import java.util.Objects;
 
 public class Ladron {
     private int iteradorCaracteristicas;

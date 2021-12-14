@@ -1,5 +1,7 @@
 package clases;
 
+import clases.caracteristicasLadron.CaracteristicaLadron;
+
 import java.util.ArrayList;
 import java.util.List;
 

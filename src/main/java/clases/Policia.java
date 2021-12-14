@@ -1,7 +1,14 @@
 package clases;
 
+import clases.armas.Arma;
+import clases.Ciudad;
+import clases.Ladron;
+import clases.Tiempo;
+import clases.edificios.Edificio;
+import clases.pistas.Pista;
+import clases.rangos.Rango;
+
 import java.util.LinkedList;
-import java.util.List;
 
 public class Policia {
     private Ciudad ciudadActual;
@@ -17,7 +24,7 @@ public class Policia {
     public LinkedList<Pista> visitar(Edificio unEdificio, Ladron ladron) {
 
         LinkedList<Pista> pistas = new LinkedList<>();
-        pistas.add(this.rango.visitar(unEdificio));
+        pistas.add(this.rango.visitar(unEdificio, this.tiempoTranscurrido));
         pistas.add(this.rango.pedirPistaLadron(ladron));
         return pistas;
     }

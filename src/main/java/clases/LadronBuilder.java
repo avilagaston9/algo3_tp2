@@ -1,5 +1,7 @@
 package clases;
 
+import clases.caracteristicasLadron.CaracteristicaLadron;
+
 public class LadronBuilder{
 
     private CaracteristicaLadron cabello;

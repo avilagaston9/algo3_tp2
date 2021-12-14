@@ -1,12 +1,5 @@
 package edu.fiuba.algo3.entrega1;
-import clases.Edificio;
-import clases.Pista;
-import clases.Ciudad;
-import clases.*;
 import org.junit.jupiter.api.Test;
-
-import java.util.LinkedList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
