@@ -13,7 +13,7 @@ public class Tiempo {
         this.numeroVisita = 1;
     }
 
-    private void sumarHoras(int cantidad){this.horas+=cantidad;}
+    public void sumarHoras(int cantidad){this.horas+=cantidad;}
 
     public int tiempoTranscurridoEnHoras(){
         return this.horas;
