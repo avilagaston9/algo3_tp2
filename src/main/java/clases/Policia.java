@@ -7,6 +7,7 @@ public class Policia {
     private Ciudad ciudadActual;
     private Tiempo tiempoTranscurrido;
     private Rango rango;
+    private OrdenArresto ordenDeArresto=new SinOrdenDeArresto();
 
     public Policia(Rango rango, Ciudad actual) {
         this.tiempoTranscurrido= new Tiempo();
@@ -52,5 +53,9 @@ public class Policia {
 
     public int tiempoTranscurrido() {
         return this.tiempoTranscurrido.tiempoTranscurridoEnHoras();
+    }
+
+    public boolean arrestarA(Ladron maria) {
+        return maria.verOrden(this.ordenDeArresto);
     }
 }

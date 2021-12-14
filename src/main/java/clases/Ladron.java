@@ -57,6 +57,11 @@ public class Ladron {
         }
         return false;
     }
+
+    public boolean verOrden(OrdenArresto ordenDeArresto) {
+        return ordenDeArresto.comparar(this.caracteristicas);
+
+    }
 }
 
 
