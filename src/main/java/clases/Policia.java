@@ -17,7 +17,7 @@ public class Policia {
        return ciudadActual.visitarEdificio(unEdificio,this.rango,this.plazo);
     }
 
-    public int tiempoTranscurrido(){
+    public int tiempoTranscurridoEnHoras(){
         return plazo.getHoras();
     }
 
@@ -29,7 +29,10 @@ public class Policia {
         ciudadActual.viajar(nuevaCiudad, plazo, rango);
     }
 
-    public Ciudad getCiudadActual(){
-        return ciudadActual;
+    public boolean ciudadActual(Ciudad ciudad){
+        if (ciudadActual == ciudad){
+            return true;
+        }
+        return false;
     }
 }

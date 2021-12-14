@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Caso3 {
 
     @Test
-    public void NovatoComienzaEnMontrealVisitaBancoDespliegaPistaCorrecta(){
+    public void policiaViajaDeMontrealAMexico(){
 
         Ciudad montreal = new Ciudad("Montreal");
         Ciudad mexico = new Ciudad("Mexico");
@@ -20,8 +20,7 @@ public class Caso3 {
 
         policia.viajarA(mexico);
 
-        assertEquals(policia.tiempoTranscurrido(), 1);
-        assertEquals(policia.getCiudadActual(), mexico);
-
+        assertEquals(policia.tiempoTranscurridoEnHoras(), 1);
+        assertEquals(policia.ciudadActual(mexico), true);
     }
 }
