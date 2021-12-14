@@ -27,19 +27,8 @@ public class Ladron {
         this.caracteristicas.add(vehiculo);
     }
 
-    Pista pedirPista(Novato unRango) {
-
-        if (Math.random() < 0.8) {
-
-            this.iteradorCaracteristicas++;
-            return caracteristicas.get(iteradorCaracteristicas % 5).darPista();
-        }
-        return new PistaSinInformacion();
-    }
-
-    Pista pedirPista(Detective unRango) {
-
-        if (Math.random() < 0.6) {
+    private Pista calcularChances(double chances){
+        if (Math.random() < chances) {
 
             this.iteradorCaracteristicas++;
             return caracteristicas.get(iteradorCaracteristicas % 5).darPista();
@@ -47,24 +36,24 @@ public class Ladron {
         return new PistaSinInformacion();
     }
 
-    Pista pedirPista(Investigador unRango) {
+    public Pista pedirPista(Novato unRango) {
 
-        if (Math.random() < 0.5) {
-
-            this.iteradorCaracteristicas++;
-            return caracteristicas.get(iteradorCaracteristicas % 5).darPista();
-        }
-        return new PistaSinInformacion();
+        return this.calcularChances(0.8);
     }
 
-    Pista pedirPista(Sargento unRango) {
+    public Pista pedirPista(Detective unRango) {
 
-        if (Math.random() < 0.5) {
+        return this.calcularChances(0.6);
+    }
 
-            this.iteradorCaracteristicas++;
-            return caracteristicas.get(iteradorCaracteristicas % 5).darPista();
-        }
-        return new PistaSinInformacion();
+    public Pista pedirPista(Investigador unRango) {
+
+        return this.calcularChances(0.5);
+    }
+
+    public Pista pedirPista(Sargento unRango) {
+
+        return this.calcularChances(0.5);
     }
 
     public boolean conCaracteristica(CaracteristicaLadron unaCaracteristica) {

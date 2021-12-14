@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+!theme reddress-darkblue
+autonumber
+skinparam style strictuml
+skinparam BackGroundColor white
+skinparam RoundCorner 7
+skinparam SequenceGroupFontColor black
+skinparam SequenceGroupBorderColor black
+skinparam SequenceGroupBorderThickness 0.5
+skinparam ArrowFontColor black
+skinparam ArrowColor black
+skinparam ActorFontColor black
+skinparam participantFontSize 12
+skinparam SequenceLifeLineBackGroundColor 2e2e2e
+
+testcase -> "detective:Policia" as Policia : arrestarA(maria:Ladron)
+"detective:Policia" as Policia -> "maria:Ladron" as Ladron : serArrestado(ordenArresto : OrdenArresto)
+"maria:Ladron" as Ladron -> "ordenArresto: OrdenArresto" as OrdenArresto : verOrden()
+"ordenArresto: OrdenArresto" as OrdenArresto --> "maria:Ladron" as Ladron : true
+"maria:Ladron" as Ladron --> "detective:Policia" as Policia : true
+"detective:Policia" as Policia --> testcase : true
+
+
+@enduml

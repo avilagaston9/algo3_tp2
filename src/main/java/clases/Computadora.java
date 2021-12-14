@@ -12,7 +12,7 @@ public class Computadora {
         this.ladrones=unosLadrones;
     }
 
-    public ArrayList<Ladron> cargarDatosYBuscar(List<CaracteristicaLadron> caracteristicas) {
+    public ArrayList<Ladron> cargarDatosYBuscar(List<CaracteristicaLadron> caracteristicas, Tiempo tiempo) {
         ArrayList<Ladron> sospechosos= (ArrayList<Ladron>) this.ladrones.clone();
         for (int i=0;i<caracteristicas.size();i++) {
             ArrayList<Ladron>posiblesSospechosos= new ArrayList<>();
@@ -23,6 +23,7 @@ public class Computadora {
             }
             sospechosos = (ArrayList<Ladron>) posiblesSospechosos.clone();
         }
+        tiempo.sumarHoras(3);
         return sospechosos;
     }
 }

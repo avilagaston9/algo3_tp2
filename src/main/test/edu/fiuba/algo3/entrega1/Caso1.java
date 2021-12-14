@@ -38,8 +38,8 @@ public class Caso1 {
         Ladron maria = new Ladron("Maria");
         buenosAires.agregarLadron(maria);
 
-        int distancia = 9000;
-        montreal.agregarSiguiente(buenosAires, distancia);
+        //int distancia = 9000; ESTO NO VA MAS
+        montreal.agregarSiguiente(buenosAires);
 
         Policia policia = new Policia(rango, montreal); // crear tiempo
 
