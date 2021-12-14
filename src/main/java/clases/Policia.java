@@ -14,6 +14,7 @@ public class Policia {
     private Ciudad ciudadActual;
     private Tiempo tiempoTranscurrido;
     private Rango rango;
+    private OrdenArresto ordenDeArresto=new SinOrdenDeArresto();
 
     public Policia(Rango rango, Ciudad actual) {
         this.tiempoTranscurrido= new Tiempo();
@@ -28,6 +29,7 @@ public class Policia {
         pistas.add(this.rango.pedirPistaLadron(ladron));
         return pistas;
     }
+
     public void dormir() { this.tiempoTranscurrido.dormir(); }
 
     public int tiempoTranscurridoEnHoras() {
@@ -55,10 +57,17 @@ public class Policia {
 
         return unaCiudad == this.ciudadActual;
     }
-    public boolean ciudadActual(Ciudad ciudad) {
-        if (ciudadActual == ciudad) {
+
+    public boolean ciudadActual(Ciudad ciudad){
+        if (ciudadActual == ciudad){
             return true;
         }
         return false;
+
+
     }
-}
+
+    public boolean arrestarA(Ladron unLAdron) {
+        return unLAdron.verOrden(this.ordenDeArresto);
+    }
+    }

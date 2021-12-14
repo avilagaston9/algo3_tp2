@@ -7,11 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Caso3 {
 
     @Test
-<<<<<<< HEAD
-    public void policiaViajaDeMontrealAMexico(){
-=======
-    public void NovatoComienzaEnMontrealVisitaBancoDespliegaPistaCorrecta(){
-        /*
+    public void policiaViajaDeMontrealAMexico() {
+/*
+        public void NovatoComienzaEnMontrealVisitaBancoDespliegaPistaCorrecta() {
+
 >>>>>>> 3045364757e6e84e02fcf1f98fd474f965e4e92d
 
         Ciudad montreal = new Ciudad("Montreal");
@@ -33,6 +32,5 @@ public class Caso3 {
         assert(policia.esCiudadActual(mexico));
 
          */
->>>>>>> 3045364757e6e84e02fcf1f98fd474f965e4e92d
+        }
     }
-}
