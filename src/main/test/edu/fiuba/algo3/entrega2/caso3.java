@@ -2,6 +2,8 @@ package edu.fiuba.algo3.entrega2;
 
 import clases.*;
 import clases.caracteristicasLadron.*;
+import clases.ladron.Ladron;
+import clases.ladron.LadronBuilder;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;

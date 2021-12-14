@@ -1,6 +1,7 @@
-package clases;
+package clases.ladron;
 
 import clases.caracteristicasLadron.CaracteristicaLadron;
+import clases.ladron.Ladron;
 
 public class LadronBuilder{
 

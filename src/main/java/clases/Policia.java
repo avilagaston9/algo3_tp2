@@ -1,9 +1,7 @@
 package clases;
 
 import clases.armas.Arma;
-import clases.Ciudad;
-import clases.Ladron;
-import clases.Tiempo;
+import clases.ladron.Ladron;
 import clases.edificios.Edificio;
 import clases.pistas.Pista;
 import clases.rangos.Rango;
@@ -14,12 +12,13 @@ public class Policia {
     private Ciudad ciudadActual;
     private Tiempo tiempoTranscurrido;
     private Rango rango;
-    private OrdenArresto ordenDeArresto=new SinOrdenDeArresto();
+    private OrdenArresto ordenDeArresto;
 
     public Policia(Rango rango, Ciudad actual) {
         this.tiempoTranscurrido= new Tiempo();
         this.rango=rango;
-        this.ciudadActual=actual;
+        this.ciudadActual = actual;
+        this.ordenDeArresto = new SinOrdenDeArresto();
     }
 
     public LinkedList<Pista> visitar(Edificio unEdificio, Ladron ladron) {

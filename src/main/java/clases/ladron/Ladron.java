@@ -1,5 +1,6 @@
-package clases;
+package clases.ladron;
 
+import clases.OrdenArresto;
 import clases.pistas.Pista;
 import clases.pistas.PistaSinInformacion;
 import clases.caracteristicasLadron.CaracteristicaLadron;
@@ -36,27 +37,15 @@ public class Ladron {
         return new PistaSinInformacion();
     }
 
-    public Pista pedirPista(Novato unRango) {
+    public Pista pedirPista(Novato unRango) { return this.calcularChances(0.8);  }
 
-        return this.calcularChances(0.8);
-    }
+    public Pista pedirPista(Detective unRango) { return this.calcularChances(0.6);  }
 
-    public Pista pedirPista(Detective unRango) {
+    public Pista pedirPista(Investigador unRango) { return this.calcularChances(0.5); }
 
-        return this.calcularChances(0.6);
-    }
+    public Pista pedirPista(Sargento unRango) { return this.calcularChances(0.5);  }
 
-    public Pista pedirPista(Investigador unRango) {
-
-        return this.calcularChances(0.5);
-    }
-
-    public Pista pedirPista(Sargento unRango) {
-
-        return this.calcularChances(0.5);
-    }
-
-    public boolean conCaracteristica(CaracteristicaLadron unaCaracteristica) {
+    public boolean tieneLaCaracteristica(CaracteristicaLadron unaCaracteristica) {
         for (int i = 0; i < caracteristicas.size(); i++) {
             if (unaCaracteristica.equals(caracteristicas.get(i))) {
                 return true;

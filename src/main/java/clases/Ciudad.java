@@ -2,6 +2,7 @@ package clases;
 
 
 import clases.edificios.Edificio;
+import clases.ladron.Ladron;
 
 import java.util.HashMap;
 import java.util.LinkedList;

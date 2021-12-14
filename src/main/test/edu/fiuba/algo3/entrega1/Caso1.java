@@ -1,19 +1,18 @@
 package edu.fiuba.algo3.entrega1;
 
 
-import clases.edificios.Edificio;
-import clases.edificios.Banco;
-import clases.pistas.Pista;
+import clases.edificios.*;
+import clases.ladron.*;
+import clases.pistas.*;
 import clases.Ciudad;
-import clases.*;
-import clases.pistas.PistaConInformacion;
 import clases.caracteristicasLadron.*;
-import clases.pistas.PistaFacil;
 import clases.rangos.Novato;
 import clases.Policia;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Caso1 {
 
@@ -74,5 +73,6 @@ public class Caso1 {
         LinkedList<Pista> pistasDevueltas = policia.visitar(banco, maria);
 
         assert(pistasDevueltas.get(0).revelar().equals("Pesos"));
+        assertEquals(1, policia.tiempoTranscurridoEnHoras());
     }
 }

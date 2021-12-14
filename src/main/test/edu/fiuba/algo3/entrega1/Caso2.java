@@ -1,5 +1,14 @@
 package edu.fiuba.algo3.entrega1;
+import clases.Ciudad;
+import clases.Policia;
+import clases.edificios.*;
+import clases.ladron.*;
+import clases.caracteristicasLadron.*;
+import clases.pistas.*;
+import clases.rangos.Novato;
 import org.junit.jupiter.api.Test;
+
+import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -55,7 +64,7 @@ public class Caso2 {
         assertEquals(pistasSegundaVisita.revelar(),pistaEsperadaSegundaVisita.revelar());
 
          */
-/*
+
         LadronBuilder builder = new LadronBuilder();
         builder.setCabello(new Rubio());
         builder.setHobby(new Tenis());
@@ -66,24 +75,24 @@ public class Caso2 {
 
         Policia policia= new Policia(new Novato(),new Ciudad("montreal"));
 
-        Pista pistaBanco = new PistaConInformacion("Pesos");
-        Pista pistaBiblioteca= new PistaConInformacion("Obelisco");
+        PistaFacil pistaBanco = new PistaFacil("Pesos");
+        PistaFacil pistaBiblioteca= new PistaFacil("Obelisco");
 
 
         Edificio banco = new Banco();
-        banco.setPistaFacil(pistaBanco);
+        banco.setPista(pistaBanco);
 
         Edificio biblioteca = new Biblioteca();
-        biblioteca.setPistaFacil(pistaBiblioteca);
+        biblioteca.setPista(pistaBiblioteca);
 
         LinkedList<Pista> pistasDeBanco = policia.visitar(banco, maria);
         LinkedList<Pista> pistasDeBiblioteca=policia.visitar(biblioteca,maria);
 
         assert(pistasDeBanco.get(0).revelar().equals("Pesos"));
         assert(pistasDeBiblioteca.get(0).revelar().equals("Obelisco"));
-
-    }*/
-}}
+        assertEquals(3, policia.tiempoTranscurridoEnHoras());
+    }
+}
 
 
 

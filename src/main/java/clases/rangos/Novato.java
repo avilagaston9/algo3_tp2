@@ -1,6 +1,6 @@
 package clases.rangos;
 
-import clases.Ladron;
+import clases.ladron.Ladron;
 import clases.Tiempo;
 import clases.edificios.Edificio;
 import clases.pistas.Pista;

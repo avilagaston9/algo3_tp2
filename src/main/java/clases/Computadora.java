@@ -1,6 +1,7 @@
 package clases;
 
 import clases.caracteristicasLadron.CaracteristicaLadron;
+import clases.ladron.Ladron;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ public class Computadora {
         for (int i=0;i<caracteristicas.size();i++) {
             ArrayList<Ladron>posiblesSospechosos= new ArrayList<>();
             for (int j = 0; j < sospechosos.size(); j++) {
-                if (sospechosos.get(j).conCaracteristica(caracteristicas.get(i))) {
+                if (sospechosos.get(j).tieneLaCaracteristica(caracteristicas.get(i))) {
                     posiblesSospechosos.add(sospechosos.get(j));
                 }
             }
