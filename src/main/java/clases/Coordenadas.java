@@ -15,10 +15,10 @@ public class Coordenadas {
     }
 
     protected double calcularDistancia(float otraLatitud, float otraLongitud){
-        lon1 = Math.toRadians(otraLongitud);
-        lon2 = Math.toRadians(this.longitud);
-        lat1 = Math.toRadians(otraLatitud);
-        lat2 = Math.toRadians(this.latitud);
+        double lon1 = Math.toRadians(otraLongitud);
+        double lon2 = Math.toRadians(this.longitud);
+        double lat1 = Math.toRadians(otraLatitud);
+        double lat2 = Math.toRadians(this.latitud);
 
         // Haversine formula
         double dlon = lon2 - lon1;
@@ -33,6 +33,6 @@ public class Coordenadas {
 
         return(c * r);
     }
-    
+
 
 }
