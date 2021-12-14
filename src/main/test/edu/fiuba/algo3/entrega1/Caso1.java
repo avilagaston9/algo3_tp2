@@ -6,37 +6,68 @@ import clases.Pista;
 import clases.Ciudad;
 import clases.*;
 import org.junit.jupiter.api.Test;
-import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.LinkedList;
 
 public class Caso1 {
 
     @Test
-    public void NovatoComienzaEnMontrealVisitaBancoDespliegaPistaCorrecta(){
+    public void NovatoComienzaEnMontrealVisitaBancoDespliegaPistaCorrecta() {
+        /*
         //set up
         Ciudad montreal = new Ciudad("Montreal");
         Ciudad buenosAires = new Ciudad("Buenos Aires");
 
-        Pistas pistasBanco = new Pistas();
-        Pista pistaBuenosAires = new Pista("pesos");
-        pistasBanco.agregarPistaFacil(pistaBuenosAires);
-        buenosAires.agregarPistasBanco(pistasBanco);
+        Rango rango= new Novato();
+        FabricaDePistas fabrica= new FabricaDePistas();
 
-        Edificio banco = new Banco();
-        montreal.agregarEdificio(banco);
+        Edificio bancoFrances = new Banco(fabrica);
+        Edificio bancoProvincia= new Banco(fabrica);
+
+        bancoProvincia.agregarPista("pesos",rango);
+        bancoFrances.agregarPista("euros",rango);
+        montreal.agregarEdificio(bancoFrances);
+        buenosAires.agregarEdificio(bancoProvincia);
 
         Ladron maria = new Ladron("Maria");
         buenosAires.agregarLadron(maria);
 
-        int distancia = 9000;
-        montreal.agregarSiguiente(buenosAires, distancia);
+        //int distancia = 9000; ESTO NO VA MAS
+        montreal.agregarSiguiente(buenosAires);
 
-        int cantArrestos = 0;
-        Policia policia = new Policia(cantArrestos, montreal); // crear tiempo y rango
+        Policia policia = new Policia(rango, montreal); // crear tiempo
 
-        List pistas = policia.visitar(banco);
+        Pista pistaDevuelta = policia.visitar(bancoFrances);
+        Pista pistaEsperada = new PistaFacil();
+        pistaEsperada.agregarCaracteristica("pesos");
 
-        assertEquals(pistas.get(0).revelar(), pistaBuenosAires.revelar());
+        assertEquals(pistaDevuelta.revelar(),pistaEsperada.revelar());
+
+
+        //se crea al ladrón
+        LadronBuilder builder = new LadronBuilder();
+        builder.setCabello(new Rubio());
+        builder.setHobby(new Tenis());
+        builder.setSexo(new Femenino());
+        builder.setSenia(new Tatuaje());
+        builder.setVehiculo(new Moto());
+        Ladron maria = builder.getLadron();
+
+        //se crea al policia
+        Policia policia = new Policia(new Novato(), new Ciudad("Montreal"));
+
+        //se crea la pista
+        Pista pistaPrueba = new PistaConInformacion("Pesos");
+
+        //se crea banco y se guarda la pista
+        Edificio banco = new Banco();
+        banco.setPistaFacil(pistaPrueba);
+
+        //policia visita banco
+        LinkedList<Pista> pistasDevueltas = policia.visitar(banco, maria);
+
+        assert(pistasDevueltas.get(0).revelar().equals("Pesos"));
+    }
+}*/
     }
 }

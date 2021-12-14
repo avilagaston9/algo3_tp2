@@ -1,13 +1,6 @@
 package clases;
 
-public class Pista {
-    private String caracteristica;
+public interface Pista {
 
-    public Pista(String moneda) {
-        caracteristica=moneda;
-    }
-
-    public String revelar() {
-        return caracteristica;
-    }
+    public String revelar();
 }

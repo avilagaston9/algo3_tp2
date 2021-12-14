@@ -16,7 +16,7 @@ skinparam SequenceLifeLineBackGroundColor 2e2e2e
 
 TestCase -> "algothieft:AlgoThieft" as algothieft: visitarEdificio(banco:Edificio)
 algothieft -> "novato:Policia" as unPolicia: visitarEdificio(banco)
-unPolicia -> "Montreal:Ciudad" as montreal : visitarEdificio(banco, novato:Rango, tiempo:Tiempo)
+unPolicia -> "Montreal:Ciudad" as montreal : visitarEdificio(banco,tiempo:Tiempo)
 montreal ->"banco: Edificio" as edificio: serVisitado(proximaCiudad:Ciudad, novato:Rango, tiempo:Tiempo, numeroVisita:Integer)
 edificio -> "proximaCiudad:Ciudad" as proximaCiudad : pistaBanco(novato:Rango)
 proximaCiudad -> "novato:Rango" as rango : pedirPista(pistasBanco:Pistas, ladron:Ladron)

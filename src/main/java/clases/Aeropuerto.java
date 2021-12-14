@@ -2,7 +2,7 @@ package clases;
 
 import java.util.List;
 
-public class Banco extends Edificio {
+public class Aeropuerto extends Edificio {
     @Override
     Pista serVisitado(Novato rango) {
         return null;
@@ -21,33 +21,31 @@ public class Banco extends Edificio {
     @Override
     Pista serVisitado(Sargento rango) {
         return null;
-    }
-    /*
-    private String tipo="Banco";
+    }/*
+    private String tipo="Aeropuerto";
     private FabricaDePistas fabrica;
     private Pista pista;
 
-    public Banco(FabricaDePistas unafabrica){
-        this.fabrica=unafabrica;
+    public Aeropuerto(FabricaDePistas unaFabrica){
+        this.fabrica=unaFabrica;
         this.pista=null;
     }
+
 
     @Override
     public void agregarPista(String caracteristica, Rango rango) {
         this.pista=fabrica.crearPista(rango);
         this.pista.agregarCaracteristica(caracteristica);
-    }
 
+    }
     @Override
-    public Pista serVisitado(Edificio edificio,Ciudad siguienteCiudad,Tiempo tiempo,int visitas) {
-        Pista pista = siguienteCiudad.darPistaDe(edificio);
-        tiempo.sumarHoras(visitas);
-        return pista;
+    public Pista serVisitado(Edificio edificio, Ciudad siguienteCiudad,Tiempo tiempo,int visitas) {
+        return siguienteCiudad.darPistaDe(edificio);
     }
 
     @Override
     public Pista darPista() {
-        return pista;
+        return this.pista;
     }
 
     @Override
@@ -59,11 +57,5 @@ public class Banco extends Edificio {
     public String tipo() {
         return this.tipo;
     }
-
-
-
-}
-
-     */
-
+    */
 }

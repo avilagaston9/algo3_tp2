@@ -7,7 +7,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Caso3 {
 
     @Test
+<<<<<<< HEAD
     public void policiaViajaDeMontrealAMexico(){
+=======
+    public void NovatoComienzaEnMontrealVisitaBancoDespliegaPistaCorrecta(){
+        /*
+>>>>>>> 3045364757e6e84e02fcf1f98fd474f965e4e92d
 
         Ciudad montreal = new Ciudad("Montreal");
         Ciudad mexico = new Ciudad("Mexico");
@@ -15,12 +20,19 @@ public class Caso3 {
         int distancia = 9000;
         montreal.agregarSiguiente(mexico, distancia);
 
-        int cantArrestos = 0;
-        Policia policia = new Policia(cantArrestos, montreal); // crear tiempo y rango
+        Rango rango=new Novato();
+        Policia policia = new Policia(rango, montreal); // crear tiempo y rango
 
         policia.viajarA(mexico);
 
+<<<<<<< HEAD
         assertEquals(policia.tiempoTranscurridoEnHoras(), 1);
         assertEquals(policia.ciudadActual(mexico), true);
+=======
+        assertEquals(10,policia.tiempoTranscurridoEnHoras());
+        assert(policia.esCiudadActual(mexico));
+
+         */
+>>>>>>> 3045364757e6e84e02fcf1f98fd474f965e4e92d
     }
 }

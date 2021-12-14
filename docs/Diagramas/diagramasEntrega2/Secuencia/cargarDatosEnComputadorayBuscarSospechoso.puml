@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+!theme reddress-darkblue
+autonumber
+skinparam style strictuml
+skinparam BackGroundColor white
+skinparam RoundCorner 7
+skinparam SequenceGroupFontColor black
+skinparam SequenceGroupBorderColor black
+skinparam SequenceGroupBorderThickness 0.5
+skinparam ArrowFontColor black
+skinparam ArrowColor black
+skinparam ActorFontColor black
+skinparam participantFontSize 12
+skinparam SequenceLifeLineBackGroundColor 2e2e2e
+
+testcase -> "compu:Computadora" as Computadora: cargarDatosYBuscar(caracteristicas:ArrayList<CaracteristicaLadron>)
+loop para cada ladron
+"compu:Computadora" as Computadora -> "Ladron:Ladron" : conCaracteristica((caracteristica: CaracteristicaLadron)
+"Ladron:Ladron" --> "compu:Computadora" as Computadora : true
+"compu:Computadora" as Computadora -> "posiblesSospechosos:ArrayList<Ladron>" : add(Ladron)
+end
+"compu:Computadora" as Computadora -> "Tiempo:tiempo" : sumarHoras(3)
+"compu:Computadora" as Computadora --> testcase : posiblesSospechosos
+
+@enduml

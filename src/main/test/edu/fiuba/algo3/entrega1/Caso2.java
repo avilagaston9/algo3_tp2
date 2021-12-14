@@ -1,37 +1,42 @@
 package edu.fiuba.algo3.entrega1;
 import clases.Edificio;
 import clases.Pista;
-import clases.Ciudad
+import clases.Ciudad;
 import clases.*;
 import org.junit.jupiter.api.Test;
+
+import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class Caso2 {
 
     @Test
     public void NovatoComienzaEnMontrealVisitaBancoYBibliotecaDespliegaPistaCorrecta(){
+        /*
         //set up
         Ciudad montreal = new Ciudad("Montreal");
         Ciudad buenosAires = new Ciudad("Buenos Aires");
+        FabricaDePistas fabrica= new FabricaDePistas();
+        Rango rango = new Novato();
 
-        Pistas pistasBanco = new Pistas();
-        Pistas pistasBiblioteca = new Pistas();
+        Edificio bancoProvincia = new Banco(fabrica);
+        Edificio bancoFrances = new Banco(fabrica);
+        Edificio biblioBsAs = new Biblioteca(fabrica);
+        Edificio biblioParis = new Biblioteca(fabrica);
 
-        Pista pistaBuenosAires = new Pista("pesos");
-        Pista otraPistaBuenosAires = new Pista("Obelisco");
+        bancoProvincia.agregarPista("pesos",rango);
+        bancoFrances.agregarPista("euros",rango);
+        biblioBsAs.agregarPista("Obelisco",rango);
+        biblioParis.agregarPista("Torre Eifel",rango);
 
-        pistasBanco.agregarPistaFacil(pistaBuenosAires);
-        pistasBiblioteca.agregarPistaFacil(otraPistaBuenosAires);
 
-        buenosAires.agregarPistasBanco(pistasBanco);
-        buenosAires.agregarPistasBiblioteca(pistasBiblioteca);
-
-        Edificio banco = new Banco();
-        Edificio biblioteca = new Biblioteca();
-        montreal.agregarEdificio(banco);
-        montreal.agregarEdificio(biblioteca);
+        montreal.agregarEdificio(bancoFrances);
+        montreal.agregarEdificio(biblioParis);
+        buenosAires.agregarEdificio(bancoProvincia);
+        buenosAires.agregarEdificio(biblioBsAs);
 
         Ladron maria = new Ladron("Maria");
         buenosAires.agregarLadron(maria);
@@ -39,18 +44,53 @@ public class Caso2 {
         int distancia = 9000;
         montreal.agregarSiguiente(buenosAires, distancia);
 
-        int cantArrestos = 0;
-        Policia policia = new Policia(cantArrestos, montreal); // crear tiempo y rango
+        Rango rango = new Novato();
+        Policia policia = new Policia(rango, montreal); // crear tiempo y rango
 
         //act
-        List pistasPrimeraVisita = policia.visitar(banco);
-        List pistasSegundaVisita = policia.visitar(biblioteca);
+        Pista pistasPrimeraVisita = policia.visitar(bancoFrances);
+        Pista pistasSegundaVisita = policia.visitar(biblioParis);
+
+        Pista pistaEsperadaPrimeraVisita= new PistaFacil();
+        pistaEsperadaPrimeraVisita.agregarCaracteristica("pesos");
+
+        Pista pistaEsperadaSegundaVisita= new PistaFacil();
+        pistaEsperadaSegundaVisita.agregarCaracteristica("Obelisco");
 
         //assert
-        assertEquals(pistasPrimeraVisita.get(0).revelar(), pistaBuenosAires.revelar());
-        assertEquals(pistasSegundaVisita.get(0)).revelar(), otraPistaBuenosAires.revelar());
-    }
-}
+        assertEquals(pistasPrimeraVisita.revelar(),pistaEsperadaPrimeraVisita.revelar());
+        assertEquals(pistasSegundaVisita.revelar(),pistaEsperadaSegundaVisita.revelar());
+
+         */
+/*
+        LadronBuilder builder = new LadronBuilder();
+        builder.setCabello(new Rubio());
+        builder.setHobby(new Tenis());
+        builder.setSexo(new Femenino());
+        builder.setSenia(new Tatuaje());
+        builder.setVehiculo(new Moto());
+        Ladron maria = builder.getLadron();
+
+        Policia policia= new Policia(new Novato(),new Ciudad("montreal"));
+
+        Pista pistaBanco = new PistaConInformacion("Pesos");
+        Pista pistaBiblioteca= new PistaConInformacion("Obelisco");
+
+
+        Edificio banco = new Banco();
+        banco.setPistaFacil(pistaBanco);
+
+        Edificio biblioteca = new Biblioteca();
+        biblioteca.setPistaFacil(pistaBiblioteca);
+
+        LinkedList<Pista> pistasDeBanco = policia.visitar(banco, maria);
+        LinkedList<Pista> pistasDeBiblioteca=policia.visitar(biblioteca,maria);
+
+        assert(pistasDeBanco.get(0).revelar().equals("Pesos"));
+        assert(pistasDeBiblioteca.get(0).revelar().equals("Obelisco"));
+
+    }*/
+}}
 
 
 

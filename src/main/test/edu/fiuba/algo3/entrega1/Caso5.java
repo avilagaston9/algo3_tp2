@@ -1,8 +1,9 @@
 package edu.fiuba.algo3.entrega1;
 
-import clases.Ciudad;
-import clases.Policia;
+import clases.*;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Caso5 {
 
@@ -10,23 +11,23 @@ public class Caso5 {
     public void DetectiveDuerme(){
 
         //arrange
-        int cantArrestos = 0;
-        Policia policia = new Policia(cantArrestos, new Ciudad("Montreal")); // crea tiempo y rango
+        Rango rango= new Novato();
+        Policia policia = new Policia(rango, new Ciudad("Montreal")); // crea tiempo y rango
         //act
         policia.dormir();
         //assert
-        assertEquals(policia.tiempoTranscurrido(), 8);
+        assertEquals(8, policia.tiempoTranscurridoEnHoras());
     }
     @Test
     public void DetectiveRecibeHeridaDeCuchillo(){
 
         //arrange
         Arma cuchillo = new Cuchillo();
-        int cantArrestos = 0;
-        Policia policia = new Policia(cantArrestos, new Ciudad("Montreal")); // crea tiempo y rango
+        Rango rango= new Novato();
+        Policia policia = new Policia(rango, new Ciudad("Montreal")); // crea tiempo y rango
         //act
         policia.herirCon(cuchillo);
         //assert
-        assertEquals(policia.tiempoTranscurrido(), 2);
+        assertEquals(2, policia.tiempoTranscurridoEnHoras());
     }
 }
