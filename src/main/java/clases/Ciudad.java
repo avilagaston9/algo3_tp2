@@ -66,5 +66,13 @@ public class Ciudad {
     }
 
      */
+
+    public double calcularDistancia(Ciudad otraCiudad){
+        return otraCiudad.calcularDistancia(this.coordenadas);
+    }
+
+    protected double calcularDistancia(Coordenadas otrasCoordenadas){
+        return otrasCoordenadas.calcularDistancia(this.coordenadas);
+    }
 }
 
