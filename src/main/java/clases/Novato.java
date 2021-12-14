@@ -14,13 +14,17 @@ public class Novato extends Rango {
     }
 
     @Override
-    public Rango siguienteRango() { return new Detective(); }
+    public Rango siguienteRango() { return new Detective();}
 
     @Override
-    public Pista visitar(Edificio unEdificio){ return unEdificio.serVisitado(this);}
+    public Pista visitar(Edificio unEdificio) {
+        return unEdificio.serVisitado(this);
+    }
 
     @Override
-    public Pista pedirPistaLadron(Ladron ladron) { return ladron.pedirPista(this);   }
+    public Pista pedirPistaLadron(Ladron ladron) {
+        return null;
+    }
 
 
 

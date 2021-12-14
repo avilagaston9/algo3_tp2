@@ -14,9 +14,9 @@ public class Policia {
         this.ciudadActual=actual;
     }
 
-    public LinkedList visitar(Edificio unEdificio, Ladron ladron) {
+    public LinkedList<Pista> visitar(Edificio unEdificio, Ladron ladron) {
 
-        LinkedList<Pista> pistas = new LinkedList<Pista>();
+        LinkedList<Pista> pistas = new LinkedList<>();
         pistas.add(this.rango.visitar(unEdificio));
         pistas.add(this.rango.pedirPistaLadron(ladron));
         return pistas;

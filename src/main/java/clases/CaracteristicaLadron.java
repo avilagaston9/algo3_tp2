@@ -1,7 +1,7 @@
 package clases;
 
-public abstract class CaracteristicaLadron {
+public interface CaracteristicaLadron {
+    public Pista darPista();
 
-    protected Pista pista;
-    public Pista darPista() { return this.pista;  }
+    boolean equals(CaracteristicaLadron caracteristica);
 }

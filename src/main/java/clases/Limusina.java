@@ -1,12 +1,11 @@
 package clases;
 
-public class Tenis implements CaracteristicaLadron {
+public class Limusina implements CaracteristicaLadron {
     private Pista pista;
 
-    public Tenis(){
-        this.pista = new PistaConInformacion("Su hobby es jugar al tenis");
+    public Limusina(){
+        this.pista=new PistaConInformacion("se movia en una limusina");
     }
-
     @Override
     public Pista darPista() {
         return pista;

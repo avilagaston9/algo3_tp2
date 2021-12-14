@@ -3,6 +3,25 @@ package clases;
 import java.util.List;
 
 public class Banco extends Edificio {
+    @Override
+    Pista serVisitado(Novato rango) {
+        return null;
+    }
+
+    @Override
+    Pista serVisitado(Detective rango) {
+        return null;
+    }
+
+    @Override
+    Pista serVisitado(Investigador rango) {
+        return null;
+    }
+
+    @Override
+    Pista serVisitado(Sargento rango) {
+        return null;
+    }
     /*
     private String tipo="Banco";
     private FabricaDePistas fabrica;

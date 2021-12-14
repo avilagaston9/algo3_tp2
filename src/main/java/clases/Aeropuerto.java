@@ -2,7 +2,26 @@ package clases;
 
 import java.util.List;
 
-public class Aeropuerto extends Edificio {/*
+public class Aeropuerto extends Edificio {
+    @Override
+    Pista serVisitado(Novato rango) {
+        return null;
+    }
+
+    @Override
+    Pista serVisitado(Detective rango) {
+        return null;
+    }
+
+    @Override
+    Pista serVisitado(Investigador rango) {
+        return null;
+    }
+
+    @Override
+    Pista serVisitado(Sargento rango) {
+        return null;
+    }/*
     private String tipo="Aeropuerto";
     private FabricaDePistas fabrica;
     private Pista pista;
