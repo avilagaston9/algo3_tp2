@@ -8,5 +8,12 @@ public class Sargento extends Rango {
         this.maximoArrestos = 0;
     }
     @Override
-    public Rango siguienteRango() { return this;   }
+    public Rango siguienteRango() { return this; }
+
+    @Override
+    public Pista visitar(Edificio unEdificio){ return unEdificio.serVisitado(this);}
+
+    @Override
+    public Pista pedirPistaLadron(Ladron ladron) {  return ladron.pedirPista(this);
+    }
 }

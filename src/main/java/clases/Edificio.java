@@ -2,9 +2,9 @@ package clases;
 
 import java.util.List;
 
-public class Edificio {
+public abstract class Edificio {
 
-    private Pista pistaFacil;
+    protected Pista pistaFacil;
     private Pista pistaMedia;
     private Pista pistaDificil;
 
@@ -20,10 +20,10 @@ public class Edificio {
     public void setPistaMedia(Pista pistaMedia){ this.pistaMedia = pistaMedia; }
     public void setPistaDificil(Pista pistaDificil){ this.pistaDificil = pistaDificil; }
 
-    public Pista serVisitado(Novato rango){ return this.pistaFacil}
-    public Pista serVisitado(Detective rango){ return this.pistaMedia}
-    public Pista serVisitado(Investigador rango){ return this.pistaDificil}
-    public Pista serVisitado(Sargento rango){ return this.pistaDificil}
+    abstract Pista serVisitado(Novato rango);
+    abstract Pista serVisitado(Detective rango);
+    abstract Pista serVisitado(Investigador rango);
+    abstract Pista serVisitado(Sargento rango);
 
     //public boolean sosIgual(Edificio edificio);
 }

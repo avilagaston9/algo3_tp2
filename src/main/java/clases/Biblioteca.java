@@ -2,7 +2,26 @@ package clases;
 
 import java.util.List;
 
-public class Biblioteca extends Edificio {/*
+public class Biblioteca extends Edificio {
+    @Override
+    Pista serVisitado(Novato rango) {
+        return null;
+    }
+
+    @Override
+    Pista serVisitado(Detective rango) {
+        return null;
+    }
+
+    @Override
+    Pista serVisitado(Investigador rango) {
+        return null;
+    }
+
+    @Override
+    Pista serVisitado(Sargento rango) {
+        return null;
+    }/*
     private String tipo="Biblioteca";
     private FabricaDePistas fabrica;
     private Pista pista;
