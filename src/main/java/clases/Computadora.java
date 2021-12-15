@@ -12,6 +12,7 @@ public class Computadora {
 
     public Computadora(ArrayList<Ladron> unosLadrones) {
         this.ladrones=unosLadrones;
+        this.caracteristicas = new ArrayList<CaracteristicaLadron>();
     }
 
 //    public ArrayList<Ladron> cargarDatosYBuscar(List<CaracteristicaLadron> caracteristicas, Tiempo tiempo) {
@@ -33,7 +34,7 @@ public class Computadora {
         caracteristicas.add(caracteristica);
     }
 
-    public ArrayList<Ladron> buscarSospechosos(){
+    public ArrayList<Ladron> buscarSospechosos(Tiempo tiempo){
         ArrayList<Ladron> sospechosos = new ArrayList<Ladron>();
 
         for (Ladron unLadron: this.ladrones){
@@ -48,6 +49,7 @@ public class Computadora {
                 sospechosos.add(unLadron);
             }
         }
+        tiempo.sumarHoras(3);
         return sospechosos;
     }
 }

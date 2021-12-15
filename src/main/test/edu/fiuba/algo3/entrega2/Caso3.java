@@ -51,12 +51,14 @@ public class Caso3 {
         CaracteristicaLadron colorDePelo= new Negro();
         CaracteristicaLadron sexo= new Masculino();
 
-        List<CaracteristicaLadron> caracteristicas=new ArrayList<>();
+//        List<CaracteristicaLadron> caracteristicas=new ArrayList<>();
+//        caracteristicas.add(colorDePelo);
+//        caracteristicas.add(sexo);
 
-        caracteristicas.add(colorDePelo);
-        caracteristicas.add(sexo);
-
-        ArrayList<Ladron> sospechosos = compu.cargarDatosYBuscar(caracteristicas,tiempo);
+//        ArrayList<Ladron> sospechosos = compu.cargarDatosYBuscar(caracteristicas,tiempo);
+        compu.cargarCaracteristica(colorDePelo);
+        compu.cargarCaracteristica(sexo);
+        ArrayList<Ladron> sospechosos = compu.buscarSospechosos(tiempo);
 
         assert (sospechosos.contains(juan));
         assert (sospechosos.contains(ricardo));
