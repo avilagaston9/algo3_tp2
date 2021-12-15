@@ -16,13 +16,40 @@ skinparam ActorFontColor black
 skinparam participantFontSize 12
 skinparam SequenceLifeLineBackGroundColor 2e2e2e
 
-testcase -> "compu:Computadora" as Computadora: cargarDatosYBuscar(caracteristicas:ArrayList<CaracteristicaLadron>)
-loop para cada ladron
-"compu:Computadora" as Computadora -> "Ladron:Ladron" : conCaracteristica((caracteristica: CaracteristicaLadron)
-"Ladron:Ladron" --> "compu:Computadora" as Computadora : true
-"compu:Computadora" as Computadora -> "posiblesSospechosos:ArrayList<Ladron>" : add(Ladron)
-end
-"compu:Computadora" as Computadora -> "Tiempo:tiempo" : sumarHoras(3)
-"compu:Computadora" as Computadora --> testcase : posiblesSospechosos
+'testcase -> "compu:Computadora" as Computadora: cargarDatosYBuscar(caracteristicas:ArrayList<CaracteristicaLadron>)
+'loop para cada ladron
+'"compu:Computadora" as Computadora -> "Ladron:Ladron" : conCaracteristica((caracteristica: CaracteristicaLadron)
+'"Ladron:Ladron" --> "compu:Computadora" as Computadora : true
+'"compu:Computadora" as Computadora -> "posiblesSospechosos:ArrayList<Ladron>" : add(Ladron)
+'end
+'"compu:Computadora" as Computadora -> "Tiempo:tiempo" : sumarHoras(3)
+'"compu:Computadora" as Computadora --> testcase : posiblesSospechosos
 
+participant TestCase
+participant "compu:Computadora" as compu
+participant ":Ladron" as ladron
+participant "carateristicaLadron:Caracteristica" as caracLadron
+participant "posiblesSospechosos:ArrayList<Ladron>" as lista
+
+TestCase -> "compu:Computadora" as compu: cargarCaracteristicaLadron(rubio:Caracteristica)
+TestCase -> "compu:Computadora" as compu: cargarCaracteristicaLadron(mujer:Caracteristica)
+TestCase -> "compu:Computadora" as compu: cargarCaracteristicaLadron(tennis:Caracteristica)
+TestCase -> "compu:Computadora" as compu: cargarCaracteristicaLadron(moto:Caracteristica)
+
+
+TestCase -> compu: buscarSospechosos()
+
+create "posiblesSospechosos:ArrayList<Ladron>" as lista
+compu -> lista: new
+
+loop Para cada Ladron
+loop Para cada Caracteristica
+compu -> ":Ladron" as ladron: tieneCaracteristica(caracteristica:CaracteristicaLadron)
+ladron -> caracLadron: esIgualA(caracteristica)
+caracLadron --> ladron: true
+ladron--> compu : true
+end
+compu -> lista : add(Ladron)
+end
+compu --> TestCase: posiblesSospechosos
 @enduml
