@@ -27,11 +27,11 @@ public class Caso2 {
         Ciudad mexico = new Ciudad("Mexico", coordenadasMexico);
 
         //se crea policia novato en montreal
-        Policia policia = new Policia(new Novato(), montreal);
+        Policia policia = new Policia(new Investigador(), montreal);
 
         policia.viajarA(mexico);
 
-        assertEquals(4,policia.tiempoTranscurridoEnHoras());
+        assertEquals(2,policia.tiempoTranscurridoEnHoras());
         assert(policia.esCiudadActual(mexico));
         assertFalse(policia.esCiudadActual(montreal));
     }
