@@ -26,7 +26,7 @@ public abstract class Rango {
 
     public abstract Pista pedirPistaLadron(Ladron ladron);
 
-    public abstract int tiempoConsumidoPorViaje(int cantidadKms);
+    public abstract void viajar(Tiempo tiempo, int kilometros);
 
     /*
 

@@ -6,10 +6,9 @@ import clases.caracteristicasLadron.*;
 import clases.ladron.Ladron;
 import clases.ladron.LadronBuilder;
 import clases.rangos.Investigador;
-import clases.rangos.Novato;
 import org.junit.jupiter.api.Test;
 
-public class caso2 {
+public class Caso2 {
 
     @Test
     public void detectiveConRangoInvestigadorTomaCasoDeUnRoboViajaDeMontrealAMexico(){

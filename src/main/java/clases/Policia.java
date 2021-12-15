@@ -42,15 +42,14 @@ public class Policia {
         unArma.Herir(this.tiempoTranscurrido);
     }
 
-
     public void viajarA(Ciudad nuevaCiudad) {
 
         int kilometros = (int) this.ciudadActual.calcularDistancia(nuevaCiudad);
         //this.rango.viajar(kilometros, this.tiempoTranscurrido);
-        this.tiempoTranscurrido.sumarHoras(this.rango.tiempoConsumidoPorViaje(kilometros));
+        //this.tiempoTranscurrido.sumarHoras(this.rango.tiempoConsumidoPorViaje(kilometros));
+        rango.viajar(tiempoTranscurrido, kilometros);
         setCiudadActual(nuevaCiudad);
     }
-
 
     public void setCiudadActual(Ciudad unaCiudad){
 

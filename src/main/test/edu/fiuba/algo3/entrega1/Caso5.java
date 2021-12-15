@@ -23,6 +23,7 @@ public class Caso5 {
         //assert
         assertEquals(8, policia.tiempoTranscurridoEnHoras());
     }
+
     @Test
     public void DetectiveRecibeHeridaDeCuchillo(){
 

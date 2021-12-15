@@ -15,16 +15,16 @@ skinparam SequenceLifeLineBackGroundColor 2e2e2e
 
 TestCase -> ":AlgoThieft" as algoT: viajarA(ciudadDestino:Ciudad)
 algoT -> "unPolicia:Policia" as policia: ViajarA(ciudadDestino:Ciudad)
-policia -> "ciudadActual:Ciudad" as ciudadActual: calcularDistancia(ciudadDestino:Ciudad))
+policia -> "ciudadActual:Ciudad" as ciudadActual: calcularDistancia(ciudadDestino:Ciudad)
 ciudadActual -> "ciudadadDestino:Ciudad" as ciudadDestino: calcularDistancia(coordenadas:Coordenadas)
 ciudadDestino -> "coordenadas:Coordenadas" as coordenadas: calcularDistancia(otrasCoordenadas:Coordenadas)
 
-ciudadDestino <- coordenadas: int distancia
-ciudadActual <- ciudadDestino: int distancia
-policia <- ciudadActual: int distancia
+ciudadDestino <-- coordenadas: int distancia
+ciudadActual <-- ciudadDestino: int distancia
+policia <-- ciudadActual: int distancia
 
 policia -> "rango:Rango" as rango: tiempoConsumidoPorViaje(distancia)
-policia <- rango: int cantidadHoras
+policia <-- rango: int cantidadHoras
 
 policia -> "tiempoTranscurrido:Tiempo" as tiempo: sumarHoras(int cantidadHoras)
 
