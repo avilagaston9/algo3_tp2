@@ -2,10 +2,10 @@ package clases;
 
 public class Coordenadas {
 
-    private float latitud;
-    private float longitud;
+    private double latitud;
+    private double longitud;
 
-    public Coordenadas(float latitud, float longitud){
+    public Coordenadas(double latitud, double longitud){
         this.latitud = latitud;
         this.longitud = longitud;
     }
@@ -14,7 +14,7 @@ public class Coordenadas {
         return otrasCoordenadas.calcularDistancia(this.latitud, this.longitud);
     }
 
-    protected double calcularDistancia(float otraLatitud, float otraLongitud){
+    protected double calcularDistancia(double otraLatitud, double otraLongitud){
         double lon1 = Math.toRadians(otraLongitud);
         double lon2 = Math.toRadians(this.longitud);
         double lat1 = Math.toRadians(otraLatitud);

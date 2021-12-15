@@ -44,7 +44,7 @@ public class Policia {
 
     public void viajarA(Ciudad nuevaCiudad) {
 
-        int kilometros = (int) this.ciudadActual.calcularDistancia(nuevaCiudad);
+        int kilometros = (int) this.ciudadActual.calcularDistanciaEnKms(nuevaCiudad);
         //this.rango.viajar(kilometros, this.tiempoTranscurrido);
         //this.tiempoTranscurrido.sumarHoras(this.rango.tiempoConsumidoPorViaje(kilometros));
         rango.viajar(tiempoTranscurrido, kilometros);

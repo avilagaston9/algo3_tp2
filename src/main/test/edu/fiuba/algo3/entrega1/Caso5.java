@@ -16,8 +16,11 @@ public class Caso5 {
     public void DetectiveDuerme(){
 
         //arrange
+        //se crea Montreal
+        Coordenadas coordenadasMontreal = new Coordenadas(45.50884,-73.58781);
+        Ciudad montreal = new Ciudad("Montreal", coordenadasMontreal);
         Rango rango= new Novato();
-        Policia policia = new Policia(rango, new Ciudad("Montreal")); // crea tiempo y rango
+        Policia policia = new Policia(rango, montreal); // crea tiempo y rango
         //act
         policia.dormir();
         //assert
@@ -28,9 +31,13 @@ public class Caso5 {
     public void DetectiveRecibeHeridaDeCuchillo(){
 
         //arrange
+        //se crea Montreal
+        Coordenadas coordenadasMontreal = new Coordenadas(45.50884,-73.58781);
+        Ciudad montreal = new Ciudad("Montreal", coordenadasMontreal);
+
         Arma cuchillo = new Cuchillo();
         Rango rango= new Novato();
-        Policia policia = new Policia(rango, new Ciudad("Montreal")); // crea tiempo y rango
+        Policia policia = new Policia(rango, montreal); // crea tiempo y rango
         //act
         policia.herirCon(cuchillo);
         //assert

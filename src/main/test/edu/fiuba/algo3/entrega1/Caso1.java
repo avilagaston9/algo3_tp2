@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.entrega1;
 
 
+import clases.Coordenadas;
 import clases.edificios.*;
 import clases.ladron.*;
 import clases.pistas.*;
@@ -59,8 +60,11 @@ public class Caso1 {
         builder.setVehiculo(new Moto());
         Ladron maria = builder.getLadron();
 
-        //se crea al policia
-        Policia policia = new Policia(new Novato(), new Ciudad("Montreal"));
+        //se crea Montreal
+        Coordenadas coordenadasMontreal = new Coordenadas(45.50884,-73.58781);
+        Ciudad montreal = new Ciudad("Montreal", coordenadasMontreal);
+        //se crea policia novato en montreal
+        Policia policia = new Policia(new Novato(), montreal);
 
         //se crea la pista
         PistaFacil pistaPrueba = new PistaFacil("Pesos");

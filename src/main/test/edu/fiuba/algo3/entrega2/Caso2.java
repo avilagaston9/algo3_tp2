@@ -1,34 +1,38 @@
 package edu.fiuba.algo3.entrega2;
 
 import clases.Ciudad;
+import clases.Coordenadas;
 import clases.Policia;
 import clases.caracteristicasLadron.*;
 import clases.ladron.Ladron;
 import clases.ladron.LadronBuilder;
 import clases.rangos.Investigador;
+import clases.rangos.Novato;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class Caso2 {
 
     @Test
     public void detectiveConRangoInvestigadorTomaCasoDeUnRoboViajaDeMontrealAMexico(){
 
-        // Set Up
-        LadronBuilder ladronBuilder = new LadronBuilder();
-        ladronBuilder.setCabello(new Negro());
-        ladronBuilder.setHobby(new Tenis());
-        ladronBuilder.setSexo(new Masculino());
-        ladronBuilder.setSenia(new Joyas());
-        ladronBuilder.setVehiculo(new Limusina());
-        Ladron Luis = ladronBuilder.getLadron();
+        //se crea Montreal
+        Coordenadas coordenadasMontreal = new Coordenadas(45.50884,-73.58781);
+        Ciudad montreal = new Ciudad("Montreal", coordenadasMontreal);
 
-        Ciudad ciudadInicial = new Ciudad("Montreal");
+        //se crea mexico
+        Coordenadas coordenadasMexico = new Coordenadas(23.634501, -102.552784);
+        Ciudad mexico = new Ciudad("Mexico", coordenadasMexico);
 
-        Policia policia= new Policia(new Investigador(),new Ciudad("montreal"));
+        //se crea policia novato en montreal
+        Policia policia = new Policia(new Novato(), montreal);
 
-        Ciudad ciudadProximoDestino = new Ciudad("Ciudad De Mexico");
+        policia.viajarA(mexico);
 
-        policia.viajarA(ciudadProximoDestino);
-
+        assertEquals(4,policia.tiempoTranscurridoEnHoras());
+        assert(policia.esCiudadActual(mexico));
+        assertFalse(policia.esCiudadActual(montreal));
     }
 }

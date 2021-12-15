@@ -13,9 +13,13 @@ public class Caso4 {
     @Test
     public void detectiveIntentaAtraparLadronSinOrdenDeArresto(){
 
+        //se crea Montreal
+        Coordenadas coordenadasMontreal = new Coordenadas(45.50884,-73.58781);
+        Ciudad montreal = new Ciudad("Montreal", coordenadasMontreal);
+
         Rango rango= new Novato();
         // ahora policia tiene un atributo orden de arresto
-        Policia policia= new Policia(rango,new Ciudad("Bs.As"));
+        Policia policia= new Policia(rango,montreal);
 
         LadronBuilder builder = new LadronBuilder();
         builder.setCabello(new Rubio());

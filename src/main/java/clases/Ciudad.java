@@ -1,30 +1,15 @@
 package clases;
 
 
-import clases.edificios.Edificio;
-import clases.ladron.Ladron;
-
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
 public class Ciudad {
 
     private String nombre;
-    private Ladron ladron;
-    private Ciudad siguienteCiudad;
-    private Map distancias;
-    private List<Edificio> edificios;
-    private int visitas;
     private Coordenadas coordenadas;
 
-    public Ciudad(String nombreCiudad) {
+    public Ciudad(String nombreCiudad, Coordenadas coordenadas) {
 
-        edificios = new LinkedList<Edificio>();
-        nombre = nombreCiudad;
-        this.distancias = new HashMap();
-        visitas = 0;
+        this.nombre = nombreCiudad;
+        this.coordenadas = coordenadas;
     }
     /*
 
@@ -57,7 +42,6 @@ public class Ciudad {
         this.visitas++;
     }
 
-    public int distanciaEnKmsHasta(Ciudad unaCiudad) { return  (int)this.distancias.get(unaCiudad);  }
 
     public Pista darPistaDe(Edificio edificio) {
         for (int i=0;i< edificios.size();i++){
@@ -70,12 +54,12 @@ public class Ciudad {
 
      */
 
-    public double calcularDistancia(Ciudad otraCiudad){
+    public double calcularDistanciaEnKms(Ciudad otraCiudad){
 
-        return otraCiudad.calcularDistancia(this.coordenadas);
+        return otraCiudad.calcularDistanciaEnKms(this.coordenadas);
     }
 
-    protected double calcularDistancia(Coordenadas otrasCoordenadas){
+    protected double calcularDistanciaEnKms(Coordenadas otrasCoordenadas){
         return otrasCoordenadas.calcularDistancia(this.coordenadas);
     }
 }

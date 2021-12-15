@@ -18,7 +18,7 @@ public class Tiempo {
     }
 
     private int calcularHorasConsumidas(int kilometros, int costoFijo){
-        numeroVisita = 0;
+        this.numeroVisita = 0;
         return (kilometros/costoFijo);
     }
 
@@ -56,20 +56,20 @@ public class Tiempo {
         this.sumarHoras(2);
     }
 
-    public int viajar(int kilometros, Novato unRango){
-        return (calcularHorasConsumidas(kilometros, 900));
+    public void viajar(int kilometros, Novato unRango){
+        this.sumarHoras(calcularHorasConsumidas(kilometros, 900));
     }
 
-    public int viajar(int kilometros, Detective unRango){
-        return (calcularHorasConsumidas(kilometros, 1100));
+    public void viajar(int kilometros, Detective unRango){
+        this.sumarHoras(calcularHorasConsumidas(kilometros, 1100));
     }
 
-    public int viajar(int kilometros, Investigador unRango){
-        return (calcularHorasConsumidas(kilometros, 1300));
+    public void viajar(int kilometros, Investigador unRango){
+        this.sumarHoras(calcularHorasConsumidas(kilometros, 1300));
     }
 
-    public int viajar(int kilometros, Sargento unRango){
-        return (calcularHorasConsumidas(kilometros, 1500));
+    public void viajar(int kilometros, Sargento unRango){
+        this.sumarHoras(calcularHorasConsumidas(kilometros, 1500));
     }
 
 }
