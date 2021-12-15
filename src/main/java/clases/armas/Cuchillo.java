@@ -9,6 +9,6 @@ public class Cuchillo implements Arma {
     @Override
     public void Herir(Tiempo tiempoTranscurrido) {
 
-        tiempoTranscurrido.heridaDeCuchillo();
+        tiempoTranscurrido.herirCon(this);
     }
 }

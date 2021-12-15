@@ -1,5 +1,7 @@
 package clases;
 
+import clases.armas.Cuchillo;
+
 public class Tiempo {
 
     private int horas;
@@ -25,17 +27,6 @@ public class Tiempo {
         sumarHoras(8);
     }
 
-    public void heridaDeCuchillo() {
-
-        if(this.heridoConCuchillo){
-
-            this.sumarHoras(1);
-            return;
-        }
-        heridoConCuchillo = true;
-        this.sumarHoras(2);
-    }
-
     public void sumarVisita() {
 
         if(this.numeroVisita > 3){
@@ -45,5 +36,16 @@ public class Tiempo {
         }
         this.sumarHoras(this.numeroVisita);
         this.numeroVisita++;
+    }
+
+    public void herirCon(Cuchillo cuchillo) {
+
+        if(this.heridoConCuchillo){
+
+            this.sumarHoras(1);
+            return;
+        }
+        this.heridoConCuchillo = true;
+        this.sumarHoras(2);
     }
 }
