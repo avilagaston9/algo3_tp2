@@ -1,6 +1,8 @@
 package clases.ladron;
 
 import clases.OrdenArresto;
+import clases.Policia;
+import clases.armas.Arma;
 import clases.pistas.Pista;
 import clases.pistas.PistaSinInformacion;
 import clases.caracteristicasLadron.CaracteristicaLadron;
@@ -58,6 +60,7 @@ public class Ladron {
         return ordenDeArresto.comparar(this.caracteristicas);
 
     }
+
 }
 
 

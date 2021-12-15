@@ -21,6 +21,11 @@ public class Detective extends Rango {
     @Override
     public Pista pedirPistaLadron(Ladron ladron) {  return ladron.pedirPista(this);   }
 
+    @Override
+    public int tiempoConsumidoPorViaje(int cantidadKms){
+        return (cantidadKms/1100);
+    }
+
     /*
     @Override
     public void viajar(int cantidadKms, Tiempo tiempo) {

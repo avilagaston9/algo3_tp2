@@ -28,6 +28,11 @@ public class Novato extends Rango {
         return null;
     }
 
+    @Override
+    public int tiempoConsumidoPorViaje(int cantidadKms){
+        return (cantidadKms/900);
+    }
+
 
 
     /*

@@ -13,12 +13,14 @@ public class Policia {
     private Tiempo tiempoTranscurrido;
     private Rango rango;
     private OrdenArresto ordenDeArresto;
+    private int cantidadHeridasDeCuchillo;
 
     public Policia(Rango rango, Ciudad actual) {
         this.tiempoTranscurrido= new Tiempo();
         this.rango=rango;
         this.ciudadActual = actual;
         this.ordenDeArresto = new SinOrdenDeArresto();
+        this.cantidadHeridasDeCuchillo = 0;
     }
 
     public LinkedList<Pista> visitar(Edificio unEdificio, Ladron ladron) {
@@ -36,16 +38,19 @@ public class Policia {
         return this.tiempoTranscurrido.tiempoTranscurridoEnHoras();
     }
 
-    public void herirCon(Arma unArma) {  unArma.Herir(this.tiempoTranscurrido);  }
+    public void herirCon(Arma unArma) {
+        unArma.Herir(this.tiempoTranscurrido);
+    }
 
-    /*
+
     public void viajarA(Ciudad nuevaCiudad) {
 
-        int kilometros = this.ciudadActual.distanciaEnKmsHasta(nuevaCiudad);
-        this.rango.viajar(kilometros, this.tiempoTranscurrido);
+        int kilometros = (int) this.ciudadActual.calcularDistancia(nuevaCiudad);
+        //this.rango.viajar(kilometros, this.tiempoTranscurrido);
+        this.tiempoTranscurrido.sumarHoras(this.rango.tiempoConsumidoPorViaje(kilometros));
         setCiudadActual(nuevaCiudad);
     }
-    */
+
 
     public void setCiudadActual(Ciudad unaCiudad){
 
@@ -69,4 +74,6 @@ public class Policia {
     public boolean arrestarA(Ladron unLAdron) {
         return unLAdron.verOrden(this.ordenDeArresto);
     }
+
+
     }
