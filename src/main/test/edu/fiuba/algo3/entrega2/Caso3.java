@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-public class caso3 {
+public class Caso3 {
     @Test
     public void CargarDatosEnComputadoraYRealizarUnaBusqueda() {
         LadronBuilder builder = new LadronBuilder();

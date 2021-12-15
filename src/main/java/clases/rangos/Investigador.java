@@ -23,7 +23,7 @@ public class Investigador extends Rango {
     public Pista pedirPistaLadron(Ladron ladron) {  return ladron.pedirPista(this);  }
 
     @Override
-    public int tiempoConsumidoPorViaje(int cantidadKms){
-        return (cantidadKms/1300);
+    public void viajar(Tiempo tiempo, int kilometos){
+        tiempo.viajar(kilometos, this);
     }
 }

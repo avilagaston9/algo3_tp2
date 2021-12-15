@@ -23,7 +23,7 @@ public class Sargento extends Rango {
     }
 
     @Override
-    public int tiempoConsumidoPorViaje(int cantidadKms){
-        return (cantidadKms/1500);
+    public void viajar(Tiempo tiempo, int kilometos){
+        tiempo.viajar(kilometos, this);
     }
 }

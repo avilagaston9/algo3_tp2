@@ -71,6 +71,7 @@ public class Ciudad {
      */
 
     public double calcularDistancia(Ciudad otraCiudad){
+
         return otraCiudad.calcularDistancia(this.coordenadas);
     }
 

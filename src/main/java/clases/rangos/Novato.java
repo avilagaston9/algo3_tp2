@@ -29,11 +29,9 @@ public class Novato extends Rango {
     }
 
     @Override
-    public int tiempoConsumidoPorViaje(int cantidadKms){
-        return (cantidadKms/900);
+    public void viajar(Tiempo tiempo, int kilometos){
+        tiempo.viajar(kilometos, this);
     }
-
-
 
     /*
     @Override

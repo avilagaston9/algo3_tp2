@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class caso4 {
+public class Caso4 {
     @Test
     public void detectiveIntentaAtraparLadronSinOrdenDeArresto(){
 

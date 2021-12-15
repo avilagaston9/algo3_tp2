@@ -1,5 +1,7 @@
 package clases;
 
+import clases.rangos.*;
+
 public class Tiempo {
 
     private int horas;
@@ -11,6 +13,11 @@ public class Tiempo {
         this.horas = 0;
         this.heridoConCuchillo = false;
         this.numeroVisita = 1;
+    }
+
+    private int calcularHorasConsumidas(int kilometros, int costoFijo){
+        numeroVisita = 0;
+        return (kilometros/costoFijo);
     }
 
     public void sumarHoras(int cantidad){this.horas+=cantidad;}
@@ -46,4 +53,21 @@ public class Tiempo {
         this.sumarHoras(this.numeroVisita);
         this.numeroVisita++;
     }
+
+    public int viajar(int kilometros, Novato unRango){
+        return (calcularHorasConsumidas(kilometros, 900));
+    }
+
+    public int viajar(int kilometros, Detective unRango){
+        return (calcularHorasConsumidas(kilometros, 1100));
+    }
+
+    public int viajar(int kilometros, Investigador unRango){
+        return (calcularHorasConsumidas(kilometros, 1300));
+    }
+
+    public int viajar(int kilometros, Sargento unRango){
+        return (calcularHorasConsumidas(kilometros, 1500));
+    }
+
 }
