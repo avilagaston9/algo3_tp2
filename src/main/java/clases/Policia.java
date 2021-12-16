@@ -71,8 +71,13 @@ public class Policia {
     }
 
     public boolean arrestarA(Ladron unLAdron) {
+
         return unLAdron.verOrden(this.ordenDeArresto);
     }
 
+    public void emitirOrdenDeArresto(OrdenArresto ordenDeArresto){
+        this.tiempoTranscurrido.sumarHoras(3);
+        this.ordenDeArresto = ordenDeArresto;
+    }
 
     }

@@ -58,7 +58,7 @@ public class Caso3 {
 //        ArrayList<Ladron> sospechosos = compu.cargarDatosYBuscar(caracteristicas,tiempo);
         compu.cargarCaracteristica(colorDePelo);
         compu.cargarCaracteristica(sexo);
-        ArrayList<Ladron> sospechosos = compu.buscarSospechosos(tiempo);
+        ArrayList<Ladron> sospechosos = compu.buscarSospechosos();
 
         assert (sospechosos.contains(juan));
         assert (sospechosos.contains(ricardo));

@@ -4,7 +4,7 @@ import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.RecursiveTask;
 
 public class Computadora {
     private ArrayList<Ladron> ladrones;
@@ -34,7 +34,7 @@ public class Computadora {
         caracteristicas.add(caracteristica);
     }
 
-    public ArrayList<Ladron> buscarSospechosos(Tiempo tiempo){
+    public ArrayList<Ladron> buscarSospechosos(){
         ArrayList<Ladron> sospechosos = new ArrayList<Ladron>();
 
         for (Ladron unLadron: this.ladrones){
@@ -49,7 +49,22 @@ public class Computadora {
                 sospechosos.add(unLadron);
             }
         }
-        tiempo.sumarHoras(3);
+        //tiempo.sumarHoras(3);
         return sospechosos;
+    }
+
+    public OrdenArresto emitirOrdenDeArresto(Ladron unLadron){
+
+        ArrayList<Ladron> ladronesSospechosos=new ArrayList<>();
+        ladronesSospechosos = this.buscarSospechosos();
+
+        //for (Ciudad c : ciudades)
+        for (Ladron sospechoso: ladronesSospechosos)
+            if (sospechoso == unLadron) {
+                //OrdenArresto orden = new Orde
+                OrdenDeArresto orden = new OrdenDeArresto(unLadron);
+                return orden;
+            }
+        return null;
     }
 }

@@ -9,4 +9,5 @@ public class SinOrdenDeArresto implements OrdenArresto {
     public boolean comparar(LinkedList<CaracteristicaLadron> caracteristicas) {
         return false;
     }
+
 }
