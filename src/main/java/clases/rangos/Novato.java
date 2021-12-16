@@ -25,12 +25,12 @@ public class Novato extends Rango {
 
     @Override
     public Pista pedirPistaLadron(Ladron ladron) {
-        return null;
+        return ladron.pedirPista(this);
     }
 
     @Override
-    public void viajar(Tiempo tiempo, int kilometos){
-        tiempo.viajar(kilometos, this);
+    public void viajar(Tiempo tiempo, int kilometros){
+        tiempo.viajar(kilometros, this);
     }
 
     /*
