@@ -13,7 +13,9 @@ skinparam ActorFontColor black
 skinparam participantFontSize 12
 skinparam SequenceLifeLineBackGroundColor 2e2e2e
 
-TestCase -> ":Computadora" as Computadora: emitirOrdenDeArresto(ladron:Ladron)
+TestCase -> "policia:Policia" as policia: emitirOrdenDeArresto(ladron:Ladron, computadora:Computadoraz)
+policia -> "tiempo:Tiempo" as tiempo: restarHoras(3)
+policia -> ":Computadora" as Computadora: emitirOrdenDeArresto(ladron:Ladron)
 Computadora -> Computadora: buscarSospechosos()
 Computadora --> Computadora: listaSospechosos:Lista
 loop para cada posible sospechoso 
@@ -26,7 +28,7 @@ end
 create "orden:OrdenDeArresto" as orden
 Computadora -> orden : new(unLadron)
 orden --> Computadora : orden
-Computadora --> TestCase :orden
-
+Computadora --> policia :orden
+policia --> TestCase: orden
 
 @enduml
