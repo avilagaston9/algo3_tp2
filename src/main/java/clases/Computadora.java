@@ -61,7 +61,6 @@ public class Computadora {
         //for (Ciudad c : ciudades)
         for (Ladron sospechoso: ladronesSospechosos)
             if (sospechoso == unLadron) {
-                //OrdenArresto orden = new Orde
                 OrdenDeArresto orden = new OrdenDeArresto(unLadron);
                 return orden;
             }

@@ -1,10 +1,11 @@
 package clases;
 
 import clases.caracteristicasLadron.CaracteristicaLadron;
+import clases.ladron.Ladron;
 
 import java.util.LinkedList;
 
 public interface OrdenArresto {
-    boolean comparar(LinkedList<CaracteristicaLadron> caracteristicas);
+    boolean comparar(Ladron ladron);
 
 }

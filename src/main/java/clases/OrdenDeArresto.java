@@ -14,9 +14,10 @@ public class OrdenDeArresto implements OrdenArresto {
     }
 
     @Override
-    public boolean comparar(LinkedList<CaracteristicaLadron> caracteristicas) {
-        return true;
+    public boolean comparar(Ladron ladron) {
+        return this.ladron.equals(ladron);
     }
+
 
 }
 

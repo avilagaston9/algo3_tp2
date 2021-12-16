@@ -44,7 +44,6 @@ public class Caso3 {
         ladrones.add(ricardo);
         ladrones.add(juan);
 
-        Tiempo tiempo= new Tiempo();
 
         Computadora compu = new Computadora(ladrones);
 
@@ -63,7 +62,6 @@ public class Caso3 {
         assert (sospechosos.contains(juan));
         assert (sospechosos.contains(ricardo));
         assert (sospechosos.size()==2);
-        assert (tiempo.tiempoTranscurridoEnHoras()==3);
 
     }
 }

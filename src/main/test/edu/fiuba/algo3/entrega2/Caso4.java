@@ -7,6 +7,7 @@ import clases.ladron.LadronBuilder;
 import clases.rangos.*;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class Caso4 {
@@ -29,7 +30,7 @@ public class Caso4 {
         builder.setVehiculo(new Moto());
         Ladron maria = builder.getLadron();
 
-        assertFalse(policia.arrestarA(maria));
+        assertEquals(policia.arrestos(),0);
 
     }
 }

@@ -70,9 +70,10 @@ public class Policia {
 
     }
 
-    public boolean arrestarA(Ladron unLAdron) {
-
-        return unLAdron.verOrden(this.ordenDeArresto);
+    public void arrestarA(Ladron unLadron) {
+         if  (unLadron.verOrden(this.ordenDeArresto)){
+             this.rango.sumarArresto();
+         }
     }
 
     public void emitirOrdenDeArresto(OrdenArresto ordenDeArresto){
@@ -80,4 +81,7 @@ public class Policia {
         this.ordenDeArresto = ordenDeArresto;
     }
 
+    public int arrestos() {
+        return this.rango.arrestos();
     }
+}

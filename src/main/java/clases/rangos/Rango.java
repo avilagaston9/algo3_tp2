@@ -28,6 +28,10 @@ public abstract class Rango {
 
     public abstract void viajar(Tiempo tiempo, int kilometros);
 
+    public int arrestos() {
+        return this.arrestos;
+    }
+
     /*
 
     void viajar(int cantidadKms, Tiempo tiempo);

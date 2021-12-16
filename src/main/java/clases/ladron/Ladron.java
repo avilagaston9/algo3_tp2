@@ -12,6 +12,7 @@ import clases.rangos.Novato;
 import clases.rangos.Sargento;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class Ladron {
     private int iteradorCaracteristicas;
@@ -57,10 +58,22 @@ public class Ladron {
     }
 
     public boolean verOrden(OrdenArresto ordenDeArresto) {
-        return ordenDeArresto.comparar(this.caracteristicas);
+        return ordenDeArresto.comparar(this);
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ladron ladron = (Ladron) o;
+        return iteradorCaracteristicas == ladron.iteradorCaracteristicas && Objects.equals(caracteristicas, ladron.caracteristicas);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(iteradorCaracteristicas, caracteristicas);
+    }
 }
 
 
