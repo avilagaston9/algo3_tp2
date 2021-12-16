@@ -13,7 +13,7 @@ skinparam ArrowColor black
 skinparam ActorFontColor black
 skinparam participantFontSize 12
 skinparam SequenceLifeLineBackGroundColor 2e2e2e
-
+/'
 TestCase -> "algothieft:AlgoThieft" as algothieft: visitarEdificio(banco:Edificio)
 algothieft -> "novato:Policia" as unPolicia: visitarEdificio(banco)
 
@@ -35,5 +35,15 @@ unPolicia <-- montreal: pistasDevueltas
 unPolicia --> algothieft: pistasDevueltas
 
 TestCase <-- algothieft: pistasDevueltas
-
+'/
+TestCase -> "novato:Policia" as unPolicia: visitar(banco:Edificio, maria:Ladron)
+'create ":List" as list
+'unPolicia -> list : new
+unPolicia -> "novato:Rango" as rango: visitar(banco:Edificio)
+rango -> "banco:Banco" as banco: serVisitado(novato, tiempo)
+banco --> rango: pistaFacil:Pista
+rango -->unPolicia : pistaFacil:Pista
+unPolicia -> "tiempo:Tiempo" as tiempo: sumarVisita()
+tiempo ->tiempo :sumarHoras(cantidadVisitas:Integer)
+unPolicia --> TestCase: pistaFacil:Pista
 @enduml
