@@ -30,28 +30,19 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 public class Caso5 {
 
     @Test
-    public void detectiveHaceSeisArrestosYTomaUnCaso(){
+    public void detectiveHaceSeisArrestosYTomaUnCaso() {
 
         //Creo ciudad...
-        Coordenadas coordenadasMontreal = new Coordenadas(45.50884,-73.58781);
+        Coordenadas coordenadasMontreal = new Coordenadas(45.50884, -73.58781);
         Ciudad montreal = new Ciudad("Montreal", coordenadasMontreal);
 
         //Creo un policia de rango Detective...
         Policia policia = new Policia(new Detective(), montreal);
 
-        //assert (policia.esDetective());
-        //assertFalse(policia.esInvestigador());
         /*
-        policia.agregarArresto();
-        policia.agregarArresto();
-        policia.agregarArresto();
-        policia.agregarArresto();
-        policia.agregarArresto();
-        policia.agregarArresto();
+        HACE 6 ARRESTOS
+        Chequear rango aca
          */
-
-        //assert (policia.esInvestigador());
-        //assertFalse(policia.esDetective());
 
         LadronBuilder ladronBuilder = new LadronBuilder();
         ladronBuilder.setSexo(new Masculino());
@@ -65,6 +56,9 @@ public class Caso5 {
         //Lista de ladrones...
         ArrayList<Ladron> sospechosos =new ArrayList<>();
         sospechosos.add(jose);
+
+
+        //==================================================================================================
 
         //PROXIMA CIUDAD, DF
         Coordenadas coordenadasMexico = new Coordenadas(23.634501, -102.552784);
@@ -96,22 +90,9 @@ public class Caso5 {
         assertEquals(3, policia.tiempoTranscurridoEnHoras()); //no se suman bien las horas
 
 
-
-
-
-
-
         policia.viajarA(mexico);
 
-
-
-
-
-
-
-
-
-
+        //==================================================================================================
 
         //PROXIMA CIUDAD, ROMA
         Coordenadas coordenadasRoma = new Coordenadas(41.8905, 12.4942);
@@ -148,22 +129,9 @@ public class Caso5 {
         assertEquals(6, policia.tiempoTranscurridoEnHoras());
 
 
-
-
-
-
-
-
-
         policia.viajarA(roma);
 
-
-
-
-
-
-
-
+        //==================================================================================================
 
         //PROXIMA CIUDAD, PARIS
         Coordenadas coordenadasParis = new Coordenadas(48.8032, 2.3511);
@@ -194,69 +162,40 @@ public class Caso5 {
         computadora.cargarCaracteristica(new Anillo());
 
 
-
-
-
-
         policia.viajarA(paris);
 
+        //==================================================================================================
 
+        //PROXIMA CIUDAD, BUENOS ARIES
+        Coordenadas coordenadasBsas = new Coordenadas(-34.6131500,  -58.3772300);
+        Ciudad bsas = new Ciudad("Buenos Aires", coordenadasBsas);
 
+        //BANCO
+        Edificio bancoBsas = new Banco();
+        PistaMedia pistaMediaBsasBanco = new PistaMedia("Pesos argentinos");
+        bancoBsas.setPista(pistaMediaBsasBanco);
 
+        //BIBLIOTECA
+        Biblioteca bibliotecaBsas = new Biblioteca();
+        PistaMedia pistaMediaBiblioteca = new PistaMedia("Rio de la plata");
+        bibliotecaBsas.setPista(pistaMediaBiblioteca);
 
+        //PISTAS
+        LinkedList<Pista> pistasDevueltasBancoBsas = policia.visitar(bancoBsas, jose); //primera visita
+        LinkedList<Pista> pistasDevueltasBibliotecaBsas = policia.visitar(bibliotecaBsas, jose);//segunda visita
 
+        assert(pistasDevueltasBancoBsas.get(0).revelar().equals("Pesos argentinos"));
+        assert (pistasDevueltasBibliotecaBsas.get(0).revelar().equals("Rio de la plata"));
 
+        computadora.cargarCaracteristica(new Masculino());
 
+        policia.emitirOrdenDeArresto(computadora.emitirOrdenDeArresto(jose));
 
-        //metodo auxiliar para sumar un arresto al policia sin proceso previo de crear ladron, persecucion, orden de
-        //arresto, etc...
+        policia.viajarA(bsas);
 
-        /*
-        policia.agregarArresto();
-        policia.agregarArresto();
-        policia.agregarArresto();
-        policia.agregarArresto();
-        policia.agregarArresto();
-        policia.agregarArresto();
+        //==================================================================================================
 
-
-         */
-        //assertEquals(false, policia.esInvestigador());
-        //assertEquals(false, policia.esSargento());
-
-        /*
-        LadronBuilder ladronBuilder = new LadronBuilder();
-        ladronBuilder.setSexo(new Masculino());
-        ladronBuilder.setHobby(new Tenis());
-        ladronBuilder.setCabello(new Negro());
-        ladronBuilder.setSenia(new Anillo());
-        ladronBuilder.setVehiculo(new Moto());
-
-        Ladron juan = ladronBuilder.getLadron();
-
-        //lista de ladrones...
-        ArrayList<Ladron> ladrones=new ArrayList<>();
-        ladrones.add(juan);
-
-
-        Computadora compu = new Computadora(ladrones);
-
-        //Cargo en computadora los datos del ladron que se esta persiguiendo
-        compu.cargarCaracteristica(new Masculino());
-        compu.cargarCaracteristica(new Tenis());
-        compu.cargarCaracteristica(new Negro());
-        compu.cargarCaracteristica(new Anillo());
-        compu.cargarCaracteristica(new Moto());
-
-        policia.emitirOrdenDeArresto(compu.emitirOrdenDeArresto(juan));
-
-        policia.arrestarA(juan);
-
-        }
-
-
-        */
-
+        policia.arrestarA(jose);
 
     }
 }
