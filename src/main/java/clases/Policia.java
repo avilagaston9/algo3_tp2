@@ -19,8 +19,8 @@ public class Policia {
     private int cantidadHeridasDeCuchillo;
 
     public Policia(Rango rango, Ciudad actual) {
-        this.tiempoTranscurrido= new Tiempo();
-        this.rango=rango;
+        this.tiempoTranscurrido = new Tiempo();
+        this.rango = rango;
         this.ciudadActual = actual;
         this.ordenDeArresto = new SinOrdenDeArresto();
         this.cantidadHeridasDeCuchillo = 0;
@@ -34,7 +34,9 @@ public class Policia {
         return pistas;
     }
 
-    public void dormir() { this.tiempoTranscurrido.dormir(); }
+    public void dormir() {
+        this.tiempoTranscurrido.dormir();
+    }
 
     public int tiempoTranscurridoEnHoras() {
 
@@ -54,7 +56,7 @@ public class Policia {
         setCiudadActual(nuevaCiudad);
     }
 
-    public void setCiudadActual(Ciudad unaCiudad){
+    public void setCiudadActual(Ciudad unaCiudad) {
 
         this.ciudadActual = unaCiudad;
     }
@@ -64,8 +66,8 @@ public class Policia {
         return unaCiudad == this.ciudadActual;
     }
 
-    public boolean ciudadActual(Ciudad ciudad){
-        if (ciudadActual == ciudad){
+    public boolean ciudadActual(Ciudad ciudad) {
+        if (ciudadActual == ciudad) {
             return true;
         }
         return false;
@@ -74,12 +76,12 @@ public class Policia {
     }
 
     public void arrestarA(Ladron unLadron) {
-         if  (unLadron.verOrden(this.ordenDeArresto)){
-             this.rango.sumarArresto();
-         }
+        if (unLadron.verOrden(this.ordenDeArresto)) {
+            this.rango.sumarArresto();
+        }
     }
 
-    public void emitirOrdenDeArresto(OrdenArresto ordenDeArresto){
+    public void emitirOrdenDeArresto(OrdenArresto ordenDeArresto) {
         this.tiempoTranscurrido.sumarHoras(3);
         this.ordenDeArresto = ordenDeArresto;
     }
@@ -89,11 +91,10 @@ public class Policia {
     }
 
     //METODOs AUXILIARes PARA E2 C5.
-    public void agregarArresto(){
+    public void agregarArresto() {
         this.rango.sumarArresto();
     }
 
-    //METODO AUXILIAR PARA E2 C5
     public boolean esInvestigador(){
         if(this.rango instanceof Investigador){
             return true;
