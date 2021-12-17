@@ -14,12 +14,23 @@ skinparam ActorFontColor black
 skinparam participantFontSize 12
 skinparam SequenceLifeLineBackGroundColor 2e2e2e
 
-TestCase -> "policia:Policia" as policia: dormir()
-policia -> "tiempo:Tiempo" as tiempo: dormir
-tiempo ->tiempo : sumarHoras(8)
 TestCase -> policia : herirConCuchillo()
 policia -> tiempo : herirConCuchillo()
 tiempo->tiempo : sumarHoras(2)
-
-
 @enduml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
