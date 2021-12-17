@@ -1,0 +1,25 @@
+@startuml Detective viaja de Montreal a Mexico
+!theme reddress-darkblue
+autonumber
+skinparam style strictuml
+skinparam BackGroundColor lavender
+skinparam RoundCorner 7
+skinparam SequenceGroupFontColor black
+skinparam SequenceGroupBorderColor black
+skinparam SequenceGroupBorderThickness 0.5
+skinparam ArrowFontColor black
+skinparam ArrowColor black
+skinparam ActorFontColor black
+skinparam participantFontSize 12
+skinparam SequenceLifeLineBackGroundColor 2e2e2e
+
+TestCase -> "policia:Policia" as policia: viajarA(nuevaCiudad:Ciudad)
+policia -> "ciuadadActual:Ciudad" as ciudadActual: calcularDistantiaEnKms(nuevaCiudad:Ciudad)
+ciudadActual --> policia: kilometros:Integer
+policia -> "rango:Novato" as rango: viajar(tiempo:Tiempo, kilometros:Integer)
+rango -> "tiempo:Tiempo" as tiempo: viajar(rango:Novato,kilometros:Integer)
+tiempo -> tiempo: sumarHoras(3)
+policia -> policia: nuevaCiudad(nuevaCiudad:Ciudad)
+
+
+@enduml

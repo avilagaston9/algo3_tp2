@@ -50,8 +50,6 @@ public class Policia {
     public void viajarA(Ciudad nuevaCiudad) {
 
         int kilometros = (int) this.ciudadActual.calcularDistanciaEnKms(nuevaCiudad);
-        //this.rango.viajar(kilometros, this.tiempoTranscurrido);
-        //this.tiempoTranscurrido.sumarHoras(this.rango.tiempoConsumidoPorViaje(kilometros));
         rango.viajar(tiempoTranscurrido, kilometros);
         setCiudadActual(nuevaCiudad);
     }
@@ -64,15 +62,6 @@ public class Policia {
     public boolean esCiudadActual(Ciudad unaCiudad) {
 
         return unaCiudad == this.ciudadActual;
-    }
-
-    public boolean ciudadActual(Ciudad ciudad) {
-        if (ciudadActual == ciudad) {
-            return true;
-        }
-        return false;
-
-
     }
 
     public void arrestarA(Ladron unLadron) {
