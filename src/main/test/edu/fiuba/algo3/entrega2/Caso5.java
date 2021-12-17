@@ -8,15 +8,18 @@ import clases.caracteristicasLadron.*;
 import clases.ladron.Ladron;
 import clases.ladron.LadronBuilder;
 import clases.rangos.Detective;
+import clases.rangos.Investigador;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class Caso5 {
 
     @Test
     public void detectiveHaceSeisArrestosYTomaUnCaso(){
-
 
         //Creo ciudad...
         Coordenadas coordenadasMontreal = new Coordenadas(45.50884,-73.58781);
@@ -25,6 +28,40 @@ public class Caso5 {
         //Creo un policia de rango Detective...
         Policia policia = new Policia(new Detective(), montreal);
 
+        //assert (policia.esDetective());
+        //assertFalse(policia.esInvestigador());
+
+        policia.agregarArresto();
+        policia.agregarArresto();
+        policia.agregarArresto();
+        policia.agregarArresto();
+        policia.agregarArresto();
+        policia.agregarArresto();
+        policia.agregarArresto();
+        policia.agregarArresto();
+
+
+        assert (policia.esInvestigador());
+        //assertFalse(policia.esDetective());
+
+
+        //metodo auxiliar para sumar un arresto al policia sin proceso previo de crear ladron, persecucion, orden de
+        //arresto, etc...
+
+        /*
+        policia.agregarArresto();
+        policia.agregarArresto();
+        policia.agregarArresto();
+        policia.agregarArresto();
+        policia.agregarArresto();
+        policia.agregarArresto();
+
+
+         */
+        //assertEquals(false, policia.esInvestigador());
+        //assertEquals(false, policia.esSargento());
+
+        /*
         LadronBuilder ladronBuilder = new LadronBuilder();
         ladronBuilder.setSexo(new Masculino());
         ladronBuilder.setHobby(new Tenis());
@@ -50,7 +87,13 @@ public class Caso5 {
 
         policia.emitirOrdenDeArresto(compu.emitirOrdenDeArresto(juan));
 
+        policia.arrestarA(juan);
+
         }
 
 
+        */
+
+
     }
+}

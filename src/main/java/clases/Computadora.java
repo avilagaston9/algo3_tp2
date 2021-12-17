@@ -58,7 +58,6 @@ public class Computadora {
         ArrayList<Ladron> ladronesSospechosos=new ArrayList<>();
         ladronesSospechosos = this.buscarSospechosos();
 
-        //for (Ciudad c : ciudades)
         for (Ladron sospechoso: ladronesSospechosos)
             if (sospechoso == unLadron) {
                 OrdenDeArresto orden = new OrdenDeArresto(unLadron);
