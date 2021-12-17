@@ -28,7 +28,7 @@ public abstract class Rango {
 
     public abstract void viajar(Tiempo tiempo, int kilometros);
 
-    public int arrestos() {
+    public int cantidadArrestos() {
         return this.arrestos;
     }
 

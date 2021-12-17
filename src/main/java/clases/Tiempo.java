@@ -18,7 +18,7 @@ public class Tiempo {
     }
 
     private int calcularHorasConsumidas(int kilometros, int costoFijo){
-        this.numeroVisita = 0;
+        this.numeroVisita = 1;
         return (kilometros/costoFijo);
     }
 

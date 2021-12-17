@@ -14,7 +14,7 @@ import clases.ladron.LadronBuilder;
 import clases.pistas.Pista;
 import clases.pistas.PistaDificil;
 import clases.pistas.PistaFacil;
-import clases.pistas.PistaMedia;
+import clases.pistas.PistaDificil;
 import clases.rangos.Detective;
 import clases.rangos.Investigador;
 import com.sun.javafx.event.EventDispatchChainImpl;
@@ -37,9 +37,9 @@ public class Caso5 {
         Ciudad mexico = new Ciudad("Mexico", coordenadasMexico);
 
         //Creo un policia de rango Detective...
-        Policia policia = new Policia(new Investigador(), mexico);
+        Policia policia = new Policia(new Detective(), mexico);
 
-        //assert (policia.esDetective());
+        assert (policia.esDetective());
 
         //HACE 6 ARRESTOS
 
@@ -50,9 +50,9 @@ public class Caso5 {
         policia.agregarArresto();
         policia.agregarArresto();
 
-        //assert (policia.esInvestigador());
+        assert (policia.esInvestigador());
 
-        //
+
 
         LadronBuilder ladronBuilder = new LadronBuilder();
         ladronBuilder.setSexo(new Masculino());
@@ -75,32 +75,34 @@ public class Caso5 {
         Ciudad montreal = new Ciudad("Montreal", coordenadasMontreal);
 
         //BANCO
-        PistaMedia pistaMedia = new PistaMedia("Dolares canadieses");
+        PistaDificil pistaDificil = new PistaDificil("Dolares canadieses");
         Edificio banco = new Banco();
-        banco.setPista(pistaMedia);
+        banco.setPista(pistaDificil);
 
         //AEROPUERTO
-        PistaMedia pistaMedia1 = new PistaMedia("bandera con una hoja");
+        PistaDificil pistaDificil1 = new PistaDificil("bandera con una hoja");
         Edificio aeropuerto = new Aeropuerto();
-        aeropuerto.setPista(pistaMedia1);
+        aeropuerto.setPista(pistaDificil1);
 
         //BIBLIOTECA
-        PistaMedia pistaMedia2 = new PistaMedia("Limita con usa");
+        PistaDificil pistaDificil2 = new PistaDificil("Limita con usa");
         Edificio biblioteca = new Biblioteca();
-        biblioteca.setPista(pistaMedia2);
+
+        biblioteca.setPista(pistaDificil2);
 
         //PISTAS
         LinkedList<Pista> pistasDevueltasBanco = policia.visitar(banco, jose); //primera visita
         LinkedList<Pista> pistasDevueltasAeropuero = policia.visitar(aeropuerto, jose);//segunda visita
         LinkedList<Pista> pistasDevueltasBiblioteca = policia.visitar(biblioteca, jose);//tercer visita
 
+        assertEquals(3, policia.tiempoTranscurridoEnHoras());
         assert(pistasDevueltasBanco.get(0).revelar().equals("Dolares canadieses"));
         assert(pistasDevueltasAeropuero.get(0).revelar().equals("bandera con una hoja"));
         assert(pistasDevueltasBiblioteca.get(0).revelar().equals("Limita con usa"));
 
-        //assertEquals(3, policia.tiempoTranscurridoEnHoras()); //no se suman bien las horas
 
         policia.viajarA(montreal);
+        assertEquals(5, policia.tiempoTranscurridoEnHoras());
 
         //================================================================================================== 2
 
@@ -109,19 +111,19 @@ public class Caso5 {
         Ciudad roma = new Ciudad("Roma", coordenadasRoma);
 
         //BANCO
-        PistaMedia pistaMediaRoma = new PistaMedia("Euros");
+        PistaDificil pistaDificilRoma = new PistaDificil("Euros");
         Edificio banco2 = new Banco();
-        banco2.setPista(pistaMediaRoma);
+        banco2.setPista(pistaDificilRoma);
 
         //AEROPUERTO
-        PistaMedia pistaMediaRoma2 = new PistaMedia("Avion con bandera de italia");
+        PistaDificil pistaDificilRoma2 = new PistaDificil("Avion con bandera de italia");
         Edificio aeropuerto2 = new Aeropuerto();
-        aeropuerto2.setPista(pistaMediaRoma2);
+        aeropuerto2.setPista(pistaDificilRoma2);
 
         //BIBLIOTECA
-        PistaMedia pistaMediaRoma3 = new PistaMedia("Dijo que iba a un lugar donde hay un coliseo romano");
+        PistaDificil pistaDificilRoma3 = new PistaDificil("Dijo que iba a un lugar donde hay un coliseo romano");
         Edificio biblioteca2 = new Biblioteca();
-        biblioteca2.setPista(pistaMediaRoma3);
+        biblioteca2.setPista(pistaDificilRoma3);
 
         //PISTAS
         LinkedList<Pista> pistasDevueltasBanco2 = policia.visitar(banco2, jose); //primera visita
@@ -129,6 +131,7 @@ public class Caso5 {
 
         assert(pistasDevueltasBanco2.get(0).revelar().equals("Euros"));
         assert(pistasDevueltasAeropuerto2.get(0).revelar().equals("Avion con bandera de italia"));
+        assertEquals(6, policia.tiempoTranscurridoEnHoras());
 
         //Se crea la computadora para registrar datos...
         Computadora computadora = new Computadora(sospechosos);
@@ -136,10 +139,10 @@ public class Caso5 {
         computadora.cargarCaracteristica(new Negro());
 
 
-        //assertEquals(3, policia.tiempoTranscurridoEnHoras());
 
 
         policia.viajarA(roma);
+        assertEquals(11, policia.tiempoTranscurridoEnHoras());
 
         //================================================================================================== 3
 
@@ -149,18 +152,18 @@ public class Caso5 {
 
         //BANCO
         Edificio bancoParis = new Banco();
-        PistaMedia pistaMediaParisBanco = new PistaMedia("Euros");
-        bancoParis.setPista(pistaMediaParisBanco);
+        PistaDificil pistaDificilParisBanco = new PistaDificil("Euros");
+        bancoParis.setPista(pistaDificilParisBanco);
 
         //AEROPUERTO
         Edificio aeropuertoParis = new Aeropuerto();
-        PistaMedia pistaMediaParisAeropuerto = new PistaMedia("bandera de francia");
-        aeropuertoParis.setPista(pistaMediaParisAeropuerto);
+        PistaDificil pistaDificilParisAeropuerto = new PistaDificil("bandera de francia");
+        aeropuertoParis.setPista(pistaDificilParisAeropuerto);
 
         //BIBLIOTECA
         Edificio bibliotecaParis = new Biblioteca();
-        PistaMedia pistaMediaParisBiblioteca = new PistaMedia("Pais que limita con Portugal");
-        bibliotecaParis.setPista(pistaMediaParisBiblioteca);
+        PistaDificil pistaDificilParisBiblioteca = new PistaDificil("Pais que limita con Portugal");
+        bibliotecaParis.setPista(pistaDificilParisBiblioteca);
 
         //PISTAS
         LinkedList<Pista> pistasDevueltasbancoParis = policia.visitar(bancoParis, jose); //primera visita
@@ -168,11 +171,13 @@ public class Caso5 {
 
         assert(pistasDevueltasbancoParis.get(0).revelar().equals("Euros"));
         assert(pistasDevueltasAeropuertoParis.get(0).revelar().equals("bandera de francia"));
+        assertEquals(12, policia.tiempoTranscurridoEnHoras());
 
         computadora.cargarCaracteristica(new Anillo());
 
 
         policia.viajarA(paris);
+        assertEquals(12, policia.tiempoTranscurridoEnHoras());
 
         //================================================================================================== 4
 
@@ -182,13 +187,13 @@ public class Caso5 {
 
         //BANCO
         Edificio bancoBsas = new Banco();
-        PistaMedia pistaMediaBsasBanco = new PistaMedia("Pesos argentinos");
-        bancoBsas.setPista(pistaMediaBsasBanco);
+        PistaDificil pistaDificilBsasBanco = new PistaDificil("Pesos argentinos");
+        bancoBsas.setPista(pistaDificilBsasBanco);
 
         //BIBLIOTECA
         Biblioteca bibliotecaBsas = new Biblioteca();
-        PistaMedia pistaMediaBiblioteca = new PistaMedia("Rio de la plata");
-        bibliotecaBsas.setPista(pistaMediaBiblioteca);
+        PistaDificil pistaDificilBiblioteca = new PistaDificil("Rio de la plata");
+        bibliotecaBsas.setPista(pistaDificilBiblioteca);
 
         //PISTAS
         LinkedList<Pista> pistasDevueltasBancoBsas = policia.visitar(bancoBsas, jose); //primera visita
@@ -196,16 +201,20 @@ public class Caso5 {
 
         assert(pistasDevueltasBancoBsas.get(0).revelar().equals("Pesos argentinos"));
         assert (pistasDevueltasBibliotecaBsas.get(0).revelar().equals("Rio de la plata"));
+        assertEquals(15, policia.tiempoTranscurridoEnHoras());
 
         computadora.cargarCaracteristica(new Masculino());
 
         policia.emitirOrdenDeArresto(computadora.emitirOrdenDeArresto(jose));
+        assertEquals(18, policia.tiempoTranscurridoEnHoras());
 
         policia.viajarA(bsas);
+        assertEquals(26, policia.tiempoTranscurridoEnHoras());
 
         //================================================================================================== 5
 
         policia.arrestarA(jose);
+        assertEquals(12, policia.cantidadArrestos());
 
     }
 }

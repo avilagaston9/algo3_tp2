@@ -86,13 +86,13 @@ public class Policia {
         this.ordenDeArresto = ordenDeArresto;
     }
 
-    public int arrestos() {
-        return this.rango.arrestos();
+    public int cantidadArrestos() {
+        return this.rango.cantidadArrestos();
     }
 
     //METODOs AUXILIARes PARA E2 C5.
     public void agregarArresto() {
-        this.rango.sumarArresto();
+        this.rango = this.rango.sumarArresto();
     }
 
     public boolean esInvestigador(){

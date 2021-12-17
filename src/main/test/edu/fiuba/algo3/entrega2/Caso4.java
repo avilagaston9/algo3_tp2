@@ -30,7 +30,7 @@ public class Caso4 {
         builder.setVehiculo(new Moto());
         Ladron maria = builder.getLadron();
 
-        assertEquals(policia.arrestos(),0);
+        assertEquals(policia.cantidadArrestos(),0);
 
     }
 }
