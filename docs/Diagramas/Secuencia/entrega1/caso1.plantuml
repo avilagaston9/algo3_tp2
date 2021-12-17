@@ -1,0 +1,29 @@
+@startuml
+
+!theme reddress-darkblue
+autonumber
+skinparam style strictuml
+skinparam BackGroundColor white
+skinparam RoundCorner 7
+skinparam SequenceGroupFontColor black
+skinparam SequenceGroupBorderColor black
+skinparam SequenceGroupBorderThickness 0.5
+skinparam ArrowFontColor black
+skinparam ArrowColor black
+skinparam ActorFontColor black
+skinparam participantFontSize 12
+skinparam SequenceLifeLineBackGroundColor 2e2e2e
+
+TestCase -> "novato:Policia" as unPolicia: visitar(banco:Edificio, maria:Ladron)
+unPolicia -> "novato:Rango" as rango: visitar(banco:Edificio, tiempo:Tiempo)
+rango -> "banco:Banco" as banco: serVisitado(novato, tiempo)
+banco -> "tiempo:Tiempo" as tiempo: sumarVisita()
+tiempo ->tiempo :sumarHoras(cantidadVisitas:Integer)
+banco --> rango: pistaFacil:Pista
+rango -->unPolicia : pistaFacil:Pista
+unPolicia -> rango: pedirPistaLadron(ladron:Ladron)
+rango -> "ladron:Ladron" as ladron: pedirPista(novato)
+ladron --> rango: pistaLadron:Pista
+rango --> unPolicia: pistaLadron:Pista
+unPolicia --> TestCase: pistas:Array
+@enduml
