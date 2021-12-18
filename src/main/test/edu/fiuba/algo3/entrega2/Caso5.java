@@ -13,19 +13,13 @@ import clases.ladron.Ladron;
 import clases.ladron.LadronBuilder;
 import clases.pistas.Pista;
 import clases.pistas.PistaDificil;
-import clases.pistas.PistaFacil;
-import clases.pistas.PistaDificil;
 import clases.rangos.Detective;
-import clases.rangos.Investigador;
-import com.sun.javafx.event.EventDispatchChainImpl;
-import com.sun.javafx.iio.bmp.BMPImageLoaderFactory;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class Caso5 {
 

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.ComputadoraTest;
+package edu.fiuba.algo3.pruebasUnitarias.computadoraTest;
 
 import clases.Computadora;
 import clases.OrdenArresto;
@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-public class EmitoOrdenDeArrestoContraMariaCorrectamente {
+public class ComputadoraTest {
     @Test
-    public void miprueba(){
+    public void EmitoOrdenDeArrestoContraMariaCorrectamente(){
         LadronBuilder builder = new LadronBuilder();
         builder.setCabello(new Rubio());
         builder.setHobby(new Tenis());
