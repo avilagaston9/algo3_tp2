@@ -32,9 +32,5 @@ public class ComputadoraTest {
         orden=compu.emitirOrdenDeArresto(maria);
 
         assert (orden.comparar(maria));
-
-
-
-
     }
 }
