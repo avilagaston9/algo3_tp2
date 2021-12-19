@@ -57,11 +57,14 @@ public class Caso3 {
 //        ArrayList<Ladron> sospechosos = compu.cargarDatosYBuscar(caracteristicas,tiempo);
         compu.cargarCaracteristica(colorDePelo);
         compu.cargarCaracteristica(sexo);
-        ArrayList<Ladron> sospechosos = compu.buscarSospechosos();
+        ArrayList<Ladron> sospechosos = compu.buscarSospechosos(); //todo nombres variables
+
 
         assert (sospechosos.contains(juan));
         assert (sospechosos.contains(ricardo));
         assert (sospechosos.size()==2);
+
+        //todo formateador de codigo
 
     }
 }

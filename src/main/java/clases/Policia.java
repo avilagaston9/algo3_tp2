@@ -64,7 +64,7 @@ public class Policia {
         return unaCiudad == this.ciudadActual;
     }
 
-    public void arrestarA(Ladron unLadron) {
+    public void arrestarA(Ladron unLadron) { //todo chequear que coincida ciudad...
         if (unLadron.verOrden(this.ordenDeArresto)) {
             this.rango.sumarArresto();
         }
