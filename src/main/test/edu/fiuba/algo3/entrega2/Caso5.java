@@ -49,11 +49,11 @@ public class Caso5 {
 
 
         LadronBuilder ladronBuilder = new LadronBuilder();
-        ladronBuilder.setSexo(new Masculino());
-        ladronBuilder.setHobby(new Tenis());
-        ladronBuilder.setCabello(new Negro());
-        ladronBuilder.setSenia(new Anillo());
-        ladronBuilder.setVehiculo(new Moto());
+        ladronBuilder.setSexo(new CaracteristicaLadron("es hombre"));
+        ladronBuilder.setHobby(new CaracteristicaLadron("le gusta jugar al tenis"));
+        ladronBuilder.setCabello(new CaracteristicaLadron("tiene el pelo negro"));
+        ladronBuilder.setSenia(new CaracteristicaLadron("tiene puesto un anillo"));
+        ladronBuilder.setVehiculo(new CaracteristicaLadron("manejaba una moto"));
 
         Ladron jose = ladronBuilder.getLadron();
 
@@ -130,7 +130,7 @@ public class Caso5 {
         //Se crea la computadora para registrar datos...
         Computadora computadora = new Computadora(sospechosos);
 
-        computadora.cargarCaracteristica(new Negro());
+        computadora.cargarCaracteristica(new CaracteristicaLadron("tiene el pelo negro"));
 
 
 
@@ -167,7 +167,7 @@ public class Caso5 {
         assert(pistasDevueltasAeropuertoParis.get(0).revelar().equals("bandera de francia"));
         assertEquals(12, policia.tiempoTranscurridoEnHoras());
 
-        computadora.cargarCaracteristica(new Anillo());
+        computadora.cargarCaracteristica(new CaracteristicaLadron("tiene puesto un anillo"));
 
 
         policia.viajarA(paris);
@@ -197,7 +197,7 @@ public class Caso5 {
         assert (pistasDevueltasBibliotecaBsas.get(0).revelar().equals("Rio de la plata"));
         assertEquals(15, policia.tiempoTranscurridoEnHoras());
 
-        computadora.cargarCaracteristica(new Masculino());
+        computadora.cargarCaracteristica(new CaracteristicaLadron("es hombre"));
 
         policia.emitirOrdenDeArresto(computadora.emitirOrdenDeArresto(jose));
         assertEquals(18, policia.tiempoTranscurridoEnHoras());

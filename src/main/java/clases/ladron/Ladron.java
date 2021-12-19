@@ -49,12 +49,11 @@ public class Ladron {
     public Pista pedirPista(Sargento unRango) { return this.calcularChances(0.5);  }
 
     public boolean tieneLaCaracteristica(CaracteristicaLadron unaCaracteristica) {
-        for (int i = 0; i < caracteristicas.size(); i++) {
-            if (unaCaracteristica.equals(caracteristicas.get(i))) {
-                return true;
-            }
-        }
-        return false;
+       for(int i=0;i<this.caracteristicas.size();i++)
+           if (this.caracteristicas.get(i).equals(unaCaracteristica)) {
+               return true;
+           }
+       return false;
     }
 
     public boolean verOrden(OrdenArresto ordenDeArresto) {

@@ -13,11 +13,11 @@ public class ComputadoraTest {
     @Test
     public void EmitoOrdenDeArrestoContraMariaCorrectamente(){
         LadronBuilder builder = new LadronBuilder();
-        builder.setCabello(new Rubio());
-        builder.setHobby(new Tenis());
-        builder.setSexo(new Femenino());
-        builder.setSenia(new Tatuaje());
-        builder.setVehiculo(new Moto());
+        builder.setCabello(new CaracteristicaLadron("tiene el pelo rubio"));
+        builder.setHobby(new CaracteristicaLadron("le gusta jugar al tenis"));
+        builder.setSexo(new CaracteristicaLadron("es mujer"));
+        builder.setSenia(new CaracteristicaLadron("tiene un tatuaje de un dragon"));
+        builder.setVehiculo(new CaracteristicaLadron("manejaba una moto"));
 
         // primer ladron
         Ladron maria = builder.getLadron();
