@@ -8,4 +8,9 @@ public class PistaConInformacion implements Pista {
 
     @Override
     public String revelar() {   return this.pista;    }
+
+    @Override
+    public boolean equals(Pista unaPista) {
+        return this.revelar().equals(unaPista.revelar());
+    }
 }

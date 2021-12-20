@@ -13,19 +13,13 @@ import clases.ladron.Ladron;
 import clases.ladron.LadronBuilder;
 import clases.pistas.Pista;
 import clases.pistas.PistaDificil;
-import clases.pistas.PistaFacil;
-import clases.pistas.PistaDificil;
 import clases.rangos.Detective;
-import clases.rangos.Investigador;
-import com.sun.javafx.event.EventDispatchChainImpl;
-import com.sun.javafx.iio.bmp.BMPImageLoaderFactory;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class Caso5 {
 
@@ -53,11 +47,11 @@ public class Caso5 {
         //assert (policia.esInvestigador());
 
         LadronBuilder ladronBuilder = new LadronBuilder();
-        ladronBuilder.setSexo(new Masculino());
-        ladronBuilder.setHobby(new Tenis());
-        ladronBuilder.setCabello(new Negro());
-        ladronBuilder.setSenia(new Anillo());
-        ladronBuilder.setVehiculo(new Moto());
+        ladronBuilder.setSexo(new CaracteristicaLadron("es hombre"));
+        ladronBuilder.setHobby(new CaracteristicaLadron("le gusta jugar al tenis"));
+        ladronBuilder.setCabello(new CaracteristicaLadron("tiene el pelo negro"));
+        ladronBuilder.setSenia(new CaracteristicaLadron("tiene puesto un anillo"));
+        ladronBuilder.setVehiculo(new CaracteristicaLadron("manejaba una moto"));
 
         Ladron jose = ladronBuilder.getLadron();
 
@@ -135,7 +129,11 @@ public class Caso5 {
         //Se crea la computadora para registrar datos...
         Computadora computadora = new Computadora(sospechosos);
 
+<<<<<<< HEAD
         computadora.cargarCaracteristica(new Negro()); //todo esto lo tiene que devolver el edificio
+=======
+        computadora.cargarCaracteristica(new CaracteristicaLadron("tiene el pelo negro"));
+>>>>>>> 1c01afaf937e6466a7a552621b647e19fb380576
 
 
 
@@ -172,7 +170,7 @@ public class Caso5 {
         assert(pistasDevueltasAeropuertoParis.get(0).revelar().equals("bandera de francia"));
         assertEquals(12, policia.tiempoTranscurridoEnHoras());
 
-        computadora.cargarCaracteristica(new Anillo());
+        computadora.cargarCaracteristica(new CaracteristicaLadron("tiene puesto un anillo"));
 
 
         policia.viajarA(paris);
@@ -202,7 +200,7 @@ public class Caso5 {
         assert (pistasDevueltasBibliotecaBsas.get(0).revelar().equals("Rio de la plata"));
         assertEquals(15, policia.tiempoTranscurridoEnHoras());
 
-        computadora.cargarCaracteristica(new Masculino());
+        computadora.cargarCaracteristica(new CaracteristicaLadron("es hombre"));
 
         policia.emitirOrdenDeArresto(computadora.emitirOrdenDeArresto(jose));
         assertEquals(18, policia.tiempoTranscurridoEnHoras());

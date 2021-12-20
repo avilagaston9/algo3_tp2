@@ -1,5 +1,6 @@
 package clases.ladron;
 
+import clases.Ciudad;
 import clases.OrdenArresto;
 import clases.Policia;
 import clases.armas.Arma;
@@ -17,6 +18,7 @@ import java.util.Objects;
 public class Ladron {
     private int iteradorCaracteristicas;
     private LinkedList<CaracteristicaLadron> caracteristicas;
+    private Ciudad ciudadFinal;
     //private FabricaDePistas fabrica;
     //private Pista pista;
 
@@ -49,17 +51,15 @@ public class Ladron {
     public Pista pedirPista(Sargento unRango) { return this.calcularChances(0.5);  }
 
     public boolean tieneLaCaracteristica(CaracteristicaLadron unaCaracteristica) {
-        for (int i = 0; i < caracteristicas.size(); i++) {
-            if (unaCaracteristica.equals(caracteristicas.get(i))) {
-                return true;
-            }
-        }
-        return false;
+       for(int i=0;i<this.caracteristicas.size();i++)
+           if (this.caracteristicas.get(i).equals(unaCaracteristica)) {
+               return true;
+           }
+       return false;
     }
 
-    public boolean verOrden(OrdenArresto ordenDeArresto) {
-        return ordenDeArresto.comparar(this);
-
+    public boolean serArrestado(OrdenArresto ordenDeArresto, Ciudad ciudadPolicia) {
+        return ((ordenDeArresto.comparar(this)) && (ciudadPolicia == ciudadFinal));
     }
 
     @Override
@@ -73,6 +73,10 @@ public class Ladron {
     @Override
     public int hashCode() {
         return Objects.hash(iteradorCaracteristicas, caracteristicas);
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudadFinal = ciudad;
     }
 }
 

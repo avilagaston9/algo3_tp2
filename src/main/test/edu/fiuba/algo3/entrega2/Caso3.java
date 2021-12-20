@@ -12,29 +12,29 @@ public class Caso3 {
     @Test
     public void CargarDatosEnComputadoraYRealizarUnaBusqueda() {
         LadronBuilder builder = new LadronBuilder();
-        builder.setCabello(new Rubio());
-        builder.setHobby(new Tenis());
-        builder.setSexo(new Femenino());
-        builder.setSenia(new Tatuaje());
-        builder.setVehiculo(new Moto());
+        builder.setCabello(new CaracteristicaLadron("tiene el pelo rubio"));
+        builder.setHobby(new CaracteristicaLadron("le gusta jugar al tenis"));
+        builder.setSexo(new CaracteristicaLadron("es mujer"));
+        builder.setSenia(new CaracteristicaLadron("tiene un tatuaje de un dragon"));
+        builder.setVehiculo(new CaracteristicaLadron("se movia en moto"));
 
         // primer ladron
         Ladron maria = builder.getLadron();
 
-        builder.setCabello(new Negro());
-        builder.setHobby(new Musica());
-        builder.setSexo(new Masculino());
-        builder.setSenia(new Anillo());
-        builder.setVehiculo(new Deportivo());
+        builder.setCabello(new CaracteristicaLadron("tiene el pelo negro"));
+        builder.setHobby(new CaracteristicaLadron("le gusta escalar"));
+        builder.setSexo(new CaracteristicaLadron("es hombre"));
+        builder.setSenia(new CaracteristicaLadron("llevaba puesto un anillo"));
+        builder.setVehiculo(new CaracteristicaLadron("manejaba un deportivo"));
 
         // segundo ladron
         Ladron ricardo = builder.getLadron();
 
-        builder.setCabello(new Negro());
-        builder.setHobby(new Alpinismo());
-        builder.setSexo(new Masculino());
-        builder.setSenia(new Joyas());
-        builder.setVehiculo(new Limusina());
+        builder.setCabello(new CaracteristicaLadron("tiene el pelo negro"));
+        builder.setHobby(new CaracteristicaLadron("le gusta escalar"));
+        builder.setSexo(new CaracteristicaLadron("es hombre"));
+        builder.setSenia(new CaracteristicaLadron("usaba muchas joyas"));
+        builder.setVehiculo(new CaracteristicaLadron("se movia en una limusina"));
 
         // tercer ladron
         Ladron juan = builder.getLadron();
@@ -47,8 +47,8 @@ public class Caso3 {
 
         Computadora compu = new Computadora(ladrones);
 
-        CaracteristicaLadron colorDePelo= new Negro();
-        CaracteristicaLadron sexo= new Masculino();
+        CaracteristicaLadron colorDePelo= new CaracteristicaLadron("tiene el pelo negro");
+        CaracteristicaLadron sexo= new CaracteristicaLadron("es hombre");
 
 //        List<CaracteristicaLadron> caracteristicas=new ArrayList<>();
 //        caracteristicas.add(colorDePelo);
