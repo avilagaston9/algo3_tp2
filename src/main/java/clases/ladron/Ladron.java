@@ -60,7 +60,6 @@ public class Ladron {
 
     public boolean serArrestado(OrdenArresto ordenDeArresto, Ciudad ciudadPolicia) {
         return ((ordenDeArresto.comparar(this)) && (ciudadPolicia == ciudadFinal));
-
     }
 
     @Override
@@ -74,6 +73,10 @@ public class Ladron {
     @Override
     public int hashCode() {
         return Objects.hash(iteradorCaracteristicas, caracteristicas);
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudadFinal = ciudad;
     }
 }
 
