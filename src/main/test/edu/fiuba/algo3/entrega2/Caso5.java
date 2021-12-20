@@ -129,11 +129,8 @@ public class Caso5 {
         //Se crea la computadora para registrar datos...
         Computadora computadora = new Computadora(sospechosos);
 
-<<<<<<< HEAD
-        computadora.cargarCaracteristica(new Negro()); //todo esto lo tiene que devolver el edificio
-=======
+//        computadora.cargarCaracteristica(new Negro()); //todo esto lo tiene que devolver el edificio
         computadora.cargarCaracteristica(new CaracteristicaLadron("tiene el pelo negro"));
->>>>>>> 1c01afaf937e6466a7a552621b647e19fb380576
 
 
 

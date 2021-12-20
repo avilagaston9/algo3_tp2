@@ -64,13 +64,9 @@ public class Policia {
         return unaCiudad == this.ciudadActual;
     }
 
-<<<<<<< HEAD
-    public void arrestarA(Ladron unLadron) { //todo chequear que coincida ciudad...
-        if (unLadron.verOrden(this.ordenDeArresto)) {
-=======
+
     public void arrestarA(Ladron unLadron) {
         if (unLadron.serArrestado(this.ordenDeArresto, this.ciudadActual)) {
->>>>>>> 1c01afaf937e6466a7a552621b647e19fb380576
             this.rango.sumarArresto();
         }
     }
