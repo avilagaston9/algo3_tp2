@@ -1,5 +1,6 @@
 package clases.ladron;
 
+import clases.Ciudad;
 import clases.OrdenArresto;
 import clases.Policia;
 import clases.armas.Arma;
@@ -17,6 +18,7 @@ import java.util.Objects;
 public class Ladron {
     private int iteradorCaracteristicas;
     private LinkedList<CaracteristicaLadron> caracteristicas;
+    private Ciudad ciudadFinal;
     //private FabricaDePistas fabrica;
     //private Pista pista;
 
@@ -56,8 +58,8 @@ public class Ladron {
        return false;
     }
 
-    public boolean verOrden(OrdenArresto ordenDeArresto) {
-        return ordenDeArresto.comparar(this);
+    public boolean serArrestado(OrdenArresto ordenDeArresto, Ciudad ciudadPolicia) {
+        return ((ordenDeArresto.comparar(this)) && (ciudadPolicia == ciudadFinal));
 
     }
 

@@ -65,7 +65,7 @@ public class Policia {
     }
 
     public void arrestarA(Ladron unLadron) {
-        if (unLadron.verOrden(this.ordenDeArresto)) {
+        if (unLadron.serArrestado(this.ordenDeArresto, this.ciudadActual)) {
             this.rango.sumarArresto();
         }
     }
