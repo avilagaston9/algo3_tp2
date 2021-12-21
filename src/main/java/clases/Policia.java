@@ -27,6 +27,13 @@ public class Policia {
 		this.cantidadHeridasDeCuchillo = 0;
 	}
 
+	public Policia(Rango rango) {
+		this.tiempoTranscurrido = new Tiempo();
+		this.rango = rango;
+		this.ordenDeArresto = new SinOrdenDeArresto();
+		this.cantidadHeridasDeCuchillo = 0;
+	}
+
 	public LinkedList<Pista> visitar(Edificio unEdificio, Ladron ladron) {
 
 		LinkedList<Pista> pistas = new LinkedList<>();
@@ -85,24 +92,8 @@ public class Policia {
 		this.rango = this.rango.sumarArresto();
 	}
 
-	public boolean esInvestigador() {
-		if (this.rango instanceof Investigador) {
-			return true;
-		}
-		return false;
-	}
 
-	public boolean esSargento() {
-		if (this.rango instanceof Sargento) {
-			return true;
-		}
-		return false;
-	}
-
-	public boolean esDetective() {
-		if (this.rango instanceof Detective) {
-			return true;
-		}
-		return false;
+	public void setCiudad(Ciudad ciudad) {
+		this.ciudadActual = ciudad;
 	}
 }
