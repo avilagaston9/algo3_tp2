@@ -13,7 +13,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
 
-        LayoutInicial layoutInicial = new LayoutInicial();
+        LayoutInicial layoutInicial = new LayoutInicial(stage);
 
         Scene sceneInicio = new Scene(layoutInicial);
 

@@ -7,18 +7,20 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 public class LayoutInicial extends StackPane{
 
     private static final String RUTA_FONDO_INICIO = "file:src/main/java/edu/fiuba/algo3/recursos/portada.jpg";
 
-    public LayoutInicial() {
+
+    public LayoutInicial(Stage stage) {
 
         this.setBackground(this.crearFondo());
 
         VBox botonesIniciales = new VBox(50);
         botonesIniciales.setAlignment(Pos.CENTER);
-        botonesIniciales.getChildren().add(this.crearBotonJugar());
+        botonesIniciales.getChildren().add(this.crearBotonJugar(stage));
         botonesIniciales.getChildren().add(this.crearBotonSalir());
 
         this.getChildren().add(botonesIniciales);
@@ -33,12 +35,12 @@ public class LayoutInicial extends StackPane{
         return botonSalir;
     }
 
-    private Button crearBotonJugar() {
+    private Button crearBotonJugar(Stage stage) {
 
         Button botonJugar = new Button();
         botonJugar.setText("Jugar");
         botonJugar.setFont(new Font("Arial Black", 30));
-        botonJugar.setOnAction(new ControladorJugar(botonJugar));
+        botonJugar.setOnAction(new ControladorJugar(botonJugar, stage));
         return botonJugar;
     }
 
