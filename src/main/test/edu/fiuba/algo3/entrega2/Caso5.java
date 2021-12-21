@@ -41,12 +41,17 @@ public class Caso5 {
 			policia.agregarArresto();
 		}
 
+		// Instancio Ciudad en la que se encuentra el ladron
+		Coordenadas coordenadasBsas = new Coordenadas(-34.6131500, -58.3772300);
+		Ciudad bsas = new Ciudad("Buenos Aires", coordenadasBsas);
+
 		LadronBuilder ladronBuilder = new LadronBuilder();
 		ladronBuilder.setSexo(new CaracteristicaLadron("es hombre"));
 		ladronBuilder.setHobby(new CaracteristicaLadron("le gusta jugar al tenis"));
 		ladronBuilder.setCabello(new CaracteristicaLadron("tiene el pelo negro"));
 		ladronBuilder.setSenia(new CaracteristicaLadron("tiene puesto un anillo"));
 		ladronBuilder.setVehiculo(new CaracteristicaLadron("manejaba una moto"));
+		ladronBuilder.setCiudad(bsas);
 
 		Ladron jose = ladronBuilder.getLadron();
 
@@ -187,10 +192,6 @@ public class Caso5 {
 
 		// ==================================================================================================
 		// 4
-
-		// PROXIMA CIUDAD, BUENOS ARIES
-		Coordenadas coordenadasBsas = new Coordenadas(-34.6131500, -58.3772300);
-		Ciudad bsas = new Ciudad("Buenos Aires", coordenadasBsas);
 
 		//jose.setCiudad(bsas); // todo pasar esto al ladron builder
 
