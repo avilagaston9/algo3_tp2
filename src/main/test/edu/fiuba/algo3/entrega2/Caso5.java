@@ -195,18 +195,20 @@ public class Caso5 {
 		//jose.setCiudad(bsas); // todo pasar esto al ladron builder
 
 		// BANCO
-		Edificio bancoBsas = new Banco();
-		PistaDificil pistaDificilBsasBanco = new PistaDificil("Pesos argentinos");
-		bancoBsas.setPista(pistaDificilBsasBanco);
+		PistaFacil pistaFacil10 = new PistaFacil("facil");
+		PistaMedia pistaMedia10 = new PistaMedia("media");
+		PistaDificil pistaDificil10 = new PistaDificil("Pesos argentinos");
+		Edificio bancoPistasBsas = fabricaBancos.crearEdificio(pistaFacil10,pistaMedia10,pistaDificil10);
 
 		// BIBLIOTECA
-		Biblioteca bibliotecaBsas = new Biblioteca();
-		PistaDificil pistaDificilBiblioteca = new PistaDificil("Rio de la plata");
-		bibliotecaBsas.setPista(pistaDificilBiblioteca);
+		PistaFacil pistaFacil11 = new PistaFacil("facil");
+		PistaMedia pistaMedia11 = new PistaMedia("media");
+		PistaDificil pistaDificil11 = new PistaDificil("Rio de la plata");
+		Edificio bibliotecaPistasBsas = fabricaBancos.crearEdificio(pistaFacil11,pistaMedia11,pistaDificil11);
 
 		// PISTAS
-		LinkedList<Pista> pistasDevueltasBancoBsas = policia.visitar(bancoBsas, jose); // primera visita
-		LinkedList<Pista> pistasDevueltasBibliotecaBsas = policia.visitar(bibliotecaBsas, jose);// segunda visita
+		LinkedList<Pista> pistasDevueltasBancoBsas = policia.visitar(bancoPistasBsas, jose); // primera visita
+		LinkedList<Pista> pistasDevueltasBibliotecaBsas = policia.visitar(bibliotecaPistasBsas, jose);// segunda visita
 
 		assert (pistasDevueltasBancoBsas.get(0).revelar().equals("Pesos argentinos"));
 		assert (pistasDevueltasBibliotecaBsas.get(0).revelar().equals("Rio de la plata"));
