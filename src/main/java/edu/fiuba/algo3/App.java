@@ -2,8 +2,6 @@ package edu.fiuba.algo3;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -11,14 +9,18 @@ import javafx.stage.Stage;
  */
 public class App extends Application {
 
+
     @Override
     public void start(Stage stage) {
-        var javaVersion = SystemInfo.javaVersion();
-        var javafxVersion = SystemInfo.javafxVersion();
 
-        var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        var scene = new Scene(new StackPane(label), 640, 480);
-        stage.setScene(scene);
+        LayoutInicial layoutInicial = new LayoutInicial();
+
+        Scene sceneInicio = new Scene(layoutInicial);
+
+        stage.setScene(sceneInicio);
+        stage.setMinWidth(640);
+        stage.setMinHeight(480);
+        stage.setTitle("AlgoThief");
         stage.show();
     }
 
