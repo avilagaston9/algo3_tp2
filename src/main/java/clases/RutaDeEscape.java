@@ -37,4 +37,8 @@ public class RutaDeEscape {
 	public void asignarCiudad(Policia policia) {
 		policia.setCiudad(this.ciudades.get(-1));
 	}
+
+	public Ciudad getPrimerCiudad() {
+		return this.ciudades.get(0);
+	}
 }

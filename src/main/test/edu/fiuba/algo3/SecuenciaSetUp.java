@@ -55,9 +55,6 @@ public class SecuenciaSetUp {
         Policia policia = builderPolicia.getPolicia();
 
         LadronBuilder builderLadron = new LadronBuilder();
-        builderLadron.set
-
-
     }
 
 }

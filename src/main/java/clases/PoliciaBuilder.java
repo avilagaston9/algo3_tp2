@@ -9,7 +9,7 @@ public class PoliciaBuilder {
     private RutaDeEscape rutaDeEscape;
 
     public void setUltimaCiudad(RutaDeEscape rutaDeEscape) {
-        this.ciudadInicio = ;
+        this.ciudadInicio = rutaDeEscape.getPrimerCiudad();
     }
 
     public void setRango(Rango rango) {
@@ -17,8 +17,6 @@ public class PoliciaBuilder {
     }
 
     public Policia getPolicia(){
-        Policia policia = new Policia(this.rango);
-        rutaDeEscape.asignarCiudad(policia);
-        return policia;
+        return new Policia(this.rango, this.ciudadInicio);
     }
 }
