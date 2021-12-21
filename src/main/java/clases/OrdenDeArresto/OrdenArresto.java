@@ -1,4 +1,4 @@
-package clases;
+package clases.OrdenDeArresto;
 
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;

@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.pruebasUnitarias.computadoraTest;
 
 import clases.Computadora;
-import clases.OrdenArresto;
+import OrdenArresto;
 import clases.caracteristicasLadron.*;
 import clases.ladron.Ladron;
 import clases.ladron.LadronBuilder;

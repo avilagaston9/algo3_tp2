@@ -1,9 +1,7 @@
 package clases.ladron;
 
 import clases.Ciudad;
-import clases.OrdenArresto;
-import clases.Policia;
-import clases.armas.Arma;
+import OrdenArresto;
 import clases.pistas.Pista;
 import clases.pistas.PistaSinInformacion;
 import clases.caracteristicasLadron.CaracteristicaLadron;

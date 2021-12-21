@@ -1,4 +1,4 @@
 package clases.valorObjetoRobado;
 
-public class ObjetoComun{
+public class ObjetoMuyValioso {
 }
