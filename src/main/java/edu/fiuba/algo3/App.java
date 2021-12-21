@@ -9,23 +9,22 @@ import javafx.stage.Stage;
  */
 public class App extends Application {
 
+	@Override
+	public void start(Stage stage) {
 
-    @Override
-    public void start(Stage stage) {
+		LayoutInicial layoutInicial = new LayoutInicial(stage);
 
-        LayoutInicial layoutInicial = new LayoutInicial(stage);
+		Scene sceneInicio = new Scene(layoutInicial);
 
-        Scene sceneInicio = new Scene(layoutInicial);
+		stage.setScene(sceneInicio);
+		stage.setMinWidth(640);
+		stage.setMinHeight(480);
+		stage.setTitle("AlgoThief");
+		stage.show();
+	}
 
-        stage.setScene(sceneInicio);
-        stage.setMinWidth(640);
-        stage.setMinHeight(480);
-        stage.setTitle("AlgoThief");
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch();
-    }
+	public static void main(String[] args) {
+		launch();
+	}
 
 }

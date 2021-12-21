@@ -3,8 +3,8 @@ package clases.ladron;
 import java.util.LinkedList;
 import java.util.Objects;
 
-import clases.OrdenDeArresto.*;
 import clases.Ciudad;
+import clases.OrdenDeArresto.OrdenArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.pistas.Pista;
 import clases.pistas.PistaSinInformacion;

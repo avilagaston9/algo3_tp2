@@ -8,12 +8,12 @@ import clases.pistas.PistaMedia;
 
 public class FabricaBancos implements FabricaEdificios {
 
-    @Override
-    public Edificio crearEdificio(PistaFacil pistaFacil, PistaMedia pistaMedia, PistaDificil pistaDificil) {
-        Edificio banco = new Banco();
-        banco.setPista(pistaFacil);
-        banco.setPista(pistaMedia);
-        banco.setPista(pistaDificil);
-        return banco;
-    }
+	@Override
+	public Edificio crearEdificio(PistaFacil pistaFacil, PistaMedia pistaMedia, PistaDificil pistaDificil) {
+		Edificio banco = new Banco();
+		banco.setPista(pistaFacil);
+		banco.setPista(pistaMedia);
+		banco.setPista(pistaDificil);
+		return banco;
+	}
 }
