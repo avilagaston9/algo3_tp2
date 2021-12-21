@@ -15,26 +15,30 @@ public class RutaDeEscape {
 
 	private ArrayList<Ciudad> ciudades;
 
-	public ArrayList<Ciudad> RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoComun objeto) {
+	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoComun objeto) {
 
 		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoComun));
-		return this.ciudades;
 	}
 
-	public ArrayList<Ciudad> RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoValioso objeto) {
+	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoValioso objeto) {
 
 		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoValioso));
-		return this.ciudades;
 	}
 
-	public ArrayList<Ciudad> RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoMuyValioso objeto) {
+	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoMuyValioso objeto) {
 
 		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoMuyValioso));
-		return this.ciudades;
 	}
 
-	public void asignarUltimaCiudadA(Ladron ladron) {
+	public void asignarCiudad(Ladron ladron) {
 		ladron.setCiudad(this.ciudades.get(-1));
 	}
 
+	public void asignarCiudad(Policia policia) {
+		policia.setCiudad(this.ciudades.get(-1));
+	}
+
+	public Ciudad getPrimerCiudad() {
+		return this.ciudades.get(0);
+	}
 }

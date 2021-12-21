@@ -27,6 +27,13 @@ public class Policia {
 		this.cantidadHeridasDeCuchillo = 0;
 	}
 
+	public Policia(Rango rango) {
+		this.tiempoTranscurrido = new Tiempo();
+		this.rango = rango;
+		this.ordenDeArresto = new SinOrdenDeArresto();
+		this.cantidadHeridasDeCuchillo = 0;
+	}
+
 	public LinkedList<Pista> visitar(Edificio unEdificio, Ladron ladron) {
 
 		LinkedList<Pista> pistas = new LinkedList<>();
@@ -85,4 +92,7 @@ public class Policia {
 		this.rango = this.rango.sumarArresto();
 	}
 
+	public void setCiudad(Ciudad ciudad) {
+		this.ciudadActual = ciudad;
+	}
 }
