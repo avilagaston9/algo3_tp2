@@ -22,7 +22,7 @@ import clases.rangos.Detective;
 public class Caso5 {
 
 	@Test
-	public void detectiveHaceSeisArrestosYTomaUnCaso() { // todo nombre mas apto para la prueba
+	public void detectiveHaceSeisArrestosYAsciendeAInvestigadorLuegoRealizaInvestigacionYAtrapaAlSospechoso() { // todo nombre mas apto para la prueba
 
 		// Creo ciudad
 		Coordenadas coordenadasMexico = new Coordenadas(23.634501, -102.552784);
