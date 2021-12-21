@@ -1,38 +1,41 @@
 package edu.fiuba.algo3.entrega2;
 
-import clases.*;
-import clases.caracteristicasLadron.*;
-import clases.ladron.Ladron;
-import clases.ladron.LadronBuilder;
-import clases.rangos.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import clases.Ciudad;
+import clases.Coordenadas;
+import clases.Policia;
+import clases.caracteristicasLadron.CaracteristicaLadron;
+import clases.ladron.Ladron;
+import clases.ladron.LadronBuilder;
+import clases.rangos.Novato;
+import clases.rangos.Rango;
 
 public class Caso4 {
-    @Test
-    public void detectiveIntentaAtraparLadronSinOrdenDeArresto(){
+	@Test
+	public void detectiveIntentaAtraparLadronSinOrdenDeArresto() {
 
-        //se crea Montreal
-        Coordenadas coordenadasMontreal = new Coordenadas(45.50884,-73.58781);
-        Ciudad montreal = new Ciudad("Montreal", coordenadasMontreal);
+		// se crea Montreal
+		Coordenadas coordenadasMontreal = new Coordenadas(45.50884, -73.58781);
+		Ciudad montreal = new Ciudad("Montreal", coordenadasMontreal);
 
-        Rango rango= new Novato();
-        // ahora policia tiene un atributo orden de arresto
-        Policia policia= new Policia(rango,montreal);
+		Rango rango = new Novato();
+		// ahora policia tiene un atributo orden de arresto
+		Policia policia = new Policia(rango, montreal);
 
-        LadronBuilder builder = new LadronBuilder();
-        builder.setCabello(new CaracteristicaLadron("tiene el pelo rubio"));
-        builder.setHobby(new CaracteristicaLadron("le gusta jugar al tenis"));
-        builder.setSexo(new CaracteristicaLadron("es mujer"));
-        builder.setSenia(new CaracteristicaLadron("tiene un tatuaje de un dragon"));
-        builder.setVehiculo(new CaracteristicaLadron("manejaba una moto"));
-        Ladron maria = builder.getLadron();
+		LadronBuilder builder = new LadronBuilder();
+		builder.setCabello(new CaracteristicaLadron("tiene el pelo rubio"));
+		builder.setHobby(new CaracteristicaLadron("le gusta jugar al tenis"));
+		builder.setSexo(new CaracteristicaLadron("es mujer"));
+		builder.setSenia(new CaracteristicaLadron("tiene un tatuaje de un dragon"));
+		builder.setVehiculo(new CaracteristicaLadron("manejaba una moto"));
+		Ladron maria = builder.getLadron();
 
-        policia.arrestarA(maria);
+		policia.arrestarA(maria);
 
-        assertEquals(policia.cantidadArrestos(),0);
+		assertEquals(policia.cantidadArrestos(), 0);
 
-    }
+	}
 }

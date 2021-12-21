@@ -1,68 +1,70 @@
 package clases;
 
+import java.util.ArrayList;
+
+import clases.OrdenDeArresto.OrdenArresto;
 import clases.OrdenDeArresto.OrdenDeArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
 
-import java.util.ArrayList;
-
 public class Computadora {
-    private ArrayList<Ladron> ladrones;
-    private ArrayList<CaracteristicaLadron> caracteristicas;
+	private ArrayList<Ladron> ladrones;
+	private ArrayList<CaracteristicaLadron> caracteristicas;
 
-    public Computadora(ArrayList<Ladron> unosLadrones) {
-        this.ladrones=unosLadrones;
-        this.caracteristicas = new ArrayList<CaracteristicaLadron>();
-    }
+	public Computadora(ArrayList<Ladron> unosLadrones) {
+		this.ladrones = unosLadrones;
+		this.caracteristicas = new ArrayList<CaracteristicaLadron>();
+	}
 
-//    public ArrayList<Ladron> cargarDatosYBuscar(List<CaracteristicaLadron> caracteristicas, Tiempo tiempo) {
-//        ArrayList<Ladron> sospechosos= (ArrayList<Ladron>) this.ladrones.clone();
-//        for (int i=0;i<caracteristicas.size();i++) {
-//            ArrayList<Ladron>posiblesSospechosos= new ArrayList<>();
-//            for (int j = 0; j < sospechosos.size(); j++) {
-//                if (sospechosos.get(j).tieneLaCaracteristica(caracteristicas.get(i))) {
-//                    posiblesSospechosos.add(sospechosos.get(j));
-//                }
-//            }
-//            sospechosos = (ArrayList<Ladron>) posiblesSospechosos.clone();
-//        }
-//        tiempo.sumarHoras(3);
-//        return sospechosos;
-//    }
+	// public ArrayList<Ladron> cargarDatosYBuscar(List<CaracteristicaLadron>
+	// caracteristicas, Tiempo tiempo) {
+	// ArrayList<Ladron> sospechosos= (ArrayList<Ladron>) this.ladrones.clone();
+	// for (int i=0;i<caracteristicas.size();i++) {
+	// ArrayList<Ladron>posiblesSospechosos= new ArrayList<>();
+	// for (int j = 0; j < sospechosos.size(); j++) {
+	// if (sospechosos.get(j).tieneLaCaracteristica(caracteristicas.get(i))) {
+	// posiblesSospechosos.add(sospechosos.get(j));
+	// }
+	// }
+	// sospechosos = (ArrayList<Ladron>) posiblesSospechosos.clone();
+	// }
+	// tiempo.sumarHoras(3);
+	// return sospechosos;
+	// }
 
-    public void cargarCaracteristica(CaracteristicaLadron caracteristica){
-        caracteristicas.add(caracteristica);
-    }
+	public void cargarCaracteristica(CaracteristicaLadron caracteristica) {
+		caracteristicas.add(caracteristica);
+	}
 
-    public ArrayList<Ladron> buscarSospechosos(){
-        ArrayList<Ladron> sospechosos = new ArrayList<Ladron>();
+	public ArrayList<Ladron> buscarSospechosos() {
+		ArrayList<Ladron> sospechosos = new ArrayList<Ladron>();
 
-        for (Ladron unLadron: this.ladrones){
-            boolean cumple = true;
-            for (CaracteristicaLadron unaCaracterisica: this.caracteristicas){
-                if (!unLadron.tieneLaCaracteristica(unaCaracterisica)){
-                    cumple = false;
-                    break;
-                }
-            }
-            if (cumple){
-                sospechosos.add(unLadron);
-            }
-        }
-        //tiempo.sumarHoras(3);
-        return sospechosos;
-    }
+		for (Ladron unLadron : this.ladrones) {
+			boolean cumple = true;
+			for (CaracteristicaLadron unaCaracterisica : this.caracteristicas) {
+				if (!unLadron.tieneLaCaracteristica(unaCaracterisica)) {
+					cumple = false;
+					break;
+				}
+			}
+			if (cumple) {
+				sospechosos.add(unLadron);
+			}
+		}
+		// tiempo.sumarHoras(3);
+		return sospechosos;
+	}
 
-    public OrdenArresto emitirOrdenDeArresto(Ladron unLadron){
+	public OrdenArresto emitirOrdenDeArresto(Ladron unLadron) {
 
-        ArrayList<Ladron> ladronesSospechosos=new ArrayList<>();
-        ladronesSospechosos = this.buscarSospechosos();
+		ArrayList<Ladron> ladronesSospechosos = new ArrayList<>();
+		ladronesSospechosos = this.buscarSospechosos();
 
-        for (Ladron sospechoso: ladronesSospechosos)
-            if (sospechoso == unLadron) {
-                OrdenDeArresto orden = new OrdenDeArresto(unLadron);
-                return orden;
-            }
-        return null;
-    }
+		for (Ladron sospechoso : ladronesSospechosos)
+			if (sospechoso == unLadron) {
+				OrdenDeArresto orden = new OrdenDeArresto(unLadron);
+				return orden;
+			}
+		return null;
+	}
 }

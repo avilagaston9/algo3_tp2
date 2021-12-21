@@ -4,9 +4,9 @@ import clases.ladron.Ladron;
 
 public class SinOrdenDeArresto implements OrdenArresto {
 
-    @Override
-    public boolean comparar(Ladron ladron) {
-        return false;
-    }
+	@Override
+	public boolean comparar(Ladron ladron) {
+		return false;
+	}
 
 }

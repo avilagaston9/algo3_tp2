@@ -8,52 +8,48 @@ import clases.rangos.Novato;
 import clases.rangos.Sargento;
 
 public class Aeropuerto extends Edificio {
-    @Override
-    public Pista serVisitado(Novato rango, Tiempo tiempo) { return this.pistaFacil;  }
+	@Override
+	public Pista serVisitado(Novato rango, Tiempo tiempo) {
+		return this.pistaFacil;
+	}
 
-    @Override
-    public Pista serVisitado(Detective rango, Tiempo tiempo) { return this.pistaMedia; }
+	@Override
+	public Pista serVisitado(Detective rango, Tiempo tiempo) {
+		return this.pistaMedia;
+	}
 
-    @Override
-    public Pista serVisitado(Investigador rango, Tiempo tiempo) { return this.pistaDificil;  }
+	@Override
+	public Pista serVisitado(Investigador rango, Tiempo tiempo) {
+		return this.pistaDificil;
+	}
 
-    @Override
-    public Pista serVisitado(Sargento rango, Tiempo tiempo) { return this.pistaDificil;  }
-    /*
-    private String tipo="Aeropuerto";
-    private FabricaDePistas fabrica;
-    private Pista pista;
-
-    public Aeropuerto(FabricaDePistas unaFabrica){
-        this.fabrica=unaFabrica;
-        this.pista=null;
-    }
-
-
-    @Override
-    public void agregarPista(String caracteristica, Rango rango) {
-        this.pista=fabrica.crearPista(rango);
-        this.pista.agregarCaracteristica(caracteristica);
-
-    }
-    @Override
-    public Pista serVisitado(Edificio edificio, Ciudad siguienteCiudad,Tiempo tiempo,int visitas) {
-        return siguienteCiudad.darPistaDe(edificio);
-    }
-
-    @Override
-    public Pista darPista() {
-        return this.pista;
-    }
-
-    @Override
-    public boolean sosIgual(Edificio edificio) {
-        return this.tipo.equals(edificio.tipo());
-    }
-
-    @Override
-    public String tipo() {
-        return this.tipo;
-    }
-    */
+	@Override
+	public Pista serVisitado(Sargento rango, Tiempo tiempo) {
+		return this.pistaDificil;
+	}
+	/*
+	 * private String tipo="Aeropuerto"; private FabricaDePistas fabrica; private
+	 * Pista pista;
+	 * 
+	 * public Aeropuerto(FabricaDePistas unaFabrica){ this.fabrica=unaFabrica;
+	 * this.pista=null; }
+	 * 
+	 * 
+	 * @Override public void agregarPista(String caracteristica, Rango rango) {
+	 * this.pista=fabrica.crearPista(rango);
+	 * this.pista.agregarCaracteristica(caracteristica);
+	 * 
+	 * }
+	 * 
+	 * @Override public Pista serVisitado(Edificio edificio, Ciudad
+	 * siguienteCiudad,Tiempo tiempo,int visitas) { return
+	 * siguienteCiudad.darPistaDe(edificio); }
+	 * 
+	 * @Override public Pista darPista() { return this.pista; }
+	 * 
+	 * @Override public boolean sosIgual(Edificio edificio) { return
+	 * this.tipo.equals(edificio.tipo()); }
+	 * 
+	 * @Override public String tipo() { return this.tipo; }
+	 */
 }

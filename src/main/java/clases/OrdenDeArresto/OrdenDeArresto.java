@@ -4,17 +4,15 @@ import clases.ladron.Ladron;
 
 public class OrdenDeArresto implements OrdenArresto {
 
-    private Ladron ladron;
+	private Ladron ladron;
 
-    public OrdenDeArresto(Ladron delincuente){
-        this.ladron = delincuente;
-    }
+	public OrdenDeArresto(Ladron delincuente) {
+		this.ladron = delincuente;
+	}
 
-    @Override
-    public boolean comparar(Ladron ladron) {
-        return this.ladron.equals(ladron);
-    }
-
+	@Override
+	public boolean comparar(Ladron ladron) {
+		return this.ladron.equals(ladron);
+	}
 
 }
-
