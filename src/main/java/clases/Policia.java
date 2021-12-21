@@ -80,29 +80,9 @@ public class Policia {
 		return this.rango.cantidadArrestos();
 	}
 
-	// METODOs AUXILIARes PARA E2 C5.
+	// METODO AUXILIAR PARA E2 C5.
 	public void agregarArresto() {
 		this.rango = this.rango.sumarArresto();
 	}
 
-	public boolean esInvestigador() {
-		if (this.rango instanceof Investigador) {
-			return true;
-		}
-		return false;
-	}
-
-	public boolean esSargento() {
-		if (this.rango instanceof Sargento) {
-			return true;
-		}
-		return false;
-	}
-
-	public boolean esDetective() {
-		if (this.rango instanceof Detective) {
-			return true;
-		}
-		return false;
-	}
 }

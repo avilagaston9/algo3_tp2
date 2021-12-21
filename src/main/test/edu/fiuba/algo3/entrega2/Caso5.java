@@ -5,12 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import clases.*;
 import org.junit.jupiter.api.Test;
 
-import clases.Ciudad;
-import clases.Computadora;
-import clases.Coordenadas;
-import clases.Policia;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.edificios.Aeropuerto;
 import clases.edificios.Banco;
@@ -25,7 +22,7 @@ import clases.rangos.Detective;
 public class Caso5 {
 
 	@Test
-	public void detectiveHaceSeisArrestosYTomaUnCaso() { // todo nombre mas apto para la prueba
+	public void detectiveHaceSeisArrestosYAsciendeAInvestigadorLuegoRealizaInvestigacionYAtrapaAlSospechoso() { // todo nombre mas apto para la prueba
 
 		// Creo ciudad
 		Coordenadas coordenadasMexico = new Coordenadas(23.634501, -102.552784);
@@ -68,6 +65,7 @@ public class Caso5 {
 		Ciudad montreal = new Ciudad("Montreal", coordenadasMontreal);
 
 		// BANCO
+
 		PistaDificil pistaDificil = new PistaDificil("Dolares canadieses");
 		Edificio banco = new Banco();
 		banco.setPista(pistaDificil); // builder
