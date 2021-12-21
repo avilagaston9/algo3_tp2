@@ -75,8 +75,6 @@ public class Caso5 {
 		PistaDificil pistaDificil1 = new PistaDificil("Dolares norteamericanos");
 		Edificio banco = fabricaBancos.crearEdificio(pistaFacil1, pistaMedia1, pistaDificil1);
 
-		//Edificio banco = new Banco();
-		//banco.setPista(pistaDificil); // builder
 		// todo investigar factory
 
 		// AEROPUERTO
@@ -85,20 +83,11 @@ public class Caso5 {
 		PistaDificil pistaDificil2 = new PistaDificil("bandera con una hoja");
 		Edificio aeropuerto = fabricaAeropuerto.crearEdificio(pistaFacil2, pistaMedia2, pistaDificil2);
 
-		//PistaDificil pistaDificil2 = new PistaDificil("bandera con una hoja");
-		//Edificio aeropuerto = new Aeropuerto();
-		//aeropuerto.setPista(pistaDificil1);
-
 		// BIBLIOTECA
 		PistaFacil pistaFacil3 = new PistaFacil("facil");
 		PistaMedia pistaMedia3 = new PistaMedia("media");
 		PistaDificil pistaDificil3 = new PistaDificil("Limita con usa");
 		Edificio biblioteca = fabricaBiblioteca.crearEdificio(pistaFacil3, pistaMedia3, pistaDificil3);
-
-		//PistaDificil pistaDificil2 = new PistaDificil("Limita con usa");
-		//Edificio biblioteca = new Biblioteca();
-
-		//biblioteca.setPista(pistaDificil2);
 
 		// PISTAS
 		LinkedList<Pista> pistasDevueltasBanco = policia.visitar(banco, jose); // primera visita
@@ -129,43 +118,30 @@ public class Caso5 {
 		PistaDificil pistaDificil4 = new PistaDificil("Euros");
 		Edificio bancoPistasRoma = fabricaBancos.crearEdificio(pistaFacil4, pistaMedia4, pistaDificil4);
 
-		//PistaDificil pistaDificilRoma = new PistaDificil("Euros");
-		//Edificio banco2 = new Banco();
-		//banco2.setPista(pistaDificilRoma);
-
 		// AEROPUERTO
 		PistaFacil pistaFacil5 = new PistaFacil("facil");
 		PistaMedia pistaMedia5 = new PistaMedia("media");
 		PistaDificil pistaDificil5 = new PistaDificil("Avion con bandera de italia");
-		Edificio aeropuertoPistasRoma = fabricaAeropuerto.crearEdificio(pistaFacil2, pistaMedia2, pistaDificil2);
-
-		//PistaDificil pistaDificilRoma2 = new PistaDificil("Avion con bandera de italia");
-		//Edificio aeropuerto2 = new Aeropuerto();
-		//aeropuerto2.setPista(pistaDificilRoma2);
+		Edificio aeropuertoPistasRoma = fabricaAeropuerto.crearEdificio(pistaFacil5, pistaMedia5, pistaDificil5);
 
 		// BIBLIOTECA
 		PistaFacil pistaFacil6 = new PistaFacil("facil");
 		PistaMedia pistaMedia6 = new PistaMedia("media");
 		PistaDificil pistaDificil6 = new PistaDificil("Limita con usa");
-		Edificio bibliotecaPistasRoma = fabricaBiblioteca.crearEdificio(pistaFacil3, pistaMedia3, pistaDificil3);
-
-		//PistaDificil pistaDificilRoma3 = new PistaDificil("Dijo que iba a un lugar donde hay un coliseo romano");
-		//Edificio biblioteca2 = new Biblioteca();
-		//biblioteca2.setPista(pistaDificilRoma3);
+		Edificio bibliotecaPistasRoma = fabricaBiblioteca.crearEdificio(pistaFacil6, pistaMedia6, pistaDificil6);
 
 		// PISTAS
-		LinkedList<Pista> pistasDevueltasBanco2 = policia.visitar(banco2, jose); // primera visita
-		LinkedList<Pista> pistasDevueltasAeropuerto2 = policia.visitar(aeropuerto2, jose);// segunda visita
+		LinkedList<Pista> pistasDevueltasBancoPistasRoma = policia.visitar(bancoPistasRoma, jose); // primera visita
+		LinkedList<Pista> pistasDevueltasAeropuertoPistasRoma = policia.visitar(aeropuertoPistasRoma, jose);// segunda visita
 
-		assert (pistasDevueltasBanco2.get(0).revelar().equals("Euros"));
-		assert (pistasDevueltasAeropuerto2.get(0).revelar().equals("Avion con bandera de italia"));
+		assert (pistasDevueltasBancoPistasRoma.get(0).revelar().equals("Euros"));
+		assert (pistasDevueltasAeropuertoPistasRoma.get(0).revelar().equals("Avion con bandera de italia"));
 		assertEquals(6, policia.tiempoTranscurridoEnHoras());
 
 		// Se crea la computadora para registrar datos...
 		Computadora computadora = new Computadora(sospechosos);
 
-		// computadora.cargarCaracteristica(new Negro()); //todo esto lo tiene que
-		// devolver el edificio
+		// computadora.cargarCaracteristica(new Negro()); //todo esto lo tiene que devolver el edificio
 		computadora.cargarCaracteristica(new CaracteristicaLadron("tiene el pelo negro"));
 
 		policia.viajarA(roma);
@@ -179,23 +155,26 @@ public class Caso5 {
 		Ciudad paris = new Ciudad("Roma", coordenadasParis);
 
 		// BANCO
-		Edificio bancoParis = new Banco();
-		PistaDificil pistaDificilParisBanco = new PistaDificil("Euros");
-		bancoParis.setPista(pistaDificilParisBanco);
+		PistaFacil pistaFacil7 = new PistaFacil("facil");
+		PistaMedia pistaMedia7 = new PistaMedia("media");
+		PistaDificil pistaDificil7 = new PistaDificil("Euros");
+		Edificio bancoPistasParis = fabricaBancos.crearEdificio(pistaFacil7,pistaMedia7,pistaDificil7);
 
 		// AEROPUERTO
-		Edificio aeropuertoParis = new Aeropuerto();
-		PistaDificil pistaDificilParisAeropuerto = new PistaDificil("bandera de francia");
-		aeropuertoParis.setPista(pistaDificilParisAeropuerto);
+		PistaFacil pistaFacil8 = new PistaFacil("facil");
+		PistaMedia pistaMedia8 = new PistaMedia("media");
+		PistaDificil pistaDificil8 = new PistaDificil("bandera de francia");
+		Edificio aeropuertoPistasParis = fabricaBancos.crearEdificio(pistaFacil8,pistaMedia8,pistaDificil8);
 
 		// BIBLIOTECA
-		Edificio bibliotecaParis = new Biblioteca();
-		PistaDificil pistaDificilParisBiblioteca = new PistaDificil("Pais que limita con Portugal");
-		bibliotecaParis.setPista(pistaDificilParisBiblioteca);
+		PistaFacil pistaFacil9 = new PistaFacil("facil");
+		PistaMedia pistaMedia9 = new PistaMedia("media");
+		PistaDificil pistaDificil9 = new PistaDificil("dificil");
+		Edificio bibliotecaPistasParis = fabricaBancos.crearEdificio(pistaFacil9,pistaMedia9,pistaDificil9);
 
 		// PISTAS
-		LinkedList<Pista> pistasDevueltasbancoParis = policia.visitar(bancoParis, jose); // primera visita
-		LinkedList<Pista> pistasDevueltasAeropuertoParis = policia.visitar(aeropuertoParis, jose);// segunda visita
+		LinkedList<Pista> pistasDevueltasbancoParis = policia.visitar(bancoPistasParis, jose); // primera visita
+		LinkedList<Pista> pistasDevueltasAeropuertoParis = policia.visitar(aeropuertoPistasParis, jose);// segunda visita
 
 		assert (pistasDevueltasbancoParis.get(0).revelar().equals("Euros"));
 		assert (pistasDevueltasAeropuertoParis.get(0).revelar().equals("bandera de francia"));
@@ -213,7 +192,7 @@ public class Caso5 {
 		Coordenadas coordenadasBsas = new Coordenadas(-34.6131500, -58.3772300);
 		Ciudad bsas = new Ciudad("Buenos Aires", coordenadasBsas);
 
-		jose.setCiudad(bsas); // todo pasar esto al ladron builder
+		//jose.setCiudad(bsas); // todo pasar esto al ladron builder
 
 		// BANCO
 		Edificio bancoBsas = new Banco();
