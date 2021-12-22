@@ -1,5 +1,6 @@
 package clases.ladron;
 
+import clases.Ciudad;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 
 public class LadronBuilder {
@@ -9,6 +10,7 @@ public class LadronBuilder {
 	private CaracteristicaLadron sexo;
 	private CaracteristicaLadron senia;
 	private CaracteristicaLadron vehiculo;
+	private Ciudad ciudad;
 
 	public void setCabello(CaracteristicaLadron cabello) {
 		this.cabello = cabello;
@@ -30,8 +32,11 @@ public class LadronBuilder {
 		this.vehiculo = vehiculo;
 	}
 
+	public void setCiudad(Ciudad ciudad){
+		this.ciudad = ciudad;
+	}
+
 	public Ladron getLadron() {
 		return new Ladron(this.cabello, this.hobby, this.sexo, this.senia, this.vehiculo);
 	}
-
 }
