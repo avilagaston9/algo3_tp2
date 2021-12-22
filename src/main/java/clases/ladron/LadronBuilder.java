@@ -37,6 +37,6 @@ public class LadronBuilder {
 	}
 
 	public Ladron getLadron() {
-		return new Ladron(this.cabello, this.hobby, this.sexo, this.senia, this.vehiculo);
+		return new Ladron(this.cabello, this.hobby, this.sexo, this.senia, this.vehiculo,this.ciudad);
 	}
 }

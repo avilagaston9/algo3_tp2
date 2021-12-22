@@ -7,22 +7,22 @@
 //
 // public class AlgoThief {
 //
-// private Policia policia;
-// private Ladron ladron;
-// private ArrayList<Ciudad> todasLasCiudades;
-// private ArrayList<Ladron> todosLosLadrones;
+//  private Policia policia;
+//  private Ladron ladron;
+//  private ArrayList<Ciudad> todasLasCiudades;
+//  private ArrayList<Ladron> todosLosLadrones;
 //
 //
-// public AlgoThief(){}
+//  public AlgoThief(){}
 //
 //
-// public ArrayList<Ciudades> cargarCiudades(File archivoCiudades){
+//  public ArrayList<Ciudades> cargarCiudades(File archivoCiudades){
 //
-// }
+//  }
 //
-// public boolean quedanHoras(){
-// return true
-// }
+//  public boolean quedanHoras(){
+//  return true
+//  }
 //
 //
 // }

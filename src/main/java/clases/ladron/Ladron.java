@@ -21,7 +21,7 @@ public class Ladron {
 	// private Pista pista;
 
 	public Ladron(CaracteristicaLadron cabello, CaracteristicaLadron hobby, CaracteristicaLadron sexo,
-			CaracteristicaLadron senia, CaracteristicaLadron vehiculo) {
+				  CaracteristicaLadron senia, CaracteristicaLadron vehiculo, Ciudad ciudad) {
 
 		this.iteradorCaracteristicas = 0;
 		this.caracteristicas = new LinkedList<CaracteristicaLadron>();
@@ -30,6 +30,7 @@ public class Ladron {
 		this.caracteristicas.add(sexo);
 		this.caracteristicas.add(senia);
 		this.caracteristicas.add(vehiculo);
+		this.setCiudad(ciudad);
 	}
 
 	private Pista calcularChances(double chances) {
