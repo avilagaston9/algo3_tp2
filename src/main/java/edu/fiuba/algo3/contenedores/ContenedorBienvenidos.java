@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.contenedores;
 
 import edu.fiuba.algo3.eventos.BotonEntrarEventHandler;
+import edu.fiuba.algo3.eventos.OpcionSalirEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -26,12 +27,17 @@ public class ContenedorBienvenidos extends VBox {
         this.setBackground(new Background(imagenDeFondo));
 
 
-        Button botonEntrar = new Button();
-        botonEntrar.setText("Jugar");
+        Button botonJugar = new Button();
+        botonJugar.setText("Jugar");
+        Button botonSalir = new Button();
+        botonSalir.setText("Salir");
+
 
         BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena);
-        botonEntrar.setOnAction(botonEntrarHandler);
+        botonJugar.setOnAction(botonEntrarHandler);
+        OpcionSalirEventHandler botonSalirHandler = new OpcionSalirEventHandler();
+        botonSalir.setOnAction(botonSalirHandler);
 
-        this.getChildren().addAll( botonEntrar);
+        this.getChildren().addAll( botonJugar, botonSalir);
     }
 }
