@@ -7,21 +7,20 @@ import javafx.stage.Stage;
 
 public class ControladorJugar implements EventHandler<ActionEvent> {
 
-    private final Stage stage;
-    private Button miBoton;
-    public ControladorJugar(Button boton, Stage stage){
+	private final Stage stage;
+	private Button miBoton;
+	public ControladorJugar(Button boton, Stage stage) {
 
-        this.stage = stage;
-        this.miBoton = boton;
-    }
+		this.stage = stage;
+		this.miBoton = boton;
+	}
 
+	@Override
+	public void handle(ActionEvent actionEvent) {
 
-    @Override
-    public void handle(ActionEvent actionEvent) {
+		String textoClickeado = "Ha comenzado el juego";
+		this.miBoton.setText(textoClickeado);
 
-        String textoClickeado = "Ha comenzado el juego";
-        this.miBoton.setText(textoClickeado);
-
-        //AlgoThief juego = new Algothief();
-    }
+		// AlgoThief juego = new Algothief();
+	}
 }
