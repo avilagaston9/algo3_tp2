@@ -2,15 +2,13 @@ package clases;
 
 import java.util.LinkedList;
 
-import clases.OrdenDeArresto.*;
+import clases.OrdenDeArresto.OrdenArresto;
+import clases.OrdenDeArresto.SinOrdenDeArresto;
 import clases.armas.Arma;
 import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
-import clases.rangos.Detective;
-import clases.rangos.Investigador;
 import clases.rangos.Rango;
-import clases.rangos.Sargento;
 
 public class Policia {
 	private Ciudad ciudadActual;

@@ -8,12 +8,12 @@ import clases.pistas.PistaMedia;
 
 public class FabricaAeropuerto implements FabricaEdificios {
 
-    @Override
-    public Edificio crearEdificio(PistaFacil pistaFacil, PistaMedia pistaMedia, PistaDificil pistaDificil){
-        Edificio aeropuerto = new Aeropuerto();
-        aeropuerto.setPista(pistaFacil);
-        aeropuerto.setPista(pistaMedia);
-        aeropuerto.setPista(pistaDificil);
-        return aeropuerto;
-    }
+	@Override
+	public Edificio crearEdificio(PistaFacil pistaFacil, PistaMedia pistaMedia, PistaDificil pistaDificil) {
+		Edificio aeropuerto = new Aeropuerto();
+		aeropuerto.setPista(pistaFacil);
+		aeropuerto.setPista(pistaMedia);
+		aeropuerto.setPista(pistaDificil);
+		return aeropuerto;
+	}
 }
