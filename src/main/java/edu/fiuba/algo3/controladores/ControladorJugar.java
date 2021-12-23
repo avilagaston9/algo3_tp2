@@ -22,6 +22,6 @@ public class ControladorJugar implements EventHandler<ActionEvent> {
         String textoClickeado = "Ha comenzado el juego";
         this.miBoton.setText(textoClickeado);
 
-        //AlgoThief juego = new Algothief();
+
     }
 }

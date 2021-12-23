@@ -15,6 +15,8 @@ public class App extends Application {
 
         LayoutInicial layoutInicial = new LayoutInicial(stage);
 
+        //AlgoThief juego = new Algothief();
+
         Scene sceneInicio = new Scene(layoutInicial);
 
         stage.setScene(sceneInicio);

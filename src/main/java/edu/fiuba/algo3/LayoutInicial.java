@@ -47,7 +47,7 @@ public class LayoutInicial extends StackPane{
 
     private Background crearFondo () {
 
-        BackgroundImage fondoImagen = new BackgroundImage(new Image(RUTA_FONDO_INICIO), BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+        BackgroundImage fondoImagen = new BackgroundImage(new Image(RUTA_FONDO_INICIO), BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.CENTER , BackgroundSize.DEFAULT);
         Background fondo = new Background(fondoImagen);
         return fondo;
     }
