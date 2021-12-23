@@ -1,5 +1,7 @@
 package edu.fiuba.algo3;
 
+import edu.fiuba.algo3.contenedores.ContenedorBienvenidos;
+import edu.fiuba.algo3.contenedores.ContenedorPrincipal;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -12,15 +14,14 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage);
+        Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
+        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego);
+        Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 640, 480);
 
-        LayoutInicial layoutInicial = new LayoutInicial(stage);
+        stage.setScene(escenaBienvenidos);
+        stage.setFullScreen(true);
 
-        Scene sceneInicio = new Scene(layoutInicial);
-
-        stage.setScene(sceneInicio);
-        stage.setMinWidth(640);
-        stage.setMinHeight(480);
-        stage.setTitle("AlgoThief");
         stage.show();
     }
 

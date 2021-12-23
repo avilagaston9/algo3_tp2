@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 public class LayoutInicial extends StackPane{
 
-    private static final String RUTA_FONDO_INICIO = "file:src/main/java/edu/fiuba/algo3/recursos/portada.jpg";
+    private static final String RUTA_FONDO_INICIO = "file:src/imagenes/bienvenida.jpg";
 
 
     public LayoutInicial(Stage stage) {
