@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-import clases.OrdenDeArresto.*;
 import clases.Computadora;
+import clases.OrdenDeArresto.OrdenArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
 import clases.ladron.LadronBuilder;
