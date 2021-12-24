@@ -27,7 +27,7 @@ import clases.rangos.Detective;
 public class Caso5 {
 
 	@Test
-	public void detectiveHaceSeisArrestosYAsciendeAInvestigadorLuegoRealizaInvestigacionYAtrapaAlSospechoso() { // todo nombre mas apto para la prueba
+	public void detectiveHaceSeisArrestosYAsciendeAInvestigadorLuegoRealizaInvestigacionYAtrapaAlSospechoso() {
 
 		// Creo ciudad
 		Coordenadas coordenadasMexico = new Coordenadas(23.634501, -102.552784);
@@ -79,8 +79,6 @@ public class Caso5 {
 		PistaMedia pistaMedia1 = new PistaMedia("Dolares similares a canadieses");
 		PistaDificil pistaDificil1 = new PistaDificil("Dolares norteamericanos");
 		Edificio banco = fabricaBancos.crearEdificio(pistaFacil1, pistaMedia1, pistaDificil1);
-
-		// todo investigar factory
 
 		// AEROPUERTO
 		PistaFacil pistaFacil2 = new PistaFacil("Bandera canadiese");
@@ -193,8 +191,6 @@ public class Caso5 {
 		// ==================================================================================================
 		// 4
 
-		//jose.setCiudad(bsas); // todo pasar esto al ladron builder
-
 		// BANCO
 		PistaFacil pistaFacil10 = new PistaFacil("facil");
 		PistaMedia pistaMedia10 = new PistaMedia("media");
@@ -221,6 +217,7 @@ public class Caso5 {
 		assertEquals(18, policia.tiempoTranscurridoEnHoras());
 
 		policia.viajarA(bsas);
+
 		assertEquals(26, policia.tiempoTranscurridoEnHoras());
 
 		// ==================================================================================================
