@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.menues;
+package edu.fiuba.algo3.botones;
 
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
