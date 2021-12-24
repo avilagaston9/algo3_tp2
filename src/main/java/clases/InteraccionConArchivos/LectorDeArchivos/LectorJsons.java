@@ -1,6 +1,7 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
 
 import clases.ladron.Ladron;
+
 /*
 public class LectorJsons implements LectorArchivos{
 
@@ -8,7 +9,7 @@ public class LectorJsons implements LectorArchivos{
 
         //lectura del archivo...?
         //Gson gson = new Gson();
-        //Gson n = new Gson();}
+        //Gson n = new Gson();
     }
 
     @Override
