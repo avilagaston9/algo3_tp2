@@ -189,12 +189,10 @@ public class Caso5 {
 		// ==================================================================================================
 		// 4
 
-<<<<<<< HEAD
-=======
 		// PROXIMA CIUDAD, BUENOS ARIES
 		// Instanciada al principio
 
->>>>>>> b9d39051aed6b34ff5a8215d59a912ee1ec7fe4f
+
 		// BANCO
 		PistaFacil pistaFacil10 = new PistaFacil("facil");
 		PistaMedia pistaMedia10 = new PistaMedia("media");
