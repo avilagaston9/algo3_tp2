@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.barraMenu;
+package edu.fiuba.algo3.menues;
 
 import edu.fiuba.algo3.eventos.OpcionAcercaDeEventHandler;
 import edu.fiuba.algo3.eventos.OpcionPantallaCompletaEventHandler;

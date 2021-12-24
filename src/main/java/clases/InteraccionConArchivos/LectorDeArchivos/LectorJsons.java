@@ -1,7 +1,7 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
 
 import clases.ladron.Ladron;
-
+/*
 public class LectorJsons implements LectorArchivos{
 
     public LectorJsons(String direccionArchivo){
@@ -19,3 +19,4 @@ public class LectorJsons implements LectorArchivos{
 
 
 }
+*/
