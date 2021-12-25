@@ -46,11 +46,11 @@ public class SecuenciaSetUp {
 
 		ObjetoComun objetoRobado = new ObjetoComun();
 
-		RutaDeEscape rutaDeEscape = new RutaDeEscape(ciudades, objetoRobado);
+//		RutaDeEscape rutaDeEscape = new RutaDeEscape(ciudades, objetoRobado);
 
 		PoliciaBuilder builderPolicia = new PoliciaBuilder();
 		builderPolicia.setRango(novato);
-		builderPolicia.setPrimerCiudad(rutaDeEscape.getRuta().get(0));
+//		builderPolicia.setPrimerCiudad(rutaDeEscape.getRuta().get(0));
 
 		Policia policia = builderPolicia.getPolicia();
 

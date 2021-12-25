@@ -15,19 +15,38 @@ public class RutaDeEscape {
 
 	private ArrayList<Ciudad> ciudades;
 
-	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoComun objeto) {
+//	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoComun objeto) {
+//
+//		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoComun));
+//	}
+//
+//	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoValioso objeto) {
+//
+//		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoValioso));
+//	}
+//
+//	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoMuyValioso objeto) {
+//
+//		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoMuyValioso));
+//	}
+//
+	public RutaDeEscape(ArrayList<Ciudad> ciudades, String nombreCiudad, int largoRutaDeEscape) {
 
-		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoComun));
+		this.ciudades = new ArrayList<Ciudad>(ciudades);
+		Ciudad ciudad =  this.buscarCiudad(ciudades, nombreCiudad);
 	}
 
-	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoValioso objeto) {
+	private Ciudad buscarCiudad(ArrayList<Ciudad> ciudades, String nombreCiudad){
 
-		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoValioso));
-	}
+		Ciudad ciudad = null;
 
-	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoMuyValioso objeto) {
-
-		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoMuyValioso));
+		for (Ciudad c : ciudades){
+			if (c.esIgualA(nombreCiudad)){
+				ciudad = c;
+			}
+		}
+		ciudades.remove(ciudad);
+		return ciudad;
 	}
 
 	public void asignarCiudad(Ladron ladron) {

@@ -1,8 +1,20 @@
 package clases.valorObjetoRobado;
 
+import clases.Ciudad;
+import clases.RutaDeEscape;
 import clases.rangos.*;
 
+import java.util.ArrayList;
+
 public class ObjetoMuyValioso extends ObjetoRobado{
+
+    private String nombreCiudad;
+    private int largoRutaDeEscape;
+
+    public ObjetoMuyValioso(){
+        this.largoRutaDeEscape = 7;
+    }
+
     @Override
     public boolean esValidoPara(Novato rango){
         return false;
@@ -21,5 +33,10 @@ public class ObjetoMuyValioso extends ObjetoRobado{
     @Override
     public boolean esValidoPara(Sargento rango){
         return true;
+    }
+
+    @Override
+    public RutaDeEscape crearRutaDeEscape(ArrayList<Ciudad> ciudades) {
+        return new RutaDeEscape(ciudades, this.nombreCiudad, this.largoRutaDeEscape);
     }
 }

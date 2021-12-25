@@ -50,4 +50,8 @@ public class Ciudad {
 	protected double calcularDistanciaEnKms(Coordenadas otrasCoordenadas) {
 		return otrasCoordenadas.calcularDistancia(this.coordenadas);
 	}
+
+	public boolean esIgualA(String nombre) {
+		return this.nombre == nombre;
+	}
 }

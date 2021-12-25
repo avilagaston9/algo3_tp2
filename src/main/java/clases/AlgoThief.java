@@ -27,16 +27,21 @@
 //
 //        this.ciudades = this.fachada.obtenerLadrones(archivoLadrones);
 //        Collections.shuffle(this.ciudades);
+//
 //        this.ladrones = this.fachada.obtenerCiudades(archivoCiudades);
 //        this.objetosRobados = this.fachada.obtenerObjetosRobados(archivoObjetos);
+//        
 //        Collections.shuffle(this.objetosRobados);
-//
 //
 //        Novato rango = new Novato();
 //
 //        ObjetoRobado objetoRobado = rango.getObjetoRobado(this.objetosRobados);
 //
-//        RutaDeEscape rutaDeEscape = new RutaDeEscape(this.ciudades, objetoRobado);
+//        RutaDeEscape rutaDeEscape = objetoRobado.crearRutaDeEscape(this.ciudades);
+//
+//
+//
+////        RutaDeEscape rutaDeEscape = new RutaDeEscape(this.ciudades, objetoRobado);
 //
 ////        PoliciaBuilder policiaBuilder = new PoliciaBuilder();
 //
