@@ -4,6 +4,9 @@ import clases.Tiempo;
 import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
+import clases.valorObjetoRobado.ObjetoRobado;
+
+import java.util.ArrayList;
 
 public class Novato extends Rango {
 	// private int velocidad;
@@ -47,4 +50,13 @@ public class Novato extends Rango {
 	 * 
 	 */
 
+	@Override
+	public ObjetoRobado getObjetoRobado(ArrayList<ObjetoRobado> objetosRobados) {
+		for (ObjetoRobado o : objetosRobados){
+			if (o.esValidoPara(this)){
+				return o;
+			}
+		}
+		return null;
+	}
 }

@@ -50,7 +50,7 @@ public class SecuenciaSetUp {
 
 		PoliciaBuilder builderPolicia = new PoliciaBuilder();
 		builderPolicia.setRango(novato);
-		builderPolicia.setUltimaCiudad(rutaDeEscape);
+		builderPolicia.setPrimerCiudad(rutaDeEscape.getRuta().get(0));
 
 		Policia policia = builderPolicia.getPolicia();
 

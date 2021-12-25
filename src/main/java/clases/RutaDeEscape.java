@@ -9,7 +9,7 @@ import clases.valorObjetoRobado.ObjetoValioso;
 
 public class RutaDeEscape {
 
-	private int largoRutaObjetoComun = 4;
+    private int largoRutaObjetoComun = 4;
 	private int largoRutaObjetoValioso = 5;
 	private int largoRutaObjetoMuyValioso = 7;
 
@@ -38,7 +38,7 @@ public class RutaDeEscape {
 		policia.setCiudad(this.ciudades.get(-1));
 	}
 
-	public Ciudad getPrimerCiudad() {
-		return this.ciudades.get(0);
+	public ArrayList<Ciudad> getRuta() {
+		return this.ciudades;
 	}
 }

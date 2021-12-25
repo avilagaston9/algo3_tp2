@@ -4,6 +4,9 @@ import clases.Tiempo;
 import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
+import clases.valorObjetoRobado.ObjetoRobado;
+
+import java.util.ArrayList;
 
 public abstract class Rango {
 
@@ -32,7 +35,9 @@ public abstract class Rango {
 		return this.arrestos;
 	}
 
-	/*
+    public abstract ObjetoRobado getObjetoRobado(ArrayList<ObjetoRobado> objetosRobados);
+
+    /*
 	 * 
 	 * void viajar(int cantidadKms, Tiempo tiempo);
 	 * 
