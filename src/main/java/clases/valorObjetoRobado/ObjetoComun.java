@@ -3,8 +3,7 @@ package clases.valorObjetoRobado;
 import clases.Ciudad;
 import clases.RutaDeEscape;
 import clases.rangos.*;
-
-import java.util.ArrayList;
+import java.util.List;
 
 public class ObjetoComun extends ObjetoRobado{
 
@@ -36,7 +35,7 @@ public class ObjetoComun extends ObjetoRobado{
     }
 
     @Override
-    public RutaDeEscape crearRutaDeEscape(ArrayList<Ciudad> ciudades) {
+    public RutaDeEscape crearRutaDeEscape(List<Ciudad> ciudades) {
         return new RutaDeEscape(ciudades, this.nombreCiudad, this.largoRutaDeEscape);
     }
 }
