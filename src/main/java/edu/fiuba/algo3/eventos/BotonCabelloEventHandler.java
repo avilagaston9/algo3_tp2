@@ -22,6 +22,7 @@ public class BotonCabelloEventHandler  implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
+        this.stage.setScene(muestraCabellos);
         this.stage.show();
     }
 }

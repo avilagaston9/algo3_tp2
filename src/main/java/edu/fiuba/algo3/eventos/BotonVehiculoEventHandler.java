@@ -22,6 +22,7 @@ public class BotonVehiculoEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
+        this.stage.setScene(muestravehiculos);
         this.stage.show();
 
     }

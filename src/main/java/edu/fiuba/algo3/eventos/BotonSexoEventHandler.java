@@ -23,6 +23,7 @@ public class BotonSexoEventHandler implements EventHandler<ActionEvent> {
 
  @Override
  public void handle(ActionEvent actionEvent) {
+  this.stage.setScene(muestraSexo);
   this.stage.show();
 
  }

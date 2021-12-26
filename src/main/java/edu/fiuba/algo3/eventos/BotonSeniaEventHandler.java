@@ -1,6 +1,7 @@
-package edu.fiuba.algo3.contenedores;
+package edu.fiuba.algo3.eventos;
 
 import clases.Computadora;
+import edu.fiuba.algo3.contenedores.ContenedorSenia;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -20,6 +21,7 @@ public class BotonSeniaEventHandler implements EventHandler<ActionEvent> {
     }
     @Override
     public void handle(ActionEvent actionEvent) {
+        this.stage.setScene(muestraSenia);
         this.stage.show();
 
     }
