@@ -53,8 +53,6 @@
          return this.policia.visitar(unEdificio, ladron);
      }
 
-     //todo que el policia duerma en ciertos horarios
-
      public int tiempoTranscurridoEnHoras() {
          return this.policia.tiempoTranscurridoEnHoras();
      }
