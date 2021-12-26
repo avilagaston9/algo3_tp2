@@ -1,11 +1,8 @@
 package edu.fiuba.algo3.botones;
 
 import clases.Computadora;
-import edu.fiuba.algo3.contenedores.BotonSeniaEventHandler;
-import edu.fiuba.algo3.eventos.CaracteristicaEventHandler;
+import edu.fiuba.algo3.eventos.BotonSeniaEventHandler;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 

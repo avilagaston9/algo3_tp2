@@ -19,8 +19,8 @@ public class CaracteristicaEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        this.computadora.cargarCaracteristica(this.caracteristica);
-        this.stage.close();
+        //this.computadora.cargarCaracteristica(this.caracteristica);
+        stage.close();
 
     }
 }

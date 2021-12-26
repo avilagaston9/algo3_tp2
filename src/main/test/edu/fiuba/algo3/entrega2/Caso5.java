@@ -1,19 +1,13 @@
 package edu.fiuba.algo3.entrega2;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-
-import org.junit.jupiter.api.Test;
-
 import clases.Ciudad;
 import clases.Computadora;
 import clases.Coordenadas;
-import clases.Policia;
 import clases.FabricaEdificios.FabricaAeropuerto;
 import clases.FabricaEdificios.FabricaBancos;
 import clases.FabricaEdificios.FabricaBiblioteca;
+import clases.InteraccionConArchivos.LectorDeArchivosFachada;
+import clases.Policia;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.edificios.Edificio;
 import clases.ladron.Ladron;
@@ -23,6 +17,12 @@ import clases.pistas.PistaDificil;
 import clases.pistas.PistaFacil;
 import clases.pistas.PistaMedia;
 import clases.rangos.Detective;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Caso5 {
 
@@ -229,6 +229,10 @@ public class Caso5 {
 
 		policia.arrestarA(jose);
 		assertEquals(12, policia.cantidadArrestos());
+
+
+		LectorDeArchivosFachada facade = new LectorDeArchivosFachada();
+		ArrayList<Ladron> ladrones = facade.obtenerLadrones("dossieros.json");
 
 	}
 }

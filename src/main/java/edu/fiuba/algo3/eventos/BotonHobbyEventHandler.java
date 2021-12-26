@@ -23,6 +23,7 @@ public class BotonHobbyEventHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
+        this.stage.setScene(muestraHobbies);
         this.stage.show();
 
     }

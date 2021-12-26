@@ -12,6 +12,10 @@ public class LectorArchivoLadrones implements LectorArchivos {
         JSONParser parser = new JSONParser();
 
 
+        //...
+        //voy leyendo el json creando los objeos de tipo ladron...
+        //BufferedReader lector = new BufferedReader("dossiers.json");
+        //JSONParser jsonParser = new JSONParser();
         return new ArrayList();
          */
     }
