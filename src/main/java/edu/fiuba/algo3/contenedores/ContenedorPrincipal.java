@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.contenedores;
 
 import edu.fiuba.algo3.eventos.BotonBuscarEventHandler;
+import edu.fiuba.algo3.eventos.BotonBuscarPistaEventHandler;
 import edu.fiuba.algo3.menues.BarraDeMenu;
 import edu.fiuba.algo3.botones.BotonViajar;
 import javafx.scene.canvas.Canvas;
@@ -27,27 +28,30 @@ public class ContenedorPrincipal extends BorderPane {
     }
 
     private void setBotonera(Stage stage) throws FileNotFoundException {
-        // Carga la imagen del boton para viajar
-        FileInputStream inputViajar = new FileInputStream("src/imagenes/planeIcon.png");
-        Image imageViajar = new Image(inputViajar);
-        ImageView imageViewViajar = new ImageView(imageViajar);
-        // Carga la imagen para el boton de buscar sospechosos
+        // Carga el icono del boton para buscar sospechosos
         FileInputStream inputBuscar = new FileInputStream("src/imagenes/unknown.png");
         Image imageBuscar = new Image(inputBuscar);
         ImageView imageViewBuscar = new ImageView(imageBuscar);
-        // Carga la imagen para buscar pistas en los edificios
+        // Carga el icono del boton para  buscar pistas en los edificios
         FileInputStream inputPista = new FileInputStream("src/imagenes/clue.png");
         Image imagePista = new Image(inputPista);
         ImageView imageViewPista = new ImageView(imagePista);
 
 
-        BotonViajar botonViajar= new BotonViajar(imageViewViajar);
+        BotonViajar botonViajar= new BotonViajar();
+
         Button botonBuscarSospechosos= new Button("",imageViewBuscar);
         botonBuscarSospechosos.setMaxSize(150,150);
-        Button buscarPista = new Button("",imageViewPista);
-        buscarPista.setMaxSize(150,150);
+
         BotonBuscarEventHandler buscarButtonHandler = new BotonBuscarEventHandler(stage);
         botonBuscarSospechosos.setOnAction(buscarButtonHandler);
+
+        Button buscarPista = new Button("",imageViewPista);
+        buscarPista.setMaxSize(150,150);
+
+        BotonBuscarPistaEventHandler buscarPistaButtonHandler = new BotonBuscarPistaEventHandler();
+        buscarPista.setOnAction(buscarPistaButtonHandler);
+
         TilePane botonera = new TilePane();
         botonera.getChildren().addAll(botonViajar,botonBuscarSospechosos,buscarPista);
         this.setLeft(botonera);

@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * JavaFX App
@@ -30,7 +29,7 @@ public class App extends Application {
 
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage);
 
-        AlgoThief algothief = this.crearModelo();
+        //AlgoThief algothief = this.crearModelo();
 
         Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
 

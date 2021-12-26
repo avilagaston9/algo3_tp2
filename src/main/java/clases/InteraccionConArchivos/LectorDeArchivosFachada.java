@@ -2,12 +2,13 @@ package clases.InteraccionConArchivos;
 
 import clases.Ciudad;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoCiudades;
+import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoLadrones;
+import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoObjetosRobados;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivos;
 import clases.ladron.Ladron;
 import clases.valorObjetoRobado.ObjetoRobado;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class LectorDeArchivosFachada {
 
@@ -22,13 +23,6 @@ public class LectorDeArchivosFachada {
         this.lectorArchivoObjetosRobados = new LectorArchivoObjetosRobados();
     }
 
-    /*
-    public Ladron obtenerLadron(){
-        Ladron ladron = lector.obtenerLadron();
-        return ladron;
-    }
-     */
-
     public ArrayList<Ciudad> obtenerCiudades(String pathArchivoCiudades) {
         
         return (ArrayList<Ciudad>) this.lectorArchivoCiudades.leer(pathArchivoCiudades);
@@ -42,6 +36,5 @@ public class LectorDeArchivosFachada {
         return (ArrayList<ObjetoRobado>) this.lectorArchivoObjetosRobados.leer(pathArchivoObjetosRobados);
     }
 
-    //...
 
 }
