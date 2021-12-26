@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 public class ContenedorBienvenidos extends VBox {
     Stage stage;
 
-
     public ContenedorBienvenidos(Stage stage, Scene proximaEscena) {
         super();
 
