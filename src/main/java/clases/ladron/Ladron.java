@@ -14,15 +14,17 @@ import clases.rangos.Novato;
 import clases.rangos.Sargento;
 
 public class Ladron {
+	private final String nombre;
 	private int iteradorCaracteristicas;
 	private LinkedList<CaracteristicaLadron> caracteristicas;
 	private Ciudad ciudadFinal;
 	// private FabricaDePistas fabrica;
 	// private Pista pista;
 
-	public Ladron(CaracteristicaLadron cabello, CaracteristicaLadron hobby, CaracteristicaLadron sexo,
-				  CaracteristicaLadron senia, CaracteristicaLadron vehiculo, Ciudad ciudad) {
+	public Ladron(String nombre, CaracteristicaLadron cabello, CaracteristicaLadron hobby, CaracteristicaLadron sexo,
+                  CaracteristicaLadron senia, CaracteristicaLadron vehiculo) {
 
+		this.nombre = nombre;
 		this.iteradorCaracteristicas = 0;
 		this.caracteristicas = new LinkedList<CaracteristicaLadron>();
 		this.caracteristicas.add(cabello);
@@ -30,7 +32,6 @@ public class Ladron {
 		this.caracteristicas.add(sexo);
 		this.caracteristicas.add(senia);
 		this.caracteristicas.add(vehiculo);
-		this.setCiudad(ciudad);
 	}
 
 	private Pista calcularChances(double chances) {

@@ -27,9 +27,9 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws FileNotFoundException {
 
-        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage);
+        AlgoThief algothief = this.crearModelo();
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, algothief, this.ciudades, this.ladrones);
 
-        //AlgoThief algothief = this.crearModelo();
 
         Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
 

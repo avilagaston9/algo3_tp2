@@ -1,5 +1,9 @@
 package edu.fiuba.algo3.contenedores;
 
+import clases.AlgoThief;
+import clases.Ciudad;
+import clases.ladron.Ladron;
+import clases.valorObjetoRobado.ObjetoRobado;
 import edu.fiuba.algo3.eventos.BotonBuscarEventHandler;
 import edu.fiuba.algo3.eventos.BotonBuscarPistaEventHandler;
 import edu.fiuba.algo3.menues.BarraDeMenu;
@@ -14,6 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class ContenedorPrincipal extends BorderPane {
     BarraDeMenu menuBar;
@@ -21,7 +26,7 @@ public class ContenedorPrincipal extends BorderPane {
 
 
 
-    public ContenedorPrincipal(Stage stage) throws FileNotFoundException {
+    public ContenedorPrincipal(Stage stage, AlgoThief algothief, ArrayList<Ciudad> ciudades, ArrayList<Ladron> ladrones) throws FileNotFoundException {
         this.setMenu(stage);
         this.setBotonera(stage);
 

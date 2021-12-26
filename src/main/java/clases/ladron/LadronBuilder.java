@@ -10,7 +10,7 @@ public class LadronBuilder {
 	private CaracteristicaLadron sexo;
 	private CaracteristicaLadron senia;
 	private CaracteristicaLadron vehiculo;
-	private Ciudad ciudad;
+	private String nombre;
 
 	public void setCabello(CaracteristicaLadron cabello) {
 		this.cabello = cabello;
@@ -32,11 +32,10 @@ public class LadronBuilder {
 		this.vehiculo = vehiculo;
 	}
 
-	public void setCiudad(Ciudad ciudad){
-		this.ciudad = ciudad;
-	}
+	public void setNombre(String nombre) { this.nombre = nombre;}
 
 	public Ladron getLadron() {
-		return new Ladron(this.cabello, this.hobby, this.sexo, this.senia, this.vehiculo,this.ciudad);
+		return new Ladron(this.nombre, this.cabello, this.hobby, this.sexo, this.senia, this.vehiculo);
 	}
+
 }
