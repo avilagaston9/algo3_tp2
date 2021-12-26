@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,9 +21,9 @@ import java.util.List;
 public class App extends Application {
 
 
-    private List<Ciudad> ciudades;
-    private List<Ladron> ladrones;
-    private List<ObjetoRobado> objetosRobados;
+    private ArrayList<Ciudad> ciudades;
+    private ArrayList<Ladron> ladrones;
+    private ArrayList<ObjetoRobado> objetosRobados;
 
     @Override
     public void start(Stage stage) throws FileNotFoundException {
