@@ -23,15 +23,19 @@ public class ContenedorCiudades extends VBox {
 
 
         Button botonPrimerCiudad = new Button(nombresCiudadesAdyacentes.get(0));
-        BotonesCiudadEventHandler botonCiudadesHandler = new BotonesCiudadEventHandler();
+        botonPrimerCiudad.setMaxSize(200,100);
+        BotonesCiudadEventHandler botonCiudadesHandler = new BotonesCiudadEventHandler(stage);
         botonPrimerCiudad.setOnAction(botonCiudadesHandler);
 
         Button botonSegundaCiudad = new Button(nombresCiudadesAdyacentes.get(1));
+        botonSegundaCiudad.setMaxSize(200,100);
         botonSegundaCiudad.setOnAction(botonCiudadesHandler);
 
         Button botonTercerCiudad = new Button(nombresCiudadesAdyacentes.get(2));
+        botonTercerCiudad.setMaxSize(200,100);
         botonTercerCiudad.setOnAction(botonCiudadesHandler);
 
         this.getChildren().addAll( botonPrimerCiudad,botonSegundaCiudad,botonTercerCiudad);
+        this.setWidth(200);
     }
 }

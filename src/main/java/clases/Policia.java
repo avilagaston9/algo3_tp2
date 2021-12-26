@@ -1,7 +1,6 @@
 package clases;
 
 import java.util.LinkedList;
-
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.OrdenDeArresto.SinOrdenDeArresto;
 import clases.armas.Arma;

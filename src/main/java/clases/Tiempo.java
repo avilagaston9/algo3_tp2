@@ -8,6 +8,8 @@ import clases.rangos.Sargento;
 
 public class Tiempo {
 
+	private int contadorDeSueño;
+	private int horasDeSueño;
 	private int horas;
 	private boolean heridoConCuchillo;
 	private int numeroVisita;
@@ -15,6 +17,8 @@ public class Tiempo {
 	public Tiempo() {
 
 		this.horas = 0;
+		this.contadorDeSueño = 0;
+		this.horasDeSueño = 8;
 		this.heridoConCuchillo = false;
 		this.numeroVisita = 1;
 	}
@@ -25,7 +29,14 @@ public class Tiempo {
 	}
 
 	public void sumarHoras(int cantidad) {
+
 		this.horas += cantidad;
+		this.contadorDeSueño += cantidad;
+		if(this.contadorDeSueño >= 16){
+
+			this.horas += this.horasDeSueño;
+			this.contadorDeSueño = (this.contadorDeSueño - 16);
+		}
 	}
 
 	public int tiempoTranscurridoEnHoras() {

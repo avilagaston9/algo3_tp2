@@ -7,13 +7,17 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class ContenedorBienvenidos extends VBox {
     Stage stage;
 
-    public ContenedorBienvenidos(Stage stage, Scene proximaEscena) {
+    public ContenedorBienvenidos(Stage stage, Scene proximaEscena) throws FileNotFoundException {
         super();
 
         this.stage = stage;
@@ -25,11 +29,14 @@ public class ContenedorBienvenidos extends VBox {
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 
-
-        Button botonJugar = new Button();
-        botonJugar.setText("Jugar");
-        Button botonSalir = new Button();
-        botonSalir.setText("Salir");
+        FileInputStream inputPlay = new FileInputStream("src/imagenes/play-button.png");
+        Image imagePlay = new Image(inputPlay);
+        ImageView imageViewPlay = new ImageView(imagePlay);
+        Button botonJugar = new Button("",imageViewPlay);
+        FileInputStream inputExit = new FileInputStream("src/imagenes/cancel.png");
+        Image imageExit = new Image(inputExit);
+        ImageView imageViewExit = new ImageView(imageExit);
+        Button botonSalir = new Button("",imageViewExit);
 
 
         BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena);
