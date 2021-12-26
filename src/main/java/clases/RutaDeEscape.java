@@ -2,6 +2,7 @@ package clases;
 
 import java.util.ArrayList;
 
+import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.valorObjetoRobado.ObjetoComun;
 import clases.valorObjetoRobado.ObjetoMuyValioso;
@@ -9,31 +10,21 @@ import clases.valorObjetoRobado.ObjetoValioso;
 
 public class RutaDeEscape {
 
-    private int largoRutaObjetoComun = 4;
-	private int largoRutaObjetoValioso = 5;
-	private int largoRutaObjetoMuyValioso = 7;
-
 	private ArrayList<Ciudad> ciudades;
 
-//	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoComun objeto) {
-//
-//		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoComun));
-//	}
-//
-//	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoValioso objeto) {
-//
-//		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoValioso));
-//	}
-//
-//	public RutaDeEscape(ArrayList<Ciudad> ciudades, ObjetoMuyValioso objeto) {
-//
-//		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaObjetoMuyValioso));
-//	}
-//
+
 	public RutaDeEscape(ArrayList<Ciudad> ciudades, String nombreCiudad, int largoRutaDeEscape) {
 
 		this.ciudades = new ArrayList<Ciudad>(ciudades);
 		Ciudad ciudad =  this.buscarCiudad(ciudades, nombreCiudad);
+		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaDeEscape-1));
+		this.ciudades.add(0, ciudad);
+
+		for (int i = 0; i < this.ciudades.size() - 1; i++){
+			Ciudad ciudadActual = this.ciudades.get(i);
+			ciudadActual.setPistas(this.ciudades.get(i+1));
+
+		}
 	}
 
 	private Ciudad buscarCiudad(ArrayList<Ciudad> ciudades, String nombreCiudad){
@@ -60,4 +51,6 @@ public class RutaDeEscape {
 	public ArrayList<Ciudad> getRuta() {
 		return this.ciudades;
 	}
+
+
 }
