@@ -20,6 +20,10 @@ import java.util.List;
 public class App extends Application {
 
 
+    private List<Ciudad> ciudades;
+    private List<Ladron> ladrones;
+    private List<ObjetoRobado> objetosRobados;
+
     @Override
     public void start(Stage stage) throws FileNotFoundException {
 
@@ -47,10 +51,10 @@ public class App extends Application {
     private AlgoThief crearModelo() {
 
         LectorDeArchivosFachada lectorDeArchivos = new LectorDeArchivosFachada();
-        List<Ciudad> ciudades = lectorDeArchivos.obtenerCiudades("/ArchivoCiudades.json");
-        List<Ladron> ladrones = lectorDeArchivos.obtenerLadrones("/ArchivoLadrones.json");
-        List<ObjetoRobado> objetosRobados = lectorDeArchivos.obtenerObjetosRobados("/ArchivoObjetosRobados.json");
+        this.ciudades = lectorDeArchivos.obtenerCiudades("/ArchivoCiudades.json");
+        this.ladrones = lectorDeArchivos.obtenerLadrones("/ArchivoLadrones.json");
+        this.objetosRobados = lectorDeArchivos.obtenerObjetosRobados("/ArchivoObjetosRobados.json");
 
-        return new AlgoThief(ciudades, ladrones, objetosRobados);
+        return new AlgoThief(this.ciudades, this.ladrones, this.objetosRobados);
     }
 }
