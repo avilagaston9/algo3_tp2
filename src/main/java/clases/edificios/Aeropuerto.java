@@ -10,22 +10,22 @@ import clases.rangos.Sargento;
 public class Aeropuerto extends Edificio {
 	@Override
 	public Pista serVisitado(Novato rango, Tiempo tiempo) {
-		return this.pistaFacil;
+		return this.pistaOtraCiudadFacil;
 	}
 
 	@Override
 	public Pista serVisitado(Detective rango, Tiempo tiempo) {
-		return this.pistaMedia;
+		return this.pistaOtraCiudadMedia;
 	}
 
 	@Override
 	public Pista serVisitado(Investigador rango, Tiempo tiempo) {
-		return this.pistaDificil;
+		return this.pistaOtraCiudadDificil;
 	}
 
 	@Override
 	public Pista serVisitado(Sargento rango, Tiempo tiempo) {
-		return this.pistaDificil;
+		return this.pistaOtraCiudadDificil;
 	}
 	/*
 	 * private String tipo="Aeropuerto"; private FabricaDePistas fabrica; private

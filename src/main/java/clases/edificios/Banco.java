@@ -12,28 +12,28 @@ public class Banco extends Edificio {
 	public Pista serVisitado(Novato rango, Tiempo tiempo) {
 
 		tiempo.sumarVisita();
-		return this.pistaFacil;
+		return this.pistaOtraCiudadFacil;
 	}
 
 	@Override
 	public Pista serVisitado(Detective rango, Tiempo tiempo) {
 
 		tiempo.sumarVisita();
-		return this.pistaMedia;
+		return this.pistaOtraCiudadMedia;
 	}
 
 	@Override
 	public Pista serVisitado(Investigador rango, Tiempo tiempo) {
 
 		tiempo.sumarVisita();
-		return this.pistaDificil;
+		return this.pistaOtraCiudadDificil;
 	}
 
 	@Override
 	public Pista serVisitado(Sargento rango, Tiempo tiempo) {
 
 		tiempo.sumarVisita();
-		return this.pistaDificil;
+		return this.pistaOtraCiudadDificil;
 	}
 	/*
 	 * private String tipo="Banco"; private FabricaDePistas fabrica; private Pista

@@ -25,8 +25,6 @@
         this.ciudades = ciudades;
         this.ladrones = ladrones;
         
-//        this.objetosRobados = objetosRobados;// todo pasar esto a variable temporal
-
         Collections.shuffle(this.ciudades);
         Collections.shuffle(objetosRobados);
 
@@ -46,6 +44,6 @@
         this.ladron = ladrones.get(random.nextInt(this.ladrones.size()));
 
         this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
-        
+
     }
  }
