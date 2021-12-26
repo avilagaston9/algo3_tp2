@@ -78,8 +78,6 @@
          return this.policia.cantidadArrestos();
      }
 
-    this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
-
     }
 
  }
