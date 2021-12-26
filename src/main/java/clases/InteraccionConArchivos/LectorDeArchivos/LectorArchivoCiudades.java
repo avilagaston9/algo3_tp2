@@ -1,10 +1,10 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class LectorArchivoCiudades implements LectorArchivos {
     @Override
-    public List leer(String pathArchivo) {
+    public ArrayList leer(String pathArchivo) {
         return null;
     }
 }

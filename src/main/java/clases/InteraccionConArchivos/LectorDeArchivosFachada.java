@@ -2,12 +2,13 @@ package clases.InteraccionConArchivos;
 
 import clases.Ciudad;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoCiudades;
+import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoLadrones;
+import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoObjetosRobados;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivos;
 import clases.ladron.Ladron;
 import clases.valorObjetoRobado.ObjetoRobado;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class LectorDeArchivosFachada {
 
