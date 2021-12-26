@@ -42,6 +42,7 @@
 
          Random random = new Random();
          this.ladron = ladrones.get(random.nextInt(this.ladrones.size()));
+         this.ladron.setCiudad(rutaDeEscape.getRuta().get(0));
 
          this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
 
@@ -78,8 +79,5 @@
          return this.policia.cantidadArrestos();
      }
 
-    }
-
- }
-
+}
 

@@ -75,14 +75,14 @@ public class Ciudad {
 	}
 
 	private void darPistasA(Aeropuerto aeropuerto) {
-		this.aeropuerto.darPistasA((Edificio) aeropuerto);
+		this.aeropuerto.darPistasA(aeropuerto);
 	}
 
 	private void darPistasA(Biblioteca biblioteca) {
-		this.biblioteca.darPistasA((Edificio) biblioteca);
+		this.biblioteca.darPistasA(biblioteca);
 	}
 
 	private void darPistasA(Banco banco) {
-		this.banco.darPistasA((Edificio) banco);
+		this.banco.darPistasA(banco);
 	}
 }
