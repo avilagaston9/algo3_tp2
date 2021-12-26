@@ -1,15 +1,12 @@
  package clases;
 
- import clases.InteraccionConArchivos.Fachada;
+ import clases.InteraccionConArchivos.LectorDeArchivosFachada;
  import clases.ladron.Ladron;
- import clases.ladron.LadronBuilder;
  import clases.rangos.Novato;
  import clases.valorObjetoRobado.ObjetoRobado;
 
  import java.io.File;
  import java.util.ArrayList;
- import java.util.Collections;
- import java.util.Random;
 
  public class AlgoThief {
 
@@ -20,10 +17,11 @@
     private ArrayList<ObjetoRobado> objetosRobados;
 
 
-    private Fachada fachada;
+    private LectorDeArchivosFachada fachada;
 
     public AlgoThief(File archivoCiudades, File archivoLadrones, File archivoObjetos) {
 
+        /*
         this.fachada = new Fachada(new LectorJson());
 
         this.ciudades = this.fachada.obtenerLadrones(archivoLadrones);
@@ -33,6 +31,8 @@
         this.objetosRobados = this.fachada.obtenerObjetosRobados(archivoObjetos);// todo pasar esto a variable temporal
 
         Collections.shuffle(this.objetosRobados);
+
+         */
 
         Novato rango = new Novato();
 

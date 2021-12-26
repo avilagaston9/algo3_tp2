@@ -1,10 +1,8 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
 
-import clases.ladron.Ladron;
+import java.util.List;
 
 public interface LectorArchivos {
 
-    public Ladron obtenerLadron();
-
-    //...
+    public List leer(String pathArchivo);
 }
