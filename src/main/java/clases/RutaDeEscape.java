@@ -1,19 +1,15 @@
 package clases;
 
 import java.util.ArrayList;
-
-import clases.edificios.Edificio;
+import java.util.List;
 import clases.ladron.Ladron;
-import clases.valorObjetoRobado.ObjetoComun;
-import clases.valorObjetoRobado.ObjetoMuyValioso;
-import clases.valorObjetoRobado.ObjetoValioso;
 
 public class RutaDeEscape {
 
 	private ArrayList<Ciudad> ciudades;
 
 
-	public RutaDeEscape(ArrayList<Ciudad> ciudades, String nombreCiudad, int largoRutaDeEscape) {
+	public RutaDeEscape(List<Ciudad> ciudades, String nombreCiudad, int largoRutaDeEscape) {
 
 		this.ciudades = new ArrayList<Ciudad>(ciudades);
 		Ciudad ciudad =  this.buscarCiudad(ciudades, nombreCiudad);
@@ -22,12 +18,12 @@ public class RutaDeEscape {
 
 		for (int i = 0; i < this.ciudades.size() - 1; i++){
 			Ciudad ciudadActual = this.ciudades.get(i);
-			ciudadActual.setPistas(this.ciudades.get(i+1));
+			//ciudadActual.setPistas(this.ciudades.get(i+1));//todo  esto
 
 		}
 	}
 
-	private Ciudad buscarCiudad(ArrayList<Ciudad> ciudades, String nombreCiudad){
+	private Ciudad buscarCiudad(List<Ciudad> ciudades, String nombreCiudad){
 
 		Ciudad ciudad = null;
 

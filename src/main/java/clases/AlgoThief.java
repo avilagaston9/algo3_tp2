@@ -4,35 +4,28 @@
  import clases.ladron.Ladron;
  import clases.rangos.Novato;
  import clases.valorObjetoRobado.ObjetoRobado;
-
- import java.io.File;
- import java.util.ArrayList;
+ import java.util.Collections;
+ import java.util.List;
 
  public class AlgoThief {
 
     private Policia policia;
     private Ladron ladron;
-    private ArrayList<Ciudad> ciudades;
-    private ArrayList<Ladron> ladrones;
-    private ArrayList<ObjetoRobado> objetosRobados;
+    private List<Ciudad> ciudades;
+    private List<Ladron> ladrones;
+    private List<ObjetoRobado> objetosRobados;
 
 
     private LectorDeArchivosFachada fachada;
 
-    public AlgoThief(File archivoCiudades, File archivoLadrones, File archivoObjetos) {
+    public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados) {
 
-        /*
-        this.fachada = new Fachada(new LectorJson());
+        this.ciudades = ciudades;
+        this.ladrones = ladrones;
+        this.objetosRobados = objetosRobados;// todo pasar esto a variable temporal
 
-        this.ciudades = this.fachada.obtenerLadrones(archivoLadrones);
         Collections.shuffle(this.ciudades);
-
-        this.ladrones = this.fachada.obtenerCiudades(archivoCiudades);
-        this.objetosRobados = this.fachada.obtenerObjetosRobados(archivoObjetos);// todo pasar esto a variable temporal
-
         Collections.shuffle(this.objetosRobados);
-
-         */
 
         Novato rango = new Novato();
 
@@ -53,7 +46,5 @@
 
         // computadora
 
-        }
     }
-
-}
+ }

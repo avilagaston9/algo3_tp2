@@ -3,6 +3,8 @@ package edu.fiuba.algo3;
 import clases.AlgoThief;
 import clases.Ciudad;
 import clases.InteraccionConArchivos.LectorDeArchivosFachada;
+import clases.ladron.Ladron;
+import clases.valorObjetoRobado.ObjetoRobado;
 import edu.fiuba.algo3.contenedores.ContenedorBienvenidos;
 import edu.fiuba.algo3.contenedores.ContenedorPrincipal;
 import javafx.application.Application;
@@ -46,7 +48,9 @@ public class App extends Application {
 
         LectorDeArchivosFachada lectorDeArchivos = new LectorDeArchivosFachada();
         List<Ciudad> ciudades = lectorDeArchivos.obtenerCiudades("/ArchivoCiudades.json");
+        List<Ladron> ladrones = lectorDeArchivos.obtenerLadrones("/ArchivoLadrones.json");
+        List<ObjetoRobado> objetosRobados = lectorDeArchivos.obtenerObjetosRobados("/ArchivoObjetosRobados.json");
 
-        //AlgoThief juego = new AlgoThief();
+        return new AlgoThief(ciudades, ladrones, objetosRobados);
     }
 }
