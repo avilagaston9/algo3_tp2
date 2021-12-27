@@ -18,6 +18,7 @@ public class Caso3 {
 		builder.setSexo(new CaracteristicaLadron("es mujer"));
 		builder.setSenia(new CaracteristicaLadron("tiene un tatuaje de un dragon"));
 		builder.setVehiculo(new CaracteristicaLadron("se movia en moto"));
+		builder.setNombre("Maria");
 
 		// primer ladron
 		Ladron maria = builder.getLadron();
@@ -27,6 +28,7 @@ public class Caso3 {
 		builder.setSexo(new CaracteristicaLadron("es hombre"));
 		builder.setSenia(new CaracteristicaLadron("llevaba puesto un anillo"));
 		builder.setVehiculo(new CaracteristicaLadron("manejaba un deportivo"));
+		builder.setNombre("Ricardo");
 
 		// segundo ladron
 		Ladron ricardo = builder.getLadron();
@@ -36,6 +38,7 @@ public class Caso3 {
 		builder.setSexo(new CaracteristicaLadron("es hombre"));
 		builder.setSenia(new CaracteristicaLadron("usaba muchas joyas"));
 		builder.setVehiculo(new CaracteristicaLadron("se movia en una limusina"));
+		builder.setNombre("Juan");
 
 		// tercer ladron
 		Ladron juan = builder.getLadron();

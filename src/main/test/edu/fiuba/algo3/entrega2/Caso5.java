@@ -1,21 +1,26 @@
 package edu.fiuba.algo3.entrega2;
 
 import clases.Ciudad;
-import clases.InteraccionConArchivos.LectorDeArchivosFachada;
+import clases.Computadora;
+import clases.Coordenadas;
+import clases.Policia;
+import clases.caracteristicasLadron.CaracteristicaLadron;
+import clases.edificios.*;
+import clases.ladron.Ladron;
+import clases.ladron.LadronBuilder;
+import clases.pistas.*;
+import clases.rangos.Detective;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Caso5 {
 
 	@Test
 	public void detectiveHaceSeisArrestosYAsciendeAInvestigadorLuegoRealizaInvestigacionYAtrapaAlSospechoso() {
-
-		LectorDeArchivosFachada facade = new LectorDeArchivosFachada();
-		ArrayList<Ciudad> ciudades = facade.obtenerCiudades("C:\\Users\\nicov\\Desktop\\fiuba\\OOP\\tps\\TP2\\algo3_tp2\\src\\main\\java\\clases\\InteraccionConArchivos\\LectorDeArchivos\\ciudadesSinTerminar.json");
-
-
-		/*
 
 		// Creo ciudad
 		Coordenadas coordenadasMexico = new Coordenadas(23.634501, -102.552784);
@@ -39,20 +44,14 @@ public class Caso5 {
 		ladronBuilder.setCabello(new CaracteristicaLadron("tiene el pelo negro"));
 		ladronBuilder.setSenia(new CaracteristicaLadron("tiene puesto un anillo"));
 		ladronBuilder.setVehiculo(new CaracteristicaLadron("manejaba una moto"));
-		ladronBuilder.setCiudad(bsas);
+		ladronBuilder.setNombre("Jose");
 
 		Ladron jose = ladronBuilder.getLadron();
-
+		jose.setCiudad(bsas);
 		// Lista de ladrones...
 		ArrayList<Ladron> sospechosos = new ArrayList<>();
 		sospechosos.add(jose);
 
-		// ==================================================================================================
-		// CREO FABRICAS DE EDIFICIOS
-
-		FabricaBancos fabricaBancos = new FabricaBancos();
-		FabricaAeropuerto fabricaAeropuerto = new FabricaAeropuerto();
-		FabricaBiblioteca fabricaBiblioteca = new FabricaBiblioteca();
 
 		// ==================================================================================================
 		// 1
@@ -65,19 +64,33 @@ public class Caso5 {
 		PistaFacil pistaFacil1 = new PistaFacil("Dolares canadieses");
 		PistaMedia pistaMedia1 = new PistaMedia("Dolares similares a canadieses");
 		PistaDificil pistaDificil1 = new PistaDificil("Dolares norteamericanos");
-		Edificio banco = fabricaBancos.crearEdificio(pistaFacil1, pistaMedia1, pistaDificil1);
+
+		Edificio banco = new Banco();
+		banco.setPistaOtraCiudad(pistaFacil1);
+		banco.setPistaOtraCiudad(pistaMedia1);
+		banco.setPistaOtraCiudad(pistaDificil1);
 
 		// AEROPUERTO
 		PistaFacil pistaFacil2 = new PistaFacil("Bandera canadiese");
 		PistaMedia pistaMedia2 = new PistaMedia("Bandera similar a la canadiese");
 		PistaDificil pistaDificil2 = new PistaDificil("bandera con una hoja");
-		Edificio aeropuerto = fabricaAeropuerto.crearEdificio(pistaFacil2, pistaMedia2, pistaDificil2);
+
+		Edificio aeropuerto = new Aeropuerto();
+		aeropuerto.setPistaOtraCiudad(pistaFacil2);
+		aeropuerto.setPistaOtraCiudad(pistaMedia2);
+		aeropuerto.setPistaOtraCiudad(pistaDificil2);
+
 
 		// BIBLIOTECA
 		PistaFacil pistaFacil3 = new PistaFacil("facil");
 		PistaMedia pistaMedia3 = new PistaMedia("media");
 		PistaDificil pistaDificil3 = new PistaDificil("Limita con usa");
-		Edificio biblioteca = fabricaBiblioteca.crearEdificio(pistaFacil3, pistaMedia3, pistaDificil3);
+
+		Edificio biblioteca = new Biblioteca();
+		biblioteca.setPistaOtraCiudad(pistaFacil3);
+		biblioteca.setPistaOtraCiudad(pistaMedia3);
+		biblioteca.setPistaOtraCiudad(pistaDificil3);
+
 
 		// PISTAS
 		LinkedList<Pista> pistasDevueltasBanco = policia.visitar(banco, jose); // primera visita
@@ -104,19 +117,31 @@ public class Caso5 {
 		PistaFacil pistaFacil4 = new PistaFacil("facil");
 		PistaMedia pistaMedia4 = new PistaMedia("media");
 		PistaDificil pistaDificil4 = new PistaDificil("Euros");
-		Edificio bancoRoma = fabricaBancos.crearEdificio(pistaFacil4, pistaMedia4, pistaDificil4);
+
+		Edificio bancoRoma = new Banco();
+		bancoRoma.setPistaOtraCiudad(pistaFacil4);
+		bancoRoma.setPistaOtraCiudad(pistaMedia4);
+		bancoRoma.setPistaOtraCiudad(pistaDificil4);
 
 		// AEROPUERTO
 		PistaFacil pistaFacil5 = new PistaFacil("facil");
 		PistaMedia pistaMedia5 = new PistaMedia("media");
 		PistaDificil pistaDificil5 = new PistaDificil("Avion con bandera de italia");
-		Edificio aeropuertoRoma = fabricaAeropuerto.crearEdificio(pistaFacil5, pistaMedia5, pistaDificil5);
+
+		Edificio aeropuertoRoma = new Aeropuerto();
+		aeropuertoRoma.setPistaOtraCiudad(pistaFacil5);
+		aeropuertoRoma.setPistaOtraCiudad(pistaMedia5);
+		aeropuertoRoma.setPistaOtraCiudad(pistaDificil5);
 
 		// BIBLIOTECA
 		PistaFacil pistaFacil6 = new PistaFacil("facil");
 		PistaMedia pistaMedia6 = new PistaMedia("media");
 		PistaDificil pistaDificil6 = new PistaDificil("Limita con usa");
-		Edificio bibliotecaPistasRoma = fabricaBiblioteca.crearEdificio(pistaFacil6, pistaMedia6, pistaDificil6);
+
+		Edificio bibliotecaPistaRoma = new Biblioteca();
+		bibliotecaPistaRoma.setPistaOtraCiudad(pistaFacil6);
+		bibliotecaPistaRoma.setPistaOtraCiudad(pistaMedia6);
+		bibliotecaPistaRoma.setPistaOtraCiudad(pistaDificil6);
 
 		// PISTAS
 		LinkedList<Pista> pistasDevueltasBancoRoma = policia.visitar(bancoRoma, jose);
@@ -146,19 +171,31 @@ public class Caso5 {
 		PistaFacil pistaFacil7 = new PistaFacil("facil");
 		PistaMedia pistaMedia7 = new PistaMedia("media");
 		PistaDificil pistaDificil7 = new PistaDificil("Euros");
-		Edificio bancoPistasParis = fabricaBancos.crearEdificio(pistaFacil7, pistaMedia7, pistaDificil7);
+
+		Edificio bancoPistasParis = new Banco();
+		bancoPistasParis.setPistaOtraCiudad(pistaFacil7);
+		bancoPistasParis.setPistaOtraCiudad(pistaMedia7);
+		bancoPistasParis.setPistaOtraCiudad(pistaDificil7);
 
 		// AEROPUERTO
 		PistaFacil pistaFacil8 = new PistaFacil("facil");
 		PistaMedia pistaMedia8 = new PistaMedia("media");
 		PistaDificil pistaDificil8 = new PistaDificil("bandera de francia");
-		Edificio aeropuertoPistasParis = fabricaAeropuerto.crearEdificio(pistaFacil8, pistaMedia8, pistaDificil8);
+
+		Edificio aeropuertoPistasParis = new Aeropuerto();
+		aeropuertoPistasParis.setPistaOtraCiudad(pistaFacil8);
+		aeropuertoPistasParis.setPistaOtraCiudad(pistaMedia8);
+		aeropuertoPistasParis.setPistaOtraCiudad(pistaDificil8);
 
 		// BIBLIOTECA
 		PistaFacil pistaFacil9 = new PistaFacil("facil");
 		PistaMedia pistaMedia9 = new PistaMedia("media");
 		PistaDificil pistaDificil9 = new PistaDificil("dificil");
-		Edificio bibliotecaPistasParis = fabricaBiblioteca.crearEdificio(pistaFacil9, pistaMedia9, pistaDificil9);
+
+		Edificio bibliotecaPistaParis = new Biblioteca();
+		bibliotecaPistaParis.setPistaOtraCiudad(pistaFacil9);
+		bibliotecaPistaParis.setPistaOtraCiudad(pistaMedia9);
+		bibliotecaPistaParis.setPistaOtraCiudad(pistaDificil9);
 
 		// PISTAS
 		LinkedList<Pista> pistasDevueltasBancoParis = policia.visitar(bancoPistasParis, jose);
@@ -185,13 +222,21 @@ public class Caso5 {
 		PistaFacil pistaFacil10 = new PistaFacil("facil");
 		PistaMedia pistaMedia10 = new PistaMedia("media");
 		PistaDificil pistaDificil10 = new PistaDificil("Pesos argentinos");
-		Edificio bancoPistasBsas = fabricaBancos.crearEdificio(pistaFacil10, pistaMedia10, pistaDificil10);
+
+		Edificio bancoPistasBsas = new Banco();
+		bancoPistasBsas.setPistaOtraCiudad(pistaFacil10);
+		bancoPistasBsas.setPistaOtraCiudad(pistaMedia10);
+		bancoPistasBsas.setPistaOtraCiudad(pistaDificil10);
 
 		// BIBLIOTECA
 		PistaFacil pistaFacil11 = new PistaFacil("facil");
 		PistaMedia pistaMedia11 = new PistaMedia("media");
 		PistaDificil pistaDificil11 = new PistaDificil("Rio de la plata");
-		Edificio bibliotecaPistasBsas = fabricaBancos.crearEdificio(pistaFacil11, pistaMedia11, pistaDificil11);
+
+		Edificio bibliotecaPistasBsas = new Biblioteca();
+		bibliotecaPistasBsas.setPistaOtraCiudad(pistaFacil11);
+		bibliotecaPistasBsas.setPistaOtraCiudad(pistaMedia11);
+		bibliotecaPistasBsas.setPistaOtraCiudad(pistaDificil11);
 
 		// PISTAS
 		LinkedList<Pista> pistasDevueltasBancoBsas = policia.visitar(bancoPistasBsas, jose); // primera visita
@@ -206,23 +251,16 @@ public class Caso5 {
 		computadora.cargarCaracteristica(new CaracteristicaLadron("es hombre"));
 
 		policia.emitirOrdenDeArresto(computadora.emitirOrdenDeArresto(jose));
-		assertEquals(18, policia.tiempoTranscurridoEnHoras());
+		assertEquals(26, policia.tiempoTranscurridoEnHoras());
 
 		policia.viajarA(bsas);
 
-		assertEquals(26, policia.tiempoTranscurridoEnHoras());
+		assertEquals(34, policia.tiempoTranscurridoEnHoras());
 
 		// ==================================================================================================
 		// 5
 
 		policia.arrestarA(jose);
 		assertEquals(12, policia.cantidadArrestos());
-
-
-		LectorDeArchivosFachada facade = new LectorDeArchivosFachada();
-		ArrayList<Ladron> ladrones = facade.obtenerLadrones("dossieros.json");
-
-		 */
-
 	}
 }

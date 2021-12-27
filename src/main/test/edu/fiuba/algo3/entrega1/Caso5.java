@@ -16,7 +16,6 @@ public class Caso5 {
 
 	@Test
 	public void DetectiveDuerme() {
-		/*
 
 		// arrange
 		// se crea Montreal
@@ -45,7 +44,5 @@ public class Caso5 {
 		policia.herirCon(cuchillo);
 		// assert
 		assertEquals(2, policia.tiempoTranscurridoEnHoras());
-
-		 */
 	}
 }
