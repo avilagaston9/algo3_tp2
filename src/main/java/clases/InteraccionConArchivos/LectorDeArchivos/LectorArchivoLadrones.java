@@ -8,6 +8,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.FileReader;
 import java.util.ArrayList;
 
 public class LectorArchivoLadrones implements LectorArchivos {
@@ -19,7 +20,9 @@ public class LectorArchivoLadrones implements LectorArchivos {
         ArrayList<Ladron> ladrones = new ArrayList<Ladron>();
         LadronBuilder ladronBuilder = new LadronBuilder();
         try{
-            Object obj = parser.parse(pathArchivo);
+            String pathCompleto = ((String)System.getProperty("user.dir") + pathArchivo);
+            FileReader fileReader = new FileReader(pathCompleto);
+            Object obj = parser.parse(fileReader);
             JSONObject jsonObject = (JSONObject) obj;
 
             JSONArray jsonLadrones = (JSONArray) jsonObject.get("dossiers");

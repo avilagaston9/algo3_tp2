@@ -51,9 +51,9 @@ public class App extends Application {
     private AlgoThief crearModelo() {
 
         LectorDeArchivosFachada lectorDeArchivos = new LectorDeArchivosFachada();
-        this.ciudades = lectorDeArchivos.obtenerCiudades("ciudadesSinTerminar.json");
-        this.ladrones = lectorDeArchivos.obtenerLadrones("dossiers.json");
-        this.objetosRobados = lectorDeArchivos.obtenerObjetosRobados("tesoros.json");
+        this.ciudades = lectorDeArchivos.obtenerCiudades("//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//ciudadesSinTerminar.json");
+        this.ladrones = lectorDeArchivos.obtenerLadrones("//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//dossiers.json");
+        this.objetosRobados = lectorDeArchivos.obtenerObjetosRobados("//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//tesoros.json");
 
         return new AlgoThief(this.ciudades, this.ladrones, this.objetosRobados);
     }

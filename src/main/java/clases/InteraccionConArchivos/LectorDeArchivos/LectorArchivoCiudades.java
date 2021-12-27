@@ -32,7 +32,8 @@ public class LectorArchivoCiudades implements LectorArchivos {
         FileReader jsonReader;
 
         try {
-            fileReader = new FileReader(pathArchivo);
+            String pathCompleto = ((String)System.getProperty("user.dir") + pathArchivo);
+            fileReader = new FileReader(pathCompleto);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
