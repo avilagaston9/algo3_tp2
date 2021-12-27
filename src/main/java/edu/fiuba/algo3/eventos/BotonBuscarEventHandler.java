@@ -17,7 +17,7 @@ public class BotonBuscarEventHandler implements EventHandler<ActionEvent> {
 
     public BotonBuscarEventHandler(Stage stage, AlgoThief algoThief) throws FileNotFoundException {
         this.stage= new Stage(StageStyle.UNDECORATED);
-        ContenedorComputadora contenedorComputadora= new ContenedorComputadora(stage,algoThief);
+        ContenedorComputadora contenedorComputadora= new ContenedorComputadora(this.stage,algoThief);
         this.mostrarComputadora = new Scene(contenedorComputadora,1000,760);
         this.stage.initModality(Modality.APPLICATION_MODAL);
 
