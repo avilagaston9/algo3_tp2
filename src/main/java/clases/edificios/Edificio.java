@@ -9,32 +9,52 @@ import clases.rangos.Sargento;
 
 public abstract class Edificio {
 
-	protected Pista pistaFacil;
-	protected Pista pistaMedia;
-	protected Pista pistaDificil;
+	protected Pista pistaOtraCiudadFacil;
+	protected Pista pistaOtraCiudadMedia;
+	protected Pista pistaOtraCiudadDificil;
+
+	private Pista pistaPropiaFacil;
+	private Pista pistaPropiaMedia;
+	private Pista pistaPropiaDificil;
 
 	public Edificio() {
 
 		Pista pistaDefault = new PistaSinInformacion();
-		this.pistaFacil = pistaDefault;
-		this.pistaMedia = pistaDefault;
-		this.pistaDificil = pistaDefault;
+		this.pistaOtraCiudadFacil = pistaDefault;
+		this.pistaOtraCiudadMedia = pistaDefault;
+		this.pistaOtraCiudadDificil = pistaDefault;
 	}
 
 	public void setPista(PistaFacil pistaFacil) {
-		this.pistaFacil = pistaFacil;
+		this.pistaOtraCiudadFacil = pistaFacil;
 	}
 	public void setPista(PistaMedia pistaMedia) {
-		this.pistaMedia = pistaMedia;
+		this.pistaOtraCiudadMedia = pistaMedia;
 	}
 	public void setPista(PistaDificil pistaDificil) {
-		this.pistaDificil = pistaDificil;
+		this.pistaOtraCiudadDificil = pistaDificil;
 	}
 
 	public abstract Pista serVisitado(Novato rango, Tiempo tiempo);
 	public abstract Pista serVisitado(Detective rango, Tiempo tiempo);
 	public abstract Pista serVisitado(Investigador rango, Tiempo tiempo);
 	public abstract Pista serVisitado(Sargento rango, Tiempo tiempo);
+
+	public void darPistasA(Edificio edificio){
+		edificio.setPistaFacilOtraCiudad(this.pistaPropiaFacil);
+		edificio.setPistaMediaOtraCiudad(this.pistaPropiaMedia);
+		edificio.setPistaDificilOtraCiudad(this.pistaPropiaDificil);
+	}
+
+	private void setPistaFacilOtraCiudad(Pista pistaFacilOtraCiudad) {
+		this.pistaOtraCiudadFacil = pistaFacilOtraCiudad;
+	}
+	private void setPistaMediaOtraCiudad(Pista pistaMediaOtraCiudad) {
+		this.pistaOtraCiudadMedia = pistaMediaOtraCiudad;
+	}
+	private void setPistaDificilOtraCiudad(Pista pistaDificilOtraCiudad) {
+		this.pistaOtraCiudadDificil = pistaDificilOtraCiudad;
+	}
 
 	// public boolean sosIgual(Edificio edificio);
 }

@@ -21,13 +21,12 @@
 
      public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados) {
 
-         this.ciudades = ciudades;
-         this.ladrones = ladrones;
 
-//        this.objetosRobados = objetosRobados;// todo pasar esto a variable temporal
-
-         Collections.shuffle(this.ciudades);
-         Collections.shuffle(objetosRobados);
+        this.ciudades = ciudades;
+        this.ladrones = ladrones;
+        
+        Collections.shuffle(this.ciudades);
+        Collections.shuffle(objetosRobados);
 
          Novato rango = new Novato();
 
@@ -43,6 +42,7 @@
 
          Random random = new Random();
          this.ladron = ladrones.get(random.nextInt(this.ladrones.size()));
+         this.ladron.setCiudad(rutaDeEscape.getRuta().get(0));
 
          this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
 
@@ -79,6 +79,5 @@
          return this.policia.cantidadArrestos();
      }
 
- }
-
+}
 

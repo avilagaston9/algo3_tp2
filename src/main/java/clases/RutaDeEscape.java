@@ -18,8 +18,7 @@ public class RutaDeEscape {
 
 		for (int i = 0; i < this.ciudades.size() - 1; i++){
 			Ciudad ciudadActual = this.ciudades.get(i);
-			//ciudadActual.setPistas(this.ciudades.get(i+1));//todo  esto
-
+			ciudadActual.setPistas(this.ciudades.get(i+1));
 		}
 	}
 

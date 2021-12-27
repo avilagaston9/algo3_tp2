@@ -1,14 +1,25 @@
 package clases;
 
+import clases.edificios.Aeropuerto;
+import clases.edificios.Banco;
+import clases.edificios.Biblioteca;
+import clases.edificios.Edificio;
+
 public class Ciudad {
 
 	private String nombre;
 	private Coordenadas coordenadas;
+	private Banco banco;
+	private Biblioteca biblioteca;
+	private Aeropuerto aeropuerto;
 
-	public Ciudad(String nombreCiudad, Coordenadas coordenadas) {
+	public Ciudad(String nombreCiudad, Coordenadas coordenadas, Banco banco, Biblioteca biblioteca, Aeropuerto aeropuerto) {
 
 		this.nombre = nombreCiudad;
 		this.coordenadas = coordenadas;
+		this.banco = banco;
+		this.biblioteca = biblioteca;
+		this.aeropuerto = aeropuerto;
 	}
 	/*
 	 * 
@@ -41,6 +52,7 @@ public class Ciudad {
 	 * edificios.get(i).darPista(); } } return null; }
 	 * 
 	 */
+	// todo borrar basura?
 
 	public double calcularDistanciaEnKms(Ciudad otraCiudad) {
 
@@ -53,5 +65,24 @@ public class Ciudad {
 
 	public boolean esIgualA(String nombre) {
 		return this.nombre == nombre;
+	}
+
+	public void setPistas(Ciudad otraCiudad) {
+		otraCiudad.darPistasA(this.banco);
+		otraCiudad.darPistasA(this.biblioteca);
+		otraCiudad.darPistasA(this.aeropuerto);
+
+	}
+
+	private void darPistasA(Aeropuerto aeropuerto) {
+		this.aeropuerto.darPistasA(aeropuerto);
+	}
+
+	private void darPistasA(Biblioteca biblioteca) {
+		this.biblioteca.darPistasA(biblioteca);
+	}
+
+	private void darPistasA(Banco banco) {
+		this.banco.darPistasA(banco);
 	}
 }

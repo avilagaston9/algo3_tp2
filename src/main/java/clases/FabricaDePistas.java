@@ -8,5 +8,5 @@ public class FabricaDePistas {/*
 								 * pista= new PistaFacil(); } else if (rango.rango()){ pista= new PistaMedia();
 								 * } else if (rango.rango()){ pista= new PistaMedia(); } else if
 								 * (rango.rango()){ pista= new PistaDificil(); } return pista; }
-								 */
+								 *///todo: borrar esto?
 }
