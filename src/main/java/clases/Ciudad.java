@@ -21,6 +21,13 @@ public class Ciudad {
 		this.biblioteca = biblioteca;
 		this.aeropuerto = aeropuerto;
 	}
+
+	//Para mantener los test de entregas anteriores.
+	public Ciudad(String nombreCiudad, Coordenadas coordenadas) {
+
+		this.nombre = nombreCiudad;
+		this.coordenadas = coordenadas;
+	}
 	/*
 	 * 
 	 * public void agregarEdificio(Edificio unEdificio) { edificios.add(unEdificio);

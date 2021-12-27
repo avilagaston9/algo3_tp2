@@ -23,8 +23,6 @@ public class Caso4 {
 	@Test
 	public void NovatoVisitaUnAeropuertoTresVeces() {
 
-		/*
-
 		// arrange
 
 		// se crea al ladrón
@@ -34,6 +32,7 @@ public class Caso4 {
 		builder.setSexo(new CaracteristicaLadron("es mujer"));
 		builder.setSenia(new CaracteristicaLadron("tiene un tatuaje de un dragon"));
 		builder.setVehiculo(new CaracteristicaLadron("manejaba una moto"));
+		builder.setNombre("Maria");
 		Ladron maria = builder.getLadron();
 
 		// se crea Montreal
@@ -47,7 +46,7 @@ public class Caso4 {
 
 		// se crea aeropuerto y se guarda la pista
 		Edificio aeropuerto = new Aeropuerto();
-		aeropuerto.setPistaPropia(pistaPrueba);
+		aeropuerto.setPistaOtraCiudad(pistaPrueba);
 
 		// policia visita aeropuerto 3 veces
 		LinkedList<Pista> pistasDevueltas;
@@ -72,6 +71,7 @@ public class Caso4 {
 		builder.setSexo(new CaracteristicaLadron("es mujer"));
 		builder.setSenia(new CaracteristicaLadron("tiene un tatuaje de un dragon"));
 		builder.setVehiculo(new CaracteristicaLadron("manejaba una moto"));
+		builder.setNombre("Maria");
 		Ladron maria = builder.getLadron();
 
 		// se crea Montreal
@@ -85,7 +85,7 @@ public class Caso4 {
 
 		// se crea aeropuerto y se guarda la pista
 		Edificio aeropuerto = new Aeropuerto();
-		aeropuerto.setPistaPropia(pistaPrueba);
+		aeropuerto.setPistaOtraCiudad(pistaPrueba);
 
 		// policia visita aeropuerto 3 veces
 		LinkedList<Pista> pistasDevueltas;
@@ -96,8 +96,5 @@ public class Caso4 {
 			assertEquals(pistasDevueltas.get(0).revelar(), "Su bandera es blanca y celeste");
 		}
 		assertEquals(0, policia.tiempoTranscurridoEnHoras());
-
-		 */
 	}
-
 }

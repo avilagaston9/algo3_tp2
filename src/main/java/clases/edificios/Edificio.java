@@ -13,9 +13,9 @@ public abstract class Edificio {
 	protected Pista pistaOtraCiudadMedia;
 	protected Pista pistaOtraCiudadDificil;
 
-	private PistaFacil pistaPropiaFacil;
-	private PistaMedia pistaPropiaMedia;
-	private PistaDificil pistaPropiaDificil;
+	protected PistaFacil pistaPropiaFacil;
+	protected PistaMedia pistaPropiaMedia;
+	protected PistaDificil pistaPropiaDificil;
 
 	public Edificio() {
 
@@ -46,15 +46,13 @@ public abstract class Edificio {
 		edificio.setPistaOtraCiudad(this.pistaPropiaDificil);
 	}
 
-	private void setPistaOtraCiudad(PistaFacil pistaFacilOtraCiudad) {
+	public void setPistaOtraCiudad(PistaFacil pistaFacilOtraCiudad) {
 		this.pistaOtraCiudadFacil = pistaFacilOtraCiudad;
 	}
-	private void setPistaOtraCiudad(PistaMedia pistaMediaOtraCiudad) {
+	public void setPistaOtraCiudad(PistaMedia pistaMediaOtraCiudad) {
 		this.pistaOtraCiudadMedia = pistaMediaOtraCiudad;
 	}
-	private void setPistaOtraCiudad(PistaDificil pistaDificilOtraCiudad) {
-		this.pistaOtraCiudadDificil = pistaDificilOtraCiudad;
-	}
+	public void setPistaOtraCiudad(PistaDificil pistaDificilOtraCiudad) {this.pistaOtraCiudadDificil = pistaDificilOtraCiudad; }
 
 	// public boolean sosIgual(Edificio edificio);
 }

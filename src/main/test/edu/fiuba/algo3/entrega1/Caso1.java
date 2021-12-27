@@ -23,8 +23,6 @@ public class Caso1 {
 	@Test
 	public void NovatoComienzaEnMontrealVisitaBancoDespliegaPistaCorrecta() {
 
-
-		/*
 		// se crea al ladrón
 		LadronBuilder builder = new LadronBuilder();
 		builder.setCabello(new CaracteristicaLadron("tiene el pelo rubio"));
@@ -32,6 +30,7 @@ public class Caso1 {
 		builder.setSexo(new CaracteristicaLadron("es mujer"));
 		builder.setSenia(new CaracteristicaLadron("tiene un tatuaje de un dragon"));
 		builder.setVehiculo(new CaracteristicaLadron("manejaba una moto"));
+		builder.setNombre("Maria");
 		Ladron maria = builder.getLadron();
 
 		// se crea Montreal
@@ -45,14 +44,12 @@ public class Caso1 {
 
 		// se crea banco y se guarda la pista
 		Edificio banco = new Banco();
-		banco.setPistaPropia(pistaPrueba);
+		banco.setPistaOtraCiudad(pistaPrueba);
 
 		// policia visita banco
 		LinkedList<Pista> pistasDevueltas = policia.visitar(banco, maria);
 
 		assert (pistasDevueltas.get(0).revelar().equals("Pesos"));
 		assertEquals(1, policia.tiempoTranscurridoEnHoras());
-
-		 */
 	}
 }

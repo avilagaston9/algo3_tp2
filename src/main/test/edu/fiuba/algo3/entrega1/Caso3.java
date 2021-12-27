@@ -14,7 +14,6 @@ public class Caso3 {
 
 	@Test
 	public void policiaViajaDeMontrealAMexico() {
-		/*
 
 		// se crea Montreal
 		Coordenadas coordenadasMontreal = new Coordenadas(45.50884, -73.58781);
@@ -32,7 +31,7 @@ public class Caso3 {
 		assertEquals(3, policia.tiempoTranscurridoEnHoras());
 		assert (policia.esCiudadActual(mexico));
 		assertFalse(policia.esCiudadActual(montreal));
-		 */
+
 	}
 
 

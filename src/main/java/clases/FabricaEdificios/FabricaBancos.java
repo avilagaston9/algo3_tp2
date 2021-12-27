@@ -12,7 +12,7 @@ public class FabricaBancos implements FabricaEdificios {
 	public Edificio crearEdificio(PistaFacil pistaFacil, PistaMedia pistaMedia, PistaDificil pistaDificil) {
 
 		Edificio banco = new Banco();
-		banco.setPistaPropia(pistaFacil);
+		banco.setPistaOtraCiudad(pistaFacil);
 		banco.setPistaPropia(pistaMedia);
 		banco.setPistaPropia(pistaDificil);
 
