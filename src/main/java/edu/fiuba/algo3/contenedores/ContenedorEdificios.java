@@ -5,9 +5,13 @@ import edu.fiuba.algo3.botones.BotonVisitarBanco;
 import edu.fiuba.algo3.botones.BotonVisitarBiblioteca;
 import edu.fiuba.algo3.botones.BotonVolver;
 import edu.fiuba.algo3.menues.BarraDeMenu;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class ContenedorEdificios extends BorderPane {
@@ -25,6 +29,10 @@ public class ContenedorEdificios extends BorderPane {
         BotonVisitarBiblioteca botonVisitarBiblioteca = new BotonVisitarBiblioteca(this.stage);
         BotonVisitarBanco botonVisitarBanco = new BotonVisitarBanco(this.stage);
         BotonVolver botonVolver = new BotonVolver(stage);
+        FileInputStream input = new FileInputStream("src/imagenes/log-out.png");
+        Image image = new Image(input);
+        ImageView imageView = new ImageView(image);
+        botonVolver.setGraphic(imageView);
         TilePane botonera = new TilePane(botonVisitarBanco,botonVisitarAeropuerto,botonVisitarBiblioteca,botonVolver);
 
         this.setBottom(botonera);

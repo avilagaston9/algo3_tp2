@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.contenedores;
 
+import clases.AlgoThief;
 import edu.fiuba.algo3.eventos.BotonEntrarEventHandler;
 import edu.fiuba.algo3.eventos.OpcionSalirEventHandler;
 import javafx.geometry.Insets;
@@ -17,7 +18,7 @@ import java.io.FileNotFoundException;
 public class ContenedorBienvenidos extends VBox {
     Stage stage;
 
-    public ContenedorBienvenidos(Stage stage, Scene proximaEscena) throws FileNotFoundException {
+    public ContenedorBienvenidos(Stage stage, Scene proximaEscena, AlgoThief algothief) throws FileNotFoundException {
         super();
 
         this.stage = stage;
@@ -39,7 +40,7 @@ public class ContenedorBienvenidos extends VBox {
         Button botonSalir = new Button("",imageViewExit);
 
 
-        BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena);
+        BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena,algothief);
         botonJugar.setOnAction(botonEntrarHandler);
         OpcionSalirEventHandler botonSalirHandler = new OpcionSalirEventHandler();
         botonSalir.setOnAction(botonSalirHandler);
