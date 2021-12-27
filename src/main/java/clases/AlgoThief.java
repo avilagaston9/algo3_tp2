@@ -83,5 +83,9 @@
      public void cargarCaracteristica(CaracteristicaLadron caracteristica) {
          computadora.cargarCaracteristica(caracteristica);
      }
+
+     public void buscarSospechosos() {
+         this.computadora.buscarSospechosos();
+     }
  }
 

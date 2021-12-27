@@ -3,14 +3,22 @@ package edu.fiuba.algo3.eventos;
 import clases.AlgoThief;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.stage.Stage;
 
 public class BotonBuscarSospechososEventHandler implements EventHandler<ActionEvent> {
+    Stage stage ;
+    AlgoThief algoThief;
 
-    public BotonBuscarSospechososEventHandler(AlgoThief algothief){
+    public BotonBuscarSospechososEventHandler(AlgoThief algothief, Stage stage){
+        this.stage = stage;
+        this.algoThief = algothief;
+
+
 
     }
     @Override
     public void handle(ActionEvent actionEvent) {
+        this.stage.close();
 
     }
 }

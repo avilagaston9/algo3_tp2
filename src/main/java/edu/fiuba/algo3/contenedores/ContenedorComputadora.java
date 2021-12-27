@@ -23,14 +23,14 @@ public class ContenedorComputadora extends BorderPane {
 
     public ContenedorComputadora(Stage stage, AlgoThief algoThief) throws FileNotFoundException {
         this.setMenu(stage);
-        this.setBotonera(algoThief);
+        this.setBotonera(algoThief,stage);
         FileInputStream input = new FileInputStream("src/imagenes/compuCargaDatos.png");
         Image image = new Image(input,800,1000,true,true);
         ImageView imageView = new ImageView(image);
         this.setRight(imageView);
     }
 
-    private void setBotonera(AlgoThief algothief) throws FileNotFoundException {
+    private void setBotonera(AlgoThief algothief, Stage stage) throws FileNotFoundException {
         BotonSexo sexo= new BotonSexo(algothief);
         BotonHobby hobby = new BotonHobby(algothief);
         BotonCabello cabello = new BotonCabello(algothief);
@@ -38,11 +38,12 @@ public class ContenedorComputadora extends BorderPane {
         BotonVehiculo vehiculo = new BotonVehiculo(algothief);
 
         Button buscarSospechosos = new Button("Buscar sospechosos");
-        BotonBuscarSospechososEventHandler buscarSospechososButtonHandler = new BotonBuscarSospechososEventHandler(algothief);
+        BotonBuscarSospechososEventHandler buscarSospechososButtonHandler = new BotonBuscarSospechososEventHandler(algothief,stage);
         buscarSospechosos.setOnAction(buscarSospechososButtonHandler);
 
+        BotonVolver botonVolver = new BotonVolver(stage);
 
-        VBox contenedorVertical = new VBox(sexo,hobby,cabello,senia,vehiculo,buscarSospechosos);
+        VBox contenedorVertical = new VBox(sexo,hobby,cabello,senia,vehiculo,buscarSospechosos,botonVolver);
         contenedorVertical.setPrefSize(100,40);
         contenedorVertical.setSpacing(10);
         contenedorVertical.setPadding(new Insets(15));

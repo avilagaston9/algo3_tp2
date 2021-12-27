@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.contenedores;
 
 import clases.Ciudad;
+import edu.fiuba.algo3.botones.BotonVolver;
 import edu.fiuba.algo3.eventos.BotonesCiudadEventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -20,6 +21,8 @@ public class ContenedorCiudades extends VBox {
             botonCiudad.setOnAction(botonCiudadHandler);
             this.getChildren().add(botonCiudad);
         }
+        BotonVolver botonVolver = new BotonVolver(stage);
+        this.getChildren().add(botonVolver);
         this.setWidth(200);
     }
 }
