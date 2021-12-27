@@ -1,10 +1,5 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
-<<<<<<< HEAD
 
-
-=======
-import java.util.ArrayList;
->>>>>>> 23a864c986c2877774834bbb880ff0af9ebe986e
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
 import clases.ladron.LadronBuilder;

@@ -5,10 +5,12 @@ import clases.Coordenadas;
 import clases.FabricaEdificios.FabricaAeropuerto;
 import clases.FabricaEdificios.FabricaBancos;
 import clases.FabricaEdificios.FabricaBiblioteca;
+import clases.edificios.Aeropuerto;
 import clases.edificios.Banco;
 import clases.edificios.Biblioteca;
 import clases.edificios.Edificio;
 import clases.ladron.Ladron;
+import clases.pistas.Pista;
 import clases.pistas.PistaDificil;
 import clases.pistas.PistaFacil;
 import clases.pistas.PistaMedia;
@@ -65,16 +67,14 @@ public class LectorArchivoCiudades implements LectorArchivos {
 
             // BANCO...
             PistaFacil pistaFacilBanco = new PistaFacil((String)ciudadJson.get("moneda"));
-            ArrayList listaIndustrias = (ArrayList) ciudadJson.get("industrias");
-            PistaMedia pistaMediaBanco = new PistaMedia((String)listaIndustrias.get(0));
+            PistaMedia pistaMediaBanco = new PistaMedia((String)ciudadJson.get("industrias"));
             PistaDificil pistaDificilBanco = new PistaDificil((String) ciudadJson.get("arte"));
 
             Banco banco = (Banco) fabricaBancos.crearEdificio(pistaFacilBanco, pistaMediaBanco, pistaDificilBanco);
 
             // BIBLIOTECA
             PistaFacil pistaFacilBiblioteca = new PistaFacil((String)ciudadJson.get("geografia"));
-            ArrayList listaEtnias = (ArrayList) ciudadJson.get("etnias");
-            PistaMedia pistaMediaBiblioteca = new PistaMedia((String)listaEtnias.get(0));
+            PistaMedia pistaMediaBiblioteca = new PistaMedia((String)ciudadJson.get("etnias"));
             PistaDificil pistaDificilBiblioteca = new PistaDificil((String)ciudadJson.get("religion"));
 
             Biblioteca biblioteca = (Biblioteca) fabricaBiblioteca.crearEdificio(pistaFacilBanco, pistaMediaBanco, pistaDificilBanco);
@@ -82,6 +82,11 @@ public class LectorArchivoCiudades implements LectorArchivos {
             // AEROPUERTO
             PistaFacil pistaFacilAeropuerto = new PistaFacil((String) ciudadJson.get("colorBandera"));
             PistaMedia pistaMediaAeropuero = new PistaMedia((String) ciudadJson.get("idioma"));
+            PistaDificil pistaDificilAeropuerto = new PistaDificil((String) ciudadJson.get("representante"));
+
+            Aeropuerto aeropuerto = (Aeropuerto) fabricaAeropuerto.crearEdificio(pistaFacilAeropuerto, pistaMediaAeropuero, pistaDificilAeropuerto);
+
+
 
 
 
