@@ -8,12 +8,14 @@ import edu.fiuba.algo3.eventos.BotonBuscarEventHandler;
 import edu.fiuba.algo3.eventos.BotonBuscarPistaEventHandler;
 import edu.fiuba.algo3.menues.BarraDeMenu;
 import edu.fiuba.algo3.botones.BotonViajar;
+import edu.fiuba.algo3.vistas.VistaReloj;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.FileInputStream;
@@ -21,15 +23,23 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class ContenedorPrincipal extends BorderPane {
-    BarraDeMenu menuBar;
-    Canvas canvas;
 
+    BarraDeMenu menuBar;
 
 
     public ContenedorPrincipal(Stage stage, AlgoThief algothief, ArrayList<Ciudad> ciudades, ArrayList<Ladron> ladrones) throws FileNotFoundException {
         this.setMenu(stage);
         this.setBotonera(stage,algothief,ciudades);
+        this.setReloj(algothief);
+    }
 
+    private void setReloj(AlgoThief algothief) {
+
+        VBox reloj = new VBox();
+        VistaReloj vistaReloj = new VistaReloj(algothief, reloj);
+        algothief.setObservador(vistaReloj);
+        vistaReloj.actualizar();
+        this.setRight(reloj);
     }
 
     private void setBotonera(Stage stage,AlgoThief algoThief,ArrayList<Ciudad> ciudades) throws FileNotFoundException {
