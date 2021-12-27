@@ -16,6 +16,7 @@ public class RutaDeEscape {
 		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaDeEscape-1));
 		this.ciudades.add(0, ciudad);
 
+
 		for (int i = 0; i < this.ciudades.size() - 1; i++){
 			Ciudad ciudadActual = this.ciudades.get(i);
 			ciudadActual.setPistas(this.ciudades.get(i+1));

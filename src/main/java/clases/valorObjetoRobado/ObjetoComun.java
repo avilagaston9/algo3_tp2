@@ -7,8 +7,6 @@ import java.util.List;
 
 public class ObjetoComun extends ObjetoRobado{
 
-    private String nombreCiudad;
-    private int largoRutaDeEscape;
 
     public ObjetoComun(){
         this.largoRutaDeEscape = 4;

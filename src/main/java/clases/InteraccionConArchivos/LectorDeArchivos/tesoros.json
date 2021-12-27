@@ -1,7 +1,7 @@
 {
     "tesoros" : [
         {
-            "ciudad": "Peking",
+            "ciudad": "Atenas",
             "tesoro": "Huevo de 1000 años",
             "valor": "Valioso"    
         },
@@ -11,12 +11,12 @@
             "valor": "Comun"
         },
         {
-            "ciudad": "Puerto Moresby",
+            "ciudad": "Cairo",
             "tesoro": "Colmillo de jabalí",
             "valor": "Comun"  
         },
         {
-            "ciudad": "Sydney",
+            "ciudad": "Bamako",
             "tesoro": "Araña de la Ópera",
             "valor": "Comun"      
         },
@@ -26,7 +26,7 @@
             "valor": "Valioso"
         },
         {
-            "ciudad": "Londres",
+            "ciudad": "Montreal",
             "tesoro": "Joyas de la corona",
             "valor": "Comun"      
         },
@@ -41,7 +41,7 @@
             "valor": "Comun"
         },
         {
-            "ciudad": "Lima",
+            "ciudad": "Buenos Aires",
             "tesoro": "Máscara de oro Inca",
             "valor": "Valioso"
         },
@@ -51,7 +51,7 @@
             "valor": "Valioso"    
         },
         {
-            "ciudad": "Moscú",
+            "ciudad": "Estambul",
             "tesoro": "Corona de Iván el Terrible",
             "valor": "Muy valioso"  
         },
@@ -61,7 +61,7 @@
             "valor": "Muy valioso"
         },
         {
-            "ciudad": "Ciudad de México",
+            "ciudad": "Colombo",
             "tesoro": "Máscara de Montezuma",
             "valor": "Valioso"      
         },
@@ -71,17 +71,17 @@
             "valor": "Comun"
         },
         {
-            "ciudad": "Singapur",
+            "ciudad": "Colombo",
             "tesoro": "Merlion el León Dorado",
             "valor": "Comun"
         },
         {
-            "ciudad": "Moscú",
+            "ciudad": "Bamako",
             "tesoro": "Pintura del Kremlin",
             "valor": "Comun"
         },
         {
-            "ciudad": "Roma",
+            "ciudad": "Estambul",
             "tesoro": "Anillo del Papa",
             "valor": "Comun"  
         },
@@ -96,7 +96,7 @@
             "valor": "Comun"      
         },
         {
-            "ciudad": "Kathmandu",
+            "ciudad": "Baghdad",
             "tesoro": "Colección Royal Quartz",
             "valor": "Comun"
         },
@@ -106,7 +106,7 @@
             "valor": "Valioso"
         },
         {
-            "ciudad": "Lima",
+            "ciudad": "Atenas",
             "tesoro": "Llama de plata",
             "valor": "Comun"      
         },
@@ -121,22 +121,22 @@
             "valor": "Comun"      
         },
         {
-            "ciudad": "Rio de Janeiro",
+            "ciudad": "Cairo",
             "tesoro": "Loro de peluche",
             "valor": "Comun"      
         },
         {
-            "ciudad": "New York",
+            "ciudad": "Colombo",
             "tesoro": "Las Rockettes",
             "valor": "Comun"
         },
         {
-            "ciudad": "Oslo",
+            "ciudad": "Bangkok",
             "tesoro": "Casco de vikingo",
             "valor": "Valioso"
         },
         {
-            "ciudad": "Kigali",
+            "ciudad": "Budapest",
             "tesoro": "Tocado del rey Watusi",
             "valor": "Comun"    
         }

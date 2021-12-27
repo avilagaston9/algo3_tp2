@@ -7,8 +7,6 @@ import java.util.List;
 
 public class ObjetoMuyValioso extends ObjetoRobado{
 
-    private String nombreCiudad;
-    private int largoRutaDeEscape;
 
     public ObjetoMuyValioso(){
         this.largoRutaDeEscape = 7;

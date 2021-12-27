@@ -64,7 +64,7 @@ public class Ciudad {
 	}
 
 	public boolean esIgualA(String nombre) {
-		return this.nombre == nombre;
+		return this.nombre.equals(nombre);
 	}
 
 	public void setPistas(Ciudad otraCiudad) {

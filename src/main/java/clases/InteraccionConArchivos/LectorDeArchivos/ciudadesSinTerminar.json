@@ -161,6 +161,24 @@
             "latitud": 41.01,
             "longitud": 28.960278,
             "descripcion": "Antiguamente conocida como Bizancio y Constantinopla, es la ciudad más poblada de Turquía y el centro histórico, cultural y económico del país. Es una ciudad transcontinental, ubicada en el estrecho del Bósforo, que separa Europa y Asia, entre el mar de Mármara y el mar Negro."
+        },
+        {
+            "ciudad": "Montreal",
+            "colorBandera": "Roja y Blanca",
+            "moneda": "Dolar Canadiense",
+            "geografia": "Nieve",
+            "caracteristicas": "Frio",
+            "industrias": "Miel de maple",
+            "animales": "Alce y Oso",
+            "etnias": "Sajones y Métis",
+            "idiomas": "Ingles y Frances",
+            "arte": "Justin Bieber",
+            "religion": "Cristianismo",
+            "representante": "Monarquía - Primer Ministro",
+            "otros": "Hockey sobre hielo",
+            "latitud": 45.50884,
+            "longitud": -73.58781,
+            "descripcion": "Montreal es la ciudad más grande de la provincia de Quebec en Canadá. Se ubica en una isla en el río San Lorenzo y su nombre viene del Mont-Royal, el cerro con tres cimas que se ubica en su centro. Sus distritos, varios de los cuales alguna vez fueron ciudades independientes, incluyen barrios que varían desde Vieux-Montréal con un estilo francés, adoquines y la Basílica neogótica de Notre-Dame en su núcleo, hasta el bohemio Plateau"
         }
     ]
 }
