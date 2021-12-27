@@ -12,6 +12,7 @@
 
  public class AlgoThief {
 
+     private ArrayList<ObservadorAlgothief> observadores;
      private Policia policia;
      private Ladron ladron;
      private List<Ciudad> ciudades;
@@ -23,6 +24,7 @@
 
      public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados) {
 
+         this.observadores = new ArrayList<ObservadorAlgothief>;
 
         this.ciudades = ciudades;
         this.ladrones = ladrones;
@@ -50,10 +52,25 @@
 
      }
 
+     public void setObservador(ObservadorAlgothief observador) {
+         this.observadores.add(observador);
+     }
+
+     private void actualizarObservadores() {
+
+         for(ObservadorAlgothief o : this.observadores){
+
+             o.actualizar();
+         }
+     }
+
      //métodos para jugar
      public LinkedList<Pista> visitar(Edificio unEdificio, Ladron ladron) {
-         return this.policia.visitar(unEdificio, ladron);
+         LinkedList<Pista> pistas = this.policia.visitar(unEdificio, ladron);
+         this.actualizarObservadores();
+         return pistas;
      }
+
 
      public int tiempoTranscurridoEnHoras() {
          return this.policia.tiempoTranscurridoEnHoras();
@@ -62,7 +79,9 @@
      //todo ¿herir con??
 
      public void viajarA(Ciudad nuevaCiudad) {
+
          this.policia.viajarA(nuevaCiudad);
+         this.actualizarObservadores();
      }
 
      public boolean esCiudadActual(Ciudad unaCiudad) {
@@ -70,11 +89,13 @@
      }
 
      public void arrestarA(Ladron unLadron) {
+
          this.policia.arrestarA(unLadron);
      }
 
      public void emitirOrdenDeArresto(OrdenArresto ordenDeArresto) {
          this.policia.emitirOrdenDeArresto(ordenDeArresto);
+         this.actualizarObservadores();
      }
 
      public int cantidadArrestos() {
