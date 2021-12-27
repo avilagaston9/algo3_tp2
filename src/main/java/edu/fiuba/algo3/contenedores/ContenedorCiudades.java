@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.contenedores;
 
+import clases.Ciudad;
 import edu.fiuba.algo3.eventos.BotonesCiudadEventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -9,33 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContenedorCiudades extends VBox {
-    Stage stage;
 
-    public ContenedorCiudades(Stage stage){
+    public ContenedorCiudades(Stage stage, ArrayList<Ciudad> ciudades){
         super();
-        List<String> nombresCiudadesAdyacentes= new ArrayList<>();
-        nombresCiudadesAdyacentes.add("Bs.As");
-        nombresCiudadesAdyacentes.add("Paris");
-        nombresCiudadesAdyacentes.add("Londres");
-
-
-        // botones que te permiten viajar a cada ciudad
-
-
-        Button botonPrimerCiudad = new Button(nombresCiudadesAdyacentes.get(0));
-        botonPrimerCiudad.setMaxSize(200,100);
-        BotonesCiudadEventHandler botonCiudadesHandler = new BotonesCiudadEventHandler(stage);
-        botonPrimerCiudad.setOnAction(botonCiudadesHandler);
-
-        Button botonSegundaCiudad = new Button(nombresCiudadesAdyacentes.get(1));
-        botonSegundaCiudad.setMaxSize(200,100);
-        botonSegundaCiudad.setOnAction(botonCiudadesHandler);
-
-        Button botonTercerCiudad = new Button(nombresCiudadesAdyacentes.get(2));
-        botonTercerCiudad.setMaxSize(200,100);
-        botonTercerCiudad.setOnAction(botonCiudadesHandler);
-
-        this.getChildren().addAll( botonPrimerCiudad,botonSegundaCiudad,botonTercerCiudad);
+        for(int i=0 ; i<ciudades.size();i++){
+            Button botonCiudad = new Button(ciudades.get(i).nombreCiudad());
+            botonCiudad.setMaxSize(200,100);
+            BotonesCiudadEventHandler botonCiudadHandler = new BotonesCiudadEventHandler(stage);
+            botonCiudad.setOnAction(botonCiudadHandler);
+            this.getChildren().add(botonCiudad);
+        }
         this.setWidth(200);
     }
 }

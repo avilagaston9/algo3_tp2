@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.eventos;
 
-import clases.Computadora;
+import clases.AlgoThief;
 import edu.fiuba.algo3.contenedores.ContenedorSenia;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -13,9 +13,9 @@ public class BotonSeniaEventHandler implements EventHandler<ActionEvent> {
     Stage stage;
     Scene muestraSenia;
 
-    public BotonSeniaEventHandler(Computadora computadora){
+    public BotonSeniaEventHandler(AlgoThief algoThief){
         this.stage = new Stage(StageStyle.UNDECORATED);
-        ContenedorSenia contenedorSenia = new ContenedorSenia(computadora,stage);
+        ContenedorSenia contenedorSenia = new ContenedorSenia(algoThief,stage);
         this.muestraSenia = new Scene(contenedorSenia,200,200);
         this.stage.initModality(Modality.APPLICATION_MODAL);
     }

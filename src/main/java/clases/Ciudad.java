@@ -85,4 +85,8 @@ public class Ciudad {
 	private void darPistasA(Banco banco) {
 		this.banco.darPistasA(banco);
 	}
+
+    public String nombreCiudad() {
+		return this.nombre;
+    }
 }

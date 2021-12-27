@@ -28,11 +28,11 @@ public class ContenedorPrincipal extends BorderPane {
 
     public ContenedorPrincipal(Stage stage, AlgoThief algothief, ArrayList<Ciudad> ciudades, ArrayList<Ladron> ladrones) throws FileNotFoundException {
         this.setMenu(stage);
-        this.setBotonera(stage);
+        this.setBotonera(stage,algothief,ciudades);
 
     }
 
-    private void setBotonera(Stage stage) throws FileNotFoundException {
+    private void setBotonera(Stage stage,AlgoThief algoThief,ArrayList<Ciudad> ciudades) throws FileNotFoundException {
         // Carga el icono del boton para buscar sospechosos
         FileInputStream inputBuscar = new FileInputStream("src/imagenes/unknown.png");
         Image imageBuscar = new Image(inputBuscar);
@@ -43,12 +43,12 @@ public class ContenedorPrincipal extends BorderPane {
         ImageView imageViewPista = new ImageView(imagePista);
 
 
-        BotonViajar botonViajar= new BotonViajar();
+        BotonViajar botonViajar= new BotonViajar(ciudades);
 
         Button botonBuscarSospechosos= new Button("",imageViewBuscar);
         botonBuscarSospechosos.setMaxSize(150,150);
 
-        BotonBuscarEventHandler buscarButtonHandler = new BotonBuscarEventHandler(stage);
+        BotonBuscarEventHandler buscarButtonHandler = new BotonBuscarEventHandler(stage,algoThief);
         botonBuscarSospechosos.setOnAction(buscarButtonHandler);
 
         Button buscarPista = new Button("",imageViewPista);

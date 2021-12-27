@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.eventos;
 
-import clases.Computadora;
+import clases.AlgoThief;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -9,17 +9,17 @@ import javafx.stage.Stage;
 public class CaracteristicaEventHandler implements EventHandler<ActionEvent> {
     Stage stage ;
     CaracteristicaLadron caracteristica;
-    Computadora computadora;
+    AlgoThief algoThief;
 
-    public CaracteristicaEventHandler(String Caracteristica, Computadora computadora, Stage stage){
+    public CaracteristicaEventHandler(String Caracteristica, AlgoThief algoThief, Stage stage){
         this.stage = stage;
         this.caracteristica = new CaracteristicaLadron(Caracteristica);
-        this.computadora = computadora;
+        this.algoThief = algoThief;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        //this.computadora.cargarCaracteristica(this.caracteristica);
+        this.algoThief.cargarCaracteristica(this.caracteristica);
         stage.close();
 
     }
