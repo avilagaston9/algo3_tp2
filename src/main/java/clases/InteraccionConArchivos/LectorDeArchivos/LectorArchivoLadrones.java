@@ -1,11 +1,5 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
-
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
-
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.*;
 import org.json.simple.JSONArray;
