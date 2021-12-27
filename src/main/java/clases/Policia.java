@@ -8,6 +8,7 @@ import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.rangos.Rango;
+import clases.valorObjetoRobado.ObjetoRobado;
 
 public class Policia {
 	private Ciudad ciudadActual;
@@ -102,5 +103,9 @@ public class Policia {
 	public String getNombre() {
 
 		return this.nombre;
+	}
+
+	public Ciudad getCiudadActual() {
+		return this.ciudadActual;
 	}
 }

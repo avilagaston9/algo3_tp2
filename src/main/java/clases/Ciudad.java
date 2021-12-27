@@ -96,4 +96,8 @@ public class Ciudad {
     public String nombreCiudad() {
 		return this.nombre;
     }
+
+	public String getNombre() {
+		return this.nombre;
+	}
 }

@@ -8,9 +8,11 @@ import edu.fiuba.algo3.eventos.BotonBuscarEventHandler;
 import edu.fiuba.algo3.eventos.BotonBuscarPistaEventHandler;
 import edu.fiuba.algo3.menues.BarraDeMenu;
 import edu.fiuba.algo3.botones.BotonViajar;
+import edu.fiuba.algo3.vistas.VistaCiudad;
 import edu.fiuba.algo3.vistas.VistaReloj;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -31,15 +33,25 @@ public class ContenedorPrincipal extends BorderPane {
         this.setMenu(stage);
         this.setBotonera(stage,algothief,ciudades);
         this.setReloj(algothief);
+        this.setVistaCiudad(algothief);
     }
 
     private void setReloj(AlgoThief algothief) {
 
-        VBox reloj = new VBox();
-        VistaReloj vistaReloj = new VistaReloj(algothief, reloj);
+        Label labelReloj = new Label();
+        VistaReloj vistaReloj = new VistaReloj(algothief, labelReloj);
         algothief.setObservador(vistaReloj);
         vistaReloj.actualizar();
-        this.setRight(reloj);
+        this.setRight(labelReloj);
+    }
+
+    private void setVistaCiudad(AlgoThief algoThief){
+        Label cuadro = new Label();
+        VistaCiudad vistaCiudad = new VistaCiudad(algoThief, cuadro);
+
+        algoThief.setObservador(vistaCiudad);
+        vistaCiudad.actualizar();
+        this.setCenter(cuadro);
     }
 
     private void setBotonera(Stage stage,AlgoThief algoThief,ArrayList<Ciudad> ciudades) throws FileNotFoundException {
@@ -53,7 +65,7 @@ public class ContenedorPrincipal extends BorderPane {
         ImageView imageViewPista = new ImageView(imagePista);
 
 
-        BotonViajar botonViajar= new BotonViajar(ciudades);
+        BotonViajar botonViajar= new BotonViajar(ciudades, algoThief);
 
         Button botonBuscarSospechosos= new Button("",imageViewBuscar);
         botonBuscarSospechosos.setMaxSize(150,150);

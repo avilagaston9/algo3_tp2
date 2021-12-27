@@ -15,6 +15,6 @@ public class BotonVisitarBibliotecaEventHandler  implements EventHandler<ActionE
     @Override
     public void handle(ActionEvent actionEvent) {
         stage.close();
-
+//TODO pasar todas estas a un solo EdificioEVentHandler
     }
 }

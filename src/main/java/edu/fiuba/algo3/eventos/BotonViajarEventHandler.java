@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.eventos;
 
+import clases.AlgoThief;
 import clases.Ciudad;
 import edu.fiuba.algo3.contenedores.ContenedorCiudades;
 import javafx.event.ActionEvent;
@@ -15,9 +16,9 @@ public class BotonViajarEventHandler implements EventHandler<ActionEvent> {
     Stage stage;
     Scene muestraCiudades;
 
-    public BotonViajarEventHandler(ArrayList<Ciudad> ciudades){
+    public BotonViajarEventHandler(ArrayList<Ciudad> ciudades, AlgoThief algoThief){
         this.stage = new Stage(StageStyle.UNDECORATED);
-        ContenedorCiudades contenedorCiudades = new ContenedorCiudades(stage,ciudades);
+        ContenedorCiudades contenedorCiudades = new ContenedorCiudades(stage,ciudades, algoThief);
         this.muestraCiudades = new Scene(contenedorCiudades,200,500);
         this.stage.initModality(Modality.APPLICATION_MODAL);
     }

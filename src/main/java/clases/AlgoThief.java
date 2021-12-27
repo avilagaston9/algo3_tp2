@@ -122,5 +122,9 @@
      public String getNombrePolicia() {
          return this.policia.getNombre();
      }
+
+     public String getNombreCiudadActual() {
+         return this.policia.getCiudadActual().getNombre();
+     }
  }
 
