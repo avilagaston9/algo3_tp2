@@ -1,11 +1,19 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
+<<<<<<< HEAD
+
+
+=======
 import java.util.ArrayList;
+>>>>>>> 23a864c986c2877774834bbb880ff0af9ebe986e
 import clases.caracteristicasLadron.CaracteristicaLadron;
-import clases.ladron.*;
+import clases.ladron.Ladron;
+import clases.ladron.LadronBuilder;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.util.ArrayList;
 
 public class LectorArchivoLadrones implements LectorArchivos {
     @Override
