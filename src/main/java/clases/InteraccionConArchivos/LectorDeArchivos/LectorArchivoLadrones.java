@@ -1,17 +1,15 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
 
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import clases.caracteristicasLadron.CaracteristicaLadron;
-import clases.ladron.*;
+import clases.ladron.Ladron;
+import clases.ladron.LadronBuilder;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.util.ArrayList;
 
 public class LectorArchivoLadrones implements LectorArchivos {
     @Override
