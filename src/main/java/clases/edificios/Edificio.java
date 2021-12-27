@@ -13,9 +13,9 @@ public abstract class Edificio {
 	protected Pista pistaOtraCiudadMedia;
 	protected Pista pistaOtraCiudadDificil;
 
-	private Pista pistaPropiaFacil;
-	private Pista pistaPropiaMedia;
-	private Pista pistaPropiaDificil;
+	private PistaFacil pistaPropiaFacil;
+	private PistaMedia pistaPropiaMedia;
+	private PistaDificil pistaPropiaDificil;
 
 	public Edificio() {
 
@@ -41,18 +41,18 @@ public abstract class Edificio {
 	public abstract Pista serVisitado(Sargento rango, Tiempo tiempo);
 
 	public void darPistasA(Edificio edificio){
-		edificio.setPistaFacilOtraCiudad(this.pistaPropiaFacil);
-		edificio.setPistaMediaOtraCiudad(this.pistaPropiaMedia);
-		edificio.setPistaDificilOtraCiudad(this.pistaPropiaDificil);
+		edificio.setPistaOtraCiudad(this.pistaPropiaFacil);
+		edificio.setPistaOtraCiudad(this.pistaPropiaMedia);
+		edificio.setPistaOtraCiudad(this.pistaPropiaDificil);
 	}
 
-	private void setPistaFacilOtraCiudad(Pista pistaFacilOtraCiudad) {
+	private void setPistaOtraCiudad(PistaFacil pistaFacilOtraCiudad) {
 		this.pistaOtraCiudadFacil = pistaFacilOtraCiudad;
 	}
-	private void setPistaMediaOtraCiudad(Pista pistaMediaOtraCiudad) {
+	private void setPistaOtraCiudad(PistaMedia pistaMediaOtraCiudad) {
 		this.pistaOtraCiudadMedia = pistaMediaOtraCiudad;
 	}
-	private void setPistaDificilOtraCiudad(Pista pistaDificilOtraCiudad) {
+	private void setPistaOtraCiudad(PistaDificil pistaDificilOtraCiudad) {
 		this.pistaOtraCiudadDificil = pistaDificilOtraCiudad;
 	}
 
