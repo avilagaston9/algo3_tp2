@@ -17,6 +17,7 @@
      private List<Ciudad> ciudades;
      private List<Ladron> ladrones;
      private Computadora computadora;
+     private ObjetoRobado objetoRobado;
 
      private LectorDeArchivosFachada fachada;
 
@@ -31,9 +32,9 @@
 
          Novato rango = new Novato();
 
-         ObjetoRobado objetoRobado = rango.getObjetoRobado(objetosRobados);
+         this.objetoRobado = rango.getObjetoRobado(objetosRobados);
 
-         RutaDeEscape rutaDeEscape = objetoRobado.crearRutaDeEscape(this.ciudades);
+         RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(this.ciudades);
 
          PoliciaBuilder policiaBuilder = new PoliciaBuilder();
          policiaBuilder.setPrimerCiudad(rutaDeEscape.getRuta().get(0));
@@ -86,6 +87,22 @@
 
      public void buscarSospechosos() {
          this.computadora.buscarSospechosos();
+     }
+
+     public String nombreObjetoRobado() {
+         return this.objetoRobado.getNombre();
+     }
+
+     public String nombreCiudadInicial() {
+         return this.objetoRobado.getNombreCiudad();
+     }
+
+     public void setNombrePolicia(String nombrePolicia) {
+         this.policia.setNombre(nombrePolicia);
+     }
+
+     public String getNombrePolicia() {
+         return this.policia.getNombre();
      }
  }
 

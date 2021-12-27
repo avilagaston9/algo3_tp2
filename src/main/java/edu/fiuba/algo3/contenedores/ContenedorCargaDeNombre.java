@@ -1,10 +1,9 @@
 package edu.fiuba.algo3.contenedores;
 
 import clases.AlgoThief;
-import edu.fiuba.algo3.eventos.BotonOkEventHandler;
+import edu.fiuba.algo3.eventos.BotonAceptarNombreEventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -20,7 +19,7 @@ public class ContenedorCargaDeNombre extends VBox {
 
        Button botonOk = new Button("Ok");
 
-       BotonOkEventHandler botonOkHandler = new BotonOkEventHandler(algothief,proximaEscena,slotParaIngresarNombre,stage);
+       BotonAceptarNombreEventHandler botonOkHandler = new BotonAceptarNombreEventHandler(algothief,proximaEscena,slotParaIngresarNombre,stage);
        botonOk.setOnAction(botonOkHandler);
 
        this.getChildren().addAll(botonOk,slotParaIngresarNombre);

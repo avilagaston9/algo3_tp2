@@ -15,6 +15,7 @@ public class Policia {
 	private Rango rango;
 	private OrdenArresto ordenDeArresto;
 	private int cantidadHeridasDeCuchillo;
+	private String nombre;
 
 	public Policia(Rango rango, Ciudad actual) {
 		this.tiempoTranscurrido = new Tiempo();
@@ -91,5 +92,16 @@ public class Policia {
 
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudadActual = ciudad;
+	}
+
+	public void setNombre(String nombrePolicia) {
+		System.out.println(nombrePolicia);
+		this.nombre = nombrePolicia;
+	}
+
+	public String getNombre() {
+		System.out.println(this.nombre);
+
+		return this.nombre;
 	}
 }

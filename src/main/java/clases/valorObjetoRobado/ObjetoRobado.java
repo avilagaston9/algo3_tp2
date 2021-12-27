@@ -30,4 +30,12 @@ public abstract class ObjetoRobado {
 
         this.nombre = nombre;
     }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public String getNombreCiudad() {
+        return this.nombreCiudad;
+    }
 }

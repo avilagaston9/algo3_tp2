@@ -9,24 +9,28 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-public class BotonOkEventHandler implements EventHandler<ActionEvent> {
+public class BotonAceptarNombreEventHandler implements EventHandler<ActionEvent> {
+    private final AlgoThief algoThief;
     TextField slot;
     Stage stage;
     Scene escenaActual;
 
-    public BotonOkEventHandler(AlgoThief algoThief, Scene proximaEscena, TextField slotParaIngresarNombre, Stage stage) {
+    public BotonAceptarNombreEventHandler(AlgoThief algoThief, Scene proximaEscena, TextField slotParaIngresarNombre, Stage stage) {
         this.slot = slotParaIngresarNombre;
         ContenedorInformacionInicial contenedorInfomacionInicial = new ContenedorInformacionInicial(stage,algoThief,proximaEscena);
         this.escenaActual = new Scene(contenedorInfomacionInicial,200,200);
         this.stage = stage;
+        this.algoThief = algoThief;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        if (this.slot.getText().trim().equals("")) {
+        String nombre = this.slot.getText().trim();
+        if (nombre.equals("")) {
             this.slot.requestFocus();
         }
         else {
+            this.algoThief.setNombrePolicia(nombre);
             stage.setScene(escenaActual);
             stage.show();
         }
