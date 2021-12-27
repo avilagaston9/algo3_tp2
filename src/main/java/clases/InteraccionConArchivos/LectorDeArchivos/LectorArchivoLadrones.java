@@ -11,9 +11,9 @@ import org.json.simple.parser.ParseException;
 import java.util.ArrayList;
 
 public class LectorArchivoLadrones implements LectorArchivos {
+
     @Override
     public ArrayList leer(String pathArchivo) {
-
 
         JSONParser parser = new JSONParser();
         ArrayList<Ladron> ladrones = new ArrayList<Ladron>();

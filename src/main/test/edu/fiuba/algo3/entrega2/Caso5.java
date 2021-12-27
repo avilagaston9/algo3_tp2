@@ -1,33 +1,21 @@
 package edu.fiuba.algo3.entrega2;
 
 import clases.Ciudad;
-import clases.Computadora;
-import clases.Coordenadas;
-import clases.FabricaEdificios.FabricaAeropuerto;
-import clases.FabricaEdificios.FabricaBancos;
-import clases.FabricaEdificios.FabricaBiblioteca;
 import clases.InteraccionConArchivos.LectorDeArchivosFachada;
-import clases.Policia;
-import clases.caracteristicasLadron.CaracteristicaLadron;
-import clases.edificios.Edificio;
-import clases.ladron.Ladron;
-import clases.ladron.LadronBuilder;
-import clases.pistas.Pista;
-import clases.pistas.PistaDificil;
-import clases.pistas.PistaFacil;
-import clases.pistas.PistaMedia;
-import clases.rangos.Detective;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Caso5 {
 
 	@Test
 	public void detectiveHaceSeisArrestosYAsciendeAInvestigadorLuegoRealizaInvestigacionYAtrapaAlSospechoso() {
+
+		LectorDeArchivosFachada facade = new LectorDeArchivosFachada();
+		ArrayList<Ciudad> ciudades = facade.obtenerCiudades("C:\\Users\\nicov\\Desktop\\fiuba\\OOP\\tps\\TP2\\algo3_tp2\\src\\main\\java\\clases\\InteraccionConArchivos\\LectorDeArchivos\\ciudadesSinTerminar.json");
+
+
+		/*
 
 		// Creo ciudad
 		Coordenadas coordenadasMexico = new Coordenadas(23.634501, -102.552784);
@@ -233,6 +221,8 @@ public class Caso5 {
 
 		LectorDeArchivosFachada facade = new LectorDeArchivosFachada();
 		ArrayList<Ladron> ladrones = facade.obtenerLadrones("dossieros.json");
+
+		 */
 
 	}
 }

@@ -1,12 +1,8 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
 
 
-import clases.CiudadBuilder;
-import clases.caracteristicasLadron.CaracteristicaLadron;
-import clases.ladron.Ladron;
-import clases.ladron.LadronBuilder;
-import java.lang.reflect.Array;
 import clases.Ciudad;
+import clases.CiudadBuilder;
 import clases.Coordenadas;
 import clases.FabricaEdificios.FabricaAeropuerto;
 import clases.FabricaEdificios.FabricaBancos;
@@ -14,9 +10,6 @@ import clases.FabricaEdificios.FabricaBiblioteca;
 import clases.edificios.Aeropuerto;
 import clases.edificios.Banco;
 import clases.edificios.Biblioteca;
-import clases.edificios.Edificio;
-import clases.ladron.Ladron;
-import clases.pistas.Pista;
 import clases.pistas.PistaDificil;
 import clases.pistas.PistaFacil;
 import clases.pistas.PistaMedia;
@@ -24,26 +17,29 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+
+import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class LectorArchivoCiudades implements LectorArchivos {
-
 
     @Override
     public ArrayList leer(String pathArchivo) {
 
         JSONParser parser = new JSONParser();
+        FileReader fileReader = null;
 
         try {
-            FileReader jsonReader = new FileReader(pathArchivo);
+            fileReader = new FileReader(pathArchivo);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
+        Object obj = null;
         try {
-            Object obj = parser.parse(jsonReader);
+            obj = parser.parse(fileReader);
+        } catch (IOException e) {
+            e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
         }
