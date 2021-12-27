@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.botones;
 
-import clases.Computadora;
+import clases.AlgoThief;
 import edu.fiuba.algo3.eventos.BotonHobbyEventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -10,12 +10,12 @@ import java.io.FileNotFoundException;
 
 public class BotonHobby extends Button {
 
-    public BotonHobby(Computadora computadora) throws FileNotFoundException {
+    public BotonHobby(AlgoThief algoThief) throws FileNotFoundException {
         FileInputStream input = new FileInputStream("src/imagenes/mental-health.png");
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);
         this.setGraphic(imageView);
-        BotonHobbyEventHandler botonHobbyHandler = new BotonHobbyEventHandler(computadora);
+        BotonHobbyEventHandler botonHobbyHandler = new BotonHobbyEventHandler(algoThief);
         this.setOnAction(botonHobbyHandler);
         this.setMaxSize(200,200);
 
