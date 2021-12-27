@@ -29,6 +29,8 @@ public class LectorArchivoCiudades implements LectorArchivos {
         JSONParser parser = new JSONParser();
         FileReader fileReader = null;
 
+        FileReader jsonReader;
+
         try {
             fileReader = new FileReader(pathArchivo);
         } catch (FileNotFoundException e) {
