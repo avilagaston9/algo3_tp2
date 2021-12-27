@@ -42,10 +42,10 @@ public class Caso2 {
 		PistaFacil pistaBiblioteca = new PistaFacil("Obelisco");
 
 		Edificio banco = new Banco();
-		banco.setPista(pistaBanco);
+		banco.setPistaPropia(pistaBanco);
 
 		Edificio biblioteca = new Biblioteca();
-		biblioteca.setPista(pistaBiblioteca);
+		biblioteca.setPistaPropia(pistaBiblioteca);
 
 		LinkedList<Pista> pistasDeBanco = policia.visitar(banco, maria);
 		LinkedList<Pista> pistasDeBiblioteca = policia.visitar(biblioteca, maria);

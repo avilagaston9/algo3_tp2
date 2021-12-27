@@ -45,7 +45,7 @@ public class Caso4 {
 
 		// se crea aeropuerto y se guarda la pista
 		Edificio aeropuerto = new Aeropuerto();
-		aeropuerto.setPista(pistaPrueba);
+		aeropuerto.setPistaPropia(pistaPrueba);
 
 		// policia visita aeropuerto 3 veces
 		LinkedList<Pista> pistasDevueltas;
@@ -83,7 +83,7 @@ public class Caso4 {
 
 		// se crea aeropuerto y se guarda la pista
 		Edificio aeropuerto = new Aeropuerto();
-		aeropuerto.setPista(pistaPrueba);
+		aeropuerto.setPistaPropia(pistaPrueba);
 
 		// policia visita aeropuerto 3 veces
 		LinkedList<Pista> pistasDevueltas;
