@@ -11,6 +11,7 @@ import clases.valorObjetoRobado.ObjetoComun;
 public class SecuenciaSetUp {
 
 	public SecuenciaSetUp() {
+		/*
 
 		Coordenadas coordenadas1 = new Coordenadas(0, 0);
 		Ciudad ciudad1 = new Ciudad("ciudad1", coordenadas1);
@@ -55,6 +56,8 @@ public class SecuenciaSetUp {
 		Policia policia = builderPolicia.getPolicia();
 
 		LadronBuilder builderLadron = new LadronBuilder();
+
+		 */
 	}
 
 }
