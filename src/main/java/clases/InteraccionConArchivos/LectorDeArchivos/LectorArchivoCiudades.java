@@ -1,13 +1,11 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
 
-<<<<<<< HEAD
+
 import clases.CiudadBuilder;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
 import clases.ladron.LadronBuilder;
-
 import java.lang.reflect.Array;
-=======
 import clases.Ciudad;
 import clases.Coordenadas;
 import clases.FabricaEdificios.FabricaAeropuerto;
@@ -26,10 +24,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
->>>>>>> 801153dd85520cc26e9a3b7f52436e013ce5cd6b
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +52,7 @@ public class LectorArchivoCiudades implements LectorArchivos {
 
         JSONArray array = (JSONArray) empJsonObject.get("ciudades");
 
+        //LISTA DE CIUDADES
         ArrayList<Ciudad> ciudades = new ArrayList<Ciudad>();
 
         //CREO LAS FABRICAS DE LOS EDIFICIOS PARA DEVOLVER LAS CIUDADES COMPLETAS...
@@ -104,12 +101,9 @@ public class LectorArchivoCiudades implements LectorArchivos {
             ciudadBuilder.setBanco(banco);
             ciudadBuilder.setBiblioteca(biblioteca);
 
+            ciudades.add(ciudadBuilder.getCiudad());
 
         }
-
-        
-
+        return ciudades;
     }
-
-    
 }
