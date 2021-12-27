@@ -11,7 +11,7 @@ public class FabricaBiblioteca implements FabricaEdificios {
 	@Override
 	public Edificio crearEdificio(PistaFacil pistaFacil, PistaMedia pistaMedia, PistaDificil pistaDificil) {
 		Edificio biblioteca = new Biblioteca();
-		biblioteca.setPistaOtraCiudad(pistaFacil);
+		biblioteca.setPistaPropia(pistaFacil);
 		biblioteca.setPistaPropia(pistaMedia);
 		biblioteca.setPistaPropia(pistaDificil);
 		return biblioteca;

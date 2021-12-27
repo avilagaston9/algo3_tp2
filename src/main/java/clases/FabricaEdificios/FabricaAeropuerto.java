@@ -11,7 +11,7 @@ public class FabricaAeropuerto implements FabricaEdificios {
 	@Override
 	public Edificio crearEdificio(PistaFacil pistaFacil, PistaMedia pistaMedia, PistaDificil pistaDificil) {
 		Edificio aeropuerto = new Aeropuerto();
-		aeropuerto.setPistaOtraCiudad(pistaFacil);
+		aeropuerto.setPistaPropia(pistaFacil);
 		aeropuerto.setPistaPropia(pistaMedia);
 		aeropuerto.setPistaPropia(pistaDificil);
 		return aeropuerto;
