@@ -22,6 +22,8 @@ public class ContenedorCiudades extends VBox {
             this.getChildren().add(botonCiudad);
         }
         BotonVolver botonVolver = new BotonVolver(stage);
+        botonVolver.setMaxSize(200,100);
+        botonVolver.setStyle("-fx-background-color: red");
         this.getChildren().add(botonVolver);
         this.setWidth(200);
     }

@@ -30,11 +30,9 @@ public class App extends Application {
         AlgoThief algothief = this.crearModelo();
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, algothief, this.ciudades, this.ladrones);
 
-
         Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
 
-
-        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego);
+        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego,algothief);
         Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 640, 480);
 
         stage.setScene(escenaBienvenidos);

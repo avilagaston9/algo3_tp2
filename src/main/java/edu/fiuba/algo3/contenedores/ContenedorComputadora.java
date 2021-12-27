@@ -42,6 +42,10 @@ public class ContenedorComputadora extends BorderPane {
         buscarSospechosos.setOnAction(buscarSospechososButtonHandler);
 
         BotonVolver botonVolver = new BotonVolver(stage);
+        FileInputStream input = new FileInputStream("src/imagenes/log-out.png");
+        Image image = new Image(input);
+        ImageView imageView = new ImageView(image);
+        botonVolver.setGraphic(imageView);
 
         VBox contenedorVertical = new VBox(sexo,hobby,cabello,senia,vehiculo,buscarSospechosos,botonVolver);
         contenedorVertical.setPrefSize(100,40);
