@@ -25,14 +25,14 @@ public abstract class Edificio {
 		this.pistaOtraCiudadDificil = pistaDefault;
 	}
 
-	public void setPista(PistaFacil pistaFacil) {
-		this.pistaOtraCiudadFacil = pistaFacil;
+	public void setPistaPropia(PistaFacil pistaFacil) {
+		this.pistaPropiaFacil = pistaFacil;
 	}
-	public void setPista(PistaMedia pistaMedia) {
-		this.pistaOtraCiudadMedia = pistaMedia;
+	public void setPistaPropia(PistaMedia pistaMedia) {
+		this.pistaPropiaMedia = pistaMedia;
 	}
-	public void setPista(PistaDificil pistaDificil) {
-		this.pistaOtraCiudadDificil = pistaDificil;
+	public void setPistaPropia(PistaDificil pistaDificil) {
+		this.pistaPropiaDificil = pistaDificil;
 	}
 
 	public abstract Pista serVisitado(Novato rango, Tiempo tiempo);

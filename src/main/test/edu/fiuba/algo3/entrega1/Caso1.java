@@ -69,7 +69,7 @@ public class Caso1 {
 
 		// se crea banco y se guarda la pista
 		Edificio banco = new Banco();
-		banco.setPista(pistaPrueba);
+		banco.setPistaPropia(pistaPrueba);
 
 		// policia visita banco
 		LinkedList<Pista> pistasDevueltas = policia.visitar(banco, maria);
