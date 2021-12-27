@@ -1,6 +1,7 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
 
 <<<<<<< HEAD
+import clases.CiudadBuilder;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
 import clases.ladron.LadronBuilder;
@@ -40,44 +41,6 @@ public class LectorArchivoCiudades implements LectorArchivos {
 
         JSONParser parser = new JSONParser();
 
-<<<<<<< HEAD
-        ArrayList<Ciudad> ciudades = new ArrayList<Ciudad>();
-
-        try{
-            Object obj = parser.parse(pathArchivo);
-            JSONObject jsonObject = (JSONObject) obj;
-
-            JSONArray jsonLadrones = (JSONArray) jsonObject.get("ciudades");
-            JSONObject actual;
-
-            for (int i = 0; i < jsonLadrones.size(); i++){
-
-                actual = (JSONObject) jsonLadrones.get(i);
-
-                String nombre = actual.get("ciudad");
-                Array coloresBandera = actual.get("colorBandera");
-                String moneda = actual.get("moneda");
-                String geografia = actual.get("geografia")
-                Array
-
-
-//                ladronBuilder.setNombre((String) actual.get("nombre"));
-//                ladronBuilder.setSexo(new CaracteristicaLadron((String) actual.get("sexo")));
-//                ladronBuilder.setHobby(new CaracteristicaLadron((String) actual.get("hobby")));
-//                ladronBuilder.setCabello(new CaracteristicaLadron((String) actual.get("colorDelPelo")));
-//                ladronBuilder.setVehiculo(new CaracteristicaLadron((String) actual.get("coche")));
-//                ladronBuilder.setSenia(new CaracteristicaLadron((String) actual.get("señasParticulares")));
-
-                ladrones.add(ladronBuilder.getLadron());
-            }
-
-        }
-        catch (ParseException e){ e.printStackTrace();}
-        catch (Exception e){ e.printStackTrace();}
-
-
-        return ladrones;
-=======
         try {
             FileReader jsonReader = new FileReader(pathArchivo);
         } catch (FileNotFoundException e) {
@@ -100,6 +63,9 @@ public class LectorArchivoCiudades implements LectorArchivos {
         FabricaBiblioteca fabricaBiblioteca = new FabricaBiblioteca();
         FabricaAeropuerto fabricaAeropuerto = new FabricaAeropuerto();
 
+        //CIUDAD BUILDER
+        CiudadBuilder ciudadBuilder = new CiudadBuilder();
+
         for(int i = 0; i < array.size(); i++){
 
             JSONObject ciudadJson = (JSONObject) array.get(i);
@@ -107,7 +73,6 @@ public class LectorArchivoCiudades implements LectorArchivos {
             //Nombre y Coodenadas de la Ciudad...
             Coordenadas coordenadasCiudad = new Coordenadas((double)ciudadJson.get("latitud"), (double)ciudadJson.get("longitud"));
             String nombreCiudad = (String)ciudadJson.get("ciudad");
-
 
             // EDIFICIOS...
 
@@ -132,21 +97,18 @@ public class LectorArchivoCiudades implements LectorArchivos {
 
             Aeropuerto aeropuerto = (Aeropuerto) fabricaAeropuerto.crearEdificio(pistaFacilAeropuerto, pistaMediaAeropuero, pistaDificilAeropuerto);
 
-
-
-
-
+            //Se crea la ciudad
+            ciudadBuilder.setNombre(nombreCiudad);
+            ciudadBuilder.setCoordenadas(coordenadasCiudad);
+            ciudadBuilder.setAeropuerto(aeropuerto);
+            ciudadBuilder.setBanco(banco);
+            ciudadBuilder.setBiblioteca(biblioteca);
 
 
         }
 
+        
 
-
-
->>>>>>> 801153dd85520cc26e9a3b7f52436e013ce5cd6b
-
-
-        return null;
     }
 
     
