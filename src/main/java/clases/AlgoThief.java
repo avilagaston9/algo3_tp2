@@ -2,6 +2,7 @@
 
  import clases.InteraccionConArchivos.LectorDeArchivosFachada;
  import clases.OrdenDeArresto.OrdenArresto;
+ import clases.caracteristicasLadron.CaracteristicaLadron;
  import clases.edificios.Edificio;
  import clases.ladron.Ladron;
  import clases.pistas.Pista;
@@ -79,5 +80,8 @@
          return this.policia.cantidadArrestos();
      }
 
-}
+     public void cargarCaracteristica(CaracteristicaLadron caracteristica) {
+         computadora.cargarCaracteristica(caracteristica);
+     }
+ }
 

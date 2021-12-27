@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.eventos;
 
+import clases.AlgoThief;
 import edu.fiuba.algo3.contenedores.ContenedorComputadora;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,10 +15,10 @@ public class BotonBuscarEventHandler implements EventHandler<ActionEvent> {
     Stage stage;
     Scene mostrarComputadora;
 
-    public BotonBuscarEventHandler(Stage stage) throws FileNotFoundException {
+    public BotonBuscarEventHandler(Stage stage, AlgoThief algoThief) throws FileNotFoundException {
         this.stage= new Stage(StageStyle.UNDECORATED);
-        ContenedorComputadora contenedorComputadora= new ContenedorComputadora(stage);
-        this.mostrarComputadora = new Scene(contenedorComputadora,640,480);
+        ContenedorComputadora contenedorComputadora= new ContenedorComputadora(stage,algoThief);
+        this.mostrarComputadora = new Scene(contenedorComputadora,1000,760);
         this.stage.initModality(Modality.APPLICATION_MODAL);
 
     }
