@@ -43,7 +43,7 @@
 
          Random random = new Random();
          this.ladron = ladrones.get(random.nextInt(this.ladrones.size()));
-         this.ladron.setCiudad(rutaDeEscape.getRuta().get(-1));
+         this.ladron.setCiudad(rutaDeEscape.getRuta().get(rutaDeEscape.getRuta().size() - 1));
 
          this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
 
