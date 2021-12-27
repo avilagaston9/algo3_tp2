@@ -1,6 +1,5 @@
  package clases;
 
- import clases.InteraccionConArchivos.LectorDeArchivosFachada;
  import clases.OrdenDeArresto.OrdenArresto;
  import clases.caracteristicasLadron.CaracteristicaLadron;
  import clases.edificios.Edificio;
@@ -20,11 +19,9 @@
      private Computadora computadora;
      private ObjetoRobado objetoRobado;
 
-     private LectorDeArchivosFachada fachada;
-
      public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados) {
 
-         this.observadores = new ArrayList<ObservadorAlgothief>;
+         this.observadores = new ArrayList<ObservadorAlgothief>();
 
         this.ciudades = ciudades;
         this.ladrones = ladrones;

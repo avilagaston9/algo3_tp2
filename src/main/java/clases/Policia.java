@@ -95,12 +95,11 @@ public class Policia {
 	}
 
 	public void setNombre(String nombrePolicia) {
-		System.out.println(nombrePolicia);
+
 		this.nombre = nombrePolicia;
 	}
 
 	public String getNombre() {
-		System.out.println(this.nombre);
 
 		return this.nombre;
 	}
