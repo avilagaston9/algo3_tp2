@@ -1,9 +1,7 @@
 package edu.fiuba.algo3.contenedores;
 
-import edu.fiuba.algo3.botones.BotonVisitarAeropuerto;
-import edu.fiuba.algo3.botones.BotonVisitarBanco;
-import edu.fiuba.algo3.botones.BotonVisitarBiblioteca;
-import edu.fiuba.algo3.botones.BotonVolver;
+import clases.AlgoThief;
+import edu.fiuba.algo3.botones.*;
 import edu.fiuba.algo3.menues.BarraDeMenu;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,16 +13,21 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class ContenedorEdificios extends BorderPane {
+    private final AlgoThief algoThief;
     Stage stage;
     BarraDeMenu menuBar;
 
-    public ContenedorEdificios(Stage stage) throws FileNotFoundException {
+    public ContenedorEdificios(Stage stage, AlgoThief algoThief) throws FileNotFoundException {
         this.stage = stage;
         this.setMenu(stage);
         this.setBotonera(stage);
+        this.algoThief = algoThief;
     }
 
     private void setBotonera(Stage stage) throws FileNotFoundException {
+
+        BotonVisitarEdificio botonAeropuerto = new BotonVisitarEdificio(this.stage, this.algoThief, this.algoThief.getCiudadActual().getAeropuerto);
+
         BotonVisitarAeropuerto botonVisitarAeropuerto = new BotonVisitarAeropuerto(this.stage);
         BotonVisitarBiblioteca botonVisitarBiblioteca = new BotonVisitarBiblioteca(this.stage);
         BotonVisitarBanco botonVisitarBanco = new BotonVisitarBanco(this.stage);

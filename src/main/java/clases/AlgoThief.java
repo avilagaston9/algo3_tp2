@@ -62,8 +62,8 @@
      }
 
      //métodos para jugar
-     public LinkedList<Pista> visitar(Edificio unEdificio, Ladron ladron) {
-         LinkedList<Pista> pistas = this.policia.visitar(unEdificio, ladron);
+     public LinkedList<Pista> visitar(Edificio unEdificio) {
+         LinkedList<Pista> pistas = this.policia.visitar(unEdificio, this.ladron);
          this.actualizarObservadores();
          return pistas;
      }
