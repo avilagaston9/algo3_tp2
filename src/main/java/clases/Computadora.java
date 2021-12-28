@@ -116,11 +116,14 @@ public class Computadora {
 	}
 
 	public void borrarCaracteristica(CaracteristicaLadron caracteristicaLadron) {
+		ArrayList<CaracteristicaLadron> coincidencias = new ArrayList<>();
 		for (CaracteristicaLadron c : this.caracteristicas) {
 			if (caracteristicaLadron.equals(c)) {
-				this.caracteristicas.remove(c);
+				coincidencias.add(c);
 			}
 		}
+		this.caracteristicas.removeAll(coincidencias);
+		this.actualizarObservadores();
 	}
 
 	public ArrayList<Ladron> getSospechosos() {
