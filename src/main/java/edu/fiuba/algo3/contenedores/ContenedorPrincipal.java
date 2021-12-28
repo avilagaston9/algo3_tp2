@@ -64,7 +64,7 @@ public class ContenedorPrincipal extends BorderPane {
 		VistaOrdenArresto vistaOrden = new VistaOrdenArresto(algothief, ordenDeArresto);
 		algothief.setObservador(vistaOrden);
 		vistaOrden.actualizar();
-		this.setTop(ordenDeArresto);
+		this.setBottom(ordenDeArresto);
 	}
 
 	private void setBotonera(Stage stage, AlgoThief algoThief, ArrayList<Ciudad> ciudades)

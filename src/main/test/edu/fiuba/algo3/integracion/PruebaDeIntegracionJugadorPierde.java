@@ -129,4 +129,15 @@ public class PruebaDeIntegracionJugadorPierde {
             computadora.cargarCaracteristica(caracteristicaLadron);
         }
     }
+<<<<<<< HEAD
+
+    @Test
+    public void jugadorPierdeTiempoInsuficiente() throws ExcepcionSinOrdenDeArresto {
+
+
+
+
+    }
+=======
+>>>>>>> 2a0980a5e991be0dc2fa5bb0dda5099b0ada25b4
 }
