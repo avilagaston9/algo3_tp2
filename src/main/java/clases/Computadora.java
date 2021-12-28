@@ -6,6 +6,7 @@ import clases.OrdenDeArresto.OrdenArresto;
 import clases.OrdenDeArresto.OrdenDeArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
+import edu.fiuba.algo3.botones.BotonVisitarEdificio;
 import edu.fiuba.algo3.vistas.VistaCaracteristicas;
 
 public class Computadora {
@@ -38,6 +39,9 @@ public class Computadora {
 	// }//todo borrar basura vieja
 
 	public void cargarCaracteristica(CaracteristicaLadron caracteristica) {
+		for (CaracteristicaLadron c : this.caracteristicas){
+			if (caracteristica.equals(c)){ return; }
+		}
 		caracteristicas.add(caracteristica);
 		this.actualizarObservadores();
 	}
@@ -102,5 +106,9 @@ public class Computadora {
 		for(Observador o : this.observadores){
 			o.actualizar();
 		}
+	}
+
+	public void borrarCaracteristica(){
+		// todo implementar borrar caracteristica
 	}
 }
