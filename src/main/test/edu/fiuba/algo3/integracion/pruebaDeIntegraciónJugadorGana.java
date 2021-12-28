@@ -67,6 +67,7 @@ public class pruebaDeIntegraciónJugadorGana {
 
 		Ladron ladron = ladrones.get(0); // Carmen Sandiego
 		ladron.setCiudad(listaRuta.get(listaRuta.size() - 1)); // Bangkok
+		ladron.setRutaDeEscape(rutaDeEscape);
 		int contadorPistasLadron = 0;
 
 		// Ladron ladronSpy = Mockito.spy(ladron);

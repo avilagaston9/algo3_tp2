@@ -57,7 +57,7 @@ public class AlgoThief {
 
 		this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
 
-		this.ladron.estabalecerRutaDeEscape(rutaDeEscape);
+		this.ladron.setRutaDeEscape(rutaDeEscape);
 
 	}
 

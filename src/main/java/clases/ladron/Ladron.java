@@ -115,7 +115,7 @@ public class Ladron {
 		return this.nombre;
 	}
 
-	public void estabalecerRutaDeEscape(RutaDeEscape rutaDeEscape) {
+	public void setRutaDeEscape(RutaDeEscape rutaDeEscape) {
 		this.rutaDeEscape = rutaDeEscape;
 	}
 
