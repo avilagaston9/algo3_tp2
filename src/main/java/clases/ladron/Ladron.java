@@ -1,9 +1,7 @@
 package clases.ladron;
 
-import java.util.LinkedList;
-import java.util.Objects;
-
 import clases.Ciudad;
+import clases.Exceptions.ExcepcionSinOrdenDeArresto;
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.pistas.Pista;
@@ -12,6 +10,9 @@ import clases.rangos.Detective;
 import clases.rangos.Investigador;
 import clases.rangos.Novato;
 import clases.rangos.Sargento;
+
+import java.util.LinkedList;
+import java.util.Objects;
 
 public class Ladron {
 	private final String nombre;
@@ -69,13 +70,24 @@ public class Ladron {
 		return false;
 	}
 
-	public boolean serArrestado(OrdenArresto ordenDeArresto, Ciudad ciudadPolicia) {
-		if((ordenDeArresto.comparar(this)) && (ciudadPolicia == ciudadFinal)){
+	public boolean serArrestado(OrdenArresto ordenDeArresto, Ciudad ciudadPolicia) throws ExcepcionSinOrdenDeArresto {
 
+		if(!ordenDeArresto.comparar(this)){
+			throw new ExcepcionSinOrdenDeArresto("sin orden de arresto");
+		}
+
+		if(ciudadPolicia != ciudadFinal){
+			return false;
+		}
+
+		return true; // caso que cumple con la orden de arresto y con estar en la misma ciudad, el ladon puede ser arestado...
+
+		/*
+		if((ordenDeArresto.comparar(this)) && (ciudadPolicia == ciudadFinal)){
 			this.arrestado = true;
 			return true;
 		}
-		return false;
+		 */
 	}
 
 	@Override

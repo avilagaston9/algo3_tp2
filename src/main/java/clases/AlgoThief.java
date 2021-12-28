@@ -1,5 +1,6 @@
  package clases;
 
+ import clases.Exceptions.ExcepcionSinOrdenDeArresto;
  import clases.OrdenDeArresto.OrdenArresto;
  import clases.caracteristicasLadron.CaracteristicaLadron;
  import clases.edificios.Edificio;
@@ -7,6 +8,7 @@
  import clases.pistas.Pista;
  import clases.rangos.Novato;
  import clases.valorObjetoRobado.ObjetoRobado;
+
  import java.util.*;
 
  public class AlgoThief {
@@ -19,7 +21,13 @@
      private Computadora computadora;
      private ObjetoRobado objetoRobado;
 
+     private Boolean juegoEnCurso;
+     private Boolean juegoGanado;
+
      public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados) {
+
+         this.juegoEnCurso = true;
+         this.juegoGanado = false;
 
          this.observadores = new ArrayList<Observador>();
 
@@ -84,7 +92,7 @@
          return this.policia.esCiudadActual(unaCiudad);
      }
 
-     public void arrestarA(Ladron unLadron) {
+     public void arrestarA(Ladron unLadron) throws ExcepcionSinOrdenDeArresto {
 
          this.policia.arrestarA(unLadron);
      }
@@ -156,5 +164,16 @@
          return pistas;
      }
 
+     private void verEstadoJuego(){
+
+         try{
+             if (policia.arrestarA(ladron)){
+                 juegoGanado = true;
+             }
+             
+         }catch (ExcepcionSinOrdenDeArresto e) {
+             juegoEnCurso = false;
+         }
+     }
  }
 
