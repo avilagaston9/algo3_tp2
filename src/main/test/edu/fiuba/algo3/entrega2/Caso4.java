@@ -31,7 +31,7 @@ public class Caso4 {
 		builder.setNombre("Maria");
 		Ladron maria = builder.getLadron();
 
-		policia.arrestarA(maria);
+		//policia.arrestarA(maria);
 
 		assertEquals(policia.cantidadArrestos(), 0);
 

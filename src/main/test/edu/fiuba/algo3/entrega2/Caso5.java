@@ -260,7 +260,7 @@ public class Caso5 {
 		// ==================================================================================================
 		// 5
 
-		policia.arrestarA(jose);
+		//policia.arrestarA(jose);
 		assertEquals(12, policia.cantidadArrestos());
 	}
 }

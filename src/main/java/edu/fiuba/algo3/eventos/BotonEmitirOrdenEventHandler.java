@@ -17,8 +17,6 @@ public class BotonEmitirOrdenEventHandler implements EventHandler<ActionEvent> {
     public BotonEmitirOrdenEventHandler(AlgoThief algoThief){
         this.stage = new Stage(StageStyle.UNDECORATED);
         this.algoThief = algoThief;
-//        ContenedorLadrones contenedorLadrones = new ContenedorLadrones(this.stage,algoThief);
-//        this.muestraLadrones = new Scene(contenedorLadrones,640,480);
         this.stage.initModality(Modality.APPLICATION_MODAL);
 
     }
@@ -26,7 +24,7 @@ public class BotonEmitirOrdenEventHandler implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         ContenedorLadrones contenedorLadrones = new ContenedorLadrones(this.stage,this.algoThief);
-        this.muestraLadrones = new Scene(contenedorLadrones,640,480);
+        this.muestraLadrones = new Scene(contenedorLadrones,200,200);
         this.stage.setScene(this.muestraLadrones);
         this.stage.show();
     }

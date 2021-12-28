@@ -9,6 +9,7 @@ import edu.fiuba.algo3.eventos.BotonBuscarPistaEventHandler;
 import edu.fiuba.algo3.menues.BarraDeMenu;
 import edu.fiuba.algo3.botones.BotonViajar;
 import edu.fiuba.algo3.vistas.VistaCiudad;
+import edu.fiuba.algo3.vistas.VistaOrdenArresto;
 import edu.fiuba.algo3.vistas.VistaReloj;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
@@ -34,6 +35,7 @@ public class ContenedorPrincipal extends BorderPane {
         this.setBotonera(stage,algothief,ciudades);
         this.setReloj(algothief);
         this.setVistaCiudad(algothief);
+        this.setVistaOrdenDeArresto(algothief);
     }
 
     private void setReloj(AlgoThief algothief) {
@@ -52,6 +54,14 @@ public class ContenedorPrincipal extends BorderPane {
         algoThief.setObservador(vistaCiudad);
         vistaCiudad.actualizar();
         this.setCenter(cuadro);
+    }
+
+    private void setVistaOrdenDeArresto(AlgoThief algothief){
+        Label ordenDeArresto = new Label();
+        VistaOrdenArresto vistaOrden = new VistaOrdenArresto(algothief,ordenDeArresto);
+        algothief.setObservador(vistaOrden);
+        vistaOrden.actualizar();
+        this.setTop(ordenDeArresto);
     }
 
     private void setBotonera(Stage stage,AlgoThief algoThief,ArrayList<Ciudad> ciudades) throws FileNotFoundException {
