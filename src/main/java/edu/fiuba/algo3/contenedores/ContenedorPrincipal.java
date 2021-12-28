@@ -18,8 +18,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.TilePane;
+import javafx.scene.layout.*;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class ContenedorPrincipal extends BorderPane {
@@ -33,11 +33,16 @@ public class ContenedorPrincipal extends BorderPane {
 		this.setReloj(algothief);
 		this.setVistaCiudad(algothief);
 		this.setVistaOrdenDeArresto(algothief);
+        Image imagen = new Image("file:src/imagenes/textura.png");
+        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
+                BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+        this.setBackground(new Background(imagenDeFondo));
 	}
 
 	private void setReloj(AlgoThief algothief) {
 
 		Label labelReloj = new Label();
+		labelReloj.setFont(new Font("Verdana", 18));
 		VistaReloj vistaReloj = new VistaReloj(algothief, labelReloj);
 		algothief.setObservador(vistaReloj);
 		vistaReloj.actualizar();
@@ -46,6 +51,7 @@ public class ContenedorPrincipal extends BorderPane {
 
 	private void setVistaCiudad(AlgoThief algoThief) {
 		Label cuadro = new Label();
+		cuadro.setFont(new Font("Verdana", 25));
 		VistaCiudad vistaCiudad = new VistaCiudad(algoThief, cuadro);
 
 		algoThief.setObservador(vistaCiudad);
