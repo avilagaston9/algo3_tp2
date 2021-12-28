@@ -1,8 +1,9 @@
 package clases;
 
+import clases.ladron.Ladron;
+
 import java.util.ArrayList;
 import java.util.List;
-import clases.ladron.Ladron;
 
 public class RutaDeEscape {
 
@@ -46,6 +47,10 @@ public class RutaDeEscape {
 
 	public ArrayList<Ciudad> getRuta() {
 		return this.ciudades;
+	}
+
+	public boolean pertenece(Ciudad unaCiudad){
+		return (this.ciudades.contains(unaCiudad));
 	}
 
 

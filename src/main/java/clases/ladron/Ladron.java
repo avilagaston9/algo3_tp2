@@ -3,6 +3,7 @@ package clases.ladron;
 import clases.Ciudad;
 import clases.Exceptions.ExcepcionSinOrdenDeArresto;
 import clases.OrdenDeArresto.OrdenArresto;
+import clases.RutaDeEscape;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.pistas.Pista;
 import clases.pistas.PistaSinInformacion;
@@ -20,6 +21,7 @@ public class Ladron {
 	private int iteradorCaracteristicas;
 	private LinkedList<CaracteristicaLadron> caracteristicas;
 	private Ciudad ciudadFinal;
+	private RutaDeEscape rutaDeEscape;
 	// private FabricaDePistas fabrica;
 	// private Pista pista;
 
@@ -112,5 +114,13 @@ public class Ladron {
 
 	public String getNombre() {
 		return this.nombre;
+	}
+
+	public void estabalecerRutaDeEscape(RutaDeEscape rutaDeEscape){
+		this.rutaDeEscape = rutaDeEscape;
+	}
+
+	public boolean ciudadPerteneceASuRutaDeEscape(Ciudad unaCiudad){
+		return (this.rutaDeEscape.pertenece(unaCiudad));
 	}
 }

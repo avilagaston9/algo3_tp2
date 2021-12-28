@@ -57,6 +57,8 @@
 
          this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
 
+         this.ladron.estabalecerRutaDeEscape(rutaDeEscape);
+
      }
 
      public void setObservador(Observador observador) {
@@ -179,7 +181,6 @@
          if (this.tiempoInsuficiente()){
              this.juegoEnCurso = false;
          }
-
          try{
              if (policia.arrestarA(ladron)){
                  this.juegoGanado = true;

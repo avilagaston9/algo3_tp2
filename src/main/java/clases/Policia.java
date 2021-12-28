@@ -113,7 +113,14 @@ public class Policia {
 
 		LinkedList<Pista> pistas = new LinkedList<>();
 		pistas.add(this.rango.visitar(unEdificio, this.tiempoTranscurrido));
-		pistas.add(this.rango.pedirPistaLadron(ladron));
+
+		//metodo en ruta de escape "pertenece" y le paso como parametro la ciudad actual,
+		// si devuelve false, NO se pide pista al ladron....
+
+		if(ladron.ciudadPerteneceASuRutaDeEscape(this.ciudadActual)){
+			pistas.add(this.rango.pedirPistaLadron(ladron));
+		}
+
 		return pistas;
 	}
 
