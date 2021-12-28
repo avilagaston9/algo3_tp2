@@ -2,6 +2,7 @@ package edu.fiuba.algo3.entrega2;
 
 import clases.Ciudad;
 import clases.Coordenadas;
+import clases.Exceptions.ExcepcionSinOrdenDeArresto;
 import clases.Policia;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.*;
@@ -31,7 +32,15 @@ public class Caso4 {
 		builder.setNombre("Maria");
 		Ladron maria = builder.getLadron();
 
+<<<<<<< HEAD
+		try {
+			policia.arrestarA(maria);
+		} catch (ExcepcionSinOrdenDeArresto e) {
+			e.printStackTrace();
+		}
+=======
 		//policia.arrestarA(maria);
+>>>>>>> 18b09613a03db51a984a97ab337522b969e01e14
 
 		assertEquals(policia.cantidadArrestos(), 0);
 		*/

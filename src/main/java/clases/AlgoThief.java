@@ -167,12 +167,11 @@
 
 
      private void verEstadoJuego(){
-
+         //Falta sumar Tiempo...
          try{
              if (policia.arrestarA(ladron)){
                  juegoGanado = true;
              }
-             
          }catch (ExcepcionSinOrdenDeArresto e) {
              juegoEnCurso = false;
          }
