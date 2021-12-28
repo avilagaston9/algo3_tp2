@@ -182,5 +182,8 @@
      }
 
 
+     public String ladronDeOrdenDeArresto() {
+          return this.policia.nombreLadronEnOrdenDeArresto();
+     }
  }
 

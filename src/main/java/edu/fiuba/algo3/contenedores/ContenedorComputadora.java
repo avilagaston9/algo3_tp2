@@ -64,6 +64,10 @@ public class ContenedorComputadora extends BorderPane {
         buscarSospechosos.setOnAction(buscarSospechososButtonHandler);
 
         Button emitirOrdenDeArresto = new Button("Emitir Orden De Arresto");
+        FileInputStream inputArresto = new FileInputStream("src/imagenes/orden-de-arresto.png");
+        Image imageArresto = new Image(inputArresto);
+        ImageView imageViewArresto = new ImageView(imageArresto);
+        emitirOrdenDeArresto.setGraphic(imageViewArresto);
         BotonEmitirOrdenEventHandler botonEmitirOrdenHandler = new BotonEmitirOrdenEventHandler(algothief);
         emitirOrdenDeArresto.setOnAction(botonEmitirOrdenHandler);
 
