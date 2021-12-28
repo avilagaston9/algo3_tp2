@@ -72,12 +72,12 @@ public class Ladron {
 
 	public boolean serArrestado(OrdenArresto ordenDeArresto, Ciudad ciudadPolicia) throws ExcepcionSinOrdenDeArresto {
 
-		if(!ordenDeArresto.comparar(this)){
-			throw new ExcepcionSinOrdenDeArresto("sin orden de arresto");
-		}
-
 		if(ciudadPolicia != ciudadFinal){
 			return false;
+		}
+
+		if(!ordenDeArresto.comparar(this)){
+			throw new ExcepcionSinOrdenDeArresto("sin orden de arresto");
 		}
 
 		return true; // caso que cumple con la orden de arresto y con estar en la misma ciudad, el ladon puede ser arestado...
