@@ -76,7 +76,7 @@ public class ContenedorPrincipal extends BorderPane {
         Button buscarPista = new Button("",imageViewPista);
         buscarPista.setMaxSize(150,150);
 
-        BotonBuscarPistaEventHandler buscarPistaButtonHandler = new BotonBuscarPistaEventHandler();
+        BotonBuscarPistaEventHandler buscarPistaButtonHandler = new BotonBuscarPistaEventHandler(algoThief);
         buscarPista.setOnAction(buscarPistaButtonHandler);
 
         TilePane botonera = new TilePane();

@@ -126,5 +126,10 @@
      public String getNombreCiudadActual() {
          return this.policia.getCiudadActual().getNombre();
      }
+
+     public Ciudad getCiudadActual() {
+
+         return this.policia.getCiudadActual();
+     }
  }
 

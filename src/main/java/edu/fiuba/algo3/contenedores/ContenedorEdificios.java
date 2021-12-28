@@ -18,25 +18,24 @@ public class ContenedorEdificios extends BorderPane {
     BarraDeMenu menuBar;
 
     public ContenedorEdificios(Stage stage, AlgoThief algoThief) throws FileNotFoundException {
+
+        this.algoThief = algoThief;
         this.stage = stage;
         this.setMenu(stage);
         this.setBotonera(stage);
-        this.algoThief = algoThief;
     }
 
     private void setBotonera(Stage stage) throws FileNotFoundException {
 
-        BotonVisitarEdificio botonAeropuerto = new BotonVisitarEdificio(this.stage, this.algoThief, this.algoThief.getCiudadActual().getAeropuerto);
-
-        BotonVisitarAeropuerto botonVisitarAeropuerto = new BotonVisitarAeropuerto(this.stage);
-        BotonVisitarBiblioteca botonVisitarBiblioteca = new BotonVisitarBiblioteca(this.stage);
-        BotonVisitarBanco botonVisitarBanco = new BotonVisitarBanco(this.stage);
+        BotonVisitarEdificio botonAeropuerto = new BotonVisitarEdificio(this.stage, this.algoThief, this.algoThief.getCiudadActual().getAeropuerto());
+        BotonVisitarEdificio botonBiblioteca = new BotonVisitarEdificio(this.stage, this.algoThief, this.algoThief.getCiudadActual().getBiblioteca());
+        BotonVisitarEdificio botonBanco = new BotonVisitarEdificio(this.stage, this.algoThief, this.algoThief.getCiudadActual().getBanco());
         BotonVolver botonVolver = new BotonVolver(stage);
         FileInputStream input = new FileInputStream("src/imagenes/log-out.png");
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);
         botonVolver.setGraphic(imageView);
-        TilePane botonera = new TilePane(botonVisitarBanco,botonVisitarAeropuerto,botonVisitarBiblioteca,botonVolver);
+        TilePane botonera = new TilePane(botonBanco,botonAeropuerto,botonBiblioteca,botonVolver);
 
         this.setBottom(botonera);
 

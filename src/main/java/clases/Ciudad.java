@@ -7,7 +7,7 @@ import clases.edificios.Edificio;
 
 public class Ciudad {
 
-	private String nombre;
+    private String nombre;
 	private Coordenadas coordenadas;
 	private Banco banco;
 	private Biblioteca biblioteca;
@@ -99,5 +99,19 @@ public class Ciudad {
 
 	public String getNombre() {
 		return this.nombre;
+	}
+
+	public Edificio getAeropuerto() {
+
+		return this.aeropuerto;
+	}
+
+	public Edificio getBiblioteca() {
+
+		return this.biblioteca;
+	}
+
+	public Edificio getBanco() {
+		return this.banco;
 	}
 }

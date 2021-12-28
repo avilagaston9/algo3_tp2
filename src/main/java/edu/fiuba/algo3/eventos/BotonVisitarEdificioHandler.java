@@ -2,11 +2,15 @@ package edu.fiuba.algo3.eventos;
 
 import clases.AlgoThief;
 import clases.edificios.Edificio;
-import clases.ladron.Ladron;
+import clases.pistas.Pista;
+import edu.fiuba.algo3.contenedores.ContenedorPistas;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import java.util.LinkedList;
 
 public class BotonVisitarEdificioHandler implements EventHandler<ActionEvent> {
 
@@ -24,7 +28,12 @@ public class BotonVisitarEdificioHandler implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent actionEvent) {
-        this.algoThief.visitar(this.edificio);
+        LinkedList<Pista> pistas = this.algoThief.visitar(this.edificio);
+        Stage stagePistas = new Stage(StageStyle.UNDECORATED);
+        ContenedorPistas contenedorPistas = new ContenedorPistas(stagePistas, pistas);
+        stagePistas.setScene(new Scene(contenedorPistas,640,480));
         stage.close();
+        stagePistas.show();
+        //this.stage.initModality(Modality.APPLICATION_MODAL);
     }
 }
