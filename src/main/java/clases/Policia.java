@@ -8,7 +8,6 @@ import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.rangos.Rango;
-import clases.valorObjetoRobado.ObjetoRobado;
 
 public class Policia {
 	private Ciudad ciudadActual;
@@ -31,14 +30,6 @@ public class Policia {
 		this.rango = rango;
 		this.ordenDeArresto = new SinOrdenDeArresto();
 		this.cantidadHeridasDeCuchillo = 0;
-	}
-
-	public LinkedList<Pista> visitar(Edificio unEdificio, Ladron ladron) {
-
-		LinkedList<Pista> pistas = new LinkedList<>();
-		pistas.add(this.rango.visitar(unEdificio, this.tiempoTranscurrido));
-		pistas.add(this.rango.pedirPistaLadron(ladron));
-		return pistas;
 	}
 
 	public void dormir() {
@@ -71,10 +62,12 @@ public class Policia {
 		return unaCiudad == this.ciudadActual;
 	}
 
-	public void arrestarA(Ladron unLadron) {
+	public boolean arrestarA(Ladron unLadron) {
 		if (unLadron.serArrestado(this.ordenDeArresto, this.ciudadActual)) {
 			this.rango.sumarArresto();
+			return true;
 		}
+		return false;
 	}
 
 	public void emitirOrdenDeArresto(OrdenArresto ordenDeArresto) {
@@ -108,4 +101,42 @@ public class Policia {
 	public Ciudad getCiudadActual() {
 		return this.ciudadActual;
 	}
+
+	public LinkedList<Pista> visitar(Edificio unEdificio, Ladron ladron) {
+
+		LinkedList<Pista> pistas = new LinkedList<>();
+		pistas.add(this.rango.visitar(unEdificio, this.tiempoTranscurrido));
+		pistas.add(this.rango.pedirPistaLadron(ladron));
+		return pistas;
+	}
+
+
+
+
+
+	//Nueva alternativa
+	private LinkedList<Pista> visitarEdificio(Edificio unEdificio, Ladron ladron) {
+
+		LinkedList<Pista> pistas = new LinkedList<>();
+		pistas.add(this.rango.visitar(unEdificio, this.tiempoTranscurrido));
+		pistas.add(this.rango.pedirPistaLadron(ladron));
+		return pistas;
+	}
+
+
+    public LinkedList<Pista> visitarBancoActual(Ladron ladron) {
+
+		return this.visitarEdificio(this.ciudadActual.getBanco(), ladron);
+    }
+
+	public LinkedList<Pista> visitarAeropuertoActual(Ladron ladron) {
+
+		return this.visitarEdificio(this.ciudadActual.getAeropuerto(), ladron);
+	}
+
+	public LinkedList<Pista> visitarBibliotecaActual(Ladron ladron) {
+
+		return this.visitarEdificio(this.ciudadActual.getBiblioteca(), ladron);
+	}
+
 }

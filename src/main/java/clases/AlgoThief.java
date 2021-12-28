@@ -68,7 +68,6 @@
          return pistas;
      }
 
-
      public int tiempoTranscurridoEnHoras() {
          return this.policia.tiempoTranscurridoEnHoras();
      }
@@ -78,6 +77,8 @@
      public void viajarA(Ciudad nuevaCiudad) {
 
          this.policia.viajarA(nuevaCiudad);
+         this.policia.arrestarA(this.ladron);
+
          this.actualizarObservadores();
      }
 
@@ -131,5 +132,27 @@
 
          return this.policia.getCiudadActual();
      }
+
+     //nueva alternativa
+     public LinkedList<Pista> visitarBancoActual() {
+         LinkedList<Pista> pistas = this.policia.visitarBancoActual(this.ladron);
+         this.actualizarObservadores();
+         return pistas;
+     }
+
+     //nueva alternativa
+     public LinkedList<Pista> visitarAeropuertoActual() {
+         LinkedList<Pista> pistas = this.policia.visitarAeropuertoActual(this.ladron);
+         this.actualizarObservadores();
+         return pistas;
+     }
+
+     //nueva alternativa
+     public LinkedList<Pista> visitarBibliotecaActual() {
+         LinkedList<Pista> pistas = this.policia.visitarBibliotecaActual(this.ladron);
+         this.actualizarObservadores();
+         return pistas;
+     }
+
  }
 

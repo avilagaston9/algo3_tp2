@@ -15,6 +15,7 @@ import clases.rangos.Sargento;
 
 public class Ladron {
 	private final String nombre;
+	private boolean arrestado;
 	private int iteradorCaracteristicas;
 	private LinkedList<CaracteristicaLadron> caracteristicas;
 	private Ciudad ciudadFinal;
@@ -24,6 +25,7 @@ public class Ladron {
 	public Ladron(String nombre, CaracteristicaLadron cabello, CaracteristicaLadron hobby, CaracteristicaLadron sexo,
                   CaracteristicaLadron senia, CaracteristicaLadron vehiculo) {
 
+		this.arrestado = false;
 		this.nombre = nombre;
 		this.iteradorCaracteristicas = 0;
 		this.caracteristicas = new LinkedList<CaracteristicaLadron>();
@@ -68,7 +70,12 @@ public class Ladron {
 	}
 
 	public boolean serArrestado(OrdenArresto ordenDeArresto, Ciudad ciudadPolicia) {
-		return ((ordenDeArresto.comparar(this)) && (ciudadPolicia == ciudadFinal));
+		if((ordenDeArresto.comparar(this)) && (ciudadPolicia == ciudadFinal)){
+
+			this.arrestado = true;
+			return true;
+		}
+		return false;
 	}
 
 	@Override
