@@ -23,11 +23,13 @@
 
      private Boolean juegoEnCurso;
      private Boolean juegoGanado;
+     private int limiteTiempo;
 
      public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados) {
 
          this.juegoEnCurso = true;
          this.juegoGanado = false;
+         this.limiteTiempo = 154;
 
          this.observadores = new ArrayList<Observador>();
 
@@ -184,6 +186,21 @@
 
      public String ladronDeOrdenDeArresto() {
           return this.policia.nombreLadronEnOrdenDeArresto();
+     }
+
+     public boolean juegoEnCurso() {
+         
+         return this.juegoEnCurso;
+     }
+
+     public boolean juegoGanado() {
+         
+         return this.juegoGanado;
+     }
+
+     public boolean tiempoInsuficiente() {
+
+         return (this.limiteTiempo < this.policia.tiempoTranscurridoEnHoras());
      }
  }
 
