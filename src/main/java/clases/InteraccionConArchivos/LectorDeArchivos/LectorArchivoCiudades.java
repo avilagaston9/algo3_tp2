@@ -84,7 +84,7 @@ public class LectorArchivoCiudades implements LectorArchivos {
             PistaMedia pistaMediaBiblioteca = new PistaMedia((String)ciudadJson.get("etnias"));
             PistaDificil pistaDificilBiblioteca = new PistaDificil((String)ciudadJson.get("religion"));
 
-            Biblioteca biblioteca = (Biblioteca) fabricaBiblioteca.crearEdificio(pistaFacilBanco, pistaMediaBanco, pistaDificilBanco);
+            Biblioteca biblioteca = (Biblioteca) fabricaBiblioteca.crearEdificio(pistaFacilBiblioteca, pistaMediaBiblioteca, pistaDificilBiblioteca);
 
             // AEROPUERTO
             PistaFacil pistaFacilAeropuerto = new PistaFacil((String) ciudadJson.get("colorBandera"));
