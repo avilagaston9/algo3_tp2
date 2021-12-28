@@ -152,5 +152,10 @@ public class PruebaDeIntegracionJugadorPierde {
     }
 
     @Test
-    public void jugadorPierdeTiempoInsuficiente() throws ExcepcionSinOrdenDeArresto {}
+    public void jugadorPierdeTiempoInsuficiente() throws ExcepcionSinOrdenDeArresto {
+
+
+
+
+    }
 }
