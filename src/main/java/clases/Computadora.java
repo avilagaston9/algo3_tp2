@@ -111,4 +111,8 @@ public class Computadora {
 	public void borrarCaracteristica(){
 		// todo implementar borrar caracteristica
 	}
+
+	public ArrayList<Ladron> getSospechosos() {
+		return this.sospechosos;
+	}
 }
