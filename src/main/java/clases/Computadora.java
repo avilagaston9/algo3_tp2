@@ -74,11 +74,11 @@ public class Computadora {
 
 	public OrdenArresto emitirOrdenDeArresto(Ladron unLadron) {
 
-		ArrayList<Ladron> ladronesSospechosos = new ArrayList<>();
-		ladronesSospechosos = this.buscarSospechosos();
+//		ArrayList<Ladron> ladronesSospechosos = new ArrayList<>();
+//		ladronesSospechosos = this.buscarSospechosos();
 
-		for (Ladron sospechoso : ladronesSospechosos)
-			if (sospechoso == unLadron) {
+		for (Ladron sospechoso : this.sospechosos)
+			if (sospechoso.equals(unLadron)) {
 				OrdenDeArresto orden = new OrdenDeArresto(unLadron);
 				return orden;
 			}
