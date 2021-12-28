@@ -1,6 +1,6 @@
 package clases;
 
-import java.util.LinkedList;
+import clases.Exceptions.ExcepcionSinOrdenDeArresto;
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.OrdenDeArresto.SinOrdenDeArresto;
 import clases.armas.Arma;
@@ -8,6 +8,8 @@ import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.rangos.Rango;
+
+import java.util.LinkedList;
 
 public class Policia {
 	private Ciudad ciudadActual;
@@ -62,12 +64,17 @@ public class Policia {
 		return unaCiudad == this.ciudadActual;
 	}
 
-	public boolean arrestarA(Ladron unLadron) {
+	public boolean arrestarA(Ladron unLadron) throws ExcepcionSinOrdenDeArresto {
+
+		return (unLadron.serArrestado(this.ordenDeArresto, this.ciudadActual));
+
+		/*
 		if (unLadron.serArrestado(this.ordenDeArresto, this.ciudadActual)) {
 			this.rango.sumarArresto();
 			return true;
 		}
 		return false;
+		 */
 	}
 
 	public void emitirOrdenDeArresto(OrdenArresto ordenDeArresto) {
