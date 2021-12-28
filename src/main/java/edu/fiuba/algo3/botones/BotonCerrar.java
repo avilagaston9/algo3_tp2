@@ -4,12 +4,11 @@ import edu.fiuba.algo3.eventos.BotonVolverEventHandler;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class BotonVolver extends Button {
+public class BotonCerrar extends Button {
 
-    public BotonVolver(Stage stage){
-        this.setText("Volver");
+    public BotonCerrar(Stage stage, String textoCerrar){
+        this.setText(textoCerrar);
         BotonVolverEventHandler botonVolverHandler = new BotonVolverEventHandler(stage);
         this.setOnAction(botonVolverHandler);
-
     }
 }

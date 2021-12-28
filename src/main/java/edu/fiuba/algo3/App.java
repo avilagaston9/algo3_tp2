@@ -5,11 +5,8 @@ import clases.Ciudad;
 import clases.InteraccionConArchivos.LectorDeArchivosFachada;
 import clases.ladron.Ladron;
 import clases.valorObjetoRobado.ObjetoRobado;
-import edu.fiuba.algo3.contenedores.ContenedorBienvenidos;
-import edu.fiuba.algo3.contenedores.ContenedorPrincipal;
 import edu.fiuba.algo3.vistas.VistaPrincipal;
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
