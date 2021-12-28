@@ -2,7 +2,7 @@ package clases.OrdenDeArresto;
 
 import clases.ladron.Ladron;
 
-public class SinOrdenDeArresto implements OrdenArresto {
+public class SinOrdenDeArresto extends Throwable implements OrdenArresto {
 
 	@Override
 	public boolean comparar(Ladron ladron) {

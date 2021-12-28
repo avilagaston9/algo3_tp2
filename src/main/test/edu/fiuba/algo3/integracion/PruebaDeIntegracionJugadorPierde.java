@@ -6,19 +6,20 @@ import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoCiudades;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoLadrones;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoObjetosRobados;
 import clases.OrdenDeArresto.OrdenArresto;
+import clases.OrdenDeArresto.SinOrdenDeArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.rangos.Novato;
 import clases.valorObjetoRobado.ObjetoRobado;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PruebaDeIntegracionJugadorPierde {
 
@@ -119,9 +120,14 @@ public class PruebaDeIntegracionJugadorPierde {
 
         policia.viajarA(bangkok);
 
-        assertFalse(policia.arrestarA(ladron));
+        try {
+            policia.arrestarA(ladron);
+        }
+        catch (Throwable e){
+            assertEquals(policia.cantidadArrestos(), 0);
+        }
+
         assertTrue(policia.tiempoTranscurridoEnHoras() < 154);
-        // chequear que tiempo no se haya pasado antes
     }
 
     private void cargarPistaLadron(LinkedList<Pista> pistasDevueltas, Computadora computadora) {
@@ -130,15 +136,10 @@ public class PruebaDeIntegracionJugadorPierde {
             computadora.cargarCaracteristica(caracteristicaLadron);
         }
     }
-<<<<<<< HEAD
 
     @Test
     public void jugadorPierdeTiempoInsuficiente() throws ExcepcionSinOrdenDeArresto {
 
 
-
-
     }
-=======
->>>>>>> 2a0980a5e991be0dc2fa5bb0dda5099b0ada25b4
 }
