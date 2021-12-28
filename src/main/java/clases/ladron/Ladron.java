@@ -97,4 +97,8 @@ public class Ladron {
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudadFinal = ciudad;
 	}
+
+	public String getNombre() {
+		return this.nombre;
+	}
 }

@@ -14,8 +14,8 @@ public class ContenedorSexo extends VBox {
         Button femenino = new Button("Femenino");
         femenino.setMaxSize(200,100);
 
-        CaracteristicaEventHandler masculinoHandler = new CaracteristicaEventHandler("es hombre", algoThief, stage);
-        CaracteristicaEventHandler femeninoHandler =  new CaracteristicaEventHandler("es mujer", algoThief, stage);
+        CaracteristicaEventHandler masculinoHandler = new CaracteristicaEventHandler("Masculino", algoThief, stage);
+        CaracteristicaEventHandler femeninoHandler =  new CaracteristicaEventHandler("Femenino", algoThief, stage);
 
         masculino.setOnAction(masculinoHandler);
         femenino.setOnAction(femeninoHandler);

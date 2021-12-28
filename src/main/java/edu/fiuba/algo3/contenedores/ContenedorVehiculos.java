@@ -19,10 +19,10 @@ public class ContenedorVehiculos extends VBox {
         Button moto = new Button("Moto");
         moto.setMaxSize(200,50);
 
-        CaracteristicaEventHandler descapotableHandler = new CaracteristicaEventHandler("manejaba un descapotable", algoThief, stage);
-        CaracteristicaEventHandler limusinaHandler = new CaracteristicaEventHandler("manejaba una limusina", algoThief, stage);
-        CaracteristicaEventHandler deportivoHandler = new CaracteristicaEventHandler("manejaba una limusina", algoThief, stage);
-        CaracteristicaEventHandler motoHandler = new CaracteristicaEventHandler("manejaba una moto", algoThief, stage);
+        CaracteristicaEventHandler descapotableHandler = new CaracteristicaEventHandler("Descapotable", algoThief, stage);
+        CaracteristicaEventHandler limusinaHandler = new CaracteristicaEventHandler("Limusina", algoThief, stage);
+        CaracteristicaEventHandler deportivoHandler = new CaracteristicaEventHandler("Deportivo", algoThief, stage);
+        CaracteristicaEventHandler motoHandler = new CaracteristicaEventHandler("Moto", algoThief, stage);
 
         descapotable.setOnAction(deportivoHandler);
         limusina.setOnAction(limusinaHandler);

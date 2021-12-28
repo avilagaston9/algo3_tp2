@@ -6,14 +6,19 @@ import clases.OrdenDeArresto.OrdenArresto;
 import clases.OrdenDeArresto.OrdenDeArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
+import edu.fiuba.algo3.vistas.VistaCaracteristicas;
 
 public class Computadora {
 	private ArrayList<Ladron> ladrones;
 	private ArrayList<CaracteristicaLadron> caracteristicas;
+	private ArrayList<Observador> observadores;
+	private ArrayList<Ladron> sospechosos;
 
 	public Computadora(ArrayList<Ladron> unosLadrones) {
 		this.ladrones = unosLadrones;
 		this.caracteristicas = new ArrayList<CaracteristicaLadron>();
+		this.observadores = new ArrayList<Observador>();
+		this.sospechosos =  new ArrayList<Ladron>();
 	}
 
 	// public ArrayList<Ladron> cargarDatosYBuscar(List<CaracteristicaLadron>
@@ -30,10 +35,11 @@ public class Computadora {
 	// }
 	// tiempo.sumarHoras(3);
 	// return sospechosos;
-	// }
+	// }//todo borrar basura vieja
 
 	public void cargarCaracteristica(CaracteristicaLadron caracteristica) {
 		caracteristicas.add(caracteristica);
+		this.actualizarObservadores();
 	}
 
 	public ArrayList<Ladron> buscarSospechosos() {
@@ -48,10 +54,12 @@ public class Computadora {
 				}
 			}
 			if (cumple) {
+//				System.out.println(unLadron.getNombre());
 				sospechosos.add(unLadron);
+				this.sospechosos.add(unLadron);
 			}
 		}
-		// tiempo.sumarHoras(3);
+		this.actualizarObservadores();
 		return sospechosos;
 	}
 
@@ -66,5 +74,33 @@ public class Computadora {
 				return orden;
 			}
 		return null;
+	}
+
+	public ArrayList<String> getCaracteristicas() {
+		ArrayList<String> caracteristicas = new ArrayList<>();
+
+		for (CaracteristicaLadron c: this.caracteristicas){
+			caracteristicas.add(c.getPista().revelar());
+		}
+		return caracteristicas;
+	}
+
+	public ArrayList<String> getNombresSospechosos() {
+		ArrayList<String> sospechosos = new ArrayList<>();
+
+		for (Ladron l: this.sospechosos){
+			sospechosos.add(l.getNombre());
+		}
+		return sospechosos;
+	}
+
+	public void setObservador(Observador vista) {
+		this.observadores.add(vista);
+	}
+
+	private void actualizarObservadores() {
+		for(Observador o : this.observadores){
+			o.actualizar();
+		}
 	}
 }

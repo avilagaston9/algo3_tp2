@@ -13,12 +13,10 @@ public class BotonBuscarSospechososEventHandler implements EventHandler<ActionEv
         this.stage = stage;
         this.algoThief = algothief;
 
-
-
     }
     @Override
     public void handle(ActionEvent actionEvent) {
-        this.stage.close();
-
+        algoThief.buscarSospechosos();
+//        this.stage.close();
     }
 }

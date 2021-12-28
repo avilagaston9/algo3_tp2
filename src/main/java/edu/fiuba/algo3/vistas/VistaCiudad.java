@@ -1,10 +1,10 @@
 package edu.fiuba.algo3.vistas;
 
 import clases.AlgoThief;
-import clases.ObservadorAlgothief;
+import clases.Observador;
 import javafx.scene.control.Label;
 
-public class VistaCiudad implements ObservadorAlgothief{
+public class VistaCiudad implements Observador {
     private AlgoThief juego;
     private Label cuadro;
 

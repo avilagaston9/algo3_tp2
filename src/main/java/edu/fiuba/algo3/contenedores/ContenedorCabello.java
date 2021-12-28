@@ -18,10 +18,10 @@ public class ContenedorCabello extends VBox {
         Rojo.setMaxSize(200,50);
         Button Negro = new Button("Negro");
 
-        CaracteristicaEventHandler castanioHandler = new CaracteristicaEventHandler("Su pelo es castaño", algoThief,stage);
-        CaracteristicaEventHandler rubioHandler = new CaracteristicaEventHandler("Su pelo es rubio", algoThief, stage);
-        CaracteristicaEventHandler rojoHandler = new CaracteristicaEventHandler("Su pelo es rojo", algoThief, stage);
-        CaracteristicaEventHandler negroHandler = new CaracteristicaEventHandler("Su pelo es negro", algoThief, stage);
+        CaracteristicaEventHandler castanioHandler = new CaracteristicaEventHandler("Castaño", algoThief,stage);
+        CaracteristicaEventHandler rubioHandler = new CaracteristicaEventHandler("Rubio", algoThief, stage);
+        CaracteristicaEventHandler rojoHandler = new CaracteristicaEventHandler("Rojizo", algoThief, stage);
+        CaracteristicaEventHandler negroHandler = new CaracteristicaEventHandler("Morocho", algoThief, stage);
 
         castanio.setOnAction(castanioHandler);
         rubio.setOnAction(rubioHandler);

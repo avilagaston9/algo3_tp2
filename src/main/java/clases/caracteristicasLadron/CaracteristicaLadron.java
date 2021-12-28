@@ -17,4 +17,8 @@ public class CaracteristicaLadron {
 	public boolean equals(CaracteristicaLadron caracteristica) {
 		return this.pista.equals(caracteristica.darPista());
 	}
+
+	public Pista getPista() {
+		return this.pista;
+	}
 }

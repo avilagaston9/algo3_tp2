@@ -13,7 +13,7 @@ public class BotonSeniaEventHandler implements EventHandler<ActionEvent> {
     Stage stage;
     Scene muestraSenia;
 
-    public BotonSeniaEventHandler(AlgoThief algoThief){
+    public BotonSeniaEventHandler(AlgoThief algoThief){ // Todo unificar todos estos botones en un BotonCaracteristicaEventHAndler hacen lo mismo codigo repetido
         this.stage = new Stage(StageStyle.UNDECORATED);
         ContenedorSenia contenedorSenia = new ContenedorSenia(algoThief,stage);
         this.muestraSenia = new Scene(contenedorSenia,200,200);
