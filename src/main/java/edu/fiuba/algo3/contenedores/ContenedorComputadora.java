@@ -72,7 +72,7 @@ public class ContenedorComputadora extends BorderPane {
         emitirOrdenDeArresto.setOnAction(botonEmitirOrdenHandler);
 
 
-        BotonVolver botonVolver = new BotonVolver(stage);
+        BotonCerrar botonVolver = new BotonCerrar(stage, "Volver");
         FileInputStream input = new FileInputStream("src/imagenes/log-out.png");
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);

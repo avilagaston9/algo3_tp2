@@ -4,8 +4,7 @@ import clases.AlgoThief;
 import clases.Ciudad;
 import clases.Observador;
 import clases.ladron.Ladron;
-import edu.fiuba.algo3.contenedores.ContenedorBienvenidos;
-import edu.fiuba.algo3.contenedores.ContenedorPrincipal;
+import edu.fiuba.algo3.contenedores.*;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -38,15 +37,17 @@ public class VistaPrincipal implements Observador {
 
         if (!this.algothief.juegoEnCurso()){
 
+            Scene nuevaScene;
             if(this.algothief.juegoGanado()){
 
-                this.stage.setScene(new ContenedorJuegoGanado(this.algothief));
+                nuevaScene = new Scene(new ContenedorJuegoGanado(this.algothief, this.stage), 640, 480);
             }else if(this.algothief.tiempoInsuficiente()){
 
-                this.stage.setScene(new ContenedorTiempoInsuficiente(this.algothief));
+                nuevaScene = new Scene(new ContenedorTiempoInsuficiente(this.algothief, this.stage), 640, 480));
             }else{
-                this.stage.setScene(new ContenedorSinOrdenDeArresto());
+                nuevaScene = new Scene(new ContenedorSinOrdenDeArresto(this.algothief, this.stage), 640, 480));
             }
+            this.stage.setScene(nuevaScene);
         }
     }
 }
