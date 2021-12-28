@@ -2,6 +2,7 @@ package edu.fiuba.algo3.contenedores;
 
 import clases.AlgoThief;
 import edu.fiuba.algo3.botones.*;
+import edu.fiuba.algo3.eventos.visitarEdificiosHandlers.*;
 import edu.fiuba.algo3.menues.BarraDeMenu;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -27,15 +28,23 @@ public class ContenedorEdificios extends BorderPane {
 
     private void setBotonera(Stage stage) throws FileNotFoundException {
 
-        BotonVisitarEdificio botonAeropuerto = new BotonVisitarEdificio(this.stage, this.algoThief, this.algoThief.getCiudadActual().getAeropuerto());
-        BotonVisitarEdificio botonBiblioteca = new BotonVisitarEdificio(this.stage, this.algoThief, this.algoThief.getCiudadActual().getBiblioteca());
-        BotonVisitarEdificio botonBanco = new BotonVisitarEdificio(this.stage, this.algoThief, this.algoThief.getCiudadActual().getBanco());
+        //creo boton visitar aeropuerto.
+        BotonVisitarAeropuertoEventHandler AeropuertoEventHandler = new BotonVisitarAeropuertoEventHandler(this.stage, this.algoThief);
+        BotonVisitarEdificio botonAeropuerto = new BotonVisitarEdificio(AeropuertoEventHandler, "src/imagenes/airport.png");
+        //creo boton visitar biblioteca
+        BotonVisitarBibliotecaEventHandler BibliotecaEventHandler = new BotonVisitarBibliotecaEventHandler(this.stage, this.algoThief);
+        BotonVisitarEdificio botonBiblioteca = new BotonVisitarEdificio(BibliotecaEventHandler, "src/imagenes/library.png");
+        //creo boton visitar banco
+        BotonVisitarBancoEventHandler BancoEventHandler = new BotonVisitarBancoEventHandler(this.stage, this.algoThief);
+        BotonVisitarEdificio botonBanco = new BotonVisitarEdificio(BancoEventHandler, "src/imagenes/bank.png");
+
+
         BotonVolver botonVolver = new BotonVolver(stage);
         FileInputStream input = new FileInputStream("src/imagenes/log-out.png");
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);
         botonVolver.setGraphic(imageView);
-        TilePane botonera = new TilePane(botonBanco,botonAeropuerto,botonBiblioteca,botonVolver);
+        TilePane botonera = new TilePane(botonBanco,botonAeropuerto, botonBiblioteca,botonVolver);
 
         this.setBottom(botonera);
 
