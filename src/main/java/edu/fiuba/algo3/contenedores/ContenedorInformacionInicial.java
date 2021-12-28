@@ -10,22 +10,23 @@ import javafx.stage.Stage;
 
 public class ContenedorInformacionInicial extends VBox {
 
-    public ContenedorInformacionInicial(Stage stage, AlgoThief algoThief, Scene proximaEscena) {
+	public ContenedorInformacionInicial(Stage stage, AlgoThief algoThief, Scene proximaEscena) {
 
-        String nombreObjetoRobado = algoThief.nombreObjetoRobado();
-        String nombreCiudadInicial = algoThief.nombreCiudadInicial();
-        String nombrePolicia = algoThief.getNombrePolicia();
+		String nombreObjetoRobado = algoThief.nombreObjetoRobado();
+		String nombreCiudadInicial = algoThief.nombreCiudadInicial();
+		String nombrePolicia = algoThief.getNombrePolicia();
 
-        Label informacion = new Label("Bienvenido oficial " + nombrePolicia +
-                                         ". Le ha sido asignado el caso del robo de " + nombreObjetoRobado
-                                          + " en la ciudad de " + nombreCiudadInicial + ".");
+		Label informacion = new Label(
+				"Bienvenido oficial " + nombrePolicia + ". Le ha sido asignado el caso del robo de "
+						+ nombreObjetoRobado + " en la ciudad de " + nombreCiudadInicial + ".");
 
-        Button botonEntendido = new Button("Entendido");
+		Button botonEntendido = new Button("Entendido");
 
-        BotonEntendidoEventHandler botonEntendidoHandler = new BotonEntendidoEventHandler(stage,algoThief,proximaEscena);
-        botonEntendido.setOnAction(botonEntendidoHandler);
+		BotonEntendidoEventHandler botonEntendidoHandler = new BotonEntendidoEventHandler(stage, algoThief,
+				proximaEscena);
+		botonEntendido.setOnAction(botonEntendidoHandler);
 
-        this.getChildren().addAll(botonEntendido,informacion);
+		this.getChildren().addAll(botonEntendido, informacion);
 
-    }
+	}
 }

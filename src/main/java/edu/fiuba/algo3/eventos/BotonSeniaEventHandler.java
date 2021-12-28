@@ -10,19 +10,21 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class BotonSeniaEventHandler implements EventHandler<ActionEvent> {
-    Stage stage;
-    Scene muestraSenia;
+	Stage stage;
+	Scene muestraSenia;
 
-    public BotonSeniaEventHandler(AlgoThief algoThief){ // Todo unificar todos estos botones en un BotonCaracteristicaEventHAndler hacen lo mismo codigo repetido
-        this.stage = new Stage(StageStyle.UNDECORATED);
-        ContenedorSenia contenedorSenia = new ContenedorSenia(algoThief,stage);
-        this.muestraSenia = new Scene(contenedorSenia,200,200);
-        this.stage.initModality(Modality.APPLICATION_MODAL);
-    }
-    @Override
-    public void handle(ActionEvent actionEvent) {
-        this.stage.setScene(muestraSenia);
-        this.stage.show();
+	public BotonSeniaEventHandler(AlgoThief algoThief) { // Todo unificar todos estos botones en un
+															// BotonCaracteristicaEventHAndler hacen lo mismo codigo
+															// repetido
+		this.stage = new Stage(StageStyle.UNDECORATED);
+		ContenedorSenia contenedorSenia = new ContenedorSenia(algoThief, stage);
+		this.muestraSenia = new Scene(contenedorSenia, 200, 200);
+		this.stage.initModality(Modality.APPLICATION_MODAL);
+	}
+	@Override
+	public void handle(ActionEvent actionEvent) {
+		this.stage.setScene(muestraSenia);
+		this.stage.show();
 
-    }
+	}
 }

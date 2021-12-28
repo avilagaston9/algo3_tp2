@@ -1,9 +1,12 @@
 package clases.ladron;
 
+import java.util.LinkedList;
+import java.util.Objects;
+
 import clases.Ciudad;
+import clases.RutaDeEscape;
 import clases.Exceptions.ExcepcionSinOrdenDeArresto;
 import clases.OrdenDeArresto.OrdenArresto;
-import clases.RutaDeEscape;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.pistas.Pista;
 import clases.pistas.PistaSinInformacion;
@@ -11,9 +14,6 @@ import clases.rangos.Detective;
 import clases.rangos.Investigador;
 import clases.rangos.Novato;
 import clases.rangos.Sargento;
-
-import java.util.LinkedList;
-import java.util.Objects;
 
 public class Ladron {
 	private final String nombre;
@@ -26,7 +26,7 @@ public class Ladron {
 	// private Pista pista;
 
 	public Ladron(String nombre, CaracteristicaLadron cabello, CaracteristicaLadron hobby, CaracteristicaLadron sexo,
-                  CaracteristicaLadron senia, CaracteristicaLadron vehiculo) {
+			CaracteristicaLadron senia, CaracteristicaLadron vehiculo) {
 
 		this.arrestado = false;
 		this.nombre = nombre;
@@ -74,21 +74,20 @@ public class Ladron {
 
 	public boolean serArrestado(OrdenArresto ordenDeArresto, Ciudad ciudadPolicia) throws ExcepcionSinOrdenDeArresto {
 
-		if(ciudadPolicia != ciudadFinal){
+		if (ciudadPolicia != ciudadFinal) {
 			return false;
 		}
 
-		if(!ordenDeArresto.comparar(this)){
+		if (!ordenDeArresto.comparar(this)) {
 			throw new ExcepcionSinOrdenDeArresto("sin orden de arresto");
 		}
 
-		return true; // caso que cumple con la orden de arresto y con estar en la misma ciudad, el ladon puede ser arestado...
+		return true; // caso que cumple con la orden de arresto y con estar en la misma ciudad, el
+						// ladon puede ser arestado...
 
 		/*
-		if((ordenDeArresto.comparar(this)) && (ciudadPolicia == ciudadFinal)){
-			this.arrestado = true;
-			return true;
-		}
+		 * if((ordenDeArresto.comparar(this)) && (ciudadPolicia == ciudadFinal)){
+		 * this.arrestado = true; return true; }
 		 */
 	}
 
@@ -116,11 +115,11 @@ public class Ladron {
 		return this.nombre;
 	}
 
-	public void estabalecerRutaDeEscape(RutaDeEscape rutaDeEscape){
+	public void estabalecerRutaDeEscape(RutaDeEscape rutaDeEscape) {
 		this.rutaDeEscape = rutaDeEscape;
 	}
 
-	public boolean ciudadPerteneceASuRutaDeEscape(Ciudad unaCiudad){
+	public boolean ciudadPerteneceASuRutaDeEscape(Ciudad unaCiudad) {
 		return (this.rutaDeEscape.pertenece(unaCiudad));
 	}
 }

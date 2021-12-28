@@ -1,11 +1,12 @@
 package clases.rangos;
 
+import java.util.List;
+
 import clases.Tiempo;
 import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.valorObjetoRobado.ObjetoRobado;
-import java.util.List;
 
 public abstract class Rango {
 
@@ -34,9 +35,9 @@ public abstract class Rango {
 		return this.arrestos;
 	}
 
-    public abstract ObjetoRobado getObjetoRobado(List<ObjetoRobado> objetosRobados);
+	public abstract ObjetoRobado getObjetoRobado(List<ObjetoRobado> objetosRobados);
 
-    /*
+	/*
 	 * 
 	 * void viajar(int cantidadKms, Tiempo tiempo);
 	 * 

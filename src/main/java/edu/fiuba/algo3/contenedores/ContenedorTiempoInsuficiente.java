@@ -7,14 +7,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class ContenedorTiempoInsuficiente extends VBox {
-    public ContenedorTiempoInsuficiente(AlgoThief algothief, Stage stage) {
+	public ContenedorTiempoInsuficiente(AlgoThief algothief, Stage stage) {
 
-        Label texto = new Label(("¡Game Over!\n" + algothief.getNombrePolicia() + ", te haz quedado sin tiempo y " +
-                algothief.getNombreLadron() + "sigue suelto."));
-        BotonCerrar botonCerrar = new BotonCerrar(stage, "Salir");
+		Label texto = new Label(("¡Game Over!\n" + algothief.getNombrePolicia() + ", te haz quedado sin tiempo y "
+				+ algothief.getNombreLadron() + "sigue suelto."));
+		BotonCerrar botonCerrar = new BotonCerrar(stage, "Salir");
 
-        this.getChildren().addAll(texto, botonCerrar);
-    }
+		this.getChildren().addAll(texto, botonCerrar);
+	}
 }
-
-

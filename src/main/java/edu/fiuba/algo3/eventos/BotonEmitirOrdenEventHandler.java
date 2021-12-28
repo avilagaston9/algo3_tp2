@@ -10,22 +10,22 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class BotonEmitirOrdenEventHandler implements EventHandler<ActionEvent> {
-    private final AlgoThief algoThief;
-    Stage stage;
-    Scene muestraLadrones;
+	private final AlgoThief algoThief;
+	Stage stage;
+	Scene muestraLadrones;
 
-    public BotonEmitirOrdenEventHandler(AlgoThief algoThief){
-        this.stage = new Stage(StageStyle.UNDECORATED);
-        this.algoThief = algoThief;
-        this.stage.initModality(Modality.APPLICATION_MODAL);
+	public BotonEmitirOrdenEventHandler(AlgoThief algoThief) {
+		this.stage = new Stage(StageStyle.UNDECORATED);
+		this.algoThief = algoThief;
+		this.stage.initModality(Modality.APPLICATION_MODAL);
 
-    }
+	}
 
-    @Override
-    public void handle(ActionEvent actionEvent) {
-        ContenedorLadrones contenedorLadrones = new ContenedorLadrones(this.stage,this.algoThief);
-        this.muestraLadrones = new Scene(contenedorLadrones,200,200);
-        this.stage.setScene(this.muestraLadrones);
-        this.stage.show();
-    }
+	@Override
+	public void handle(ActionEvent actionEvent) {
+		ContenedorLadrones contenedorLadrones = new ContenedorLadrones(this.stage, this.algoThief);
+		this.muestraLadrones = new Scene(contenedorLadrones, 200, 200);
+		this.stage.setScene(this.muestraLadrones);
+		this.stage.show();
+	}
 }

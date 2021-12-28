@@ -4,7 +4,8 @@ Esta guia presenta los pasos necesarios para configurar el ambiente de desarroll
 
 ## Pre-requisitos
 
-- Java 11 ([Oracle](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) u [OpenJDK](https://openjdk.java.net/install/))
+- Java 11 ([Oracle](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+  u [OpenJDK](https://openjdk.java.net/install/))
 - [Maven](https://maven.apache.org/)
 
 ### 1. Pruebas
@@ -29,5 +30,6 @@ Esto genera el empaquetado en `target/tp2-0.0.1.jar`.
 $ mvn clean javafx:run
 ```
 
-La tarea `clean` se encarga de limpiar archivos de compilaciones anteriores. `javafx:run` compila y ejecuta la aplicación.
+La tarea `clean` se encarga de limpiar archivos de compilaciones anteriores. `javafx:run` compila y ejecuta la
+aplicación.
 

@@ -1,5 +1,7 @@
 package clases;
 
+import java.util.LinkedList;
+
 import clases.Exceptions.ExcepcionSinOrdenDeArresto;
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.OrdenDeArresto.SinOrdenDeArresto;
@@ -8,8 +10,6 @@ import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.rangos.Rango;
-
-import java.util.LinkedList;
 
 public class Policia {
 	private Ciudad ciudadActual;
@@ -69,11 +69,8 @@ public class Policia {
 		return (unLadron.serArrestado(this.ordenDeArresto, this.ciudadActual));
 
 		/*
-		if (unLadron.serArrestado(this.ordenDeArresto, this.ciudadActual)) {
-			this.rango.sumarArresto();
-			return true;
-		}
-		return false;
+		 * if (unLadron.serArrestado(this.ordenDeArresto, this.ciudadActual)) {
+		 * this.rango.sumarArresto(); return true; } return false;
 		 */
 	}
 
@@ -114,35 +111,31 @@ public class Policia {
 		LinkedList<Pista> pistas = new LinkedList<>();
 		pistas.add(this.rango.visitar(unEdificio, this.tiempoTranscurrido));
 
-		//metodo en ruta de escape "pertenece" y le paso como parametro la ciudad actual,
+		// metodo en ruta de escape "pertenece" y le paso como parametro la ciudad
+		// actual,
 		// si devuelve false, NO se pide pista al ladron....
-		if(ladron.ciudadPerteneceASuRutaDeEscape(this.ciudadActual)){
+		if (ladron.ciudadPerteneceASuRutaDeEscape(this.ciudadActual)) {
 			pistas.add(this.rango.pedirPistaLadron(ladron));
 		}
 		return pistas;
 	}
-
 
 	/*
-	//Nueva alternativa
-	private LinkedList<Pista> visitarEdificio(Edificio unEdificio, Ladron ladron) {
-
-		LinkedList<Pista> pistas = new LinkedList<>();
-		pistas.add(this.rango.visitar(unEdificio, this.tiempoTranscurrido));
-
-		if(ladron.ciudadPerteneceASuRutaDeEscape(this.ciudadActual)){
-			pistas.add(this.rango.pedirPistaLadron(ladron));
-		}
-		return pistas;
-	}
-
+	 * //Nueva alternativa private LinkedList<Pista> visitarEdificio(Edificio
+	 * unEdificio, Ladron ladron) {
+	 * 
+	 * LinkedList<Pista> pistas = new LinkedList<>();
+	 * pistas.add(this.rango.visitar(unEdificio, this.tiempoTranscurrido));
+	 * 
+	 * if(ladron.ciudadPerteneceASuRutaDeEscape(this.ciudadActual)){
+	 * pistas.add(this.rango.pedirPistaLadron(ladron)); } return pistas; }
+	 * 
 	 */
 
-
-    public LinkedList<Pista> visitarBancoActual(Ladron ladron) {
+	public LinkedList<Pista> visitarBancoActual(Ladron ladron) {
 
 		return this.visitar(this.ciudadActual.getBanco(), ladron);
-    }
+	}
 
 	public LinkedList<Pista> visitarAeropuertoActual(Ladron ladron) {
 

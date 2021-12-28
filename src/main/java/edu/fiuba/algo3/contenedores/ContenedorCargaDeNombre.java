@@ -9,21 +9,22 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class ContenedorCargaDeNombre extends VBox {
-    Scene proximaEscena;
+	Scene proximaEscena;
 
-   public  ContenedorCargaDeNombre(AlgoThief algothief, Scene proximaEscena, Stage stage){
-       this.proximaEscena = proximaEscena;
+	public ContenedorCargaDeNombre(AlgoThief algothief, Scene proximaEscena, Stage stage) {
+		this.proximaEscena = proximaEscena;
 
-       TextField slotParaIngresarNombre = new TextField();
-       slotParaIngresarNombre.setPromptText("Ingrese su nombre");
+		TextField slotParaIngresarNombre = new TextField();
+		slotParaIngresarNombre.setPromptText("Ingrese su nombre");
 
-       Button botonOk = new Button("Ok");
+		Button botonOk = new Button("Ok");
 
-       BotonAceptarNombreEventHandler botonOkHandler = new BotonAceptarNombreEventHandler(algothief,proximaEscena,slotParaIngresarNombre,stage);
-       botonOk.setOnAction(botonOkHandler);
+		BotonAceptarNombreEventHandler botonOkHandler = new BotonAceptarNombreEventHandler(algothief, proximaEscena,
+				slotParaIngresarNombre, stage);
+		botonOk.setOnAction(botonOkHandler);
 
-       this.getChildren().addAll(botonOk,slotParaIngresarNombre);
+		this.getChildren().addAll(botonOk, slotParaIngresarNombre);
 
-    }
+	}
 
 }

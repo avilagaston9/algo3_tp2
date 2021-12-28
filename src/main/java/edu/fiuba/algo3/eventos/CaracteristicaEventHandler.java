@@ -7,20 +7,20 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
 public class CaracteristicaEventHandler implements EventHandler<ActionEvent> {
-    Stage stage ;
-    CaracteristicaLadron caracteristica;
-    AlgoThief algoThief;
+	Stage stage;
+	CaracteristicaLadron caracteristica;
+	AlgoThief algoThief;
 
-    public CaracteristicaEventHandler(String Caracteristica, AlgoThief algoThief, Stage stage){
-        this.stage = stage;
-        this.caracteristica = new CaracteristicaLadron(Caracteristica);
-        this.algoThief = algoThief;
-    }
+	public CaracteristicaEventHandler(String Caracteristica, AlgoThief algoThief, Stage stage) {
+		this.stage = stage;
+		this.caracteristica = new CaracteristicaLadron(Caracteristica);
+		this.algoThief = algoThief;
+	}
 
-    @Override
-    public void handle(ActionEvent actionEvent) {
-        this.algoThief.cargarCaracteristica(this.caracteristica);
-        stage.close();
+	@Override
+	public void handle(ActionEvent actionEvent) {
+		this.algoThief.cargarCaracteristica(this.caracteristica);
+		stage.close();
 
-    }
+	}
 }

@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 
 public class BotonVolver extends Button {
 
-    public BotonVolver(Stage stage) {
-        BotonVolverEventHandler botonVolverHandler = new BotonVolverEventHandler(stage);
-    }
+	public BotonVolver(Stage stage) {
+		BotonVolverEventHandler botonVolverHandler = new BotonVolverEventHandler(stage);
+	}
 }

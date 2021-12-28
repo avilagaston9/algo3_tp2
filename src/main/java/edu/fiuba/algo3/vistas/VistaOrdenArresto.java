@@ -5,20 +5,18 @@ import clases.Observador;
 import javafx.scene.control.Label;
 
 public class VistaOrdenArresto implements Observador {
-    private AlgoThief algoThief;
-    private Label orden;
+	private AlgoThief algoThief;
+	private Label orden;
 
-    public VistaOrdenArresto(AlgoThief algothief, Label ordenDeArresto) {
-        this.algoThief = algothief;
-        this.orden = ordenDeArresto;
-    }
+	public VistaOrdenArresto(AlgoThief algothief, Label ordenDeArresto) {
+		this.algoThief = algothief;
+		this.orden = ordenDeArresto;
+	}
 
+	@Override
+	public void actualizar() {
+		String orden = this.algoThief.ladronDeOrdenDeArresto();
+		this.orden.setText(orden);
 
-    @Override
-    public void actualizar() {
-        String orden = this.algoThief.ladronDeOrdenDeArresto();
-        this.orden.setText(orden);
-
-
-    }
+	}
 }

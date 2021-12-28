@@ -1,5 +1,7 @@
 package clases.InteraccionConArchivos;
 
+import java.util.ArrayList;
+
 import clases.Ciudad;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoCiudades;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoLadrones;
@@ -8,33 +10,30 @@ import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivos;
 import clases.ladron.Ladron;
 import clases.valorObjetoRobado.ObjetoRobado;
 
-import java.util.ArrayList;
-
 public class LectorDeArchivosFachada {
 
-    private LectorArchivos lectorArchivoLadrones;
-    private LectorArchivos lectorArchivoCiudades;
-    private LectorArchivos lectorArchivoObjetosRobados;
+	private LectorArchivos lectorArchivoLadrones;
+	private LectorArchivos lectorArchivoCiudades;
+	private LectorArchivos lectorArchivoObjetosRobados;
 
-    public LectorDeArchivosFachada(){
+	public LectorDeArchivosFachada() {
 
-        this.lectorArchivoCiudades = new LectorArchivoCiudades();
-        this.lectorArchivoLadrones = new LectorArchivoLadrones();
-        this.lectorArchivoObjetosRobados = new LectorArchivoObjetosRobados();
-    }
+		this.lectorArchivoCiudades = new LectorArchivoCiudades();
+		this.lectorArchivoLadrones = new LectorArchivoLadrones();
+		this.lectorArchivoObjetosRobados = new LectorArchivoObjetosRobados();
+	}
 
-    public ArrayList<Ciudad> obtenerCiudades(String pathArchivoCiudades) {
-        
-        return (ArrayList<Ciudad>) this.lectorArchivoCiudades.leer(pathArchivoCiudades);
-    }
-    public ArrayList<Ladron> obtenerLadrones(String pathArchivoLadrones) {
+	public ArrayList<Ciudad> obtenerCiudades(String pathArchivoCiudades) {
 
-        return (ArrayList<Ladron>) this.lectorArchivoLadrones.leer(pathArchivoLadrones);
-    }
-    public ArrayList<ObjetoRobado> obtenerObjetosRobados(String pathArchivoObjetosRobados) {
+		return (ArrayList<Ciudad>) this.lectorArchivoCiudades.leer(pathArchivoCiudades);
+	}
+	public ArrayList<Ladron> obtenerLadrones(String pathArchivoLadrones) {
 
-        return (ArrayList<ObjetoRobado>) this.lectorArchivoObjetosRobados.leer(pathArchivoObjetosRobados);
-    }
+		return (ArrayList<Ladron>) this.lectorArchivoLadrones.leer(pathArchivoLadrones);
+	}
+	public ArrayList<ObjetoRobado> obtenerObjetosRobados(String pathArchivoObjetosRobados) {
 
+		return (ArrayList<ObjetoRobado>) this.lectorArchivoObjetosRobados.leer(pathArchivoObjetosRobados);
+	}
 
 }

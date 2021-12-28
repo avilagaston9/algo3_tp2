@@ -1,104 +1,104 @@
+{
+  "dossiers": [
     {
-    "dossiers": [
-        {
-            "nombre": "Carmen Sandiego",
-            "sexo": "Femenino",
-            "ocupacion": "Antigua gente del Servicio de Espionaje de Mónaco",
-            "hobby": "Tenis",
-            "colorDelPelo": "Castaño",
-            "coche": "Descapotable",
-            "señasParticulares": "Anillo",
-            "otros": "Le encanta la enchilada" 
-        },
-        {
-            "nombre": "Merey LaRoc",
-            "sexo": "Femenino",
-            "ocupacion": "Bailarina profesional de aerobic",
-            "hobby": "Musica",
-            "colorDelPelo": "Castaño",
-            "coche": "Limusina",
-            "señasParticulares": "Joyas",
-            "otros": "Le encanta la comida picante" 
-        },
-        {
-            "nombre": "Dazzle Annie Nonker",
-            "sexo": "Femenino",
-            "ocupacion": "Propietaria de un bar de yogurt",
-            "hobby": "Alpinismo",
-            "colorDelPelo": "Rubio",
-            "coche": "Limusina",
-            "señasParticulares": "Tatuaje",
-            "otros": "Le encanta comer marisco" 
-        },
-        {
-            "nombre": "Lady Agatha Wayland",
-            "sexo": "Femenino",
-            "ocupacion": "Lectora de novelas de misterio",
-            "hobby": "Paracaidismo",
-            "colorDelPelo": "Rojizo",
-            "coche": "Deportivo",
-            "señasParticulares": "Anillo",
-            "otros": "Atraviesa los campos en busca de restaurantes mejicanos" 
-        },
-        {
-            "nombre": "Len 'Red' Bulk",
-            "sexo": "Masculino",
-            "ocupacion": "Ex-jugador de hockey profesional",
-            "hobby": "Natacion",
-            "colorDelPelo": "Rojizo",
-            "coche": "Descapotable",
-            "señasParticulares": "Tatuaje",
-            "otros": "Le encanta el marisco" 
-        },
-        {
-            "nombre": "Scar Graynolt",
-            "sexo": "Masculino",
-            "ocupacion": "Guitarrista folk",
-            "hobby": "Croquet",
-            "colorDelPelo": "Morocho",
-            "coche": "Limusina",
-            "señasParticulares": "Joyas",
-            "otros": "Tiene un fiel servidor sherpa de 2'15 metros" 
-        },
-        {
-            "nombre": "Nick Brunch",
-            "sexo": "Masculino",
-            "ocupacion": "Ex-detective privado",
-            "hobby": "Alpinismo",
-            "colorDelPelo": "Morocho",
-            "coche": "Moto",
-            "señasParticulares": "Cicatriz",
-            "otros": "Le apasiona la cocina mejicana; lleva un anillo de Dick Tracy" 
-        },
-        {
-            "nombre": "Fast Eddie B.",
-            "sexo": "Masculino",
-            "ocupacion": "Jugador mundial de croquet",
-            "hobby": "Croquet",
-            "colorDelPelo": "Rubio",
-            "coche": "Descapotable",
-            "señasParticulares": "Tatuaje",
-            "otros": "Siempre va impecablemente vestido y peinado; le encanta la comida mejicana" 
-        },
-        {
-            "nombre": "Ihor Ihorovitch",
-            "sexo": "Masculino",
-            "ocupacion": "Aspirante al trono zarista",
-            "hobby": "Tenis",
-            "colorDelPelo": "Rubio",
-            "coche": "Limusina",
-            "señasParticulares": "Anillo",
-            "otros": "Le encanta comer langosta y ver dibujos animados" 
-        },
-        {
-            "nombre": "Katherine Drib",
-            "sexo": "Femenino",
-            "ocupacion": "Piloto de carreras de motociclismo",
-            "hobby": "Alpinismo",
-            "colorDelPelo": "Castaño",
-            "coche": "Moto",
-            "señasParticulares": "Cicatriz",
-            "otros": "Cocina muy bien el marisco; es una fanatica de la salud y del aerobic" 
-        }
-    ]
+      "nombre": "Carmen Sandiego",
+      "sexo": "Femenino",
+      "ocupacion": "Antigua gente del Servicio de Espionaje de Mónaco",
+      "hobby": "Tenis",
+      "colorDelPelo": "Castaño",
+      "coche": "Descapotable",
+      "señasParticulares": "Anillo",
+      "otros": "Le encanta la enchilada"
+    },
+    {
+      "nombre": "Merey LaRoc",
+      "sexo": "Femenino",
+      "ocupacion": "Bailarina profesional de aerobic",
+      "hobby": "Musica",
+      "colorDelPelo": "Castaño",
+      "coche": "Limusina",
+      "señasParticulares": "Joyas",
+      "otros": "Le encanta la comida picante"
+    },
+    {
+      "nombre": "Dazzle Annie Nonker",
+      "sexo": "Femenino",
+      "ocupacion": "Propietaria de un bar de yogurt",
+      "hobby": "Alpinismo",
+      "colorDelPelo": "Rubio",
+      "coche": "Limusina",
+      "señasParticulares": "Tatuaje",
+      "otros": "Le encanta comer marisco"
+    },
+    {
+      "nombre": "Lady Agatha Wayland",
+      "sexo": "Femenino",
+      "ocupacion": "Lectora de novelas de misterio",
+      "hobby": "Paracaidismo",
+      "colorDelPelo": "Rojizo",
+      "coche": "Deportivo",
+      "señasParticulares": "Anillo",
+      "otros": "Atraviesa los campos en busca de restaurantes mejicanos"
+    },
+    {
+      "nombre": "Len 'Red' Bulk",
+      "sexo": "Masculino",
+      "ocupacion": "Ex-jugador de hockey profesional",
+      "hobby": "Natacion",
+      "colorDelPelo": "Rojizo",
+      "coche": "Descapotable",
+      "señasParticulares": "Tatuaje",
+      "otros": "Le encanta el marisco"
+    },
+    {
+      "nombre": "Scar Graynolt",
+      "sexo": "Masculino",
+      "ocupacion": "Guitarrista folk",
+      "hobby": "Croquet",
+      "colorDelPelo": "Morocho",
+      "coche": "Limusina",
+      "señasParticulares": "Joyas",
+      "otros": "Tiene un fiel servidor sherpa de 2'15 metros"
+    },
+    {
+      "nombre": "Nick Brunch",
+      "sexo": "Masculino",
+      "ocupacion": "Ex-detective privado",
+      "hobby": "Alpinismo",
+      "colorDelPelo": "Morocho",
+      "coche": "Moto",
+      "señasParticulares": "Cicatriz",
+      "otros": "Le apasiona la cocina mejicana; lleva un anillo de Dick Tracy"
+    },
+    {
+      "nombre": "Fast Eddie B.",
+      "sexo": "Masculino",
+      "ocupacion": "Jugador mundial de croquet",
+      "hobby": "Croquet",
+      "colorDelPelo": "Rubio",
+      "coche": "Descapotable",
+      "señasParticulares": "Tatuaje",
+      "otros": "Siempre va impecablemente vestido y peinado; le encanta la comida mejicana"
+    },
+    {
+      "nombre": "Ihor Ihorovitch",
+      "sexo": "Masculino",
+      "ocupacion": "Aspirante al trono zarista",
+      "hobby": "Tenis",
+      "colorDelPelo": "Rubio",
+      "coche": "Limusina",
+      "señasParticulares": "Anillo",
+      "otros": "Le encanta comer langosta y ver dibujos animados"
+    },
+    {
+      "nombre": "Katherine Drib",
+      "sexo": "Femenino",
+      "ocupacion": "Piloto de carreras de motociclismo",
+      "hobby": "Alpinismo",
+      "colorDelPelo": "Castaño",
+      "coche": "Moto",
+      "señasParticulares": "Cicatriz",
+      "otros": "Cocina muy bien el marisco; es una fanatica de la salud y del aerobic"
+    }
+  ]
 } 

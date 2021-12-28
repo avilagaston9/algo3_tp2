@@ -10,20 +10,20 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class BotonSexoEventHandler implements EventHandler<ActionEvent> {
- Stage stage ;
- Scene muestraSexo;
+	Stage stage;
+	Scene muestraSexo;
 
- public BotonSexoEventHandler(AlgoThief algoThief){
-  this.stage = new Stage(StageStyle.UNDECORATED);
-  ContenedorSexo contenedorSexo = new ContenedorSexo(algoThief,stage);
-  this.muestraSexo = new Scene(contenedorSexo,200,200);
-  this.stage.initModality(Modality.APPLICATION_MODAL);
- }
+	public BotonSexoEventHandler(AlgoThief algoThief) {
+		this.stage = new Stage(StageStyle.UNDECORATED);
+		ContenedorSexo contenedorSexo = new ContenedorSexo(algoThief, stage);
+		this.muestraSexo = new Scene(contenedorSexo, 200, 200);
+		this.stage.initModality(Modality.APPLICATION_MODAL);
+	}
 
- @Override
- public void handle(ActionEvent actionEvent) {
-  this.stage.setScene(muestraSexo);
-  this.stage.show();
+	@Override
+	public void handle(ActionEvent actionEvent) {
+		this.stage.setScene(muestraSexo);
+		this.stage.show();
 
- }
+	}
 }

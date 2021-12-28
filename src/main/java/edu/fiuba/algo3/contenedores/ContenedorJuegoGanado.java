@@ -8,13 +8,13 @@ import javafx.stage.Stage;
 
 public class ContenedorJuegoGanado extends VBox {
 
-    public ContenedorJuegoGanado(AlgoThief algothief, Stage stage) {
+	public ContenedorJuegoGanado(AlgoThief algothief, Stage stage) {
 
-        Label texto = new Label(("Felicidades, " + algothief.getNombrePolicia() + "!!! \n" +
-                algothief.getNombreLadron() + ", ahora está tras las rejas."));
+		Label texto = new Label(("Felicidades, " + algothief.getNombrePolicia() + "!!! \n" + algothief.getNombreLadron()
+				+ ", ahora está tras las rejas."));
 
-        BotonCerrar botonCerrar = new BotonCerrar(stage, "Salir");
+		BotonCerrar botonCerrar = new BotonCerrar(stage, "Salir");
 
-        this.getChildren().addAll(texto, botonCerrar);
-    }
+		this.getChildren().addAll(texto, botonCerrar);
+	}
 }

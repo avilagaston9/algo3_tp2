@@ -1,19 +1,19 @@
 package edu.fiuba.algo3.eventos.visitarEdificiosHandlers;
 
+import java.util.LinkedList;
+
 import clases.AlgoThief;
 import clases.pistas.Pista;
 import javafx.stage.Stage;
 
-import java.util.LinkedList;
-
 public class BotonVisitarBancoEventHandler extends BotonVisitarEdificioHandler {
-    public BotonVisitarBancoEventHandler(Stage stage, AlgoThief algoThief) {
-        super(stage, algoThief);
-    }
+	public BotonVisitarBancoEventHandler(Stage stage, AlgoThief algoThief) {
+		super(stage, algoThief);
+	}
 
-    @Override
-    public LinkedList<Pista> visitarJuego() {
+	@Override
+	public LinkedList<Pista> visitarJuego() {
 
-        return this.algoThief.visitarBancoActual();
-    }
+		return this.algoThief.visitarBancoActual();
+	}
 }

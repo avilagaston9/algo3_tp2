@@ -32,7 +32,7 @@ public class Tiempo {
 
 		this.horas += cantidad;
 		this.contadorDeSueño += cantidad;
-		if(this.contadorDeSueño >= 16){
+		if (this.contadorDeSueño >= 16) {
 
 			this.horas += this.horasDeSueño;
 			this.contadorDeSueño = (this.contadorDeSueño - 16);

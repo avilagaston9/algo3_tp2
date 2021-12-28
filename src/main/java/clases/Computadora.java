@@ -6,8 +6,6 @@ import clases.OrdenDeArresto.OrdenArresto;
 import clases.OrdenDeArresto.OrdenDeArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
-import edu.fiuba.algo3.botones.BotonVisitarEdificio;
-import edu.fiuba.algo3.vistas.VistaCaracteristicas;
 
 public class Computadora {
 	private ArrayList<Ladron> ladrones;
@@ -19,7 +17,7 @@ public class Computadora {
 		this.ladrones = unosLadrones;
 		this.caracteristicas = new ArrayList<CaracteristicaLadron>();
 		this.observadores = new ArrayList<Observador>();
-		this.sospechosos =  new ArrayList<Ladron>();
+		this.sospechosos = new ArrayList<Ladron>();
 	}
 
 	// public ArrayList<Ladron> cargarDatosYBuscar(List<CaracteristicaLadron>
@@ -39,8 +37,10 @@ public class Computadora {
 	// }//todo borrar basura vieja
 
 	public void cargarCaracteristica(CaracteristicaLadron caracteristica) {
-		for (CaracteristicaLadron c : this.caracteristicas){
-			if (caracteristica.equals(c)){ return; }
+		for (CaracteristicaLadron c : this.caracteristicas) {
+			if (caracteristica.equals(c)) {
+				return;
+			}
 		}
 		caracteristicas.add(caracteristica);
 		this.actualizarObservadores();
@@ -66,16 +66,18 @@ public class Computadora {
 	}
 
 	private void cargarSospechoso(Ladron unLadron) {
-		for (Ladron l : this.sospechosos){
-			if (l.equals(unLadron)){ return ;}
+		for (Ladron l : this.sospechosos) {
+			if (l.equals(unLadron)) {
+				return;
+			}
 		}
 		this.sospechosos.add(unLadron);
 	}
 
 	public OrdenArresto emitirOrdenDeArresto(Ladron unLadron) {
 
-//		ArrayList<Ladron> ladronesSospechosos = new ArrayList<>();
-//		ladronesSospechosos = this.buscarSospechosos();
+		// ArrayList<Ladron> ladronesSospechosos = new ArrayList<>();
+		// ladronesSospechosos = this.buscarSospechosos();
 
 		for (Ladron sospechoso : this.sospechosos)
 			if (sospechoso.equals(unLadron)) {
@@ -88,7 +90,7 @@ public class Computadora {
 	public ArrayList<String> getCaracteristicas() {
 		ArrayList<String> caracteristicas = new ArrayList<>();
 
-		for (CaracteristicaLadron c: this.caracteristicas){
+		for (CaracteristicaLadron c : this.caracteristicas) {
 			caracteristicas.add(c.getPista().revelar());
 		}
 		return caracteristicas;
@@ -97,7 +99,7 @@ public class Computadora {
 	public ArrayList<String> getNombresSospechosos() {
 		ArrayList<String> sospechosos = new ArrayList<>();
 
-		for (Ladron l: this.sospechosos){
+		for (Ladron l : this.sospechosos) {
 			sospechosos.add(l.getNombre());
 		}
 		return sospechosos;
@@ -108,14 +110,14 @@ public class Computadora {
 	}
 
 	private void actualizarObservadores() {
-		for(Observador o : this.observadores){
+		for (Observador o : this.observadores) {
 			o.actualizar();
 		}
 	}
 
-	public void borrarCaracteristica(CaracteristicaLadron caracteristicaLadron){
-		for (CaracteristicaLadron c : this.caracteristicas){
-			if (caracteristicaLadron.equals(c)){
+	public void borrarCaracteristica(CaracteristicaLadron caracteristicaLadron) {
+		for (CaracteristicaLadron c : this.caracteristicas) {
+			if (caracteristicaLadron.equals(c)) {
 				this.caracteristicas.remove(c);
 			}
 		}

@@ -6,18 +6,19 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 
 public class BotonBorrarCaracteristicaSexo extends MenuButton {
-    public BotonBorrarCaracteristicaSexo(AlgoThief algothief){
-        this.setText("Borrar");
-        MenuItem masculino = new MenuItem("Masculino");
-        MenuItem femenino = new MenuItem("Femenino");
+	public BotonBorrarCaracteristicaSexo(AlgoThief algothief) {
+		this.setText("Borrar");
+		MenuItem masculino = new MenuItem("Masculino");
+		MenuItem femenino = new MenuItem("Femenino");
 
-        BorrarCaracteristicaEventHandler masculinoHandler = new BorrarCaracteristicaEventHandler("Masculino", algothief);
-        BorrarCaracteristicaEventHandler femeninoHandler = new BorrarCaracteristicaEventHandler("Femenino", algothief);
+		BorrarCaracteristicaEventHandler masculinoHandler = new BorrarCaracteristicaEventHandler("Masculino",
+				algothief);
+		BorrarCaracteristicaEventHandler femeninoHandler = new BorrarCaracteristicaEventHandler("Femenino", algothief);
 
-        masculino.setOnAction(masculinoHandler);
-        femenino.setOnAction(femeninoHandler);
+		masculino.setOnAction(masculinoHandler);
+		femenino.setOnAction(femeninoHandler);
 
-        this.getItems().addAll(masculino,femenino);
+		this.getItems().addAll(masculino, femenino);
 
-    }
+	}
 }

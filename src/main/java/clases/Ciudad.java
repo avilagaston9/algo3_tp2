@@ -7,13 +7,14 @@ import clases.edificios.Edificio;
 
 public class Ciudad {
 
-    private String nombre;
+	private String nombre;
 	private Coordenadas coordenadas;
 	private Banco banco;
 	private Biblioteca biblioteca;
 	private Aeropuerto aeropuerto;
 
-	public Ciudad(String nombreCiudad, Coordenadas coordenadas, Banco banco, Biblioteca biblioteca, Aeropuerto aeropuerto) {
+	public Ciudad(String nombreCiudad, Coordenadas coordenadas, Banco banco, Biblioteca biblioteca,
+			Aeropuerto aeropuerto) {
 
 		this.nombre = nombreCiudad;
 		this.coordenadas = coordenadas;
@@ -22,7 +23,7 @@ public class Ciudad {
 		this.aeropuerto = aeropuerto;
 	}
 
-	//Para mantener los test de entregas anteriores.
+	// Para mantener los test de entregas anteriores.
 	public Ciudad(String nombreCiudad, Coordenadas coordenadas) {
 
 		this.nombre = nombreCiudad;
@@ -93,9 +94,9 @@ public class Ciudad {
 		this.banco.darPistasA(banco);
 	}
 
-    public String nombreCiudad() {
+	public String nombreCiudad() {
 		return this.nombre;
-    }
+	}
 
 	public String getNombre() {
 		return this.nombre;

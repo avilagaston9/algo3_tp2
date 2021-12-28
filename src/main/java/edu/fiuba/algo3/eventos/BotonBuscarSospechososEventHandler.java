@@ -6,17 +6,17 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
 public class BotonBuscarSospechososEventHandler implements EventHandler<ActionEvent> {
-    Stage stage ;
-    AlgoThief algoThief;
+	Stage stage;
+	AlgoThief algoThief;
 
-    public BotonBuscarSospechososEventHandler(AlgoThief algothief, Stage stage){
-        this.stage = stage;
-        this.algoThief = algothief;
+	public BotonBuscarSospechososEventHandler(AlgoThief algothief, Stage stage) {
+		this.stage = stage;
+		this.algoThief = algothief;
 
-    }
-    @Override
-    public void handle(ActionEvent actionEvent) {
-        algoThief.buscarSospechosos();
-//        this.stage.close();
-    }
+	}
+	@Override
+	public void handle(ActionEvent actionEvent) {
+		algoThief.buscarSospechosos();
+		// this.stage.close();
+	}
 }

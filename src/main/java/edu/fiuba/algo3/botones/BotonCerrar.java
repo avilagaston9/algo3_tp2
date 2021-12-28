@@ -6,9 +6,9 @@ import javafx.stage.Stage;
 
 public class BotonCerrar extends Button {
 
-    public BotonCerrar(Stage stage, String textoCerrar){
-        this.setText(textoCerrar);
-        BotonVolverEventHandler botonVolverHandler = new BotonVolverEventHandler(stage);
-        this.setOnAction(botonVolverHandler);
-    }
+	public BotonCerrar(Stage stage, String textoCerrar) {
+		this.setText(textoCerrar);
+		BotonVolverEventHandler botonVolverHandler = new BotonVolverEventHandler(stage);
+		this.setOnAction(botonVolverHandler);
+	}
 }

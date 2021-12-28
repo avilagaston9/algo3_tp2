@@ -7,13 +7,13 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class ContenedorSinOrdenDeArresto extends VBox {
-    public ContenedorSinOrdenDeArresto(AlgoThief algothief, Stage stage) {
+	public ContenedorSinOrdenDeArresto(AlgoThief algothief, Stage stage) {
 
-        Label texto = new Label(("¡Game Over!\n" + algothief.getNombrePolicia() + ", te haz cruzado con " +
-                algothief.getNombreLadron() + " sin orden de arresto y se ha escapado."));
-        BotonCerrar botonCerrar = new BotonCerrar(stage, "Salir");
+		Label texto = new Label(("¡Game Over!\n" + algothief.getNombrePolicia() + ", te haz cruzado con "
+				+ algothief.getNombreLadron() + " sin orden de arresto y se ha escapado."));
+		BotonCerrar botonCerrar = new BotonCerrar(stage, "Salir");
 
-        this.getChildren().addAll(texto, botonCerrar);
+		this.getChildren().addAll(texto, botonCerrar);
 
-    }
+	}
 }

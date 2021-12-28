@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface LectorArchivos {
 
-    public List leer(String pathArchivo);
+	public List leer(String pathArchivo);
 }

@@ -24,7 +24,8 @@ Una vez dentro del contenedor, podemos ejecutar los siguientes comandos (es un c
 $ scripts/build.sh
 ```
 
-Este comando crea el reporte de cobertura para CI y el reporte HTML, que se puede encontrar en `target/site/jacoco/index.html`.
+Este comando crea el reporte de cobertura para CI y el reporte HTML, que se puede encontrar
+en `target/site/jacoco/index.html`.
 
 ### 2. Empaquetado
 

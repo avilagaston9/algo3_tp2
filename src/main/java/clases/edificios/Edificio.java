@@ -40,7 +40,7 @@ public abstract class Edificio {
 	public abstract Pista serVisitado(Investigador rango, Tiempo tiempo);
 	public abstract Pista serVisitado(Sargento rango, Tiempo tiempo);
 
-	public void darPistasA(Edificio edificio){
+	public void darPistasA(Edificio edificio) {
 		edificio.setPistaOtraCiudad(this.pistaPropiaFacil);
 		edificio.setPistaOtraCiudad(this.pistaPropiaMedia);
 		edificio.setPistaOtraCiudad(this.pistaPropiaDificil);
@@ -52,7 +52,9 @@ public abstract class Edificio {
 	public void setPistaOtraCiudad(PistaMedia pistaMediaOtraCiudad) {
 		this.pistaOtraCiudadMedia = pistaMediaOtraCiudad;
 	}
-	public void setPistaOtraCiudad(PistaDificil pistaDificilOtraCiudad) {this.pistaOtraCiudadDificil = pistaDificilOtraCiudad; }
+	public void setPistaOtraCiudad(PistaDificil pistaDificilOtraCiudad) {
+		this.pistaOtraCiudadDificil = pistaDificilOtraCiudad;
+	}
 
 	// public boolean sosIgual(Edificio edificio);
 }

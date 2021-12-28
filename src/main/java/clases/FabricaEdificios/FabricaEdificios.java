@@ -7,4 +7,5 @@ import clases.pistas.PistaMedia;
 
 public interface FabricaEdificios {
 	public Edificio crearEdificio(PistaFacil pistaFacil, PistaMedia pistaMedia, PistaDificil pistaDificil);
-}// todo deberia pasarse las pistas propias sacadas del json (las de otro paises son default)
+}// todo deberia pasarse las pistas propias sacadas del json (las de otro paises
+	// son default)

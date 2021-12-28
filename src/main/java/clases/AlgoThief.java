@@ -1,226 +1,223 @@
- package clases;
+package clases;
 
- import clases.Exceptions.ExcepcionSinOrdenDeArresto;
- import clases.OrdenDeArresto.OrdenArresto;
- import clases.caracteristicasLadron.CaracteristicaLadron;
- import clases.edificios.Edificio;
- import clases.ladron.Ladron;
- import clases.pistas.Pista;
- import clases.rangos.Novato;
- import clases.valorObjetoRobado.ObjetoRobado;
+import java.util.*;
 
- import java.util.*;
+import clases.Exceptions.ExcepcionSinOrdenDeArresto;
+import clases.OrdenDeArresto.OrdenArresto;
+import clases.caracteristicasLadron.CaracteristicaLadron;
+import clases.edificios.Edificio;
+import clases.ladron.Ladron;
+import clases.pistas.Pista;
+import clases.rangos.Novato;
+import clases.valorObjetoRobado.ObjetoRobado;
 
- public class AlgoThief {
+public class AlgoThief {
 
-     private ArrayList<Observador> observadores;
-     private Policia policia;
-     private Ladron ladron;
-     private List<Ciudad> ciudades;
-     private List<Ladron> ladrones;
-     private Computadora computadora;
-     private ObjetoRobado objetoRobado;
+	private ArrayList<Observador> observadores;
+	private Policia policia;
+	private Ladron ladron;
+	private List<Ciudad> ciudades;
+	private List<Ladron> ladrones;
+	private Computadora computadora;
+	private ObjetoRobado objetoRobado;
 
-     private Boolean juegoEnCurso;
-     private Boolean juegoGanado;
-     private int limiteTiempo;
+	private Boolean juegoEnCurso;
+	private Boolean juegoGanado;
+	private int limiteTiempo;
 
-     public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados) {
+	public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados) {
 
-         this.juegoEnCurso = true;
-         this.juegoGanado = false;
-         this.limiteTiempo = 154;
+		this.juegoEnCurso = true;
+		this.juegoGanado = false;
+		this.limiteTiempo = 154;
 
-         this.observadores = new ArrayList<Observador>();
+		this.observadores = new ArrayList<Observador>();
 
-        this.ciudades = ciudades;
-        this.ladrones = ladrones;
-        
-        Collections.shuffle(this.ciudades);
-        Collections.shuffle(objetosRobados);
+		this.ciudades = ciudades;
+		this.ladrones = ladrones;
 
-         Novato rango = new Novato();
+		Collections.shuffle(this.ciudades);
+		Collections.shuffle(objetosRobados);
 
-         this.objetoRobado = rango.getObjetoRobado(objetosRobados);
+		Novato rango = new Novato();
 
-         RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(this.ciudades);
+		this.objetoRobado = rango.getObjetoRobado(objetosRobados);
 
-         PoliciaBuilder policiaBuilder = new PoliciaBuilder();
-         policiaBuilder.setPrimerCiudad(rutaDeEscape.getRuta().get(0));
-         policiaBuilder.setRango(rango);
+		RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(this.ciudades);
 
-         this.policia = policiaBuilder.getPolicia();
+		PoliciaBuilder policiaBuilder = new PoliciaBuilder();
+		policiaBuilder.setPrimerCiudad(rutaDeEscape.getRuta().get(0));
+		policiaBuilder.setRango(rango);
 
-         Random random = new Random();
-         this.ladron = ladrones.get(random.nextInt(this.ladrones.size()));
-         this.ladron.setCiudad(rutaDeEscape.getRuta().get(rutaDeEscape.getRuta().size() - 1));
+		this.policia = policiaBuilder.getPolicia();
 
-         this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
+		Random random = new Random();
+		this.ladron = ladrones.get(random.nextInt(this.ladrones.size()));
+		this.ladron.setCiudad(rutaDeEscape.getRuta().get(rutaDeEscape.getRuta().size() - 1));
 
-         this.ladron.estabalecerRutaDeEscape(rutaDeEscape);
+		this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
 
-     }
+		this.ladron.estabalecerRutaDeEscape(rutaDeEscape);
 
-     public void setObservador(Observador observador) {
-         this.observadores.add(observador);
-     }
+	}
 
-     private void actualizarObservadores() {
+	public void setObservador(Observador observador) {
+		this.observadores.add(observador);
+	}
 
-         for(Observador o : this.observadores){
+	private void actualizarObservadores() {
 
-             o.actualizar();
-         }
-     }
+		for (Observador o : this.observadores) {
 
-     //métodos para jugar
-     public LinkedList<Pista> visitar(Edificio unEdificio) {
-         LinkedList<Pista> pistas = this.policia.visitar(unEdificio, this.ladron);
-         this.actualizarEstadoJuego();
-         this.actualizarObservadores();
-         return pistas;
-     }
+			o.actualizar();
+		}
+	}
 
-     public int tiempoTranscurridoEnHoras() {
-         return this.policia.tiempoTranscurridoEnHoras();
-     }
+	// métodos para jugar
+	public LinkedList<Pista> visitar(Edificio unEdificio) {
+		LinkedList<Pista> pistas = this.policia.visitar(unEdificio, this.ladron);
+		this.actualizarEstadoJuego();
+		this.actualizarObservadores();
+		return pistas;
+	}
 
-     //todo ¿herir con??
+	public int tiempoTranscurridoEnHoras() {
+		return this.policia.tiempoTranscurridoEnHoras();
+	}
 
-     public void viajarA(Ciudad nuevaCiudad) {
+	// todo ¿herir con??
 
-         this.policia.viajarA(nuevaCiudad);
-         this.actualizarEstadoJuego();
-         this.actualizarObservadores();
-     }
+	public void viajarA(Ciudad nuevaCiudad) {
 
-     public boolean esCiudadActual(Ciudad unaCiudad) {
-         return this.policia.esCiudadActual(unaCiudad);
-     }
+		this.policia.viajarA(nuevaCiudad);
+		this.actualizarEstadoJuego();
+		this.actualizarObservadores();
+	}
 
-     public void arrestarA(Ladron unLadron) throws ExcepcionSinOrdenDeArresto {
-         this.policia.arrestarA(unLadron);
-         this.actualizarEstadoJuego();
-     }
+	public boolean esCiudadActual(Ciudad unaCiudad) {
+		return this.policia.esCiudadActual(unaCiudad);
+	}
 
-     public void emitirOrdenDeArresto(Ladron ladron) {
-         OrdenArresto orden = this.computadora.emitirOrdenDeArresto(ladron);
-         this.policia.emitirOrdenDeArresto(orden);
-         this.actualizarEstadoJuego();
-         this.actualizarObservadores();
-     }
+	public void arrestarA(Ladron unLadron) throws ExcepcionSinOrdenDeArresto {
+		this.policia.arrestarA(unLadron);
+		this.actualizarEstadoJuego();
+	}
 
-     public int cantidadArrestos() {
-         return this.policia.cantidadArrestos();
-     }
+	public void emitirOrdenDeArresto(Ladron ladron) {
+		OrdenArresto orden = this.computadora.emitirOrdenDeArresto(ladron);
+		this.policia.emitirOrdenDeArresto(orden);
+		this.actualizarEstadoJuego();
+		this.actualizarObservadores();
+	}
 
-     public void cargarCaracteristica(CaracteristicaLadron caracteristica) {
-         computadora.cargarCaracteristica(caracteristica);
-     }
+	public int cantidadArrestos() {
+		return this.policia.cantidadArrestos();
+	}
 
-     public void buscarSospechosos() {
-         this.computadora.buscarSospechosos();
-     }
+	public void cargarCaracteristica(CaracteristicaLadron caracteristica) {
+		computadora.cargarCaracteristica(caracteristica);
+	}
 
-     public String nombreObjetoRobado() {
-         return this.objetoRobado.getNombre();
-     }
+	public void buscarSospechosos() {
+		this.computadora.buscarSospechosos();
+	}
 
-     public String nombreCiudadInicial() {
-         return this.objetoRobado.getNombreCiudad();
-     }
+	public String nombreObjetoRobado() {
+		return this.objetoRobado.getNombre();
+	}
 
-     public void setNombrePolicia(String nombrePolicia) {
-         this.policia.setNombre(nombrePolicia);
-     }
+	public String nombreCiudadInicial() {
+		return this.objetoRobado.getNombreCiudad();
+	}
 
-     public String getNombrePolicia() {
-         return this.policia.getNombre();
-     }
+	public void setNombrePolicia(String nombrePolicia) {
+		this.policia.setNombre(nombrePolicia);
+	}
 
-     public String getNombreCiudadActual() {
-         return this.policia.getCiudadActual().getNombre();
-     }
+	public String getNombrePolicia() {
+		return this.policia.getNombre();
+	}
 
-     public Ciudad getCiudadActual() {
+	public String getNombreCiudadActual() {
+		return this.policia.getCiudadActual().getNombre();
+	}
 
-         return this.policia.getCiudadActual();
-     }
+	public Ciudad getCiudadActual() {
 
-     public Computadora getComputadora() {
-         return this.computadora;
-     }
+		return this.policia.getCiudadActual();
+	}
 
-     //nueva alternativa
-     public LinkedList<Pista> visitarBancoActual() {
-         LinkedList<Pista> pistas = this.policia.visitarBancoActual(this.ladron);
-         this.actualizarEstadoJuego();
-         this.actualizarObservadores();
-         return pistas;
-     }
+	public Computadora getComputadora() {
+		return this.computadora;
+	}
 
-     //nueva alternativa
-     public LinkedList<Pista> visitarAeropuertoActual() {
-         LinkedList<Pista> pistas = this.policia.visitarAeropuertoActual(this.ladron);
-         this.actualizarEstadoJuego();
-         this.actualizarObservadores();
-         return pistas;
-     }
+	// nueva alternativa
+	public LinkedList<Pista> visitarBancoActual() {
+		LinkedList<Pista> pistas = this.policia.visitarBancoActual(this.ladron);
+		this.actualizarEstadoJuego();
+		this.actualizarObservadores();
+		return pistas;
+	}
 
-     //nueva alternativa
-     public LinkedList<Pista> visitarBibliotecaActual() {
-         LinkedList<Pista> pistas = this.policia.visitarBibliotecaActual(this.ladron);
-         this.actualizarEstadoJuego();
-         this.actualizarObservadores();
-         return pistas;
-     }
+	// nueva alternativa
+	public LinkedList<Pista> visitarAeropuertoActual() {
+		LinkedList<Pista> pistas = this.policia.visitarAeropuertoActual(this.ladron);
+		this.actualizarEstadoJuego();
+		this.actualizarObservadores();
+		return pistas;
+	}
 
+	// nueva alternativa
+	public LinkedList<Pista> visitarBibliotecaActual() {
+		LinkedList<Pista> pistas = this.policia.visitarBibliotecaActual(this.ladron);
+		this.actualizarEstadoJuego();
+		this.actualizarObservadores();
+		return pistas;
+	}
 
-     private void actualizarEstadoJuego(){
+	private void actualizarEstadoJuego() {
 
-         if (this.tiempoInsuficiente()){
-             this.juegoEnCurso = false;
-         }
-         try{
-             if (policia.arrestarA(ladron)){
-                 this.juegoGanado = true;
-                 this.juegoEnCurso = false;
-             }
-         }catch (ExcepcionSinOrdenDeArresto e) {
-             this.juegoEnCurso = false;
-         }
-     }
+		if (this.tiempoInsuficiente()) {
+			this.juegoEnCurso = false;
+		}
+		try {
+			if (policia.arrestarA(ladron)) {
+				this.juegoGanado = true;
+				this.juegoEnCurso = false;
+			}
+		} catch (ExcepcionSinOrdenDeArresto e) {
+			this.juegoEnCurso = false;
+		}
+	}
 
-     public ArrayList<Ladron> getSospechosos() {
-         return this.computadora.getSospechosos();
-     }
+	public ArrayList<Ladron> getSospechosos() {
+		return this.computadora.getSospechosos();
+	}
 
+	public String ladronDeOrdenDeArresto() {
+		return this.policia.nombreLadronEnOrdenDeArresto();
+	}
 
-     public String ladronDeOrdenDeArresto() {
-          return this.policia.nombreLadronEnOrdenDeArresto();
-     }
+	public boolean juegoEnCurso() {
 
-     public boolean juegoEnCurso() {
-         
-         return this.juegoEnCurso;
-     }
+		return this.juegoEnCurso;
+	}
 
-     public boolean juegoGanado() {
-         
-         return this.juegoGanado;
-     }
+	public boolean juegoGanado() {
 
-     public boolean tiempoInsuficiente() {
+		return this.juegoGanado;
+	}
 
-         return (this.limiteTiempo < this.policia.tiempoTranscurridoEnHoras());
-     }
+	public boolean tiempoInsuficiente() {
 
-     public String getNombreLadron() {
-         return this.ladron.getNombre();
-     }
+		return (this.limiteTiempo < this.policia.tiempoTranscurridoEnHoras());
+	}
 
-     public void borrarCaracteristica(CaracteristicaLadron caracteristica) {
-         this.computadora.borrarCaracteristica(caracteristica);
-     }
- }
+	public String getNombreLadron() {
+		return this.ladron.getNombre();
+	}
 
+	public void borrarCaracteristica(CaracteristicaLadron caracteristica) {
+		this.computadora.borrarCaracteristica(caracteristica);
+	}
+}

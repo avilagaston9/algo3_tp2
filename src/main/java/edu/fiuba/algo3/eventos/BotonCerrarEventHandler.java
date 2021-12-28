@@ -5,16 +5,16 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 
 public class BotonCerrarEventHandler implements EventHandler<ActionEvent> {
-    private final Stage stage;
+	private final Stage stage;
 
-    public BotonCerrarEventHandler(Stage stage) {
+	public BotonCerrarEventHandler(Stage stage) {
 
-        this.stage = stage;
-    }
+		this.stage = stage;
+	}
 
-    @Override
-    public void handle(ActionEvent actionEvent) {
+	@Override
+	public void handle(ActionEvent actionEvent) {
 
-        this.stage.close();
-    }
+		this.stage.close();
+	}
 }

@@ -1,11 +1,12 @@
 package clases.rangos;
 
+import java.util.List;
+
 import clases.Tiempo;
 import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.valorObjetoRobado.ObjetoRobado;
-import java.util.List;
 
 public class Investigador extends Rango {
 
@@ -37,8 +38,8 @@ public class Investigador extends Rango {
 
 	@Override
 	public ObjetoRobado getObjetoRobado(List<ObjetoRobado> objetosRobados) {
-		for (ObjetoRobado o : objetosRobados){
-			if (o.esValidoPara(this)){
+		for (ObjetoRobado o : objetosRobados) {
+			if (o.esValidoPara(this)) {
 				return o;
 			}
 		}
