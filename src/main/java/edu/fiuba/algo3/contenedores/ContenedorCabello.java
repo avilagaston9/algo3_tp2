@@ -1,6 +1,10 @@
 package edu.fiuba.algo3.contenedores;
 
 import clases.AlgoThief;
+import edu.fiuba.algo3.botones.BotonBorrarCaracteristicaCabello;
+import edu.fiuba.algo3.botones.BotonBorrarCaracteristicaHobby;
+import edu.fiuba.algo3.botones.BotonCerrar;
+import edu.fiuba.algo3.botones.BotonVolver;
 import edu.fiuba.algo3.eventos.CaracteristicaEventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -17,6 +21,8 @@ public class ContenedorCabello extends VBox {
         Button Rojo = new Button("Rojo");
         Rojo.setMaxSize(200,50);
         Button Negro = new Button("Negro");
+        BotonCerrar botonVolver = new BotonCerrar(stage,"Volver");
+        BotonBorrarCaracteristicaCabello botonBorrar = new BotonBorrarCaracteristicaCabello(algoThief);
 
         CaracteristicaEventHandler castanioHandler = new CaracteristicaEventHandler("Castaño", algoThief,stage);
         CaracteristicaEventHandler rubioHandler = new CaracteristicaEventHandler("Rubio", algoThief, stage);
@@ -28,7 +34,7 @@ public class ContenedorCabello extends VBox {
         Rojo.setOnAction(rojoHandler);
         Negro.setOnAction(negroHandler);
 
-        this.getChildren().addAll(castanio,rubio,Rojo,Negro);
+        this.getChildren().addAll(castanio,rubio,Rojo,Negro,botonVolver,botonBorrar);
 
     }
 }

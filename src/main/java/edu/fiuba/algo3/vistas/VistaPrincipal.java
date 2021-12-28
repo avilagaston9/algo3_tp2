@@ -35,7 +35,7 @@ public class VistaPrincipal implements Observador {
     }
     @Override
     public void actualizar() {
-
+/*
         if (!this.algothief.juegoEnCurso()){
 
             Scene nuevaScene;
@@ -50,5 +50,6 @@ public class VistaPrincipal implements Observador {
             }
             this.stage.setScene(nuevaScene);
         }
+    }*/
     }
 }

@@ -211,11 +211,16 @@
      }
 
      public boolean tiempoInsuficiente() {
+
          return (this.limiteTiempo < this.policia.tiempoTranscurridoEnHoras());
      }
 
      public String getNombreLadron() {
          return this.ladron.getNombre();
+     }
+
+     public void borrarCaracteristica(CaracteristicaLadron caracteristica) {
+         this.computadora.borrarCaracteristica(caracteristica);
      }
  }
 
