@@ -39,7 +39,7 @@ public class ContenedorEdificios extends BorderPane {
         BotonVisitarEdificio botonBanco = new BotonVisitarEdificio(BancoEventHandler, "src/imagenes/bank.png");
 
 
-        BotonVolver botonVolver = new BotonVolver(stage);
+        BotonCerrar botonVolver = new BotonCerrar(stage, "Volver" );
         FileInputStream input = new FileInputStream("src/imagenes/log-out.png");
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);
