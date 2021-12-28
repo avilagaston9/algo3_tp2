@@ -47,7 +47,7 @@ public class Computadora {
 	}
 
 	public ArrayList<Ladron> buscarSospechosos() {
-		ArrayList<Ladron> sospechosos = new ArrayList<Ladron>();
+		this.sospechosos = new ArrayList<Ladron>();
 
 		for (Ladron unLadron : this.ladrones) {
 			boolean cumple = true;
@@ -58,13 +58,18 @@ public class Computadora {
 				}
 			}
 			if (cumple) {
-//				System.out.println(unLadron.getNombre());
-				sospechosos.add(unLadron);
-				this.sospechosos.add(unLadron);
+				this.cargarSospechoso(unLadron);
 			}
 		}
 		this.actualizarObservadores();
-		return sospechosos;
+		return this.sospechosos;
+	}
+
+	private void cargarSospechoso(Ladron unLadron) {
+		for (Ladron l : this.sospechosos){
+			if (l.equals(unLadron)){ return ;}
+		}
+		this.sospechosos.add(unLadron);
 	}
 
 	public OrdenArresto emitirOrdenDeArresto(Ladron unLadron) {
@@ -108,7 +113,11 @@ public class Computadora {
 		}
 	}
 
-	public void borrarCaracteristica(){
-		// todo implementar borrar caracteristica
+	public void borrarCaracteristica(CaracteristicaLadron caracteristicaLadron){
+		for (CaracteristicaLadron c : this.caracteristicas){
+			if (caracteristicaLadron.equals(c)){
+				this.caracteristicas.remove(c);
+			}
+		}
 	}
 }
