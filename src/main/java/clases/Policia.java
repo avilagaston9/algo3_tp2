@@ -116,41 +116,42 @@ public class Policia {
 
 		//metodo en ruta de escape "pertenece" y le paso como parametro la ciudad actual,
 		// si devuelve false, NO se pide pista al ladron....
-
 		if(ladron.ciudadPerteneceASuRutaDeEscape(this.ciudadActual)){
 			pistas.add(this.rango.pedirPistaLadron(ladron));
 		}
-
 		return pistas;
 	}
 
 
-
-
-
+	/*
 	//Nueva alternativa
 	private LinkedList<Pista> visitarEdificio(Edificio unEdificio, Ladron ladron) {
 
 		LinkedList<Pista> pistas = new LinkedList<>();
 		pistas.add(this.rango.visitar(unEdificio, this.tiempoTranscurrido));
-		pistas.add(this.rango.pedirPistaLadron(ladron));
+
+		if(ladron.ciudadPerteneceASuRutaDeEscape(this.ciudadActual)){
+			pistas.add(this.rango.pedirPistaLadron(ladron));
+		}
 		return pistas;
 	}
+
+	 */
 
 
     public LinkedList<Pista> visitarBancoActual(Ladron ladron) {
 
-		return this.visitarEdificio(this.ciudadActual.getBanco(), ladron);
+		return this.visitar(this.ciudadActual.getBanco(), ladron);
     }
 
 	public LinkedList<Pista> visitarAeropuertoActual(Ladron ladron) {
 
-		return this.visitarEdificio(this.ciudadActual.getAeropuerto(), ladron);
+		return this.visitar(this.ciudadActual.getAeropuerto(), ladron);
 	}
 
 	public LinkedList<Pista> visitarBibliotecaActual(Ladron ladron) {
 
-		return this.visitarEdificio(this.ciudadActual.getBiblioteca(), ladron);
+		return this.visitar(this.ciudadActual.getBiblioteca(), ladron);
 	}
 
 	public String nombreLadronEnOrdenDeArresto() {

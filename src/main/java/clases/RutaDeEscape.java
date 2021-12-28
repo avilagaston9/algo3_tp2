@@ -53,5 +53,4 @@ public class RutaDeEscape {
 		return (this.ciudades.contains(unaCiudad));
 	}
 
-
 }
