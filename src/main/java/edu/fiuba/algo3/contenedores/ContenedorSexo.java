@@ -3,6 +3,7 @@ package edu.fiuba.algo3.contenedores;
 import clases.AlgoThief;
 import edu.fiuba.algo3.botones.BotonBorrarCaracteristicaCabello;
 import edu.fiuba.algo3.botones.BotonBorrarCaracteristicaSexo;
+import edu.fiuba.algo3.botones.BotonCerrar;
 import edu.fiuba.algo3.botones.BotonVolver;
 import edu.fiuba.algo3.eventos.CaracteristicaEventHandler;
 import javafx.scene.control.Button;
@@ -16,7 +17,7 @@ public class ContenedorSexo extends VBox {
         masculino.setMaxSize(200,100);
         Button femenino = new Button("Femenino");
         femenino.setMaxSize(200,100);
-        BotonVolver botonVolver = new BotonVolver(stage);
+        BotonCerrar botonVolver = new BotonCerrar(stage,"Volver");
         BotonBorrarCaracteristicaSexo botonBorrar = new BotonBorrarCaracteristicaSexo(algoThief);
 
         CaracteristicaEventHandler masculinoHandler = new CaracteristicaEventHandler("Masculino", algoThief, stage);

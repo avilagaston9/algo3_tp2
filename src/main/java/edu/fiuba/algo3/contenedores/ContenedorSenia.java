@@ -3,6 +3,7 @@ package edu.fiuba.algo3.contenedores;
 import clases.AlgoThief;
 import edu.fiuba.algo3.botones.BotonBorrarCaracteristicaHobby;
 import edu.fiuba.algo3.botones.BotonBorrarCaracteristicaSenia;
+import edu.fiuba.algo3.botones.BotonCerrar;
 import edu.fiuba.algo3.botones.BotonVolver;
 import edu.fiuba.algo3.eventos.CaracteristicaEventHandler;
 import javafx.scene.control.Button;
@@ -26,7 +27,7 @@ public class ContenedorSenia extends VBox {
         CaracteristicaEventHandler tatuajeHandler = new CaracteristicaEventHandler("Tatuaje", algoThief, stage);
         CaracteristicaEventHandler cicatrizHandler = new CaracteristicaEventHandler("Cicatriz", algoThief, stage);
         CaracteristicaEventHandler joyasHandler = new CaracteristicaEventHandler("Joyas", algoThief, stage);
-        BotonVolver botonVolver = new BotonVolver(stage);
+        BotonCerrar botonVolver = new BotonCerrar(stage,"Volver");
         BotonBorrarCaracteristicaSenia botonBorrar = new BotonBorrarCaracteristicaSenia(algoThief);
 
         anillo.setOnAction(anilloHandler);

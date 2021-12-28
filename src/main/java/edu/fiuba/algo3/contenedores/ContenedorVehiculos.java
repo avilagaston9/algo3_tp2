@@ -4,6 +4,7 @@ import clases.AlgoThief;
 import clases.Computadora;
 import edu.fiuba.algo3.botones.BotonBorrarCaracteristicaCabello;
 import edu.fiuba.algo3.botones.BotonBorrarCaracteristicaVehiculo;
+import edu.fiuba.algo3.botones.BotonCerrar;
 import edu.fiuba.algo3.botones.BotonVolver;
 import edu.fiuba.algo3.eventos.CaracteristicaEventHandler;
 import javafx.scene.control.Button;
@@ -21,7 +22,7 @@ public class ContenedorVehiculos extends VBox {
         deportivo.setMaxSize(200,50);
         Button moto = new Button("Moto");
         moto.setMaxSize(200,50);
-        BotonVolver botonVolver = new BotonVolver(stage);
+        BotonCerrar botonVolver = new BotonCerrar(stage,"Volver");
         BotonBorrarCaracteristicaVehiculo botonBorrar = new BotonBorrarCaracteristicaVehiculo(algoThief);
 
 
