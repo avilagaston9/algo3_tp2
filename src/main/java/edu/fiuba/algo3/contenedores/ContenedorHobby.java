@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.contenedores;
 
 import clases.AlgoThief;
+import edu.fiuba.algo3.botones.BotonBorrarCaracteristicaHobby;
+import edu.fiuba.algo3.botones.BotonVolver;
 import edu.fiuba.algo3.eventos.CaracteristicaEventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -15,6 +17,8 @@ public class ContenedorHobby extends VBox {
         Button paracaidismo = new Button("Paracaidismo");
         Button natacion = new Button("Natacion");
         Button croquet = new Button("Croquet");
+        BotonVolver botonVolver = new BotonVolver(stage);
+        BotonBorrarCaracteristicaHobby botonBorrar = new BotonBorrarCaracteristicaHobby(algoThief);
 
         CaracteristicaEventHandler tenisHandler = new CaracteristicaEventHandler("Tenis", algoThief, stage);
         CaracteristicaEventHandler musicaHandler = new CaracteristicaEventHandler("Musica", algoThief, stage);
@@ -30,7 +34,7 @@ public class ContenedorHobby extends VBox {
         natacion.setOnAction(natacionHandler);
         croquet.setOnAction(croquetHandler);
 
-        this.getChildren().addAll(tenis,musica,alpinismo,paracaidismo,natacion,croquet);
+        this.getChildren().addAll(tenis,musica,alpinismo,paracaidismo,natacion,croquet,botonVolver,botonBorrar);
 
     }
 }

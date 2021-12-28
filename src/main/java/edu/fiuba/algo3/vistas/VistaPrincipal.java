@@ -35,7 +35,7 @@ public class VistaPrincipal implements Observador {
     }
     @Override
     public void actualizar() {
-
+/*
         if (!this.algothief.juegoEnCurso()){
 
             if(this.algothief.juegoGanado()){
@@ -48,5 +48,6 @@ public class VistaPrincipal implements Observador {
                 this.stage.setScene(new ContenedorSinOrdenDeArresto());
             }
         }
+    }*/
     }
 }
