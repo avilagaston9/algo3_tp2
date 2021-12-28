@@ -5,6 +5,7 @@ import clases.Computadora;
 import edu.fiuba.algo3.botones.*;
 import edu.fiuba.algo3.botones.BotonSenia;
 import edu.fiuba.algo3.eventos.BotonBuscarSospechososEventHandler;
+import edu.fiuba.algo3.eventos.BotonEmitirOrdenEventHandler;
 import edu.fiuba.algo3.menues.BarraDeMenu;
 import edu.fiuba.algo3.vistas.VistaCaracteristicas;
 import edu.fiuba.algo3.vistas.VistaSospechosos;
@@ -62,13 +63,18 @@ public class ContenedorComputadora extends BorderPane {
         BotonBuscarSospechososEventHandler buscarSospechososButtonHandler = new BotonBuscarSospechososEventHandler(algothief,stage);
         buscarSospechosos.setOnAction(buscarSospechososButtonHandler);
 
+        Button emitirOrdenDeArresto = new Button("Emitir Orden De Arresto");
+        BotonEmitirOrdenEventHandler botonEmitirOrdenHandler = new BotonEmitirOrdenEventHandler(algothief);
+        emitirOrdenDeArresto.setOnAction(botonEmitirOrdenHandler);
+
+
         BotonVolver botonVolver = new BotonVolver(stage);
         FileInputStream input = new FileInputStream("src/imagenes/log-out.png");
         Image image = new Image(input);
         ImageView imageView = new ImageView(image);
         botonVolver.setGraphic(imageView);
 
-        VBox contenedorVertical = new VBox(sexo,hobby,cabello,senia,vehiculo,buscarSospechosos,botonVolver);
+        VBox contenedorVertical = new VBox(sexo,hobby,cabello,senia,vehiculo,buscarSospechosos,botonVolver,emitirOrdenDeArresto);
         contenedorVertical.setPrefSize(100,40);
         contenedorVertical.setSpacing(10);
         contenedorVertical.setPadding(new Insets(15));

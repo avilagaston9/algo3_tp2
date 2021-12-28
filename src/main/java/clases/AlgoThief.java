@@ -97,8 +97,9 @@
          this.policia.arrestarA(unLadron);
      }
 
-     public void emitirOrdenDeArresto(OrdenArresto ordenDeArresto) {
-         this.policia.emitirOrdenDeArresto(ordenDeArresto);
+     public void emitirOrdenDeArresto(Ladron ladron) {
+         OrdenArresto orden = this.computadora.emitirOrdenDeArresto(ladron);
+         this.policia.emitirOrdenDeArresto(orden);
          this.actualizarObservadores();
      }
 
@@ -164,6 +165,7 @@
          return pistas;
      }
 
+
      private void verEstadoJuego(){
 
          try{
@@ -175,5 +177,11 @@
              juegoEnCurso = false;
          }
      }
+
+     public ArrayList<Ladron> getSospechosos() {
+         return this.computadora.getSospechosos();
+     }
+
+
  }
 
