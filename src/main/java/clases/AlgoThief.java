@@ -74,6 +74,7 @@
      //métodos para jugar
      public LinkedList<Pista> visitar(Edificio unEdificio) {
          LinkedList<Pista> pistas = this.policia.visitar(unEdificio, this.ladron);
+         this.actualizarEstadoJuego();
          this.actualizarObservadores();
          return pistas;
      }
@@ -87,6 +88,7 @@
      public void viajarA(Ciudad nuevaCiudad) {
 
          this.policia.viajarA(nuevaCiudad);
+         this.actualizarEstadoJuego();
          this.actualizarObservadores();
      }
 
@@ -95,13 +97,14 @@
      }
 
      public void arrestarA(Ladron unLadron) throws ExcepcionSinOrdenDeArresto {
-
          this.policia.arrestarA(unLadron);
+         this.actualizarEstadoJuego();
      }
 
      public void emitirOrdenDeArresto(Ladron ladron) {
          OrdenArresto orden = this.computadora.emitirOrdenDeArresto(ladron);
          this.policia.emitirOrdenDeArresto(orden);
+         this.actualizarEstadoJuego();
          this.actualizarObservadores();
      }
 
@@ -149,6 +152,7 @@
      //nueva alternativa
      public LinkedList<Pista> visitarBancoActual() {
          LinkedList<Pista> pistas = this.policia.visitarBancoActual(this.ladron);
+         this.actualizarEstadoJuego();
          this.actualizarObservadores();
          return pistas;
      }
@@ -156,6 +160,7 @@
      //nueva alternativa
      public LinkedList<Pista> visitarAeropuertoActual() {
          LinkedList<Pista> pistas = this.policia.visitarAeropuertoActual(this.ladron);
+         this.actualizarEstadoJuego();
          this.actualizarObservadores();
          return pistas;
      }
@@ -163,19 +168,24 @@
      //nueva alternativa
      public LinkedList<Pista> visitarBibliotecaActual() {
          LinkedList<Pista> pistas = this.policia.visitarBibliotecaActual(this.ladron);
+         this.actualizarEstadoJuego();
          this.actualizarObservadores();
          return pistas;
      }
 
 
-     private void verEstadoJuego(){
-         //Falta sumar Tiempo...
+     private void actualizarEstadoJuego(){
+
+         if (this.tiempoInsuficiente()){
+             this.juegoEnCurso = false;
+         }
+
          try{
              if (policia.arrestarA(ladron)){
-                 juegoGanado = true;
+                 this.juegoGanado = true;
              }
          }catch (ExcepcionSinOrdenDeArresto e) {
-             juegoEnCurso = false;
+             this.juegoEnCurso = false;
          }
      }
 
@@ -199,7 +209,6 @@
      }
 
      public boolean tiempoInsuficiente() {
-
          return (this.limiteTiempo < this.policia.tiempoTranscurridoEnHoras());
      }
 
