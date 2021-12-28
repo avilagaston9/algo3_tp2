@@ -183,6 +183,7 @@
          try{
              if (policia.arrestarA(ladron)){
                  this.juegoGanado = true;
+                 this.juegoEnCurso = false;
              }
          }catch (ExcepcionSinOrdenDeArresto e) {
              this.juegoEnCurso = false;
