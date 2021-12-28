@@ -1,6 +1,6 @@
 package clases;
 
-public interface ObservadorAlgothief {
+public interface Observador {
 
     public void actualizar();
 }

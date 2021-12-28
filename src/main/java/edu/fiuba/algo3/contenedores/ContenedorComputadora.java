@@ -6,8 +6,10 @@ import edu.fiuba.algo3.botones.*;
 import edu.fiuba.algo3.botones.BotonSenia;
 import edu.fiuba.algo3.eventos.BotonBuscarSospechososEventHandler;
 import edu.fiuba.algo3.menues.BarraDeMenu;
+import edu.fiuba.algo3.vistas.VistaCaracteristicas;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -21,13 +23,23 @@ public class ContenedorComputadora extends BorderPane {
     BarraDeMenu menuBar;
     Computadora computadora;
 
+
     public ContenedorComputadora(Stage stage, AlgoThief algoThief) throws FileNotFoundException {
+        this.computadora = algoThief.getComputadora();
         this.setMenu(stage);
         this.setBotonera(algoThief,stage);
-        FileInputStream input = new FileInputStream("src/imagenes/compuCargaDatos.png");
-        Image image = new Image(input,800,1000,true,true);
-        ImageView imageView = new ImageView(image);
-        this.setRight(imageView);
+//        FileInputStream input = new FileInputStream("src/imagenes/compuCargaDatos.png");
+//        Image image = new Image(input,800,1000,true,true);
+//        ImageView imageView = new ImageView(image);
+//        this.setRight(imageView);
+        this.setVistaCaracteristicas(algoThief);
+    }
+
+    private void setVistaCaracteristicas(AlgoThief algoThief) {
+        Label label = new Label();
+        VistaCaracteristicas vista = new VistaCaracteristicas(algoThief, label);
+        this.computadora.setObservador(vista);
+        this.setCenter(label);
     }
 
     private void setBotonera(AlgoThief algothief, Stage stage) throws FileNotFoundException {

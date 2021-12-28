@@ -11,7 +11,7 @@
 
  public class AlgoThief {
 
-     private ArrayList<ObservadorAlgothief> observadores;
+     private ArrayList<Observador> observadores;
      private Policia policia;
      private Ladron ladron;
      private List<Ciudad> ciudades;
@@ -21,7 +21,7 @@
 
      public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados) {
 
-         this.observadores = new ArrayList<ObservadorAlgothief>();
+         this.observadores = new ArrayList<Observador>();
 
         this.ciudades = ciudades;
         this.ladrones = ladrones;
@@ -49,13 +49,13 @@
 
      }
 
-     public void setObservador(ObservadorAlgothief observador) {
+     public void setObservador(Observador observador) {
          this.observadores.add(observador);
      }
 
      private void actualizarObservadores() {
 
-         for(ObservadorAlgothief o : this.observadores){
+         for(Observador o : this.observadores){
 
              o.actualizar();
          }
@@ -130,6 +130,10 @@
      public Ciudad getCiudadActual() {
 
          return this.policia.getCiudadActual();
+     }
+
+     public Computadora getComputadora() {
+         return this.computadora;
      }
  }
 
