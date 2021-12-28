@@ -12,11 +12,13 @@ public class Computadora {
 	private ArrayList<Ladron> ladrones;
 	private ArrayList<CaracteristicaLadron> caracteristicas;
 	private ArrayList<Observador> observadores;
+	private ArrayList<Ladron> sospechosos;
 
 	public Computadora(ArrayList<Ladron> unosLadrones) {
 		this.ladrones = unosLadrones;
 		this.caracteristicas = new ArrayList<CaracteristicaLadron>();
 		this.observadores = new ArrayList<Observador>();
+		this.sospechosos =  new ArrayList<Ladron>();
 	}
 
 	// public ArrayList<Ladron> cargarDatosYBuscar(List<CaracteristicaLadron>
@@ -52,7 +54,9 @@ public class Computadora {
 				}
 			}
 			if (cumple) {
+//				System.out.println(unLadron.getNombre());
 				sospechosos.add(unLadron);
+				this.sospechosos.add(unLadron);
 			}
 		}
 		this.actualizarObservadores();
@@ -79,6 +83,15 @@ public class Computadora {
 			caracteristicas.add(c.getPista().revelar());
 		}
 		return caracteristicas;
+	}
+
+	public ArrayList<String> getNombresSospechosos() {
+		ArrayList<String> sospechosos = new ArrayList<>();
+
+		for (Ladron l: this.sospechosos){
+			sospechosos.add(l.getNombre());
+		}
+		return sospechosos;
 	}
 
 	public void setObservador(Observador vista) {

@@ -7,6 +7,7 @@ import edu.fiuba.algo3.botones.BotonSenia;
 import edu.fiuba.algo3.eventos.BotonBuscarSospechososEventHandler;
 import edu.fiuba.algo3.menues.BarraDeMenu;
 import edu.fiuba.algo3.vistas.VistaCaracteristicas;
+import edu.fiuba.algo3.vistas.VistaSospechosos;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -33,6 +34,14 @@ public class ContenedorComputadora extends BorderPane {
 //        ImageView imageView = new ImageView(image);
 //        this.setRight(imageView);
         this.setVistaCaracteristicas(algoThief);
+        this.setVistaSospechosos(algoThief);
+    }
+
+    private void setVistaSospechosos(AlgoThief algoThief) {
+        Label label = new Label();
+        VistaSospechosos vista = new VistaSospechosos(algoThief, label);
+        this.computadora.setObservador(vista);
+        this.setRight(label);
     }
 
     private void setVistaCaracteristicas(AlgoThief algoThief) {
