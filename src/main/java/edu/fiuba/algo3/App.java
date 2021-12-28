@@ -7,6 +7,7 @@ import clases.ladron.Ladron;
 import clases.valorObjetoRobado.ObjetoRobado;
 import edu.fiuba.algo3.contenedores.ContenedorBienvenidos;
 import edu.fiuba.algo3.contenedores.ContenedorPrincipal;
+import edu.fiuba.algo3.vistas.VistaPrincipal;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -28,17 +29,8 @@ public class App extends Application {
     public void start(Stage stage) throws FileNotFoundException {
 
         AlgoThief algothief = this.crearModelo();
-        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, algothief, this.ciudades, this.ladrones);
 
-        Scene escenaJuego = new Scene(contenedorPrincipal, 640, 480);
-
-        ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(stage, escenaJuego,algothief);
-        Scene escenaBienvenidos = new Scene(contenedorBienvenidos, 640, 480);
-
-        stage.setScene(escenaBienvenidos);
-        stage.setFullScreen(true);
-
-        stage.show();
+        VistaPrincipal vistaPrincipal = new VistaPrincipal(stage, algothief, this.ciudades, this.ladrones);
     }
 
 
