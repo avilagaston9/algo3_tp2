@@ -20,6 +20,7 @@ public class VistaPrincipal implements Observador {
 
         this.stage = stage;
         this.algothief = algothief;
+        algothief.setObservador(this);
 
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, algothief, ciudades, ladrones);
         Scene escenaPrincipal = new Scene(contenedorPrincipal, 640, 480);
@@ -43,9 +44,9 @@ public class VistaPrincipal implements Observador {
                 nuevaScene = new Scene(new ContenedorJuegoGanado(this.algothief, this.stage), 640, 480);
             }else if(this.algothief.tiempoInsuficiente()){
 
-                nuevaScene = new Scene(new ContenedorTiempoInsuficiente(this.algothief, this.stage), 640, 480));
+                nuevaScene = new Scene(new ContenedorTiempoInsuficiente(this.algothief, this.stage), 640, 480);
             }else{
-                nuevaScene = new Scene(new ContenedorSinOrdenDeArresto(this.algothief, this.stage), 640, 480));
+                nuevaScene = new Scene(new ContenedorSinOrdenDeArresto(this.algothief, this.stage), 640, 480);
             }
             this.stage.setScene(nuevaScene);
         }
