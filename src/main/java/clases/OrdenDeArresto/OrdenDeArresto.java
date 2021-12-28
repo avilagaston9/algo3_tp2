@@ -15,4 +15,9 @@ public class OrdenDeArresto implements OrdenArresto {
 		return this.ladron.equals(ladron);
 	}
 
+	@Override
+	public String nombreLadronEnLaOrden() {
+		return ladron.getNombre();
+	}
+
 }

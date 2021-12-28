@@ -9,4 +9,9 @@ public class SinOrdenDeArresto implements OrdenArresto {
 		return false;
 	}
 
+	@Override
+	public String nombreLadronEnLaOrden() {
+		return "Sin orden de Arresto";
+	}
+
 }

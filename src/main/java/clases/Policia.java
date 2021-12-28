@@ -146,4 +146,7 @@ public class Policia {
 		return this.visitarEdificio(this.ciudadActual.getBiblioteca(), ladron);
 	}
 
+	public String nombreLadronEnOrdenDeArresto() {
+		return this.ordenDeArresto.nombreLadronEnLaOrden();
+	}
 }
