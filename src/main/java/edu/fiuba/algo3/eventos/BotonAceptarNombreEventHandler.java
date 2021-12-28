@@ -32,6 +32,7 @@ public class BotonAceptarNombreEventHandler implements EventHandler<ActionEvent>
             this.algoThief.setNombrePolicia(nombre);
             ContenedorInformacionInicial contenedorInfomacionInicial = new ContenedorInformacionInicial(this.stage, this.algoThief, this.proximaEscena);
             stage.setScene(new Scene(contenedorInfomacionInicial,200,200));
+            stage.setFullScreen(true);
             stage.show();
         }
     }

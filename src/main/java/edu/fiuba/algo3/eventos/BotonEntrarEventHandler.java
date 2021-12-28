@@ -22,5 +22,6 @@ public class BotonEntrarEventHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent) {
         stage.setScene(proximaEscena);
         stage.setFullScreenExitHint("");
+        stage.setFullScreen(true);
     }
 }
