@@ -15,8 +15,11 @@ public class VistaOrdenArresto implements Observador {
 
 	@Override
 	public void actualizar() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Orden de arresto: ");
 		String orden = this.algoThief.ladronDeOrdenDeArresto();
-		this.orden.setText(orden);
+		builder.append(orden);
+		this.orden.setText(builder.toString());
 
 	}
 }

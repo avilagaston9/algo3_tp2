@@ -18,6 +18,7 @@ import java.util.LinkedList;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class PruebaDeIntegracionJugadorPierde {
 
@@ -37,14 +38,9 @@ public class PruebaDeIntegracionJugadorPierde {
         ArrayList<ObjetoRobado> objetos = lectorObjetos
                 .leer("//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//tesoros.json");
 
-        // AlgoThief juego = new AlgoThief(ciudades, ladrones, objetos);
-
-        // juego.visitarBancoActual();
-
         Novato rango = new Novato();
 
         ObjetoRobado objetoRobado = rango.getObjetoRobado(objetos);
-        assert (objetoRobado.equals(objetos.get(1)));
 
         RutaDeEscape rutaDeEscape = objetoRobado.crearRutaDeEscape(new ArrayList<Ciudad>(ciudades)); // (Baghdad,
         // Atenas,Bamako,Bangkok)
@@ -54,11 +50,6 @@ public class PruebaDeIntegracionJugadorPierde {
         Ciudad atenas = ciudades.get(0);
         Ciudad bamako = ciudades.get(2);
         Ciudad bangkok = ciudades.get(3);
-
-        assert (listaRuta.get(0).equals(baghdad));
-        assert (listaRuta.get(1).equals(atenas));
-        assert (listaRuta.get(2).equals(bamako));
-        assert (listaRuta.get(3).equals(bangkok));
 
         PoliciaBuilder policiaBuilder = new PoliciaBuilder();
         policiaBuilder.setRango(rango);
@@ -81,13 +72,10 @@ public class PruebaDeIntegracionJugadorPierde {
         LinkedList<Pista> pistasDevueltasAeropuerto = policia.visitarAeropuertoActual(ladron);// segunda visita
         LinkedList<Pista> pistasDevueltasBiblioteca = policia.visitarBibliotecaActual(ladron);// tercer visita
 
-        assert (pistasDevueltasBanco.get(0).revelar().equals("Dracmas"));
         this.cargarPistaLadron(pistasDevueltasAeropuerto, computadora);
 
-        assert (pistasDevueltasAeropuerto.get(0).revelar().equals("Azul y blanco"));
         this.cargarPistaLadron(pistasDevueltasBanco, computadora);
 
-        assert (pistasDevueltasBiblioteca.get(0).revelar().equals("Montes"));
         this.cargarPistaLadron(pistasDevueltasBiblioteca, computadora);
 
         assertEquals(3, policia.tiempoTranscurridoEnHoras());
@@ -100,13 +88,10 @@ public class PruebaDeIntegracionJugadorPierde {
         pistasDevueltasAeropuerto = policia.visitarAeropuertoActual(ladron);// segunda visita
         pistasDevueltasBiblioteca = policia.visitarBibliotecaActual(ladron);// tercer visita
 
-        assert (pistasDevueltasBanco.get(0).revelar().equals("Franco francés"));
         this.cargarPistaLadron(pistasDevueltasAeropuerto, computadora);
 
-        assert (pistasDevueltasAeropuerto.get(0).revelar().equals("Verde, Amarillo, Rojo"));
         this.cargarPistaLadron(pistasDevueltasBanco, computadora);
 
-        assert (pistasDevueltasBiblioteca.get(0).revelar().equals("Savanna Tropical"));
         this.cargarPistaLadron(pistasDevueltasBiblioteca, computadora);
 
         assertEquals(8, policia.tiempoTranscurridoEnHoras());
@@ -119,27 +104,22 @@ public class PruebaDeIntegracionJugadorPierde {
         pistasDevueltasAeropuerto = policia.visitarAeropuertoActual(ladron);// segunda visita
         pistasDevueltasBiblioteca = policia.visitarBibliotecaActual(ladron);// tercer visita
 
-        assert (pistasDevueltasBanco.get(0).revelar().equals("Baht tailandés"));
         this.cargarPistaLadron(pistasDevueltasAeropuerto, computadora);
 
-        assert (pistasDevueltasAeropuerto.get(0).revelar().equals("Rojo, Blanco, Azul"));
         this.cargarPistaLadron(pistasDevueltasBanco, computadora);
 
-        assert (pistasDevueltasBiblioteca.get(0).revelar().equals("Llanura"));
         this.cargarPistaLadron(pistasDevueltasBiblioteca, computadora);
 
-        assertEquals(15, policia.tiempoTranscurridoEnHoras());
 
         computadora.buscarSospechosos();
 
-        OrdenArresto orden = computadora.emitirOrdenDeArresto(ladron);
-        policia.emitirOrdenDeArresto(orden);
-        assertEquals(26, policia.tiempoTranscurridoEnHoras()); // 3hs de orden de arresto + 8hs de dormir
+        //OrdenArresto orden = computadora.emitirOrdenDeArresto(ladron);
+       // policia.emitirOrdenDeArresto(orden);
+       // assertEquals(26, policia.tiempoTranscurridoEnHoras()); // 3hs de orden de arresto + 8hs de dormir
 
         policia.viajarA(bangkok);
-        assertEquals(38, policia.tiempoTranscurridoEnHoras());
 
-        assertTrue(policia.arrestarA(ladron));
+        assertFalse(policia.arrestarA(ladron));
         assertTrue(policia.tiempoTranscurridoEnHoras() < 154);
         // chequear que tiempo no se haya pasado antes
     }
@@ -150,6 +130,7 @@ public class PruebaDeIntegracionJugadorPierde {
             computadora.cargarCaracteristica(caracteristicaLadron);
         }
     }
+<<<<<<< HEAD
 
     @Test
     public void jugadorPierdeTiempoInsuficiente() throws ExcepcionSinOrdenDeArresto {
@@ -158,4 +139,6 @@ public class PruebaDeIntegracionJugadorPierde {
 
 
     }
+=======
+>>>>>>> 2a0980a5e991be0dc2fa5bb0dda5099b0ada25b4
 }
