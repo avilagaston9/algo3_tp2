@@ -5,8 +5,7 @@ import clases.Exceptions.ExcepcionSinOrdenDeArresto;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoCiudades;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoLadrones;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoObjetosRobados;
-import clases.OrdenDeArresto.OrdenArresto;
-import clases.OrdenDeArresto.SinOrdenDeArresto;
+
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
