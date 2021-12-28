@@ -37,10 +37,6 @@ public class pruebaDeIntegraciónJugadorGana {
 		ArrayList<ObjetoRobado> objetos = lectorObjetos
 				.leer("//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//tesoros.json");
 
-		// AlgoThief juego = new AlgoThief(ciudades, ladrones, objetos);
-
-		// juego.visitarBancoActual();
-
 		Novato rango = new Novato();
 
 		ObjetoRobado objetoRobado = rango.getObjetoRobado(objetos);
@@ -70,9 +66,6 @@ public class pruebaDeIntegraciónJugadorGana {
 		ladron.setRutaDeEscape(rutaDeEscape);
 		int contadorPistasLadron = 0;
 
-		// Ladron ladronSpy = Mockito.spy(ladron);
-		// Mockito.when(ladronSpy.pedirPista(rango)).thenReturn(new
-		// PistaConInformacion("Femenino"));
 
 		Computadora computadora = new Computadora(ladrones);
 
