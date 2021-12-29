@@ -66,12 +66,12 @@ public class Policia {
 
 	public boolean arrestarA(Ladron unLadron) throws ExcepcionSinOrdenDeArresto {
 
-		return (unLadron.serArrestado(this.ordenDeArresto, this.ciudadActual));
+		 if (unLadron.serArrestado(this.ordenDeArresto, this.ciudadActual)) {
+			 this.rango.sumarArresto();
+			 return true;
+		 }
+		 return false;
 
-		/*
-		 * if (unLadron.serArrestado(this.ordenDeArresto, this.ciudadActual)) {
-		 * this.rango.sumarArresto(); return true; } return false;
-		 */
 	}
 
 	public void emitirOrdenDeArresto(OrdenArresto ordenDeArresto) {

@@ -6,7 +6,7 @@ import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoCiudades;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoLadrones;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoObjetosRobados;
 import clases.ladron.Ladron;
-import clases.valorObjetoRobado.ObjetoRobado;
+import clases.ObjetoRobado.ObjetoRobado;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

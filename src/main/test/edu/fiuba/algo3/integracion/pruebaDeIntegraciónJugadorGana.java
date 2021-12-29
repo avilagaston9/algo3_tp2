@@ -6,68 +6,257 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import clases.FabricaEdificios.FabricaAeropuerto;
+import clases.FabricaEdificios.FabricaBancos;
+import clases.FabricaEdificios.FabricaBiblioteca;
+import clases.edificios.Aeropuerto;
+import clases.edificios.Banco;
+import clases.edificios.Biblioteca;
+import clases.ladron.LadronBuilder;
+import clases.pistas.PistaDificil;
+import clases.pistas.PistaFacil;
+import clases.pistas.PistaMedia;
+import clases.ObjetoRobado.*;
 import org.junit.jupiter.api.Test;
 
 import clases.*;
 import clases.Exceptions.ExcepcionSinOrdenDeArresto;
-import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoCiudades;
-import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoLadrones;
-import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoObjetosRobados;
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.rangos.Novato;
-import clases.valorObjetoRobado.ObjetoRobado;
 
 public class pruebaDeIntegraciónJugadorGana {
 
 	@Test
 	public void novatoRealizaLaInvestigacionYArrestaAlLadron() throws ExcepcionSinOrdenDeArresto {
 
-		LectorArchivoCiudades lectorCiudades = new LectorArchivoCiudades();
-		ArrayList<Ciudad> ciudades = lectorCiudades
-				.leer("//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//ciudadesSinTerminar.json");
+		// CREACION CIUDADES //
 
-		LectorArchivoLadrones lectorLadrones = new LectorArchivoLadrones();
-		ArrayList<Ladron> ladrones = lectorLadrones
-				.leer("//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//dossiers.json");
+		//Baghdad
+		String nombreBaghdad = "Baghdad";
+		String descripcionBaghdad= "";
+		Coordenadas coordenadasBaghdad = new Coordenadas(33.35,44.416667);
 
-		LectorArchivoObjetosRobados lectorObjetos = new LectorArchivoObjetosRobados();
-		ArrayList<ObjetoRobado> objetos = lectorObjetos
-				.leer("//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//tesoros.json");
+		//EDIFICIOS
+		FabricaBancos fabricaBancos = new FabricaBancos();
+		FabricaBiblioteca fabricaBiblioteca = new FabricaBiblioteca();
+		FabricaAeropuerto fabricaAeropuerto = new FabricaAeropuerto();
+
+		//Banco
+		PistaFacil pistaFacilBanco = new PistaFacil("Dinares");
+		PistaMedia pistaMediaBanco = new PistaMedia("Petroleo");
+		PistaDificil pistaDificilBanco = new PistaDificil("Puertas de Baghdad");
+
+		Banco bancoBaghdad = (Banco) fabricaBancos.crearEdificio(pistaFacilBanco, pistaMediaBanco,pistaDificilBanco);
+
+		//Biblioteca
+		PistaFacil pistaFacilBiblioteca = new PistaFacil("Desierto");
+		PistaMedia pistaMediaBiblioteca = new PistaMedia("Sumerio");
+		PistaDificil pistaDificilBiblioteca = new PistaDificil("Islam");
+
+		Biblioteca bibliotecaBaghdad = (Biblioteca) fabricaBiblioteca.crearEdificio(pistaFacilBiblioteca, pistaMediaBiblioteca, pistaDificilBiblioteca);
+
+		//Aeropuerto
+		PistaFacil pistaFacilAeropuerto = new PistaFacil("Rojo, Blanco, Negro");
+		PistaMedia pistaMediaAeropuerto = new PistaMedia("Arabe");
+		PistaDificil pistaDificilAeropuerto = new PistaDificil("Arabe");
+
+		Aeropuerto aeropuertoBaghdad = (Aeropuerto) fabricaAeropuerto.crearEdificio(pistaFacilAeropuerto, pistaMediaAeropuerto, pistaDificilAeropuerto);
+
+		// CIUDAD BUILDER
+		CiudadBuilder ciudadBuilder = new CiudadBuilder();
+
+		ciudadBuilder.setNombre(nombreBaghdad);
+		ciudadBuilder.setCoordenadas(coordenadasBaghdad);
+		ciudadBuilder.setAeropuerto(aeropuertoBaghdad);
+		ciudadBuilder.setBanco(bancoBaghdad);
+		ciudadBuilder.setBiblioteca(bibliotecaBaghdad);
+		ciudadBuilder.setDescripcion(descripcionBaghdad);
+
+		Ciudad baghdad = ciudadBuilder.getCiudad();
+
+		//Atenas
+		String nombreAtenas = "Atenas";
+		String descripcionAtenas= "";
+		Coordenadas coordenadasAtenas = new Coordenadas(37.984167,23.728056);
+
+		//EDIFICIOS
+		fabricaBancos = new FabricaBancos();
+		fabricaBiblioteca = new FabricaBiblioteca();
+		fabricaAeropuerto = new FabricaAeropuerto();
+
+		//Banco
+		pistaFacilBanco = new PistaFacil("Dracmas");
+		pistaMediaBanco = new PistaMedia("Metalurgica");
+		pistaDificilBanco = new PistaDificil("Musica");
+
+		Banco bancoAtenas = (Banco) fabricaBancos.crearEdificio(pistaFacilBanco, pistaMediaBanco,pistaDificilBanco);
+
+		//Biblioteca
+		pistaFacilBiblioteca = new PistaFacil("Montes");
+		pistaMediaBiblioteca = new PistaMedia("Plateo");
+		pistaDificilBiblioteca = new PistaDificil("Cristianismo");
+
+		Biblioteca bibliotecaAtenas = (Biblioteca) fabricaBiblioteca.crearEdificio(pistaFacilBiblioteca, pistaMediaBiblioteca, pistaDificilBiblioteca);
+
+		//Aeropuerto
+		pistaFacilAeropuerto = new PistaFacil("Azul y blanco");
+		pistaMediaAeropuerto = new PistaMedia("Griego");
+		pistaDificilAeropuerto = new PistaDificil("Primer Ministro");
+
+		Aeropuerto aeropuertoAtenas = (Aeropuerto) fabricaAeropuerto.crearEdificio(pistaFacilAeropuerto, pistaMediaAeropuerto, pistaDificilAeropuerto);
+
+		// CIUDAD BUILDER
+		ciudadBuilder = new CiudadBuilder();
+
+		ciudadBuilder.setNombre(nombreAtenas);
+		ciudadBuilder.setCoordenadas(coordenadasAtenas);
+		ciudadBuilder.setAeropuerto(aeropuertoAtenas);
+		ciudadBuilder.setBanco(bancoAtenas);
+		ciudadBuilder.setBiblioteca(bibliotecaAtenas);
+		ciudadBuilder.setDescripcion(descripcionAtenas);
+
+		Ciudad atenas = ciudadBuilder.getCiudad();
+
+		//Bamako
+		String nombreBamako = "Bamako";
+		String descripcionBamako= "";
+		Coordenadas coordenadasBamako = new Coordenadas(12.645833,-7.992222);
+
+		//EDIFICIOS
+		fabricaBancos = new FabricaBancos();
+		fabricaBiblioteca = new FabricaBiblioteca();
+		fabricaAeropuerto = new FabricaAeropuerto();
+
+		//Banco
+		pistaFacilBanco = new PistaFacil("Franco francés");
+		pistaMediaBanco = new PistaMedia("Mineria");
+		pistaDificilBanco = new PistaDificil("Musica");
+
+		Banco bancoBamako = (Banco) fabricaBancos.crearEdificio(pistaFacilBanco, pistaMediaBanco,pistaDificilBanco);
+
+		//Biblioteca
+		pistaFacilBiblioteca = new PistaFacil("Savanna Tropical");
+		pistaMediaBiblioteca = new PistaMedia("Tuareg");
+		pistaDificilBiblioteca = new PistaDificil("Islam");
+
+		Biblioteca bibliotecaBamako = (Biblioteca) fabricaBiblioteca.crearEdificio(pistaFacilBiblioteca, pistaMediaBiblioteca, pistaDificilBiblioteca);
+
+		//Aeropuerto
+		pistaFacilAeropuerto = new PistaFacil("Verde, Amarillo, Rojo");
+		pistaMediaAeropuerto = new PistaMedia("Inglés, Francés, Hebreo, Idioma bambara");
+		pistaDificilAeropuerto = new PistaDificil("Presidente");
+
+		Aeropuerto aeropuertoBamako = (Aeropuerto) fabricaAeropuerto.crearEdificio(pistaFacilAeropuerto, pistaMediaAeropuerto, pistaDificilAeropuerto);
+
+		// CIUDAD BUILDER
+		ciudadBuilder = new CiudadBuilder();
+
+		ciudadBuilder.setNombre(nombreBamako);
+		ciudadBuilder.setCoordenadas(coordenadasBamako);
+		ciudadBuilder.setAeropuerto(aeropuertoBamako);
+		ciudadBuilder.setBanco(bancoBamako);
+		ciudadBuilder.setBiblioteca(bibliotecaBamako);
+		ciudadBuilder.setDescripcion(descripcionBamako);
+
+		Ciudad bamako = ciudadBuilder.getCiudad();
+
+		//Bangkok
+		String nombreBangkok = "Bangkok";
+		String descripcionBangkok= "";
+		Coordenadas coordenadasBangkok = new Coordenadas(12.645833,-7.992222);
+
+		//EDIFICIOS
+		fabricaBancos = new FabricaBancos();
+		fabricaBiblioteca = new FabricaBiblioteca();
+		fabricaAeropuerto = new FabricaAeropuerto();
+
+		//Banco
+		pistaFacilBanco = new PistaFacil("Baht tailandés");
+		pistaMediaBanco = new PistaMedia("Software");
+		pistaDificilBanco = new PistaDificil("NFTs");
+
+		Banco bancoBangkok = (Banco) fabricaBancos.crearEdificio(pistaFacilBanco, pistaMediaBanco,pistaDificilBanco);
+
+		//Biblioteca
+		pistaFacilBiblioteca = new PistaFacil("Llanura");
+		pistaMediaBiblioteca = new PistaMedia("Tailandesa, China, Malaya");
+		pistaDificilBiblioteca = new PistaDificil("Budismo");
+
+		Biblioteca bibliotecaBangkok = (Biblioteca) fabricaBiblioteca.crearEdificio(pistaFacilBiblioteca, pistaMediaBiblioteca, pistaDificilBiblioteca);
+
+		//Aeropuerto
+		pistaFacilAeropuerto = new PistaFacil("Rojo, Blanco, Azul");
+		pistaMediaAeropuerto = new PistaMedia("Tailandes");
+		pistaDificilAeropuerto = new PistaDificil("Presidente");
+
+		Aeropuerto aeropuertoBangkok = (Aeropuerto) fabricaAeropuerto.crearEdificio(pistaFacilAeropuerto, pistaMediaAeropuerto, pistaDificilAeropuerto);
+
+		// CIUDAD BUILDER
+		ciudadBuilder = new CiudadBuilder();
+
+		ciudadBuilder.setNombre(nombreBangkok);
+		ciudadBuilder.setCoordenadas(coordenadasBangkok);
+		ciudadBuilder.setAeropuerto(aeropuertoBangkok);
+		ciudadBuilder.setBanco(bancoBangkok);
+		ciudadBuilder.setBiblioteca(bibliotecaBangkok);
+		ciudadBuilder.setDescripcion(descripcionBangkok);
+
+		Ciudad bangkok = ciudadBuilder.getCiudad();
+
+		ArrayList<Ciudad> ciudades = new ArrayList<>();
+		ciudades.add(baghdad);
+		ciudades.add(atenas);
+		ciudades.add(bamako);
+		ciudades.add(bangkok);
+
+		/////////////////////////////////////////////////////////
+		FabricaObjetoRobado fabricaObjetoRobado = new FabricaObjetoComun();
+		ObjetoRobado objetoRobado = fabricaObjetoRobado.crearObjeto("Tablilla babilónica", "Baghdad");
+
+		ArrayList<ObjetoRobado> objetosRobados = new ArrayList<>();
+		objetosRobados.add(objetoRobado);
 
 		Novato rango = new Novato();
 
-		ObjetoRobado objetoRobado = rango.getObjetoRobado(objetos);
-		assert (objetoRobado.equals(objetos.get(1)));
+		//En la versión completa se llama a:
+		// rango.getObjetoRobado(objetosRobados)
 
-		RutaDeEscape rutaDeEscape = objetoRobado.crearRutaDeEscape(new ArrayList<Ciudad>(ciudades)); // (Baghdad,
-																										// Atenas,Bamako,Bangkok)
+		RutaDeEscape rutaDeEscape = objetoRobado.crearRutaDeEscape(ciudades); // (Baghdad, Atenas,Bamako,Bangkok)
 		ArrayList<Ciudad> listaRuta = rutaDeEscape.getRuta();
 
-		Ciudad baghdad = ciudades.get(1);
-		Ciudad atenas = ciudades.get(0);
-		Ciudad bamako = ciudades.get(2);
-		Ciudad bangkok = ciudades.get(3);
+		for (int i = 0 ; i< listaRuta.size(); i++){
+			assertEquals(ciudades.get(i),listaRuta.get(i));
+		}
 
-		assert (listaRuta.get(0).equals(baghdad));
-		assert (listaRuta.get(1).equals(atenas));
-		assert (listaRuta.get(2).equals(bamako));
-		assert (listaRuta.get(3).equals(bangkok));
-
+		//Policia
 		PoliciaBuilder policiaBuilder = new PoliciaBuilder();
 		policiaBuilder.setRango(rango);
 		policiaBuilder.setPrimerCiudad(baghdad);
 		Policia policia = policiaBuilder.getPolicia();
 
-		Ladron ladron = ladrones.get(0); // Carmen Sandiego
-		ladron.setCiudad(listaRuta.get(listaRuta.size() - 1)); // Bangkok
-		ladron.setRutaDeEscape(rutaDeEscape);
-		int contadorPistasLadron = 0;
+		//Ladron
+		LadronBuilder ladronBuilder = new LadronBuilder();
 
+		ladronBuilder.setNombre("Carmen Sandiego");
+		ladronBuilder.setSexo(new CaracteristicaLadron("Femenino"));
+		ladronBuilder.setHobby(new CaracteristicaLadron("Tenis"));
+		ladronBuilder.setCabello(new CaracteristicaLadron("Castaño"));
+		ladronBuilder.setVehiculo(new CaracteristicaLadron("Descapotable"));
+		ladronBuilder.setSenia(new CaracteristicaLadron("Anillo"));
+
+		Ladron ladron = ladronBuilder.getLadron();
+		ladron.setCiudad(bangkok);
+		ladron.setRutaDeEscape(rutaDeEscape);
+
+		ArrayList<Ladron> ladrones = new ArrayList<>();
+		ladrones.add(ladron);
 
 		Computadora computadora = new Computadora(ladrones);
+
+		// FIN SETUP //
 
 		// VISITAS EN BAGHDAD
 		LinkedList<Pista> pistasDevueltasBanco = policia.visitarBancoActual(ladron); // primera visita
@@ -130,11 +319,11 @@ public class pruebaDeIntegraciónJugadorGana {
 		assertEquals(26, policia.tiempoTranscurridoEnHoras()); // 3hs de orden de arresto + 8hs de dormir
 
 		policia.viajarA(bangkok);
-		assertEquals(38, policia.tiempoTranscurridoEnHoras());
+		assertEquals(26, policia.tiempoTranscurridoEnHoras());
 
 		assertTrue(policia.arrestarA(ladron));
+		assertEquals(policia.cantidadArrestos(), 1);
 		assertTrue(policia.tiempoTranscurridoEnHoras() < 154);
-		// chequear que tiempo no se haya pasado antes
 	}
 
 	private void cargarPistaLadron(LinkedList<Pista> pistasDevueltas, Computadora computadora) {

@@ -8,10 +8,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import clases.valorObjetoRobado.ObjetoComun;
-import clases.valorObjetoRobado.ObjetoMuyValioso;
-import clases.valorObjetoRobado.ObjetoRobado;
-import clases.valorObjetoRobado.ObjetoValioso;
+import clases.ObjetoRobado.ObjetoComun;
+import clases.ObjetoRobado.ObjetoMuyValioso;
+import clases.ObjetoRobado.ObjetoRobado;
+import clases.ObjetoRobado.ObjetoValioso;
 
 public class LectorArchivoObjetosRobados implements LectorArchivos {
 	@Override
@@ -31,21 +31,22 @@ public class LectorArchivoObjetosRobados implements LectorArchivos {
 
 				actual = (JSONObject) jsonLadrones.get(i);
 
+				String nombre = (String) actual.get("tesoro");
+				String ciudad = (String) actual.get("ciudad");
+
 				switch ((String) actual.get("valor")) {
 					case "Comun" : {
-						objetoRobadoActual = new ObjetoComun();
+						objetoRobadoActual = new ObjetoComun(nombre, ciudad);
 					}
 						break;
 					case "Valioso" : {
-						objetoRobadoActual = new ObjetoValioso();
+						objetoRobadoActual = new ObjetoValioso(nombre, ciudad);
 					}
 						break;
 					default : {
-						objetoRobadoActual = new ObjetoMuyValioso();
+						objetoRobadoActual = new ObjetoMuyValioso(nombre, ciudad);
 					}
 				}
-				objetoRobadoActual.setNombre((String) actual.get("tesoro"));
-				objetoRobadoActual.setNombreCiudad((String) actual.get("ciudad"));
 
 				objetosRobados.add(objetoRobadoActual);
 			}

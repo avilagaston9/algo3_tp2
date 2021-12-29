@@ -73,6 +73,8 @@ public class LectorArchivoCiudades implements LectorArchivos {
 					(double) ciudadJson.get("longitud"));
 			String nombreCiudad = (String) ciudadJson.get("ciudad");
 
+			String descripcionCiudad = (String) ciudadJson.get("descripcion");
+
 			// EDIFICIOS...
 
 			// BANCO...
@@ -104,6 +106,7 @@ public class LectorArchivoCiudades implements LectorArchivos {
 			ciudadBuilder.setAeropuerto(aeropuerto);
 			ciudadBuilder.setBanco(banco);
 			ciudadBuilder.setBiblioteca(biblioteca);
+			ciudadBuilder.setDescripcion(descripcionCiudad);
 
 			ciudades.add(ciudadBuilder.getCiudad());
 

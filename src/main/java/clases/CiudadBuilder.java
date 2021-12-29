@@ -10,6 +10,7 @@ public class CiudadBuilder {
 	private Aeropuerto aeropuerto;
 	private Coordenadas coordenadas;
 	private String nombre;
+	private String descripcion;
 
 	public void setBanco(Banco banco) {
 		this.banco = banco;
@@ -31,7 +32,11 @@ public class CiudadBuilder {
 		this.coordenadas = coordenadas;
 	}
 
+	public void setDescripcion(String descripcionCiudad) {
+		this.descripcion = descripcionCiudad;
+	}
+
 	public Ciudad getCiudad() {
-		return new Ciudad(this.nombre, this.coordenadas, this.banco, this.biblioteca, this.aeropuerto);
+		return new Ciudad(this.nombre, this.coordenadas, this.banco, this.biblioteca, this.aeropuerto, this.descripcion);
 	}
 }

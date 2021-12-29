@@ -12,18 +12,19 @@ public class Ciudad {
 	private Banco banco;
 	private Biblioteca biblioteca;
 	private Aeropuerto aeropuerto;
+	private String descripcion;
 
-	public Ciudad(String nombreCiudad, Coordenadas coordenadas, Banco banco, Biblioteca biblioteca,
-			Aeropuerto aeropuerto) {
+	public Ciudad(String nombreCiudad, Coordenadas coordenadas, Banco banco, Biblioteca biblioteca, Aeropuerto aeropuerto, String descripcion) {
 
 		this.nombre = nombreCiudad;
 		this.coordenadas = coordenadas;
 		this.banco = banco;
 		this.biblioteca = biblioteca;
 		this.aeropuerto = aeropuerto;
+		this.descripcion = descripcion;
 	}
 
-	// Para mantener los test de entregas anteriores.
+	// Para mantener los test de entregas anteriores. //todo borrar
 	public Ciudad(String nombreCiudad, Coordenadas coordenadas) {
 
 		this.nombre = nombreCiudad;

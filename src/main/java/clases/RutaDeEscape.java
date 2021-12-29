@@ -11,11 +11,15 @@ public class RutaDeEscape {
 
 	public RutaDeEscape(List<Ciudad> ciudades, String nombreCiudad, int largoRutaDeEscape) {
 
-		this.ciudades = new ArrayList<Ciudad>(ciudades);
-		Ciudad ciudad = this.buscarCiudad(ciudades, nombreCiudad);
-		this.ciudades = new ArrayList<Ciudad>(ciudades.subList(0, largoRutaDeEscape - 1));
+		this.ciudades = new ArrayList<>(ciudades);
+		Ciudad ciudad = this.buscarCiudad(this.ciudades, nombreCiudad);
+		this.ciudades = new ArrayList<Ciudad>(this.ciudades.subList(0, largoRutaDeEscape - 1));
 		this.ciudades.add(0, ciudad);
 
+		setearPistasProximaCiudad();
+	}
+
+	private void setearPistasProximaCiudad() {
 		for (int i = 0; i < this.ciudades.size() - 1; i++) {
 			Ciudad ciudadActual = this.ciudades.get(i);
 			ciudadActual.setPistas(this.ciudades.get(i + 1));

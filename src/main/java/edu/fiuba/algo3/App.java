@@ -7,7 +7,7 @@ import clases.AlgoThief;
 import clases.Ciudad;
 import clases.InteraccionConArchivos.LectorDeArchivosFachada;
 import clases.ladron.Ladron;
-import clases.valorObjetoRobado.ObjetoRobado;
+import clases.ObjetoRobado.ObjetoRobado;
 import edu.fiuba.algo3.vistas.VistaPrincipal;
 import javafx.application.Application;
 import javafx.stage.Stage;

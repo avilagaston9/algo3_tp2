@@ -6,7 +6,7 @@ import clases.Tiempo;
 import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
-import clases.valorObjetoRobado.ObjetoRobado;
+import clases.ObjetoRobado.ObjetoRobado;
 
 public abstract class Rango {
 

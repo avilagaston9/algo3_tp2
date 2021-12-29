@@ -8,7 +8,7 @@ import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoLadrones;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoObjetosRobados;
 import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivos;
 import clases.ladron.Ladron;
-import clases.valorObjetoRobado.ObjetoRobado;
+import clases.ObjetoRobado.ObjetoRobado;
 
 public class LectorDeArchivosFachada {
 

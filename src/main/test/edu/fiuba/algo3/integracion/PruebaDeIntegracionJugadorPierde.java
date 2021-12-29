@@ -10,9 +10,8 @@ import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.rangos.Novato;
-import clases.valorObjetoRobado.ObjetoRobado;
+import clases.ObjetoRobado.ObjetoRobado;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.function.Executable;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
