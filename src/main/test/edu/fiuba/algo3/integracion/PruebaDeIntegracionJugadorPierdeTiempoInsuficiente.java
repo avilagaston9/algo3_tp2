@@ -185,6 +185,7 @@ public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {
 
         Biblioteca bibliotecaBangkok = (Biblioteca) fabricaBiblioteca.crearEdificio(pistaFacilBiblioteca, pistaMediaBiblioteca, pistaDificilBiblioteca);
 
+        AlgoThief juego = new AlgoThief(ciudades, ladrones, objetos, "pedro");
         //Aeropuerto
         pistaFacilAeropuerto = new PistaFacil("Rojo, Blanco, Azul");
         pistaMediaAeropuerto = new PistaMedia("Tailandes");

@@ -25,13 +25,18 @@ public class AlgoThief {
 	private Boolean juegoGanado;
 	private int limiteTiempo;
 
-	public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados) {
+	public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados, String nombrePolicia) {
+
+
+		this.observadores = new ArrayList<Observador>();
+		this.inicializarCon(ciudades, ladrones, objetosRobados, nombrePolicia);
+	}
+
+	public void inicializarCon(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados, String nombrePolicia){
 
 		this.juegoEnCurso = true;
 		this.juegoGanado = false;
 		this.limiteTiempo = 154;
-
-		this.observadores = new ArrayList<Observador>();
 
 		this.ciudades = ciudades;
 		this.ladrones = ladrones;
@@ -39,6 +44,8 @@ public class AlgoThief {
 		Collections.shuffle(this.ciudades);
 		Collections.shuffle(objetosRobados);
 
+
+		//break
 		Novato rango = new Novato();
 
 		this.objetoRobado = rango.getObjetoRobado(objetosRobados);
@@ -58,8 +65,24 @@ public class AlgoThief {
 		this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
 
 		this.ladron.setRutaDeEscape(rutaDeEscape);
-
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	public void setObservador(Observador observador) {
 		this.observadores.add(observador);

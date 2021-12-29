@@ -43,6 +43,6 @@ public class App extends Application {
 		this.objetosRobados = lectorDeArchivos.obtenerObjetosRobados(
 				"//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//tesoros.json");
 
-		return new AlgoThief(this.ciudades, this.ladrones, this.objetosRobados);
+		return new AlgoThief(this.ciudades, this.ladrones, this.objetosRobados, null);
 	}
 }
