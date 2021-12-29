@@ -15,20 +15,21 @@ import javafx.stage.Stage;
 public class VistaPrincipal implements Observador {
 
 
-	private ArrayList<Ciudad> ciudades;
-	private ArrayList<Ladron> ladrones;
-	private ArrayList<ObjetoRobado> objetosRobados;
-
 
 	private final Stage stage;
 	private final AlgoThief algothief;
+	private final ArrayList<Ciudad> ciudades;
+	private final ArrayList<Ladron> ladrones;
 
-	/*public VistaPrincipal(Stage stage, AlgoThief algothief, ArrayList<Ciudad> ciudades, ArrayList<Ladron> ladrones)
+	public VistaPrincipal(Stage stage, AlgoThief algothief, ArrayList<Ciudad> ciudades, ArrayList<Ladron> ladrones)
 			throws FileNotFoundException {
 
 		this.stage = stage;
 		this.algothief = algothief;
+		this.ciudades = ciudades;
+		this.ladrones = ladrones;
 		algothief.setObservador(this);
+	}
 
 		ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, algothief, ciudades, ladrones);
 		Scene escenaPrincipal = new Scene(contenedorPrincipal, 640, 480);
@@ -40,9 +41,8 @@ public class VistaPrincipal implements Observador {
 		stage.setFullScreen(true);
 
 		stage.show();
-	}
 
-	 */
+/*
 	public VistaPrincipal(Stage stage) throws FileNotFoundException {
 
 		this.stage = stage;
@@ -65,8 +65,18 @@ public class VistaPrincipal implements Observador {
 		Scene escenaPrincipal = new Scene(contenedorPrincipal, 640, 480);
 
 	}
+
+ */
 	@Override
 	public void actualizar() {
+
+		if(!this.algothief.jugadorCargado()){
+
+
+
+
+
+		}
 
 		  if (!this.algothief.juegoEnCurso()){
 

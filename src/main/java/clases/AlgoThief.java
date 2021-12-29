@@ -21,13 +21,13 @@ public class AlgoThief {
 	private Computadora computadora;
 	private ObjetoRobado objetoRobado;
 
-	private boolean juegoIniciado;
+	private boolean jugadorCargado;
 	private Boolean juegoEnCurso;
 	private Boolean juegoGanado;
 	private int limiteTiempo;
 	private List<ObjetoRobado> objetosRobados;
 
-	public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados/*listaPolicias?*/) {
+	public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados /*,listaPolicias*/) {
 
 
 		this.observadores = new ArrayList<Observador>();
@@ -37,7 +37,7 @@ public class AlgoThief {
 		//this.listaPolicias = listaPolicias;        o quizás levantar de la fachada.
 
 
-		this.juegoIniciado = false;
+		this.jugadorCargado = false;
 		this.juegoGanado = false;
 		this.juegoEnCurso = false;
 	}
@@ -48,13 +48,13 @@ public class AlgoThief {
 		//todo aca se debería crear la instancia de policia, ya sea del archivo o de 0 si no existe.
 		//todo y guardar en this.policia = nuevoPolicia;
 		this.policia.setNombre(nombrePolicia);
+		this.jugadorCargado = true;
 	}
 	//todo recordatorio para el builder de policia, hay que dejarlo sin ciudadInicial seteada, y setearlo con la cantidad de arrestos correspondiente.
 
 
 	public void iniciarJuego(){
 
-		this.juegoIniciado = true;
 		this.juegoEnCurso = true;
 		this.juegoGanado = false;
 		this.limiteTiempo = 154;
@@ -261,5 +261,10 @@ public class AlgoThief {
 
 	public void borrarCaracteristica(CaracteristicaLadron caracteristica) {
 		this.computadora.borrarCaracteristica(caracteristica);
+	}
+
+	public boolean jugadorCargado() {
+
+		return this.jugadorCargado;
 	}
 }
