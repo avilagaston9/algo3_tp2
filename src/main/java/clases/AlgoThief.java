@@ -21,42 +21,63 @@ public class AlgoThief {
 	private Computadora computadora;
 	private ObjetoRobado objetoRobado;
 
+	private boolean juegoIniciado;
 	private Boolean juegoEnCurso;
 	private Boolean juegoGanado;
 	private int limiteTiempo;
+	private List<ObjetoRobado> objetosRobados;
 
-	public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados, String nombrePolicia) {
+	public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados/*listaPolicias?*/) {
 
 
 		this.observadores = new ArrayList<Observador>();
-		this.inicializarCon(ciudades, ladrones, objetosRobados, nombrePolicia);
+		this.ciudades = ciudades;
+		this.ladrones = ladrones;
+		this.objetosRobados = objetosRobados;
+		//this.listaPolicias = listaPolicias;        o quizás levantar de la fachada.
+
+
+		this.juegoIniciado = false;
+		this.juegoGanado = false;
+		this.juegoEnCurso = false;
 	}
 
-	public void inicializarCon(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados, String nombrePolicia){
+	//todo quizá convendría cambiar el nombre del método a setPolicia(String nombrePolicia)
+	public void setNombrePolicia(String nombrePolicia) {
 
+		//todo aca se debería crear la instancia de policia, ya sea del archivo o de 0 si no existe.
+		//todo y guardar en this.policia = nuevoPolicia;
+		this.policia.setNombre(nombrePolicia);
+	}
+	//todo recordatorio para el builder de policia, hay que dejarlo sin ciudadInicial seteada, y setearlo con la cantidad de arrestos correspondiente.
+
+
+	public void iniciarJuego(){
+
+		this.juegoIniciado = true;
 		this.juegoEnCurso = true;
 		this.juegoGanado = false;
 		this.limiteTiempo = 154;
 
-		this.ciudades = ciudades;
-		this.ladrones = ladrones;
 
 		Collections.shuffle(this.ciudades);
 		Collections.shuffle(objetosRobados);
 
 
-		//break
-		Novato rango = new Novato();
 
-		this.objetoRobado = rango.getObjetoRobado(objetosRobados);
+		Novato rango = new Novato(); //todo borrar cuando se implemente lo de policia.
+
+		this.objetoRobado = rango.getObjetoRobado(this.objetosRobados);//todo esto sería this.policia.GetRango().getObjetoRonado();
 
 		RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(this.ciudades);
 
-		PoliciaBuilder policiaBuilder = new PoliciaBuilder();
+
+		PoliciaBuilder policiaBuilder = new PoliciaBuilder();//todo aca simplemente sería this.policia.setCiudadInicial()
 		policiaBuilder.setPrimerCiudad(rutaDeEscape.getRuta().get(0));
 		policiaBuilder.setRango(rango);
 
 		this.policia = policiaBuilder.getPolicia();
+		//todo hay que resetear el tiempo del policía, hay que implementar el método.
 
 		Random random = new Random();
 		this.ladron = ladrones.get(random.nextInt(this.ladrones.size()));
@@ -65,6 +86,7 @@ public class AlgoThief {
 		this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
 
 		this.ladron.setRutaDeEscape(rutaDeEscape);
+		this.actualizarObservadores();
 	}
 
 
@@ -153,9 +175,6 @@ public class AlgoThief {
 		return this.objetoRobado.getNombreCiudad();
 	}
 
-	public void setNombrePolicia(String nombrePolicia) {
-		this.policia.setNombre(nombrePolicia);
-	}
 
 	public String getNombrePolicia() {
 		return this.policia.getNombre();
