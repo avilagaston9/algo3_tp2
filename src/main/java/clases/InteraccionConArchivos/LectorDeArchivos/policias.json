@@ -1,0 +1,16 @@
+{
+  "policias": [
+    {
+      "nombre": "Theo",
+      "arrestos": 7
+    },
+    {
+      "nombre": "Nicolas",
+      "arrestos": 3
+    },
+    {
+      "nombre": "Gaston",
+      "arrestos": 1
+    }
+  ]
+}
