@@ -24,6 +24,7 @@ public class App extends Application {
 	private ArrayList<Ciudad> ciudades;
 	private ArrayList<Ladron> ladrones;
 	private ArrayList<ObjetoRobado> objetosRobados;
+	private ObtenerDatosFachada obtenedorDeDatos;
 
 	@Override
 	public void start(Stage stage) throws FileNotFoundException {
@@ -41,6 +42,12 @@ public class App extends Application {
 
 	private AlgoThief crearModelo() {
 
+		this.obtenedorDeDatos = this.crearObtenedorDeDatos();
+		return new AlgoThief(this.obtenedorDeDatos);
+	}
+
+	private ObtenerDatosFachada crearObtenedorDeDatos() {
+
 		LectorArchivoCiudadesJson lectorJsonCiudades = new LectorArchivoCiudadesJson("//src//main//java//" +
 				"clases//InteraccionConArchivos//LectorDeArchivos//ciudadesSinTerminar.json");
 
@@ -51,25 +58,7 @@ public class App extends Application {
 				"//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//tesoros.json");
 
 
-		ObtenerDatosFachada obtenedorDeDatos = new ObtenerDatosFachada(lectorJsonCiudades, lectorJsonLadrones, lectorJsonObjetosRobados);
-
-		//...
-
-		return new AlgoThief(obtenedorDeDatos);
-
-
-		/*
-		LectorDeArchivosFachada lectorDeArchivos = new LectorDeArchivosFachada();
-		this.ciudades = lectorDeArchivos.obtenerCiudades(
-				"//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//ciudadesSinTerminar.json");
-		this.ladrones = lectorDeArchivos
-				.obtenerLadrones("//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//dossiers.json");
-		this.objetosRobados = lectorDeArchivos.obtenerObjetosRobados(
-				"//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//tesoros.json");
-
-		return new AlgoThief(this.ciudades, this.ladrones, this.objetosRobados, null);
-
-		 */
+		return new ObtenerDatosFachada(lectorJsonCiudades, lectorJsonLadrones, lectorJsonObjetosRobados);
 	}
 
 
