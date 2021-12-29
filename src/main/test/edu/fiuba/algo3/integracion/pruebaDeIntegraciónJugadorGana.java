@@ -214,7 +214,7 @@ public class pruebaDeIntegraciónJugadorGana {
 
 		/////////////////////////////////////////////////////////
 		FabricaObjetoRobado fabricaObjetoRobado = new FabricaObjetoComun();
-		ObjetoRobado objetoRobado = fabricaObjetoRobado.crearObjeto("Tablilla babilónica", "Baghdad");
+		ObjetoRobado objetoRobado = fabricaObjetoRobado.crearObjeto("La Navidad", "Baghdad");
 
 		ArrayList<ObjetoRobado> objetosRobados = new ArrayList<>();
 		objetosRobados.add(objetoRobado);
@@ -323,7 +323,7 @@ public class pruebaDeIntegraciónJugadorGana {
 
 		assertTrue(policia.arrestarA(ladron));
 		assertEquals(policia.cantidadArrestos(), 1);
-		assertTrue(policia.tiempoTranscurridoEnHoras() < 154);
+		assertTrue(policia.tiempoTranscurridoEnHoras() == 26);
 	}
 
 	private void cargarPistaLadron(LinkedList<Pista> pistasDevueltas, Computadora computadora) {
