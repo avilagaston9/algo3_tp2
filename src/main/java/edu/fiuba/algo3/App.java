@@ -17,21 +17,20 @@ import javafx.stage.Stage;
  */
 public class App extends Application {
 
-	private ArrayList<Ciudad> ciudades;
-	private ArrayList<Ladron> ladrones;
-	private ArrayList<ObjetoRobado> objetosRobados;
-
 	@Override
 	public void start(Stage stage) throws FileNotFoundException {
 
-		AlgoThief algothief = this.crearModelo();
+		//AlgoThief algothief = this.crearModelo();
+		//VistaPrincipal vistaPrincipal = new VistaPrincipal(stage, algothief, this.ciudades, this.ladrones);
+		VistaPrincipal vistaPrincipal = new VistaPrincipal(stage);
 
-		VistaPrincipal vistaPrincipal = new VistaPrincipal(stage, algothief, this.ciudades, this.ladrones);
 	}
 
 	public static void main(String[] args) {
 		launch();
 	}
+
+	/*
 
 	private AlgoThief crearModelo() {
 
@@ -45,4 +44,6 @@ public class App extends Application {
 
 		return new AlgoThief(this.ciudades, this.ladrones, this.objetosRobados, null);
 	}
+
+	 */
 }
