@@ -5,12 +5,12 @@ import java.util.ArrayList;
 
 import clases.AlgoThief;
 import clases.Ciudad;
-import clases.ObjetoRobado.ObjetoRobado;
 import clases.Observador;
 import clases.ladron.Ladron;
 import edu.fiuba.algo3.contenedores.*;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import clases.InteraccionConArchivos.LectorDeArchivos.ObtenerDatosFachada;
 
 public class VistaPrincipal implements Observador {
 
@@ -18,16 +18,14 @@ public class VistaPrincipal implements Observador {
 
 	private final Stage stage;
 	private final AlgoThief algothief;
-	private final ArrayList<Ciudad> ciudades;
-	private final ArrayList<Ladron> ladrones;
+	private final ObtenerDatosFachada ObtenerDatosFachada;
 
-	public VistaPrincipal(Stage stage, AlgoThief algothief, ArrayList<Ciudad> ciudades, ArrayList<Ladron> ladrones)
+	public VistaPrincipal(Stage stage, AlgoThief algothief, ObtenerDatosFachada obtejedorDeDatos)
 			throws FileNotFoundException {
 
 		this.stage = stage;
 		this.algothief = algothief;
-		this.ciudades = ciudades;
-		this.ladrones = ladrones;
+		this.ObtenerDatosFachada = obtejedorDeDatos;
 		algothief.setObservador(this);
 	}
 
