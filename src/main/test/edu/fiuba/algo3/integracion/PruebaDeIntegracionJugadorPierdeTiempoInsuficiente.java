@@ -30,7 +30,7 @@ public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {
         ArrayList<ObjetoRobado> objetos = lectorObjetos
                 .leer("//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//tesoros.json");
 
-        AlgoThief juego = new AlgoThief(ciudades, ladrones, objetos);
+        AlgoThief juego = new AlgoThief(ciudades, ladrones, objetos, "pedro");
 
         Ciudad ciudad1 = ciudades.get(5);
         Ciudad ciudad2 = ciudades.get(3);
