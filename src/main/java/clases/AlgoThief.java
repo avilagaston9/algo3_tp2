@@ -28,6 +28,8 @@ public class AlgoThief {
 	private Boolean juegoEnCurso;
 	private Boolean juegoGanado;
 	private int limiteTiempo;
+	private String nombrePolicia;
+	private boolean juegoIniciado;
 
 	public AlgoThief(ObtenerDatosFachada obtenedorDeDatos) {
 
@@ -44,6 +46,7 @@ public class AlgoThief {
 		this.jugadorCargado = false;
 		this.juegoGanado = false;
 		this.juegoEnCurso = false;
+		this.juegoIniciado = false;
 	}
 
 	//todo quizá convendría cambiar el nombre del método a setPolicia(String nombrePolicia)
@@ -51,7 +54,8 @@ public class AlgoThief {
 
 		//todo aca se debería crear la instancia de policia, ya sea del archivo o de 0 si no existe.
 		//todo y guardar en this.policia = nuevoPolicia;
-		this.policia.setNombre(nombrePolicia);
+		//this.policia.setNombre(nombrePolicia);
+		this.nombrePolicia = nombrePolicia; //este atributo debe desaparecer.
 		this.jugadorCargado = true;
 	}
 	//todo recordatorio para el builder de policia, hay que dejarlo sin ciudadInicial seteada, y setearlo con la cantidad de arrestos correspondiente.
@@ -61,6 +65,7 @@ public class AlgoThief {
 
 		this.juegoEnCurso = true;
 		this.juegoGanado = false;
+		this.juegoIniciado = true;
 		this.limiteTiempo = 154;
 
 		ArrayList<Ladron> ladrones = obtenedorDeDatos.obtenerLadrones();
@@ -68,7 +73,6 @@ public class AlgoThief {
 		ArrayList<ObjetoRobado> objetosRobados = obtenedorDeDatos.obtenerObjetosRobados();
 		Collections.shuffle(ciudades);
 		Collections.shuffle(objetosRobados);
-
 
 
 		Novato rango = new Novato(); //todo borrar cuando se implemente lo de policia.
@@ -82,7 +86,8 @@ public class AlgoThief {
 		policiaBuilder.setPrimerCiudad(rutaDeEscape.getRuta().get(0));
 		policiaBuilder.setRango(rango);
 
-		this.policia = policiaBuilder.getPolicia();
+		this.policia = policiaBuilder.getPolicia();//estos métodos desaparecen.
+		this.policia.setNombre(this.nombrePolicia);
 		//todo hay que resetear el tiempo del policía, hay que implementar el método.
 
 		Random random = new Random();
@@ -272,5 +277,10 @@ public class AlgoThief {
 	public boolean jugadorCargado() {
 
 		return this.jugadorCargado;
+	}
+
+	public boolean juegoIniciado() {
+
+		return this.juegoIniciado;
 	}
 }

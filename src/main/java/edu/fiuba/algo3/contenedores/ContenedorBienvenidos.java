@@ -16,35 +16,62 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class ContenedorBienvenidos extends VBox {
+	private final AlgoThief algoThief;
 	Stage stage;
 
-	public ContenedorBienvenidos(Stage stage, Scene proximaEscena, AlgoThief algothief) throws FileNotFoundException {
+	public ContenedorBienvenidos(Stage stage, AlgoThief algoThief){
 		super();
 
 		this.stage = stage;
+		this.algoThief = algoThief;
 		this.setAlignment(Pos.CENTER);
 		this.setSpacing(20);
 		this.setPadding(new Insets(25));
 		this.setAlignment(Pos.CENTER);
+
+		Scene escenaContenedorCargaDeNombre = this.setSceneContenedorCargaDeNombre();
+		this.setImagenBienvenida();
+		this.setBotonPlay(escenaContenedorCargaDeNombre);
+		this.setBotonExit();
+	}
+
+	private Scene setSceneContenedorCargaDeNombre() {
+
+		ContenedorCargaDeNombre contenedorCargaDeNombre = new ContenedorCargaDeNombre(this.stage, this.algoThief);
+		return new Scene(contenedorCargaDeNombre,640, 480);
+	}
+
+	private void setImagenBienvenida() {
+
 		Image imagen = new Image("file:src/imagenes/bienvenida.jpg");
 		BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
 				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 		this.setBackground(new Background(imagenDeFondo));
+	}
 
-		FileInputStream inputPlay = new FileInputStream("src/imagenes/play-button.png");
-		Image imagePlay = new Image(inputPlay);
-		ImageView imageViewPlay = new ImageView(imagePlay);
-		Button botonJugar = new Button("", imageViewPlay);
-		FileInputStream inputExit = new FileInputStream("src/imagenes/cancel.png");
-		Image imageExit = new Image(inputExit);
-		ImageView imageViewExit = new ImageView(imageExit);
-		Button botonSalir = new Button("", imageViewExit);
+	private void setBotonPlay(Scene escenaContenedorCargaDeNombre) {
 
-		BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(stage, proximaEscena, algothief);
-		botonJugar.setOnAction(botonEntrarHandler);
-		OpcionSalirEventHandler botonSalirHandler = new OpcionSalirEventHandler();
-		botonSalir.setOnAction(botonSalirHandler);
+		try{
+			FileInputStream inputPlay = new FileInputStream("src/imagenes/play-button.png");
+			Image imagePlay = new Image(inputPlay);
+			ImageView imageViewPlay = new ImageView(imagePlay);
+			Button botonJugar = new Button("", imageViewPlay);
+			BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(this.stage, escenaContenedorCargaDeNombre);
+			botonJugar.setOnAction(botonEntrarHandler);
+			this.getChildren().add(botonJugar);
+		}catch (FileNotFoundException e){System.out.println("No se encontro imagen play-button");}
+	}
 
-		this.getChildren().addAll(botonJugar, botonSalir);
+	private void setBotonExit(){
+
+		try{
+			FileInputStream inputExit = new FileInputStream("src/imagenes/cancel.png");
+			Image imageExit = new Image(inputExit);
+			ImageView imageViewExit = new ImageView(imageExit);
+			Button botonSalir = new Button("", imageViewExit);
+			OpcionSalirEventHandler botonSalirHandler = new OpcionSalirEventHandler();
+			botonSalir.setOnAction(botonSalirHandler);
+			this.getChildren().add(botonSalir);
+		}catch (FileNotFoundException e){System.out.println("No se encontro imagen cancel");}
 	}
 }

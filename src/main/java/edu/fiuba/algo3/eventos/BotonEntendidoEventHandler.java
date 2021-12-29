@@ -20,8 +20,5 @@ public class BotonEntendidoEventHandler implements EventHandler<ActionEvent> {
 	@Override
 	public void handle(ActionEvent actionEvent) {
 		stage.setScene(esceneActual);
-		stage.setFullScreen(true);
-		stage.show();
-
 	}
 }

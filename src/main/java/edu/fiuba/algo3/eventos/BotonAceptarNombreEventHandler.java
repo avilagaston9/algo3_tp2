@@ -11,14 +11,10 @@ import javafx.stage.Stage;
 public class BotonAceptarNombreEventHandler implements EventHandler<ActionEvent> {
 	private final AlgoThief algoThief;
 	TextField slot;
-	Stage stage;
-	Scene proximaEscena;
 
-	public BotonAceptarNombreEventHandler(AlgoThief algoThief, Scene proximaEscena, TextField slotParaIngresarNombre,
-			Stage stage) {
+	public BotonAceptarNombreEventHandler(AlgoThief algoThief, TextField slotParaIngresarNombre) {
+
 		this.slot = slotParaIngresarNombre;
-		this.proximaEscena = proximaEscena;
-		this.stage = stage;
 		this.algoThief = algoThief;
 	}
 
@@ -29,11 +25,7 @@ public class BotonAceptarNombreEventHandler implements EventHandler<ActionEvent>
 			this.slot.requestFocus();
 		} else {
 			this.algoThief.setNombrePolicia(nombre);
-			ContenedorInformacionInicial contenedorInfomacionInicial = new ContenedorInformacionInicial(this.stage,
-					this.algoThief, this.proximaEscena);
-			stage.setScene(new Scene(contenedorInfomacionInicial, 200, 200));
-			stage.setFullScreen(true);
-			stage.show();
+			this.algoThief.iniciarJuego();
 		}
 	}
 }

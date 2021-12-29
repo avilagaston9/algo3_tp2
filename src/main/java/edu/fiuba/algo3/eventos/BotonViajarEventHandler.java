@@ -20,12 +20,13 @@ public class BotonViajarEventHandler implements EventHandler<ActionEvent> {
 		this.stage = new Stage(StageStyle.UNDECORATED);
 		ContenedorCiudades contenedorCiudades = new ContenedorCiudades(stage, ciudades, algoThief);
 		this.muestraCiudades = new Scene(contenedorCiudades, 200, 500);
-		this.stage.initModality(Modality.APPLICATION_MODAL);
+		//this.stage.initModality(Modality.APPLICATION_MODAL);
 	}
 
 	@Override
 	public void handle(ActionEvent actionEvent) {
 		stage.setScene(muestraCiudades);
+		//stage.setFullScreen(true);
 		stage.setFullScreenExitHint("");
 		stage.show();
 

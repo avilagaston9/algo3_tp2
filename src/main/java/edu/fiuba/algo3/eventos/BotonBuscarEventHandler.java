@@ -15,17 +15,22 @@ public class BotonBuscarEventHandler implements EventHandler<ActionEvent> {
 	Stage stage;
 	Scene mostrarComputadora;
 
-	public BotonBuscarEventHandler(Stage stage, AlgoThief algoThief) throws FileNotFoundException {
+	public BotonBuscarEventHandler(Stage stage, AlgoThief algoThief) {
 		this.stage = new Stage(StageStyle.UNDECORATED);
-		ContenedorComputadora contenedorComputadora = new ContenedorComputadora(this.stage, algoThief);
-		this.mostrarComputadora = new Scene(contenedorComputadora, 1000, 760);
-		this.stage.initModality(Modality.APPLICATION_MODAL);
 
+		try{
+			ContenedorComputadora contenedorComputadora = new ContenedorComputadora(this.stage, algoThief);
+			this.mostrarComputadora = new Scene(contenedorComputadora, 1000, 760);
+		}catch (FileNotFoundException e){
+			System.out.println("Problema al iniciar botonera computadora");
+		}
+		//this.stage.initModality(Modality.APPLICATION_MODAL);
 	}
 
 	@Override
 	public void handle(ActionEvent actionEvent) {
 		stage.setScene(mostrarComputadora);
+		//stage.setFullScreen(true);
 		stage.setFullScreenExitHint("");
 		stage.show();
 	}

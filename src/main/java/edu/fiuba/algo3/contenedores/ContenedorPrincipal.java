@@ -6,10 +6,10 @@ import java.util.ArrayList;
 
 import clases.AlgoThief;
 import clases.Ciudad;
-import clases.ladron.Ladron;
-import edu.fiuba.algo3.botones.BotonViajar;
+import clases.InteraccionConArchivos.LectorDeArchivos.ObtenerDatosFachada;
 import edu.fiuba.algo3.eventos.BotonBuscarEventHandler;
 import edu.fiuba.algo3.eventos.BotonBuscarPistaEventHandler;
+import edu.fiuba.algo3.eventos.BotonViajarEventHandler;
 import edu.fiuba.algo3.menues.BarraDeMenu;
 import edu.fiuba.algo3.vistas.VistaCiudad;
 import edu.fiuba.algo3.vistas.VistaOrdenArresto;
@@ -26,10 +26,10 @@ public class ContenedorPrincipal extends BorderPane {
 
 	BarraDeMenu menuBar;
 
-	public ContenedorPrincipal(Stage stage, AlgoThief algothief, ArrayList<Ciudad> ciudades, ArrayList<Ladron> ladrones)
-			throws FileNotFoundException {
+	public ContenedorPrincipal(Stage stage, AlgoThief algothief, ObtenerDatosFachada obtenedorDeDatos){
+
 		this.setMenu(stage);
-		this.setBotonera(stage, algothief, ciudades);
+		this.setBotonera(stage, algothief, obtenedorDeDatos.obtenerCiudades());
 		this.setReloj(algothief);
 		this.setVistaCiudad(algothief);
 		this.setVistaOrdenDeArresto(algothief);
@@ -51,7 +51,7 @@ public class ContenedorPrincipal extends BorderPane {
 
 	private void setVistaCiudad(AlgoThief algoThief) {
 		Label cuadro = new Label();
-		cuadro.setFont(new Font("Verdana", 25));
+		cuadro.setFont(new Font("Verdana", 35));
 		VistaCiudad vistaCiudad = new VistaCiudad(algoThief, cuadro);
 
 		algoThief.setObservador(vistaCiudad);
@@ -67,34 +67,64 @@ public class ContenedorPrincipal extends BorderPane {
 		this.setBottom(ordenDeArresto);
 	}
 
-	private void setBotonera(Stage stage, AlgoThief algoThief, ArrayList<Ciudad> ciudades)
-			throws FileNotFoundException {
-		// Carga el icono del boton para buscar sospechosos
-		FileInputStream inputBuscar = new FileInputStream("src/imagenes/unknown.png");
-		Image imageBuscar = new Image(inputBuscar);
-		ImageView imageViewBuscar = new ImageView(imageBuscar);
-		// Carga el icono del boton para buscar pistas en los edificios
-		FileInputStream inputPista = new FileInputStream("src/imagenes/clue.png");
-		Image imagePista = new Image(inputPista);
-		ImageView imageViewPista = new ImageView(imagePista);
+	private void setBotonera(Stage stage, AlgoThief algoThief, ArrayList<Ciudad> ciudades) {
 
-		BotonViajar botonViajar = new BotonViajar(ciudades, algoThief);
-
-		Button botonBuscarSospechosos = new Button("", imageViewBuscar);
-		botonBuscarSospechosos.setMaxSize(150, 150);
-
-		BotonBuscarEventHandler buscarButtonHandler = new BotonBuscarEventHandler(stage, algoThief);
-		botonBuscarSospechosos.setOnAction(buscarButtonHandler);
-
-		Button buscarPista = new Button("", imageViewPista);
-		buscarPista.setMaxSize(150, 150);
-
-		BotonBuscarPistaEventHandler buscarPistaButtonHandler = new BotonBuscarPistaEventHandler(algoThief);
-		buscarPista.setOnAction(buscarPistaButtonHandler);
+		Button buscarPista = this.setBotonPista(algoThief);
+		Button botonBuscarSospechosos = this.setBotonBuscarSospechosos(stage, algoThief);
+		Button botonViajar = this.setBotonViajar(ciudades, algoThief);
 
 		TilePane botonera = new TilePane();
 		botonera.getChildren().addAll(botonViajar, botonBuscarSospechosos, buscarPista);
 		this.setLeft(botonera);
+	}
+
+	private Button setBotonViajar(ArrayList<Ciudad> ciudades, AlgoThief algoThief) {
+
+		try{
+			FileInputStream input = new FileInputStream("src/imagenes/planeIcon.png");
+			Image image = new Image(input);
+			ImageView imageView = new ImageView(image);
+			Button botonViajar = new Button("", imageView);
+			botonViajar.setMaxSize(150, 150);
+			BotonViajarEventHandler botonViajarHandler = new BotonViajarEventHandler(ciudades, algoThief);
+			botonViajar.setOnAction(botonViajarHandler);
+			return botonViajar;
+		}catch (FileNotFoundException e){
+			System.out.println("planeIcon.png no entontrado.");
+		}return null;
+	}
+
+	private Button setBotonPista(AlgoThief algoThief) {
+		try{
+			FileInputStream inputPista = new FileInputStream("src/imagenes/clue.png");
+			Image imagePista = new Image(inputPista);
+			ImageView imageViewPista = new ImageView(imagePista);
+			Button buscarPista = new Button("", imageViewPista);
+			buscarPista.setMaxSize(150, 150);
+			BotonBuscarPistaEventHandler buscarPistaButtonHandler = new BotonBuscarPistaEventHandler(algoThief);
+			buscarPista.setOnAction(buscarPistaButtonHandler);
+			return buscarPista;
+		}catch (FileNotFoundException e){
+			System.out.println("clue.png no entontrado.");
+		}return null;
+	}
+
+	private Button setBotonBuscarSospechosos(Stage stage, AlgoThief algoThief) {
+
+		try{
+			FileInputStream inputBuscar = new FileInputStream("src/imagenes/unknown.png");
+			Image imageBuscar = new Image(inputBuscar);
+			ImageView imageViewBuscar = new ImageView(imageBuscar);
+
+			Button botonBuscarSospechosos = new Button("", imageViewBuscar);
+			botonBuscarSospechosos.setMaxSize(150, 150);
+
+			BotonBuscarEventHandler buscarButtonHandler = new BotonBuscarEventHandler(stage, algoThief);
+			botonBuscarSospechosos.setOnAction(buscarButtonHandler);
+			return botonBuscarSospechosos;
+		}catch (FileNotFoundException e){
+			System.out.println("unknown.png no entontrado.");
+		}return null;
 	}
 
 	private void setMenu(Stage stage) {

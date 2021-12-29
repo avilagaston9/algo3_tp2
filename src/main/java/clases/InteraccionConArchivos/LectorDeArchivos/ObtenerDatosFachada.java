@@ -23,11 +23,11 @@ public class ObtenerDatosFachada {
     }
 
     public ArrayList<Ladron> obtenerLadrones(){
-        return (ArrayList<Ladron>) this.lectorCiudades.leer();
+        return (ArrayList<Ladron>) this.lectorLadrones.leer();
     }
 
     public ArrayList<ObjetoRobado> obtenerObjetosRobados(){
-        return (ArrayList<ObjetoRobado>) this.lectorCiudades.leer();
+        return (ArrayList<ObjetoRobado>) this.lectorObjetosRobados.leer();
     }
 
 }
