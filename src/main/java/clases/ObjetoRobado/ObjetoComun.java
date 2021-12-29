@@ -1,9 +1,5 @@
-package clases.valorObjetoRobado;
+package clases.ObjetoRobado;
 
-import java.util.List;
-
-import clases.Ciudad;
-import clases.RutaDeEscape;
 import clases.rangos.Detective;
 import clases.rangos.Investigador;
 import clases.rangos.Novato;
@@ -11,7 +7,8 @@ import clases.rangos.Sargento;
 
 public class ObjetoComun extends ObjetoRobado {
 
-	public ObjetoComun() {
+	public ObjetoComun(String nombre, String ciudad) {
+		super(nombre,ciudad);
 		this.largoRutaDeEscape = 4;
 	}
 
@@ -35,8 +32,4 @@ public class ObjetoComun extends ObjetoRobado {
 		return false;
 	}
 
-	@Override
-	public RutaDeEscape crearRutaDeEscape(List<Ciudad> ciudades) {
-		return new RutaDeEscape(ciudades, this.nombreCiudad, this.largoRutaDeEscape);
-	}
 }

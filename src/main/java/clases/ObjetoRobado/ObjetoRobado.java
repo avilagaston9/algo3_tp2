@@ -1,4 +1,4 @@
-package clases.valorObjetoRobado;
+package clases.ObjetoRobado;
 
 import java.util.List;
 
@@ -15,6 +15,11 @@ public abstract class ObjetoRobado {
 	protected int largoRutaDeEscape;
 	protected String nombre;
 
+	public ObjetoRobado(String nombre, String ciudad) {
+		this.nombre = nombre;
+		this.nombreCiudad = ciudad;
+	}
+
 	public abstract boolean esValidoPara(Novato rango);
 
 	public abstract boolean esValidoPara(Detective rango);
@@ -23,7 +28,9 @@ public abstract class ObjetoRobado {
 
 	public abstract boolean esValidoPara(Sargento rango);
 
-	public abstract RutaDeEscape crearRutaDeEscape(List<Ciudad> ciudades);
+	public RutaDeEscape crearRutaDeEscape(List<Ciudad> ciudades) {
+		return new RutaDeEscape(ciudades, this.nombreCiudad, this.largoRutaDeEscape);
+	}
 
 	public void setNombreCiudad(String nombreCiudad) {
 
