@@ -55,11 +55,7 @@ public class App extends Application {
 
 		//...
 
-		this.ciudades = obtenedorDeDatos.obtenerCiudades();
-		this.ladrones = obtenedorDeDatos.obtenerLadrones();
-		this.objetosRobados = obtenedorDeDatos.obtenerObjetosRobados();
-
-		return new AlgoThief(this.ciudades, this.ladrones, this.objetosRobados, null);
+		return new AlgoThief(obtenedorDeDatos);
 
 
 		/*

@@ -3,6 +3,7 @@ package clases;
 import java.util.*;
 
 import clases.Exceptions.ExcepcionSinOrdenDeArresto;
+import clases.InteraccionConArchivos.LectorDeArchivos.ObtenerDatosFachada;
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.edificios.Edificio;
@@ -13,27 +14,30 @@ import clases.ObjetoRobado.ObjetoRobado;
 
 public class AlgoThief {
 
+	private final ObtenerDatosFachada obtenedorDeDatos;
 	private ArrayList<Observador> observadores;
 	private Policia policia;
 	private Ladron ladron;
-	private List<Ciudad> ciudades;
-	private List<Ladron> ladrones;
-	private Computadora computadora;
+	//private List<Ciudad> ciudades;
+	//private List<Ladron> ladrones;
+	//private List<ObjetoRobado> objetosRobados;
 	private ObjetoRobado objetoRobado;
+	private Computadora computadora;
 
 	private boolean jugadorCargado;
 	private Boolean juegoEnCurso;
 	private Boolean juegoGanado;
 	private int limiteTiempo;
-	private List<ObjetoRobado> objetosRobados;
 
-	public AlgoThief(List<Ciudad> ciudades, List<Ladron> ladrones, List<ObjetoRobado> objetosRobados /*,listaPolicias*/) {
+	public AlgoThief(ObtenerDatosFachada obtenedorDeDatos) {
 
 
 		this.observadores = new ArrayList<Observador>();
-		this.ciudades = ciudades;
-		this.ladrones = ladrones;
-		this.objetosRobados = objetosRobados;
+		this.obtenedorDeDatos = obtenedorDeDatos;
+
+		//this.ciudades = obtenedorDeDatos.obtenerCiudades();
+		//this.ladrones = obtenedorDeDatos.obtenerLadrones();
+		//this.objetosRobados = obtenedorDeDatos.;
 		//this.listaPolicias = listaPolicias;        o quizás levantar de la fachada.
 
 
@@ -59,17 +63,19 @@ public class AlgoThief {
 		this.juegoGanado = false;
 		this.limiteTiempo = 154;
 
-
-		Collections.shuffle(this.ciudades);
+		ArrayList<Ladron> ladrones = obtenedorDeDatos.obtenerLadrones();
+		ArrayList<Ciudad> ciudades = obtenedorDeDatos.obtenerCiudades();
+		ArrayList<ObjetoRobado> objetosRobados = obtenedorDeDatos.obtenerObjetosRobados();
+		Collections.shuffle(ciudades);
 		Collections.shuffle(objetosRobados);
 
 
 
 		Novato rango = new Novato(); //todo borrar cuando se implemente lo de policia.
 
-		this.objetoRobado = rango.getObjetoRobado(this.objetosRobados);//todo esto sería this.policia.GetRango().getObjetoRonado();
+		this.objetoRobado = rango.getObjetoRobado(objetosRobados);//todo esto sería this.policia.GetRango().getObjetoRonado();
 
-		RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(this.ciudades);
+		RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(ciudades);
 
 
 		PoliciaBuilder policiaBuilder = new PoliciaBuilder();//todo aca simplemente sería this.policia.setCiudadInicial()
@@ -80,10 +86,10 @@ public class AlgoThief {
 		//todo hay que resetear el tiempo del policía, hay que implementar el método.
 
 		Random random = new Random();
-		this.ladron = ladrones.get(random.nextInt(this.ladrones.size()));
+		this.ladron = ladrones.get(random.nextInt(ladrones.size()));
 		this.ladron.setCiudad(rutaDeEscape.getRuta().get(rutaDeEscape.getRuta().size() - 1));
 
-		this.computadora = new Computadora((ArrayList<Ladron>) this.ladrones);
+		this.computadora = new Computadora((ArrayList<Ladron>) ladrones);
 
 		this.ladron.setRutaDeEscape(rutaDeEscape);
 		this.actualizarObservadores();
