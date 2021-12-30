@@ -3,6 +3,7 @@ package edu.fiuba.algo3.interfaz.contenedores;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import edu.fiuba.algo3.interfaz.Resources;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.Computadora;
 import edu.fiuba.algo3.eventos.BotonBuscarSospechososEventHandler;
@@ -64,7 +65,7 @@ public class ContenedorComputadora extends BorderPane {
 		buscarSospechosos.setOnAction(buscarSospechososButtonHandler);
 
 		Button emitirOrdenDeArresto = new Button("Emitir Orden De Arresto");
-		FileInputStream inputArresto = new FileInputStream("src/imagenes/orden-de-arresto.png");
+		FileInputStream inputArresto = new FileInputStream(Resources.IconoGenerarOrdenDeArrestoRuta());
 		Image imageArresto = new Image(inputArresto);
 		ImageView imageViewArresto = new ImageView(imageArresto);
 		emitirOrdenDeArresto.setGraphic(imageViewArresto);
@@ -72,7 +73,7 @@ public class ContenedorComputadora extends BorderPane {
 		emitirOrdenDeArresto.setOnAction(botonEmitirOrdenHandler);
 
 		BotonCerrar botonVolver = new BotonCerrar(stage, "Volver");
-		FileInputStream input = new FileInputStream("src/imagenes/log-out.png");
+		FileInputStream input = new FileInputStream(Resources.IconoSalirComputadoraRuta());
 		Image image = new Image(input);
 		ImageView imageView = new ImageView(image);
 		botonVolver.setGraphic(imageView);

@@ -1,5 +1,6 @@
 package edu.fiuba.algo3;
 
+import edu.fiuba.algo3.interfaz.Resources;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.interfaz.vistas.VistaPrincipal;
 import edu.fiuba.algo3.modelo.InteraccionConArchivos.*;
@@ -36,8 +37,7 @@ public class App extends Application {
 
 	private EscribirDatosFachada crearRegistadorDeDatos(){
 
-		EscritorArchivoPoliciasJson escritorPolicias = new EscritorArchivoPoliciasJson("//src//main//java//clases//" +
-				"InteraccionConArchivos//LectorDeArchivos//policias.json");
+		EscritorArchivoPoliciasJson escritorPolicias = new EscritorArchivoPoliciasJson(Resources.ArchivoPoliciasRuta());
 
 		EscribirDatosFachada escribirDatosFachada = new EscribirDatosFachada(escritorPolicias);
 
@@ -46,17 +46,13 @@ public class App extends Application {
 
 	private ObtenerDatosFachada crearObtenedorDeDatos() {
 
-		LectorArchivoCiudadesJson lectorJsonCiudades = new LectorArchivoCiudadesJson("//src//main//java//" +
-				"clases//InteraccionConArchivos//LectorDeArchivos//ciudadesSinTerminar.json");
+		LectorArchivoCiudadesJson lectorJsonCiudades = new LectorArchivoCiudadesJson(Resources.ArchivoCiudadesRuta());
 
-		LectorArchivoLadronesJson lectorJsonLadrones = new LectorArchivoLadronesJson("//src//main//java//" +
-				"clases//InteraccionConArchivos//LectorDeArchivos//dossiers.json");
+		LectorArchivoLadronesJson lectorJsonLadrones = new LectorArchivoLadronesJson(Resources.ArchivoLadronesRuta());
 
-		LectorArchivoObjetosRobadosJson lectorJsonObjetosRobados = new LectorArchivoObjetosRobadosJson("" +
-				"//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//tesoros.json");
+		LectorArchivoObjetosRobadosJson lectorJsonObjetosRobados = new LectorArchivoObjetosRobadosJson("" + Resources.ArchivoTesorosRuta());
 
-		LectorArchivoPoliciasJson lectorPolicias = new LectorArchivoPoliciasJson("//src//main//java//clases//" +
-				"InteraccionConArchivos//LectorDeArchivos//policias.json");
+		LectorArchivoPoliciasJson lectorPolicias = new LectorArchivoPoliciasJson(Resources.ArchivoPoliciasRuta());
 
 
 		return new ObtenerDatosFachada(lectorJsonCiudades, lectorJsonLadrones, lectorJsonObjetosRobados, lectorPolicias);

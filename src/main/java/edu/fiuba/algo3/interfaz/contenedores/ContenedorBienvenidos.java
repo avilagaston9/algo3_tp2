@@ -3,6 +3,7 @@ package edu.fiuba.algo3.interfaz.contenedores;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import edu.fiuba.algo3.interfaz.Resources;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.eventos.BotonEntrarEventHandler;
 import edu.fiuba.algo3.eventos.OpcionSalirEventHandler;
@@ -43,7 +44,7 @@ public class ContenedorBienvenidos extends VBox {
 
 	private void setImagenBienvenida() {
 
-		Image imagen = new Image("file:src/imagenes/bienvenida.jpg");
+		Image imagen = new Image(Resources.FondoPrincipalRuta());
 		BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
 				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 		this.setBackground(new Background(imagenDeFondo));
@@ -52,7 +53,7 @@ public class ContenedorBienvenidos extends VBox {
 	private void setBotonPlay(Scene escenaContenedorCargaDeNombre) {
 
 		try{
-			FileInputStream inputPlay = new FileInputStream("src/imagenes/play-button.png");
+			FileInputStream inputPlay = new FileInputStream(Resources.IconoJugarRuta());
 			Image imagePlay = new Image(inputPlay);
 			ImageView imageViewPlay = new ImageView(imagePlay);
 			Button botonJugar = new Button("", imageViewPlay);
@@ -65,7 +66,7 @@ public class ContenedorBienvenidos extends VBox {
 	private void setBotonExit(){
 
 		try{
-			FileInputStream inputExit = new FileInputStream("src/imagenes/cancel.png");
+			FileInputStream inputExit = new FileInputStream(Resources.IconoSalirRuta());
 			Image imageExit = new Image(inputExit);
 			ImageView imageViewExit = new ImageView(imageExit);
 			Button botonSalir = new Button("", imageViewExit);

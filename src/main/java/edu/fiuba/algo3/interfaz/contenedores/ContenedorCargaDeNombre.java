@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.interfaz.contenedores;
 
+import edu.fiuba.algo3.interfaz.Resources;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.eventos.BotonAceptarNombreEventHandler;
 import javafx.geometry.Insets;
@@ -34,7 +35,7 @@ public class ContenedorCargaDeNombre extends VBox {
 
 	private void setImagenFondo() {
 
-		Image imagen = new Image("file:src/imagenes/textura.png");
+		Image imagen = new Image(Resources.FondoJuegoRuta());
 		BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
 				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 		this.setBackground(new Background(imagenDeFondo));

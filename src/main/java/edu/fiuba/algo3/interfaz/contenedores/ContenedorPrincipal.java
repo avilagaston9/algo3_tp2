@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import edu.fiuba.algo3.interfaz.Resources;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.ciudades.Ciudad;
 import edu.fiuba.algo3.eventos.BotonBuscarEventHandler;
@@ -33,7 +34,7 @@ public class ContenedorPrincipal extends BorderPane {
 		this.setReloj(algothief);
 		this.setVistaCiudad(algothief);
 		this.setVistaOrdenDeArresto(algothief);
-        Image imagen = new Image("file:src/imagenes/textura.png");
+        Image imagen = new Image(Resources.FondoJuegoRuta());
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
                 BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
@@ -80,7 +81,7 @@ public class ContenedorPrincipal extends BorderPane {
 
 		Collections.shuffle(ciudades);
 		try{
-			FileInputStream input = new FileInputStream("src/imagenes/planeIcon.png");
+			FileInputStream input = new FileInputStream(Resources.IconoViajarACiudadRuta());
 			Image image = new Image(input);
 			ImageView imageView = new ImageView(image);
 			Button botonViajar = new Button("", imageView);
@@ -95,7 +96,7 @@ public class ContenedorPrincipal extends BorderPane {
 
 	private Button setBotonPista(AlgoThief algoThief) {
 		try{
-			FileInputStream inputPista = new FileInputStream("src/imagenes/clue.png");
+			FileInputStream inputPista = new FileInputStream(Resources.IconoVisitarEdificioRuta());
 			Image imagePista = new Image(inputPista);
 			ImageView imageViewPista = new ImageView(imagePista);
 			Button buscarPista = new Button("", imageViewPista);
@@ -111,7 +112,7 @@ public class ContenedorPrincipal extends BorderPane {
 	private Button setBotonBuscarSospechosos(Stage stage, AlgoThief algoThief) {
 
 		try{
-			FileInputStream inputBuscar = new FileInputStream("src/imagenes/unknown.png");
+			FileInputStream inputBuscar = new FileInputStream(Resources.IconoUsarComputadoraRuta());
 			Image imageBuscar = new Image(inputBuscar);
 			ImageView imageViewBuscar = new ImageView(imageBuscar);
 

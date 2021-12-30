@@ -3,6 +3,7 @@ package edu.fiuba.algo3.interfaz.contenedores;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import edu.fiuba.algo3.interfaz.Resources;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.interfaz.botones.BotonCerrar;
 import edu.fiuba.algo3.interfaz.botones.BotonVisitarEdificio;
@@ -35,18 +36,18 @@ public class ContenedorEdificios extends BorderPane {
 		BotonVisitarAeropuertoEventHandler AeropuertoEventHandler = new BotonVisitarAeropuertoEventHandler(this.stage,
 				this.algoThief);
 		BotonVisitarEdificio botonAeropuerto = new BotonVisitarEdificio(AeropuertoEventHandler,
-				"src/imagenes/airport.png");
+				Resources.IconoAeropuertoRuta());
 		// creo boton visitar biblioteca
 		BotonVisitarBibliotecaEventHandler BibliotecaEventHandler = new BotonVisitarBibliotecaEventHandler(this.stage,
 				this.algoThief);
 		BotonVisitarEdificio botonBiblioteca = new BotonVisitarEdificio(BibliotecaEventHandler,
-				"src/imagenes/library.png");
+				Resources.IconoBibliotecaRuta());
 		// creo boton visitar banco
 		BotonVisitarBancoEventHandler BancoEventHandler = new BotonVisitarBancoEventHandler(this.stage, this.algoThief);
-		BotonVisitarEdificio botonBanco = new BotonVisitarEdificio(BancoEventHandler, "src/imagenes/bank.png");
+		BotonVisitarEdificio botonBanco = new BotonVisitarEdificio(BancoEventHandler, Resources.IconoBancoRuta());
 
 		BotonCerrar botonVolver = new BotonCerrar(stage, "Volver");
-		FileInputStream input = new FileInputStream("src/imagenes/log-out.png");
+		FileInputStream input = new FileInputStream(Resources.IconoSalirComputadoraRuta());
 		Image image = new Image(input);
 		ImageView imageView = new ImageView(image);
 		botonVolver.setGraphic(imageView);
