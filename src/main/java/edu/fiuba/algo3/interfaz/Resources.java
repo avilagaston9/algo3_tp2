@@ -8,7 +8,7 @@ public class Resources {
     public static String IconoAppRuta() { return Ruta + Imagenes + IconoApp; }
 
     static public String FondoPrincipal = "background3.png";
-    static public String FondoJuego = "textura.png";
+    static public String FondoJuego = "areaJuego.png";
     static public String FondoInfo = "laptop.png";
     static public String IconoJugar = "play.png";
     static public String IconoSalir = "quit.png";
