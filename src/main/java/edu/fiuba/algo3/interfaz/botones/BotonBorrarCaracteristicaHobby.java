@@ -29,8 +29,8 @@ public class BotonBorrarCaracteristicaHobby extends MenuButton {
 		musica.setOnAction(musicaHandler);
 		alpinismo.setOnAction(alpinismoHandler);
 		paracaidismo.setOnAction(paracaidismoHandler);
-		natacion.setOnAction(paracaidismoHandler);
-		croquet.setOnAction(paracaidismoHandler);
+		natacion.setOnAction(natacionHandler);
+		croquet.setOnAction(croquetHandler);
 
 		this.getItems().addAll(tenis, musica, alpinismo, paracaidismo, natacion, croquet);
 
