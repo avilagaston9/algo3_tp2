@@ -167,7 +167,7 @@ public class Policia {
 	}
 
 	//!!!
-	public void resetearTiempo(){
+	private void resetearTiempo(){
 		this.tiempoTranscurrido = new Tiempo();
 	}
 
@@ -177,5 +177,16 @@ public class Policia {
 
 	public String getNombreRango(){
 		return this.rango.getNombre();
+	}
+
+	public void resetear() {
+
+		this.resetearTiempo();
+		this.resetearOrdenDeArresto();
+	}
+
+	private void resetearOrdenDeArresto() {
+
+		this.ordenDeArresto = new SinOrdenDeArresto();
 	}
 }
