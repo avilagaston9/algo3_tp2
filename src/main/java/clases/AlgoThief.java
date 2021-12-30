@@ -51,7 +51,7 @@ public class AlgoThief {
 	private Policia obtenerPolicia(ArrayList<Policia> listaPolicias, String nombrePolicia) {
 
 		for(Policia p : listaPolicias){
-			if (p.seHaceLlamar(nombrePolicia)){
+			if (p.seLlama(nombrePolicia)){
 				return (p);
 			}
 		}
@@ -83,9 +83,8 @@ public class AlgoThief {
 		Collections.shuffle(this.ciudades);
 		Collections.shuffle(objetosRobados);
 
-		this.objetoRobado = this.policia.getRango().getObjetoRobado(objetosRobados);
+		this.objetoRobado = this.policia.getObjetoRobado(objetosRobados);
 		RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(this.ciudades);
-
 
 		this.policia.setCiudadActual(rutaDeEscape.getRuta().get(0));
 		this.policia.resetearTiempo();

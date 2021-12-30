@@ -1,6 +1,7 @@
 package clases;
 
 import clases.Exceptions.ExcepcionSinOrdenDeArresto;
+import clases.ObjetoRobado.ObjetoRobado;
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.OrdenDeArresto.SinOrdenDeArresto;
 import clases.armas.Arma;
@@ -10,6 +11,7 @@ import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.rangos.Rango;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Policia {
@@ -155,7 +157,7 @@ public class Policia {
 	}
 
 	//!!!
-	public Boolean seHaceLlamar(String unNombre){
+	public Boolean seLlama(String unNombre){
 		return (this.nombre.equals(unNombre));
 	}
 
@@ -167,5 +169,9 @@ public class Policia {
 	//!!!
 	public void resetearTiempo(){
 		this.tiempoTranscurrido = new Tiempo();
+	}
+
+	public ObjetoRobado getObjetoRobado(ArrayList<ObjetoRobado> objetosRobados) {
+		return this.rango.getObjetoRobado(objetosRobados);
 	}
 }

@@ -7,6 +7,7 @@ import clases.FabricaEdificios.FabricaBiblioteca;
 import clases.ObjetoRobado.FabricaObjetoComun;
 import clases.ObjetoRobado.FabricaObjetoRobado;
 import clases.caracteristicasLadron.CaracteristicaLadron;
+import clases.ciudades.Ciudad;
 import clases.edificios.Aeropuerto;
 import clases.edificios.Banco;
 import clases.edificios.Biblioteca;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {/*
+public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {
 
     @Test
     public void jugadorPierdePorTiempoInsuficiente(){
@@ -183,7 +184,7 @@ public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {/*
 
         Biblioteca bibliotecaBangkok = (Biblioteca) fabricaBiblioteca.crearEdificio(pistaFacilBiblioteca, pistaMediaBiblioteca, pistaDificilBiblioteca);
 
-        AlgoThief juego = new AlgoThief(ciudades, ladrones, objetos, "pedro");
+//        AlgoThief juego = new AlgoThief(ciudades, ladrones, objetos, "pedro");
         //Aeropuerto
         pistaFacilAeropuerto = new PistaFacil("Rojo, Blanco, Azul");
         pistaMediaAeropuerto = new PistaMedia("Tailandes");
@@ -230,8 +231,8 @@ public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {/*
         //Policia
         PoliciaBuilder policiaBuilder = new PoliciaBuilder();
         policiaBuilder.setRango(rango);
-        policiaBuilder.setPrimerCiudad(atenas);
         Policia policia = policiaBuilder.getPolicia();
+        policia.setCiudadActual(atenas);
 
         //Ladron
         LadronBuilder ladronBuilder = new LadronBuilder();
@@ -250,18 +251,20 @@ public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {/*
         ArrayList<Ladron> ladrones = new ArrayList<>();
         ladrones.add(ladron);
 
-        AlgoThief juego = new AlgoThief(ciudades, ladrones, objetosRobados);
+
+
+//        AlgoThief juego = new AlgoThief(ciudades, ladrones, objetosRobados);
 
         // FIN SETUP //
 
-        while (!juego.tiempoInsuficiente()){
-            juego.viajarA(bangkok);
-            juego.viajarA(atenas);
-        }
-
-        assertEquals(false, juego.juegoGanado());
-        assertEquals(false, juego.juegoEnCurso());
+//        while (!juego.tiempoInsuficiente()){
+//            juego.viajarA(bangkok);
+//            juego.viajarA(atenas);
+//        }
+//
+//        assertEquals(false, juego.juegoGanado());
+//        assertEquals(false, juego.juegoEnCurso());
 
     }
-    */
+
 }
