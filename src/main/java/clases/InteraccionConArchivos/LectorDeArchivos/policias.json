@@ -1,1 +1,9 @@
-{"policias":[{"nombre":"Theo","arrestos":10},{"nombre":"Nicolas","arrestos":20},{"nombre":"Gaston","arrestos":5}]}
+{
+  "policias":
+  [
+    {"nombre":"Theo","arrestos":10},
+    {"nombre":"Nicolas","arrestos":20},
+    {"nombre":"Gaston","arrestos":5},
+    {"nombre":"Cachorro","arrestos":20}
+  ]
+}

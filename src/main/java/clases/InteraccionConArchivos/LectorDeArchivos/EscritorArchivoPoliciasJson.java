@@ -19,6 +19,7 @@ public class EscritorArchivoPoliciasJson implements Escritor{
         this.filePath = filePath;
     }
 
+
     @Override
     public void escribir(Policia unPolicia) {
 
@@ -55,12 +56,23 @@ public class EscritorArchivoPoliciasJson implements Escritor{
         JSONObject empJsonObject = (JSONObject) obj;
         JSONArray arrayJson = (JSONArray) empJsonObject.get("policias");
 
-        for(int i = 0; i < arrayJson.size(); i++){
+        boolean estaRegistrado = false;
+
+        for(int i = 0; i < arrayJson.size(); i++) {
             JSONObject actual = (JSONObject) arrayJson.get(i);
             if(actual.get("nombre").equals(identificador)){
                 actual.put("arrestos", arrestos);
+                estaRegistrado = true;
             }
         }
+
+        if(!estaRegistrado){//caso que no este registrado...
+            JSONObject nuevoPoliciaJson = new JSONObject();
+            nuevoPoliciaJson.put("nombre", identificador);
+            nuevoPoliciaJson.put("arrestos", arrestos);
+            arrayJson.add(nuevoPoliciaJson);
+        }
+
 
         try(FileWriter file = new FileWriter(this.filePath)){
             file.write(String.valueOf(empJsonObject));
