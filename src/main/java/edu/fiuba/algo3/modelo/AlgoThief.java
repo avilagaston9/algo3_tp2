@@ -48,7 +48,7 @@ public class AlgoThief {
 	private Policia obtenerPolicia(ArrayList<Policia> listaPolicias, String nombrePolicia) {
 
 		for(Policia p : listaPolicias){
-			if (p.seHaceLlamar(nombrePolicia)){
+			if (p.seLlama(nombrePolicia)){
 				return (p);
 			}
 		}
@@ -80,9 +80,8 @@ public class AlgoThief {
 		Collections.shuffle(this.ciudades);
 		Collections.shuffle(objetosRobados);
 
-		this.objetoRobado = this.policia.getRango().getObjetoRobado(objetosRobados);
+		this.objetoRobado = this.policia.getObjetoRobado(objetosRobados);
 		RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(this.ciudades);
-
 
 		this.policia.setCiudadActual(rutaDeEscape.getRuta().get(0));
 		this.policia.resetear();
@@ -90,7 +89,8 @@ public class AlgoThief {
 
 		Random random = new Random();
 		this.ladron = ladrones.get(random.nextInt(ladrones.size()));
-		this.ladron.setCiudad(rutaDeEscape.getRuta().get(rutaDeEscape.getRuta().size() - 1));
+//		this.ladron.setCiudad(rutaDeEscape.getRuta().get(rutaDeEscape.getRuta().size() - 1));
+		rutaDeEscape.asignarCiudad(ladron);
 
 		this.computadora = new Computadora(ladrones);
 

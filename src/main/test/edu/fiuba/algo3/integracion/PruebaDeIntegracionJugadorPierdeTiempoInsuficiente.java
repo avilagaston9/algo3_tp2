@@ -1,11 +1,14 @@
 package edu.fiuba.algo3.integracion;
 
+import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaAeropuerto;
 import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBancos;
 import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBiblioteca;
+import edu.fiuba.algo3.modelo.InteraccionConArchivos.*;
 import edu.fiuba.algo3.modelo.ObjetoRobado.FabricaObjetoComun;
 import edu.fiuba.algo3.modelo.ObjetoRobado.FabricaObjetoRobado;
 import edu.fiuba.algo3.modelo.caracteristicasLadron.CaracteristicaLadron;
+import edu.fiuba.algo3.modelo.ciudades.Ciudad;
 import edu.fiuba.algo3.modelo.edificios.Aeropuerto;
 import edu.fiuba.algo3.modelo.edificios.Banco;
 import edu.fiuba.algo3.modelo.edificios.Biblioteca;
@@ -16,10 +19,13 @@ import edu.fiuba.algo3.modelo.pistas.PistaDificil;
 import edu.fiuba.algo3.modelo.pistas.PistaFacil;
 import edu.fiuba.algo3.modelo.pistas.PistaMedia;
 import edu.fiuba.algo3.modelo.rangos.Novato;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {/*
+public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {
 
     @Test
     public void jugadorPierdePorTiempoInsuficiente(){
@@ -179,7 +185,7 @@ public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {/*
 
         Biblioteca bibliotecaBangkok = (Biblioteca) fabricaBiblioteca.crearEdificio(pistaFacilBiblioteca, pistaMediaBiblioteca, pistaDificilBiblioteca);
 
-        AlgoThief juego = new AlgoThief(ciudades, ladrones, objetos, "pedro");
+//        AlgoThief juego = new AlgoThief(ciudades, ladrones, objetos, "pedro");
         //Aeropuerto
         pistaFacilAeropuerto = new PistaFacil("Rojo, Blanco, Azul");
         pistaMediaAeropuerto = new PistaMedia("Tailandes");
@@ -226,8 +232,12 @@ public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {/*
         //Policia
         PoliciaBuilder policiaBuilder = new PoliciaBuilder();
         policiaBuilder.setRango(rango);
-        policiaBuilder.setPrimerCiudad(atenas);
+        policiaBuilder.setNombre("Theo");
         Policia policia = policiaBuilder.getPolicia();
+
+//        policia.setCiudadActual(atenas);
+        ArrayList<Policia> policias = new ArrayList<>();
+        policias.add(policia);
 
         //Ladron
         LadronBuilder ladronBuilder = new LadronBuilder();
@@ -246,11 +256,25 @@ public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {/*
         ArrayList<Ladron> ladrones = new ArrayList<>();
         ladrones.add(ladron);
 
-        AlgoThief juego = new AlgoThief(ciudades, ladrones, objetosRobados);
+        Lector lectorCiudades = new LectorCiudadesParaTest(ciudades);
+        Lector lectorLadrones = new LectorLadronesParaTest(ladrones);
+        Lector lectorPolicias = new LectorPoliciasParaTest(policias);
+        Lector lectorObjetos = new LectorObjetosParaTest(objetosRobados);
+
+        ObtenerDatosFachada fachadaLeer = new ObtenerDatosFachada(lectorCiudades, lectorLadrones,lectorObjetos, lectorPolicias);
+
+        Escritor escritorVacio = new EscritorParaTest();
+
+        EscribirDatosFachada fachadaEscribir = new EscribirDatosFachada(escritorVacio);
+
+        AlgoThief juego = new AlgoThief(fachadaLeer, fachadaEscribir);
+        juego.setNombrePolicia("Theo");
+        juego.iniciarJuego();
 
         // FIN SETUP //
 
         while (!juego.tiempoInsuficiente()){
+            System.out.println(juego.tiempoTranscurridoEnHoras());
             juego.viajarA(bangkok);
             juego.viajarA(atenas);
         }
@@ -259,5 +283,5 @@ public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {/*
         assertEquals(false, juego.juegoEnCurso());
 
     }
-    */
+
 }

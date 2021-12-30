@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.Exceptions.ExcepcionSinOrdenDeArresto;
+import edu.fiuba.algo3.modelo.ObjetoRobado.ObjetoRobado;
 import edu.fiuba.algo3.modelo.OrdenDeArresto.OrdenArresto;
 import edu.fiuba.algo3.modelo.OrdenDeArresto.SinOrdenDeArresto;
 import edu.fiuba.algo3.modelo.armas.Arma;
@@ -10,6 +11,7 @@ import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.rangos.Rango;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Policia {
@@ -155,7 +157,7 @@ public class Policia {
 	}
 
 	//!!!
-	public Boolean seHaceLlamar(String unNombre){
+	public Boolean seLlama(String unNombre){
 		return (this.nombre.equals(unNombre));
 	}
 
@@ -169,7 +171,11 @@ public class Policia {
 		this.tiempoTranscurrido = new Tiempo();
 	}
 
-	public String getNombreRango() {
+	public ObjetoRobado getObjetoRobado(ArrayList<ObjetoRobado> objetosRobados) {
+		return this.rango.getObjetoRobado(objetosRobados);
+	}
+
+	public String getNombreRango(){
 		return this.rango.getNombre();
 	}
 
