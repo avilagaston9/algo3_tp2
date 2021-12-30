@@ -85,7 +85,8 @@ public class AlgoThief {
 
 
 		this.policia.setCiudadActual(rutaDeEscape.getRuta().get(0));
-		this.policia.resetearTiempo();
+		this.policia.resetear();
+
 
 		Random random = new Random();
 		this.ladron = ladrones.get(random.nextInt(ladrones.size()));
