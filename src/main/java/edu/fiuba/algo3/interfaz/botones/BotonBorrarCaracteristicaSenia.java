@@ -13,10 +13,10 @@ public class BotonBorrarCaracteristicaSenia extends MenuButton {
 		MenuItem cicatriz = new MenuItem("Cicatriz");
 		MenuItem joyas = new MenuItem("Joyas");
 
-		BorrarCaracteristicaEventHandler anilloHandler = new BorrarCaracteristicaEventHandler("Seña particular del sospechos@: Tenis", algothief);
-		BorrarCaracteristicaEventHandler tatuajeHandler = new BorrarCaracteristicaEventHandler("Seña particular del sospechos@: Musica", algothief);
-		BorrarCaracteristicaEventHandler cicatrizHandler = new BorrarCaracteristicaEventHandler("Seña particular del sospechos@: Alpinismo", algothief);
-		BorrarCaracteristicaEventHandler joyasHandler = new BorrarCaracteristicaEventHandler("Seña particular del sospechos@: Paracaidismo", algothief);
+		BorrarCaracteristicaEventHandler anilloHandler = new BorrarCaracteristicaEventHandler("Seña particular del sospechos@: Anillo", algothief);
+		BorrarCaracteristicaEventHandler tatuajeHandler = new BorrarCaracteristicaEventHandler("Seña particular del sospechos@: Tatuaje", algothief);
+		BorrarCaracteristicaEventHandler cicatrizHandler = new BorrarCaracteristicaEventHandler("Seña particular del sospechos@: Cicatriz", algothief);
+		BorrarCaracteristicaEventHandler joyasHandler = new BorrarCaracteristicaEventHandler("Seña particular del sospechos@: Joyas", algothief);
 
 		anillo.setOnAction(anilloHandler);
 		tatuaje.setOnAction(tatuajeHandler);
