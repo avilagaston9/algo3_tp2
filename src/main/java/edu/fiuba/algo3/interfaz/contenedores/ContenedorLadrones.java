@@ -19,7 +19,7 @@ public class ContenedorLadrones extends VBox {
 			Button botonLadron = new Button(listaSospechosos.get(i).getNombre());
 			botonLadron.setMaxSize(200, 50);
 			BotonLadronEventHandler botonLadronHandler = new BotonLadronEventHandler(stage, algoThief,
-					listaSospechosos.get(0));
+					listaSospechosos.get(i));
 			botonLadron.setOnAction(botonLadronHandler);
 			this.getChildren().add(botonLadron);
 		}
