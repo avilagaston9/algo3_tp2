@@ -1,16 +1,21 @@
 package clases;
 
-import java.util.*;
-
 import clases.Exceptions.ExcepcionSinOrdenDeArresto;
+import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoPoliciasJson;
 import clases.InteraccionConArchivos.LectorDeArchivos.ObtenerDatosFachada;
+import clases.InteraccionConArchivos.LectorDeArchivos.ObtenerDatosPoliciasFachada;
+import clases.ObjetoRobado.ObjetoRobado;
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
 import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.rangos.Novato;
-import clases.ObjetoRobado.ObjetoRobado;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Random;
 
 public class AlgoThief {
 
@@ -42,11 +47,26 @@ public class AlgoThief {
 		//this.objetosRobados = obtenedorDeDatos.;
 		//this.listaPolicias = listaPolicias;        o quizás levantar de la fachada.
 
-
 		this.jugadorCargado = false;
 		this.juegoGanado = false;
 		this.juegoEnCurso = false;
 		this.juegoIniciado = false;
+	}
+
+
+
+	private Policia obtenerPolicia(ArrayList<Policia> listaPolicias, String nombrePolicia) {
+
+		for(int i = 0; i < listaPolicias.size(); i++){
+			if (listaPolicias.get(i).seHaceLlamar(nombrePolicia)){
+				return (listaPolicias.get(i));
+			}
+		}
+		PoliciaBuilder policiaBuilder = new PoliciaBuilder();
+		policiaBuilder.setNombre(nombrePolicia);
+		policiaBuilder.setRango(new Novato());
+
+		return (policiaBuilder.getPolicia());
 	}
 
 	//todo quizá convendría cambiar el nombre del método a setPolicia(String nombrePolicia)
@@ -55,7 +75,17 @@ public class AlgoThief {
 		//todo aca se debería crear la instancia de policia, ya sea del archivo o de 0 si no existe.
 		//todo y guardar en this.policia = nuevoPolicia;
 		//this.policia.setNombre(nombrePolicia);
-		this.nombrePolicia = nombrePolicia; //este atributo debe desaparecer.
+
+
+		LectorArchivoPoliciasJson lectorPolicias = new LectorArchivoPoliciasJson("C:\\Users\\nicov\\Desktop\\fiuba\\OOP\\tps\\TP2\\algo3_tp2\\src\\main\\java\\clases\\InteraccionConArchivos\\LectorDeArchivos\\policias.json");
+		ObtenerDatosPoliciasFachada facadePolicias = new ObtenerDatosPoliciasFachada(lectorPolicias);
+
+		ArrayList<Policia> policias = facadePolicias.obtenerPolicias();
+
+		Policia policiaCreado = this.obtenerPolicia(policias, nombrePolicia);
+
+		this.policia = policiaCreado;
+		//this.nombrePolicia = nombrePolicia; //este atributo debe desaparecer.
 		this.jugadorCargado = true;
 	}
 	//todo recordatorio para el builder de policia, hay que dejarlo sin ciudadInicial seteada, y setearlo con la cantidad de arrestos correspondiente.
@@ -74,20 +104,24 @@ public class AlgoThief {
 		Collections.shuffle(ciudades);
 		Collections.shuffle(objetosRobados);
 
+		//Novato rango = new Novato(); //todo borrar cuando se implemente lo de policia.
+		//Rango rango = this.policia.getRango();
+		//this.objetoRobado = rango.getObjetoRobado(objetosRobados);//todo esto sería this.policia.GetRango().getObjetoRonado();
 
-		Novato rango = new Novato(); //todo borrar cuando se implemente lo de policia.
-
-		this.objetoRobado = rango.getObjetoRobado(objetosRobados);//todo esto sería this.policia.GetRango().getObjetoRonado();
-
+		this.objetoRobado = this.policia.getRango().getObjetoRobado(objetosRobados);
 		RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(ciudades);
 
-
+		/*
 		PoliciaBuilder policiaBuilder = new PoliciaBuilder();//todo aca simplemente sería this.policia.setCiudadInicial()
 		policiaBuilder.setPrimerCiudad(rutaDeEscape.getRuta().get(0));
 		policiaBuilder.setRango(rango);
+		 */
 
-		this.policia = policiaBuilder.getPolicia();//estos métodos desaparecen.
-		this.policia.setNombre(this.nombrePolicia);
+		this.policia.setCiudadActual(rutaDeEscape.getRuta().get(0));
+		this.policia.resetearTiempo();
+
+		//this.policia = policiaBuilder.getPolicia();//estos métodos desaparecen.
+		//this.policia.setNombre(this.nombrePolicia);
 		//todo hay que resetear el tiempo del policía, hay que implementar el método.
 
 		Random random = new Random();
@@ -99,7 +133,6 @@ public class AlgoThief {
 		this.ladron.setRutaDeEscape(rutaDeEscape);
 		this.actualizarObservadores();
 	}
-
 
 
 

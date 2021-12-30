@@ -18,4 +18,13 @@ public class ObtenerDatosPoliciasFachada {
 
     }
 
+    /*
+
+
+    metodo para escribir el archivo de policias
+
+
+
+     */
+
 }

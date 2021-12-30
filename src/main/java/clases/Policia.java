@@ -1,7 +1,5 @@
 package clases;
 
-import java.util.LinkedList;
-
 import clases.Exceptions.ExcepcionSinOrdenDeArresto;
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.OrdenDeArresto.SinOrdenDeArresto;
@@ -10,6 +8,8 @@ import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
 import clases.rangos.Rango;
+
+import java.util.LinkedList;
 
 public class Policia {
 	private Ciudad ciudadActual;
@@ -149,5 +149,20 @@ public class Policia {
 
 	public String nombreLadronEnOrdenDeArresto() {
 		return this.ordenDeArresto.nombreLadronEnLaOrden();
+	}
+
+	//!!!
+	public Boolean seHaceLlamar(String unNombre){
+		return (this.nombre.equals(unNombre));
+	}
+
+	//!!!
+	public Rango getRango(){
+		return (this.rango);
+	}
+
+	//!!!
+	public void resetearTiempo(){
+		this.tiempoTranscurrido = new Tiempo();
 	}
 }
