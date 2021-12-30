@@ -18,15 +18,15 @@ public class ContenedorPistas extends VBox {
 
 	public ContenedorPistas(Stage stagePistas, LinkedList<Pista> pistas) {
 
-		Label pista;
-		int i = 1;
+		Label pistaLabel = new Label();
+		String pista = "Encargado: ";
 		for (Pista p : pistas) {
 
-			pista = new Label("Pista " + i + ": " + p.revelar());
-			pista.setFont(new Font("Verdana", 16));
-			this.getChildren().add(pista);
-			i++;
+			pista = (pista + p.revelar() + "\n");
 		}
+		pistaLabel.setText(pista);
+		pistaLabel.setFont(new Font("Verdana", 16));
+		this.getChildren().add(pistaLabel);
 
 		this.setAlignment(Pos.CENTER);
 		this.setSpacing(20);
