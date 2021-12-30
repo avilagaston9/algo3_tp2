@@ -22,10 +22,11 @@ public class ContenedorPistas extends VBox {
 		String pista = "Encargado: ";
 		for (Pista p : pistas) {
 
-			pista = (pista + p.revelar() + "\n");
+			pista = (pista + "'");
+			pista = (pista + p.revelar() + "'.\n");
 		}
 		pistaLabel.setText(pista);
-		pistaLabel.setFont(new Font("Verdana", 16));
+		pistaLabel.setFont(new Font("Verdana", 12));
 		this.getChildren().add(pistaLabel);
 
 		this.setAlignment(Pos.CENTER);
