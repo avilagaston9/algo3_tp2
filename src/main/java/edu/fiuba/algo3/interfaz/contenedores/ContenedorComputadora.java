@@ -3,11 +3,10 @@ package edu.fiuba.algo3.interfaz.contenedores;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import edu.fiuba.algo3.eventos.*;
 import edu.fiuba.algo3.interfaz.Resources;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.Computadora;
-import edu.fiuba.algo3.eventos.BotonBuscarSospechososEventHandler;
-import edu.fiuba.algo3.eventos.BotonEmitirOrdenEventHandler;
 import edu.fiuba.algo3.interfaz.botones.*;
 import edu.fiuba.algo3.interfaz.menues.BarraDeMenu;
 import edu.fiuba.algo3.interfaz.vistas.VistaCaracteristicas;
@@ -17,25 +16,28 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 public class ContenedorComputadora extends BorderPane {
 	BarraDeMenu menuBar;
 	Computadora computadora;
 
-	public ContenedorComputadora(Stage stage, AlgoThief algoThief) throws FileNotFoundException {
+	public ContenedorComputadora(Stage stage, AlgoThief algoThief)  {
 		this.computadora = algoThief.getComputadora();
 		this.setMenu(stage);
 		this.setBotonera(algoThief, stage);
-		// FileInputStream input = new
-		// FileInputStream("src/imagenes/compuCargaDatos.png");
-		// Image image = new Image(input,800,1000,true,true);
-		// ImageView imageView = new ImageView(image);
-		// this.setRight(imageView);
+		this.setFondo();
 		this.setVistaCaracteristicas(algoThief);
 		this.setVistaSospechosos(algoThief);
+	}
+
+	private void setFondo() {
+
+		Image imagen = new Image(Resources.FondoJuegoRuta());
+		BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
+				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+		this.setBackground(new Background(imagenDeFondo));
 	}
 
 	private void setVistaSospechosos(AlgoThief algoThief) {
@@ -52,31 +54,22 @@ public class ContenedorComputadora extends BorderPane {
 		this.setCenter(label);
 	}
 
-	private void setBotonera(AlgoThief algothief, Stage stage) throws FileNotFoundException {
-		BotonSexo sexo = new BotonSexo(algothief);
-		BotonHobby hobby = new BotonHobby(algothief);
-		BotonCabello cabello = new BotonCabello(algothief);
-		BotonSenia senia = new BotonSenia(algothief);
-		BotonVehiculo vehiculo = new BotonVehiculo(algothief);
+	private void setBotonera(AlgoThief algothief, Stage stage) {
+
+		BotonIcono sexo = new BotonIcono(Resources.IconoCaracteristicaSexoRuta(), new BotonSexoEventHandler(algothief));
+		BotonIcono hobby = new BotonIcono(Resources.IconoCaracteristicaHobbyRuta(), new BotonHobbyEventHandler(algothief));
+		BotonIcono cabello = new BotonIcono(Resources.IconoCaracteristicaCabelloRuta(), new BotonCabelloEventHandler(algothief));
+		BotonIcono senia = new BotonIcono(Resources.IconoCaracteristicaSeniaRuta(),new BotonSeniaEventHandler(algothief));
+		BotonIcono vehiculo = new BotonIcono(Resources.IconoCaracteristicaVehiculoRuta(), new BotonVehiculoEventHandler(algothief));
 
 		Button buscarSospechosos = new Button("Buscar sospechosos");
 		BotonBuscarSospechososEventHandler buscarSospechososButtonHandler = new BotonBuscarSospechososEventHandler(
 				algothief, stage);
 		buscarSospechosos.setOnAction(buscarSospechososButtonHandler);
 
-		Button emitirOrdenDeArresto = new Button("Emitir Orden De Arresto");
-		FileInputStream inputArresto = new FileInputStream(Resources.IconoGenerarOrdenDeArrestoRuta());
-		Image imageArresto = new Image(inputArresto);
-		ImageView imageViewArresto = new ImageView(imageArresto);
-		emitirOrdenDeArresto.setGraphic(imageViewArresto);
-		BotonEmitirOrdenEventHandler botonEmitirOrdenHandler = new BotonEmitirOrdenEventHandler(algothief);
-		emitirOrdenDeArresto.setOnAction(botonEmitirOrdenHandler);
+		BotonIcono emitirOrdenDeArresto = new BotonIcono(Resources.IconoGenerarOrdenDeArrestoRuta(), new BotonEmitirOrdenEventHandler(algothief));
 
-		BotonCerrar botonVolver = new BotonCerrar(stage, "Volver");
-		FileInputStream input = new FileInputStream(Resources.IconoVolver());
-		Image image = new Image(input);
-		ImageView imageView = new ImageView(image);
-		botonVolver.setGraphic(imageView);
+		BotonIcono botonVolver = new BotonIcono(Resources.IconoVolver(), new BotonVolverEventHandler(stage));
 
 		VBox contenedorVertical = new VBox(sexo, hobby, cabello, senia, vehiculo, buscarSospechosos, botonVolver,
 				emitirOrdenDeArresto);
