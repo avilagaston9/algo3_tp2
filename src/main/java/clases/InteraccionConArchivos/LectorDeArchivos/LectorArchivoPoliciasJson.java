@@ -63,11 +63,10 @@ public class LectorArchivoPoliciasJson implements Lector{
 
             policiaBuilder.setNombre((String) policiaJson.get("nombre"));
 
-            rangoBuilder.setArrestos((int)policiaJson.get("arrestos"));
+            rangoBuilder.setArrestos( Integer.parseInt(String.valueOf(policiaJson.get("arrestos"))));
             policiaBuilder.setRango(rangoBuilder.getRango());
 
             policias.add(policiaBuilder.getPolicia());
-
         }
 
         return policias;

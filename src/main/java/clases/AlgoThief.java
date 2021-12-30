@@ -69,12 +69,7 @@ public class AlgoThief {
 
 	public void setNombrePolicia(String nombrePolicia) {
 
-		//todo aca se debería crear la instancia de policia, ya sea del archivo o de 0 si no existe.
-		//todo y guardar en this.policia = nuevoPolicia;
-		//this.policia.setNombre(nombrePolicia);
-
 		ArrayList<Policia> policias = this.obtenedorDeDatos.obtenerPolicias();
-
 
 		this.policia = this.obtenerPolicia(policias, nombrePolicia);
 		this.jugadorCargado = true;
@@ -96,6 +91,7 @@ public class AlgoThief {
 
 		this.objetoRobado = this.policia.getRango().getObjetoRobado(objetosRobados);
 		RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(ciudades);
+
 
 		this.policia.setCiudadActual(rutaDeEscape.getRuta().get(0));
 		this.policia.resetearTiempo();
