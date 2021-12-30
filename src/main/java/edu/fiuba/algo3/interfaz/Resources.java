@@ -5,9 +5,9 @@ public class Resources {
     static public String Imagenes = "imagenes/";
 
     static public String IconoApp = "logo.png";
-    public static String IconoAppRuta() { return "file:" + Ruta + Imagenes + IconoApp; }
+    public static String IconoAppRuta() { return Ruta + Imagenes + IconoApp; }
 
-    static public String FondoPrincipal = "bienvenida.jpg";
+    static public String FondoPrincipal = "background3.png";
     static public String FondoJuego = "textura.png";
     static public String IconoJugar = "play-button.png";
     static public String IconoSalir = "cancel.png";
@@ -24,7 +24,7 @@ public class Resources {
     static public String IconoCaracteristicaSexo = "sex.png";
     static public String IconoCaracteristicaVehiculo = "searching.png";
     static public String IconoGenerarOrdenDeArresto = "orden-de-arresto.png";
-    static public String IconoSalirComputadora = "log-out.png";
+    static public String IconoVolver = "log-out.png";
 
     static public String IconoViajarACiudad = "planeIcon.png";
 
@@ -32,6 +32,7 @@ public class Resources {
     public static String FondoJuegoRuta() { return "file:" + Ruta + Imagenes + FondoJuego; }
     public static String IconoJugarRuta() { return Ruta + Imagenes + IconoJugar; }
     public static String IconoSalirRuta() { return Ruta + Imagenes + IconoSalir; }
+    public static String IconoVolver() { return Ruta + Imagenes + IconoVolver; }
 
     public static String IconoVisitarEdificioRuta() { return Ruta + Imagenes + IconoVisitarEdificio; }
     public static String IconoAeropuertoRuta() { return Ruta + Imagenes + IconoAeropuerto; }
@@ -45,7 +46,6 @@ public class Resources {
     public static String IconoCaracteristicaSexoRuta() { return Ruta + Imagenes + IconoCaracteristicaSexo; }
     public static String IconoCaracteristicaVehiculoRuta() { return Ruta + Imagenes + IconoCaracteristicaVehiculo; }
     public static String IconoGenerarOrdenDeArrestoRuta() { return Ruta + Imagenes + IconoGenerarOrdenDeArresto; }
-    public static String IconoSalirComputadoraRuta() { return Ruta + Imagenes + IconoSalirComputadora; }
 
     public static String IconoViajarACiudadRuta() { return Ruta + Imagenes + IconoViajarACiudad; }
 

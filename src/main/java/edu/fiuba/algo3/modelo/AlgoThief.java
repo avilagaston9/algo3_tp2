@@ -12,10 +12,7 @@ import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.rangos.Novato;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.Random;
+import java.util.*;
 
 public class AlgoThief {
 
@@ -106,7 +103,7 @@ public class AlgoThief {
 
 	private void actualizarObservadores() {
 
-		for (Observador o : this.observadores) {
+		for (Observador o : ((List<Observador>)this.observadores.clone())) {
 
 			o.actualizar();
 		}

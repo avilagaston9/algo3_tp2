@@ -5,8 +5,10 @@ import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.interfaz.vistas.VistaPrincipal;
 import edu.fiuba.algo3.modelo.InteraccionConArchivos.*;
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 /**
@@ -18,7 +20,7 @@ public class App extends Application {
 
 	@Override
 	public void start(Stage stage) throws FileNotFoundException {
-
+		stage.getIcons().add(new Image(new FileInputStream(Resources.IconoAppRuta())));
 		AlgoThief algothief = this.crearModelo();
 		VistaPrincipal vistaPrincipal = new VistaPrincipal(stage, algothief);
 		vistaPrincipal.actualizar();
