@@ -34,6 +34,7 @@ public class AlgoThief {
 	private int limiteTiempo;
 	private String nombrePolicia;
 	private boolean juegoIniciado;
+	private ArrayList<Ciudad> ciudades;
 
 	public AlgoThief(ObtenerDatosFachada obtenedorDeDatos) {
 
@@ -84,13 +85,13 @@ public class AlgoThief {
 		this.limiteTiempo = 154;
 
 		ArrayList<Ladron> ladrones = obtenedorDeDatos.obtenerLadrones();
-		ArrayList<Ciudad> ciudades = obtenedorDeDatos.obtenerCiudades();
+		this.ciudades = obtenedorDeDatos.obtenerCiudades();
 		ArrayList<ObjetoRobado> objetosRobados = obtenedorDeDatos.obtenerObjetosRobados();
-		Collections.shuffle(ciudades);
+		Collections.shuffle(this.ciudades);
 		Collections.shuffle(objetosRobados);
 
 		this.objetoRobado = this.policia.getRango().getObjetoRobado(objetosRobados);
-		RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(ciudades);
+		RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(this.ciudades);
 
 
 		this.policia.setCiudadActual(rutaDeEscape.getRuta().get(0));
@@ -273,5 +274,10 @@ public class AlgoThief {
 	public boolean juegoIniciado() {
 
 		return this.juegoIniciado;
+	}
+
+	public ArrayList<Ciudad> getCiudades() {
+
+		return this.ciudades;
 	}
 }

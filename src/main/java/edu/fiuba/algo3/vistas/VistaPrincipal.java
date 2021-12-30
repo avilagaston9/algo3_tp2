@@ -64,7 +64,7 @@ public class VistaPrincipal implements Observador {
 		}else if (this.darInformacionInicial){
 
 			this.darInformacionInicial = false;
-			ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(this.stage, this.algoThief, this.obtenedorDatosFachada);
+			ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(this.stage, this.algoThief);
 			Scene escenaPrincipal = new Scene(contenedorPrincipal, 640, 480);
 
 			ContenedorInformacionInicial contenedorInfomacionInicial = new ContenedorInformacionInicial(this.stage,
@@ -88,7 +88,6 @@ public class VistaPrincipal implements Observador {
 			}else{ nuevaScene = new Scene(new
 					ContenedorSinOrdenDeArresto(this.algoThief, this.stage), 640, 480); }
 			this.stage.setScene(nuevaScene);
-			stage.setFullScreen(true);
 			stage.show();
 		}
 	}

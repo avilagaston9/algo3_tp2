@@ -26,10 +26,10 @@ public class ContenedorPrincipal extends BorderPane {
 
 	BarraDeMenu menuBar;
 
-	public ContenedorPrincipal(Stage stage, AlgoThief algothief, ObtenerDatosFachada obtenedorDeDatos){
+	public ContenedorPrincipal(Stage stage, AlgoThief algothief){
 
 		this.setMenu(stage);
-		this.setBotonera(stage, algothief, obtenedorDeDatos.obtenerCiudades());
+		this.setBotonera(stage, algothief, algothief.getCiudades());
 		this.setReloj(algothief);
 		this.setVistaCiudad(algothief);
 		this.setVistaOrdenDeArresto(algothief);

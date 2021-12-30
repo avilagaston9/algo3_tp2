@@ -13,10 +13,10 @@ public class BotonesCiudadEventHandler implements EventHandler<ActionEvent> {
 	Stage stage;
 
 	public BotonesCiudadEventHandler(Stage stage, AlgoThief algoThief, Ciudad ciudad) {
+
 		this.stage = stage;
 		this.algoThief = algoThief;
 		this.ciudad = ciudad;
-
 	}
 
 	@Override
