@@ -3,6 +3,7 @@ package clases;
 import java.util.ArrayList;
 import java.util.List;
 
+import clases.ciudades.Ciudad;
 import clases.ladron.Ladron;
 
 public class RutaDeEscape {

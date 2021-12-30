@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import clases.AlgoThief;
-import clases.Ciudad;
+import clases.ciudades.Ciudad;
 import clases.InteraccionConArchivos.LectorDeArchivos.ObtenerDatosFachada;
 import edu.fiuba.algo3.eventos.BotonBuscarEventHandler;
 import edu.fiuba.algo3.eventos.BotonBuscarPistaEventHandler;

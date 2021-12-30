@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import org.junit.jupiter.api.Test;
 
-import clases.Ciudad;
+import clases.ciudades.Ciudad;
 import clases.Coordenadas;
 import clases.Policia;
 import clases.rangos.Investigador;

@@ -3,7 +3,7 @@ package edu.fiuba.algo3.contenedores;
 import java.util.ArrayList;
 
 import clases.AlgoThief;
-import clases.Ciudad;
+import clases.ciudades.Ciudad;
 import edu.fiuba.algo3.botones.BotonCerrar;
 import edu.fiuba.algo3.eventos.BotonesCiudadEventHandler;
 import javafx.scene.control.Button;

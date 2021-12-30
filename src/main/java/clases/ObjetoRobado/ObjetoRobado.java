@@ -2,7 +2,7 @@ package clases.ObjetoRobado;
 
 import java.util.List;
 
-import clases.Ciudad;
+import clases.ciudades.Ciudad;
 import clases.RutaDeEscape;
 import clases.rangos.Detective;
 import clases.rangos.Investigador;

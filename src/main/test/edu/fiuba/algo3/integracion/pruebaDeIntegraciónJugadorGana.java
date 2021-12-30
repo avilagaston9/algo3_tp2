@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import clases.FabricaEdificios.FabricaAeropuerto;
 import clases.FabricaEdificios.FabricaBancos;
 import clases.FabricaEdificios.FabricaBiblioteca;
+import clases.ciudades.Ciudad;
 import clases.edificios.Aeropuerto;
 import clases.edificios.Banco;
 import clases.edificios.Biblioteca;
@@ -234,8 +235,9 @@ public class pruebaDeIntegraciónJugadorGana {
 		//Policia
 		PoliciaBuilder policiaBuilder = new PoliciaBuilder();
 		policiaBuilder.setRango(rango);
-		policiaBuilder.setPrimerCiudad(baghdad);
+		policiaBuilder.setNombre("jose");
 		Policia policia = policiaBuilder.getPolicia();
+		policia.setCiudadActual(baghdad);
 
 		//Ladron
 		LadronBuilder ladronBuilder = new LadronBuilder();

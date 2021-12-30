@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.eventos;
 
 import clases.AlgoThief;
-import clases.Ciudad;
+import clases.ciudades.Ciudad;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;

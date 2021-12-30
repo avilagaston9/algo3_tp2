@@ -7,6 +7,7 @@ import clases.InteraccionConArchivos.LectorDeArchivos.ObtenerDatosPoliciasFachad
 import clases.ObjetoRobado.ObjetoRobado;
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
+import clases.ciudades.Ciudad;
 import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
@@ -111,20 +112,6 @@ public class AlgoThief {
 		this.ladron.setRutaDeEscape(rutaDeEscape);
 		this.actualizarObservadores();
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

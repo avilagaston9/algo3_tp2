@@ -2,21 +2,7 @@ package edu.fiuba.algo3.entrega1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.LinkedList;
-
 import org.junit.jupiter.api.Test;
-
-import clases.Ciudad;
-import clases.Coordenadas;
-import clases.Policia;
-import clases.caracteristicasLadron.CaracteristicaLadron;
-import clases.edificios.Aeropuerto;
-import clases.edificios.Edificio;
-import clases.ladron.Ladron;
-import clases.ladron.LadronBuilder;
-import clases.pistas.Pista;
-import clases.pistas.PistaFacil;
-import clases.rangos.Novato;
 
 public class Caso4 {
 

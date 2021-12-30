@@ -1,12 +1,7 @@
 package edu.fiuba.algo3.vistas;
 
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-
 import clases.AlgoThief;
-import clases.Ciudad;
 import clases.Observador;
-import clases.ladron.Ladron;
 import edu.fiuba.algo3.contenedores.*;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

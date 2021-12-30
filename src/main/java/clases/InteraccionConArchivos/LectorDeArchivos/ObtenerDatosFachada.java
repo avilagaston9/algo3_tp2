@@ -1,6 +1,6 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
 
-import clases.Ciudad;
+import clases.ciudades.Ciudad;
 import clases.ObjetoRobado.ObjetoRobado;
 import clases.ladron.Ladron;
 
