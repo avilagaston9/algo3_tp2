@@ -5,10 +5,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import edu.fiuba.algo3.eventos.BotonBuscarSospechososEventHandler;
 import edu.fiuba.algo3.interfaz.Resources;
+import edu.fiuba.algo3.interfaz.botones.BotonIcono;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.ciudades.Ciudad;
-import edu.fiuba.algo3.eventos.BotonBuscarEventHandler;
 import edu.fiuba.algo3.eventos.BotonBuscarPistaEventHandler;
 import edu.fiuba.algo3.eventos.BotonViajarEventHandler;
 import edu.fiuba.algo3.interfaz.menues.BarraDeMenu;
@@ -68,63 +69,36 @@ public class ContenedorPrincipal extends BorderPane {
 
 	private void setBotonera(Stage stage, AlgoThief algoThief, ArrayList<Ciudad> ciudades) {
 
-		Button buscarPista = this.setBotonPista(algoThief);
-		Button botonBuscarSospechosos = this.setBotonBuscarSospechosos(stage, algoThief);
+		Button buscarPista = this.setBotonVisitarEdificios(algoThief);
+		Button botonUsarComputadora = this.setBotonUsarComputadora(stage, algoThief);
 		Button botonViajar = this.setBotonViajar(ciudades, algoThief);
 
 		TilePane botonera = new TilePane();
-		botonera.getChildren().addAll(botonViajar, botonBuscarSospechosos, buscarPista);
+		botonera.setVgap(70);
+		botonera.getChildren().addAll(botonViajar, botonUsarComputadora, buscarPista);
 		this.setLeft(botonera);
 	}
 
 	private Button setBotonViajar(ArrayList<Ciudad> ciudades, AlgoThief algoThief) {
 
 		Collections.shuffle(ciudades);
-		try{
-			FileInputStream input = new FileInputStream(Resources.IconoViajarACiudadRuta());
-			Image image = new Image(input);
-			ImageView imageView = new ImageView(image);
-			Button botonViajar = new Button("", imageView);
-			botonViajar.setMaxSize(150, 150);
-			BotonViajarEventHandler botonViajarHandler = new BotonViajarEventHandler(ciudades, algoThief);
-			botonViajar.setOnAction(botonViajarHandler);
-			return botonViajar;
-		}catch (FileNotFoundException e){
-			System.out.println("planeIcon.png no entontrado.");
-		}return null;
+		String pathImagen = Resources.IconoViajarACiudadRuta();
+		BotonViajarEventHandler handlerViajar = new BotonViajarEventHandler(ciudades, algoThief);
+		return new BotonIcono(pathImagen, handlerViajar);
 	}
 
-	private Button setBotonPista(AlgoThief algoThief) {
-		try{
-			FileInputStream inputPista = new FileInputStream(Resources.IconoVisitarEdificioRuta());
-			Image imagePista = new Image(inputPista);
-			ImageView imageViewPista = new ImageView(imagePista);
-			Button buscarPista = new Button("", imageViewPista);
-			buscarPista.setMaxSize(150, 150);
-			BotonBuscarPistaEventHandler buscarPistaButtonHandler = new BotonBuscarPistaEventHandler(algoThief);
-			buscarPista.setOnAction(buscarPistaButtonHandler);
-			return buscarPista;
-		}catch (FileNotFoundException e){
-			System.out.println("clue.png no entontrado.");
-		}return null;
+	private Button setBotonVisitarEdificios(AlgoThief algoThief) {
+
+		String pathImagen = Resources.IconoVisitarEdificioRuta();
+		BotonBuscarPistaEventHandler handlerPista = new BotonBuscarPistaEventHandler(algoThief);
+		return new BotonIcono(pathImagen, handlerPista);
 	}
 
-	private Button setBotonBuscarSospechosos(Stage stage, AlgoThief algoThief) {
+	private Button setBotonUsarComputadora(Stage stage, AlgoThief algoThief) {
 
-		try{
-			FileInputStream inputBuscar = new FileInputStream(Resources.IconoUsarComputadoraRuta());
-			Image imageBuscar = new Image(inputBuscar);
-			ImageView imageViewBuscar = new ImageView(imageBuscar);
-
-			Button botonBuscarSospechosos = new Button("", imageViewBuscar);
-			botonBuscarSospechosos.setMaxSize(150, 150);
-
-			BotonBuscarEventHandler buscarButtonHandler = new BotonBuscarEventHandler(stage, algoThief);
-			botonBuscarSospechosos.setOnAction(buscarButtonHandler);
-			return botonBuscarSospechosos;
-		}catch (FileNotFoundException e){
-			System.out.println("unknown.png no entontrado.");
-		}return null;
+		String pathImagen = Resources.IconoUsarComputadoraRuta();
+		BotonBuscarSospechososEventHandler handlerSospechosos = new BotonBuscarSospechososEventHandler(algoThief, stage);
+		return new BotonIcono(pathImagen, handlerSospechosos);
 	}
 
 	private void setMenu(Stage stage) {

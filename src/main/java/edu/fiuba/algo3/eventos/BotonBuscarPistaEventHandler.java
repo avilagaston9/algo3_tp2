@@ -14,7 +14,7 @@ public class BotonBuscarPistaEventHandler implements EventHandler<ActionEvent> {
 	Stage stage;
 	Scene mostrarEdificios;
 
-	public BotonBuscarPistaEventHandler(AlgoThief algothief) throws FileNotFoundException {
+	public BotonBuscarPistaEventHandler(AlgoThief algothief) {
 		this.stage = new Stage(StageStyle.UNDECORATED);
 		ContenedorEdificios contenedorEdificios = new ContenedorEdificios(this.stage, algothief);
 		this.mostrarEdificios = new Scene(contenedorEdificios, 640, 480);

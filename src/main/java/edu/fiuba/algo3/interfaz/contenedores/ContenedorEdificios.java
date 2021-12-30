@@ -3,14 +3,18 @@ package edu.fiuba.algo3.interfaz.contenedores;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import edu.fiuba.algo3.eventos.BotonVolverEventHandler;
 import edu.fiuba.algo3.interfaz.Resources;
+import edu.fiuba.algo3.interfaz.botones.BotonIcono;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.interfaz.botones.BotonCerrar;
-import edu.fiuba.algo3.interfaz.botones.BotonVisitarEdificio;
 import edu.fiuba.algo3.eventos.visitarEdificiosHandlers.BotonVisitarAeropuertoEventHandler;
 import edu.fiuba.algo3.eventos.visitarEdificiosHandlers.BotonVisitarBancoEventHandler;
 import edu.fiuba.algo3.eventos.visitarEdificiosHandlers.BotonVisitarBibliotecaEventHandler;
 import edu.fiuba.algo3.interfaz.menues.BarraDeMenu;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -22,39 +26,33 @@ public class ContenedorEdificios extends BorderPane {
 	Stage stage;
 	BarraDeMenu menuBar;
 
-	public ContenedorEdificios(Stage stage, AlgoThief algoThief) throws FileNotFoundException {
+	public ContenedorEdificios(Stage stage, AlgoThief algoThief) {
 
 		this.algoThief = algoThief;
 		this.stage = stage;
 		this.setMenu(stage);
 		this.setBotonera(stage);
+		this.setPadding(new Insets(25));
 	}
 
-	private void setBotonera(Stage stage) throws FileNotFoundException {
+	private void setBotonera(Stage stage){
 
 		// creo boton visitar aeropuerto.
-		BotonVisitarAeropuertoEventHandler AeropuertoEventHandler = new BotonVisitarAeropuertoEventHandler(this.stage,
-				this.algoThief);
-		BotonVisitarEdificio botonAeropuerto = new BotonVisitarEdificio(AeropuertoEventHandler,
-				Resources.IconoAeropuertoRuta());
+		BotonVisitarAeropuertoEventHandler AeropuertoEventHandler = new BotonVisitarAeropuertoEventHandler(this.stage, this.algoThief);
+		BotonIcono botonAeropuerto = new BotonIcono(Resources.IconoAeropuertoRuta(), AeropuertoEventHandler);
 		// creo boton visitar biblioteca
-		BotonVisitarBibliotecaEventHandler BibliotecaEventHandler = new BotonVisitarBibliotecaEventHandler(this.stage,
-				this.algoThief);
-		BotonVisitarEdificio botonBiblioteca = new BotonVisitarEdificio(BibliotecaEventHandler,
-				Resources.IconoBibliotecaRuta());
+		BotonVisitarBibliotecaEventHandler BibliotecaEventHandler = new BotonVisitarBibliotecaEventHandler(this.stage, this.algoThief);
+		BotonIcono botonBiblioteca = new BotonIcono(Resources.IconoBibliotecaRuta(), BibliotecaEventHandler);
 		// creo boton visitar banco
 		BotonVisitarBancoEventHandler BancoEventHandler = new BotonVisitarBancoEventHandler(this.stage, this.algoThief);
-		BotonVisitarEdificio botonBanco = new BotonVisitarEdificio(BancoEventHandler, Resources.IconoBancoRuta());
+		BotonIcono botonBanco = new BotonIcono(Resources.IconoBancoRuta(), BancoEventHandler);
 
-		BotonCerrar botonVolver = new BotonCerrar(stage, "Volver");
-		FileInputStream input = new FileInputStream(Resources.IconoVolver());
-		Image image = new Image(input);
-		ImageView imageView = new ImageView(image);
-		botonVolver.setGraphic(imageView);
+		//creo icono volver
+		BotonIcono botonVolver = new BotonIcono(Resources.IconoVolver(), new BotonVolverEventHandler(stage));
+
 		TilePane botonera = new TilePane(botonBanco, botonAeropuerto, botonBiblioteca, botonVolver);
-
+		botonera.setHgap(70);
 		this.setBottom(botonera);
-
 	}
 
 	private void setMenu(Stage stage) {
