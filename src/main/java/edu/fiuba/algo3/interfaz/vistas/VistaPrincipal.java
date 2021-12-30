@@ -19,7 +19,6 @@ public class VistaPrincipal implements Observador {
 		this.darInformacionInicial = true;
 		this.stage = stage;
 		this.algoThief = algothief;
-		algothief.setObservador(this);
 	}
 
 	@Override
