@@ -18,6 +18,12 @@ public class Novato extends Rango {
 		// this.velocidad=900;
 	}
 
+	public Novato(int cantArrestos){
+
+		this.maximoArrestos = 5;
+		this.arrestos = cantArrestos;
+	}
+
 	@Override
 	public Rango siguienteRango() {
 		return new Detective();

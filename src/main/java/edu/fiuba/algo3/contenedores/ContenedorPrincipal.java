@@ -3,6 +3,7 @@ package edu.fiuba.algo3.contenedores;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import clases.AlgoThief;
 import clases.ciudades.Ciudad;
@@ -78,6 +79,7 @@ public class ContenedorPrincipal extends BorderPane {
 
 	private Button setBotonViajar(ArrayList<Ciudad> ciudades, AlgoThief algoThief) {
 
+		Collections.shuffle(ciudades);
 		try{
 			FileInputStream input = new FileInputStream("src/imagenes/planeIcon.png");
 			Image image = new Image(input);

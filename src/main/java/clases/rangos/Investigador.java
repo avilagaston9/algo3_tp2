@@ -16,6 +16,12 @@ public class Investigador extends Rango {
 		this.maximoArrestos = 20;
 	}
 
+	public Investigador(int cantArrestos){
+
+		this.maximoArrestos = 20;
+		this.arrestos = cantArrestos;
+	}
+
 	@Override
 	public Rango siguienteRango() {
 		return new Sargento();

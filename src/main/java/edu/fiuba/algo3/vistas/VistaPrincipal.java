@@ -85,6 +85,7 @@ public class VistaPrincipal implements Observador {
 					ContenedorSinOrdenDeArresto(this.algoThief, this.stage), 640, 480); }
 			this.stage.setScene(nuevaScene);
 			stage.show();
+			this.darInformacionInicial = true;
 		}
 	}
 }

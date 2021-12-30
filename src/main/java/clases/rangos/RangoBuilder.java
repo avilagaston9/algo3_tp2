@@ -13,18 +13,18 @@ public class RangoBuilder {
 
     private void setRango(){
         if(this.arrestos < 5 ){
-            this.rango = new Novato();
+            this.rango = new Novato(this.arrestos);
             return;
         }
         if(this.arrestos < 10){
-            this.rango = new Detective();
+            this.rango = new Detective(this.arrestos);
             return;
         }
         if(this.arrestos < 20){
-            this.rango = new Investigador();
+            this.rango = new Investigador(this.arrestos);
             return;
         }
-        this.rango = new Sargento();
+        this.rango = new Sargento(this.arrestos);
     }
 
     public Rango getRango(){

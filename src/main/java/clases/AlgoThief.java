@@ -24,9 +24,6 @@ public class AlgoThief {
 	private ArrayList<Observador> observadores;
 	private Policia policia;
 	private Ladron ladron;
-	//private List<Ciudad> ciudades;
-	//private List<Ladron> ladrones;
-	//private List<ObjetoRobado> objetosRobados;
 	private ObjetoRobado objetoRobado;
 	private Computadora computadora;
 
@@ -51,8 +48,6 @@ public class AlgoThief {
 		this.juegoIniciado = false;
 	}
 
-
-
 	private Policia obtenerPolicia(ArrayList<Policia> listaPolicias, String nombrePolicia) {
 
 		for(Policia p : listaPolicias){
@@ -74,7 +69,6 @@ public class AlgoThief {
 		this.policia = this.obtenerPolicia(policias, nombrePolicia);
 		this.jugadorCargado = true;
 	}
-
 
 	public void iniciarJuego(){
 

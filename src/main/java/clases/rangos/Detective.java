@@ -15,6 +15,11 @@ public class Detective extends Rango {
 		this.arrestos = 5;
 		this.maximoArrestos = 10;
 	}
+	public Detective(int cantArrestos){
+
+		this.maximoArrestos = 10;
+		this.arrestos = cantArrestos;
+	}
 
 	@Override
 	public Rango siguienteRango() {
