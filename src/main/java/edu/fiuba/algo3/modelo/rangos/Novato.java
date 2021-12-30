@@ -15,6 +15,7 @@ public class Novato extends Rango {
 
 		this.maximoArrestos = 5;
 		this.arrestos = 0;
+		this.nombre ="Novato";
 		// this.velocidad=900;
 	}
 
@@ -22,6 +23,7 @@ public class Novato extends Rango {
 
 		this.maximoArrestos = 5;
 		this.arrestos = cantArrestos;
+		this.nombre ="Novato";
 	}
 
 	@Override

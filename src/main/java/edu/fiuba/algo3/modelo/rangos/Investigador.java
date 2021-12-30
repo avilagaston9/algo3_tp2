@@ -14,12 +14,14 @@ public class Investigador extends Rango {
 
 		this.arrestos = 10;
 		this.maximoArrestos = 20;
+		this.nombre ="Investigador";
 	}
 
 	public Investigador(int cantArrestos){
 
 		this.maximoArrestos = 20;
 		this.arrestos = cantArrestos;
+		this.nombre ="Investigador";
 	}
 
 	@Override

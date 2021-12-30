@@ -168,4 +168,8 @@ public class Policia {
 	public void resetearTiempo(){
 		this.tiempoTranscurrido = new Tiempo();
 	}
+
+	public String getNombreRango() {
+		return this.rango.getNombre();
+	}
 }

@@ -12,6 +12,7 @@ public abstract class Rango {
 
 	protected int arrestos;
 	protected int maximoArrestos;
+	protected String nombre;
 
 	public Rango sumarArresto() {
 
@@ -37,7 +38,11 @@ public abstract class Rango {
 
 	public abstract ObjetoRobado getObjetoRobado(List<ObjetoRobado> objetosRobados);
 
-	/*
+	public String getNombre() {
+		return this.nombre;
+	}
+
+    /*
 	 * 
 	 * void viajar(int cantidadKms, Tiempo tiempo);
 	 * 

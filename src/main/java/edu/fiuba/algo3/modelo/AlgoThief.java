@@ -276,4 +276,9 @@ public class AlgoThief {
 	public String getDescripcionCiudadActual() {
 		return this.policia.getCiudadActual().getDescripcion();
 	}
+
+	public String getRangoPolicia() {
+
+		return this.policia.getNombreRango();
+	}
 }

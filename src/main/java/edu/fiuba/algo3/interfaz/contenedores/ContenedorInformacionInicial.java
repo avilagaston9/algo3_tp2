@@ -26,9 +26,10 @@ public class ContenedorInformacionInicial extends VBox {
 		String nombreObjetoRobado = algoThief.nombreObjetoRobado();
 		String nombreCiudadInicial = algoThief.nombreCiudadInicial();
 		String nombrePolicia = algoThief.getNombrePolicia();
+		String rangoPolicia = algoThief.getRangoPolicia();
 
 		Label informacion = new Label(
-				"Bienvenido oficial " + nombrePolicia + ".\n Le ha sido asignado el caso del robo de "
+				"Bienvenido " + rangoPolicia + " " + nombrePolicia + ".\n Le ha sido asignado el caso del robo de "
 						+ nombreObjetoRobado + "\n en la ciudad de " + nombreCiudadInicial + ".");
 		informacion.setFont(new Font("Verdana", 14));
 

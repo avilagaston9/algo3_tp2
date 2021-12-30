@@ -14,12 +14,14 @@ public class Sargento extends Rango {
 
 		this.arrestos = 20;
 		this.maximoArrestos = 0;
+		this.nombre ="Sargento";
 	}
 
 	public Sargento(int cantArrestos){
 
 		this.maximoArrestos = 0;
 		this.arrestos = cantArrestos;
+		this.nombre ="Sargento";
 	}
 
 	@Override
