@@ -20,10 +20,10 @@ public class ContenedorSenia extends VBox {
 		Button joyas = new Button("Joyas");
 		joyas.setMaxSize(200, 50);
 
-		CaracteristicaEventHandler anilloHandler = new CaracteristicaEventHandler("Anillo", algoThief, stage);
-		CaracteristicaEventHandler tatuajeHandler = new CaracteristicaEventHandler("Tatuaje", algoThief, stage);
-		CaracteristicaEventHandler cicatrizHandler = new CaracteristicaEventHandler("Cicatriz", algoThief, stage);
-		CaracteristicaEventHandler joyasHandler = new CaracteristicaEventHandler("Joyas", algoThief, stage);
+		CaracteristicaEventHandler anilloHandler = new CaracteristicaEventHandler("Seña particular del sospechos@: Anillo", algoThief, stage);
+		CaracteristicaEventHandler tatuajeHandler = new CaracteristicaEventHandler("Seña particular del sospechos@: Tatuaje", algoThief, stage);
+		CaracteristicaEventHandler cicatrizHandler = new CaracteristicaEventHandler("Seña particular del sospechos@: Cicatriz", algoThief, stage);
+		CaracteristicaEventHandler joyasHandler = new CaracteristicaEventHandler("Seña particular del sospechos@: Joyas", algoThief, stage);
 		BotonCerrar botonVolver = new BotonCerrar(stage, "Volver");
 		BotonBorrarCaracteristicaSenia botonBorrar = new BotonBorrarCaracteristicaSenia(algoThief);
 

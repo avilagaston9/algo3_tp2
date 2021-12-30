@@ -22,10 +22,10 @@ public class ContenedorCabello extends VBox {
 		BotonCerrar botonVolver = new BotonCerrar(stage, "Volver");
 		BotonBorrarCaracteristicaCabello botonBorrar = new BotonBorrarCaracteristicaCabello(algoThief);
 
-		CaracteristicaEventHandler castanioHandler = new CaracteristicaEventHandler("Castaño", algoThief, stage);
-		CaracteristicaEventHandler rubioHandler = new CaracteristicaEventHandler("Rubio", algoThief, stage);
-		CaracteristicaEventHandler rojoHandler = new CaracteristicaEventHandler("Rojizo", algoThief, stage);
-		CaracteristicaEventHandler negroHandler = new CaracteristicaEventHandler("Morocho", algoThief, stage);
+		CaracteristicaEventHandler castanioHandler = new CaracteristicaEventHandler("Color de pelo del sospechos@: Castaño", algoThief, stage);
+		CaracteristicaEventHandler rubioHandler = new CaracteristicaEventHandler("Color de pelo del sospechos@: Rubio", algoThief, stage);
+		CaracteristicaEventHandler rojoHandler = new CaracteristicaEventHandler("Color de pelo del sospechos@: Rojizo", algoThief, stage);
+		CaracteristicaEventHandler negroHandler = new CaracteristicaEventHandler("Color de pelo del sospechos@: Morocho", algoThief, stage);
 
 		castanio.setOnAction(castanioHandler);
 		rubio.setOnAction(rubioHandler);

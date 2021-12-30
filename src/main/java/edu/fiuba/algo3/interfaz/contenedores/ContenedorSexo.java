@@ -18,8 +18,8 @@ public class ContenedorSexo extends VBox {
 		BotonCerrar botonVolver = new BotonCerrar(stage, "Volver");
 		BotonBorrarCaracteristicaSexo botonBorrar = new BotonBorrarCaracteristicaSexo(algoThief);
 
-		CaracteristicaEventHandler masculinoHandler = new CaracteristicaEventHandler("Masculino", algoThief, stage);
-		CaracteristicaEventHandler femeninoHandler = new CaracteristicaEventHandler("Femenino", algoThief, stage);
+		CaracteristicaEventHandler masculinoHandler = new CaracteristicaEventHandler("Sexo del sospechos@: Masculino", algoThief, stage);
+		CaracteristicaEventHandler femeninoHandler = new CaracteristicaEventHandler("Sexo del sospechos@: Femenino", algoThief, stage);
 
 		masculino.setOnAction(masculinoHandler);
 		femenino.setOnAction(femeninoHandler);

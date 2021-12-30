@@ -20,13 +20,13 @@ public class ContenedorHobby extends VBox {
 		BotonCerrar botonVolver = new BotonCerrar(stage, "Volver");
 		BotonBorrarCaracteristicaHobby botonBorrar = new BotonBorrarCaracteristicaHobby(algoThief);
 
-		CaracteristicaEventHandler tenisHandler = new CaracteristicaEventHandler("Tenis", algoThief, stage);
-		CaracteristicaEventHandler musicaHandler = new CaracteristicaEventHandler("Musica", algoThief, stage);
-		CaracteristicaEventHandler alpinismoHandler = new CaracteristicaEventHandler("Alpinismo", algoThief, stage);
-		CaracteristicaEventHandler paracaidismoHandler = new CaracteristicaEventHandler("Paracaidismo", algoThief,
+		CaracteristicaEventHandler tenisHandler = new CaracteristicaEventHandler("Hobby del sospechos@: Tenis", algoThief, stage);
+		CaracteristicaEventHandler musicaHandler = new CaracteristicaEventHandler("Hobby del sospechos@: Musica", algoThief, stage);
+		CaracteristicaEventHandler alpinismoHandler = new CaracteristicaEventHandler("Hobby del sospechos@: Alpinismo", algoThief, stage);
+		CaracteristicaEventHandler paracaidismoHandler = new CaracteristicaEventHandler("Hobby del sospechos@: Paracaidismo", algoThief,
 				stage);
-		CaracteristicaEventHandler natacionHandler = new CaracteristicaEventHandler("Natacion", algoThief, stage);
-		CaracteristicaEventHandler croquetHandler = new CaracteristicaEventHandler("Croquet", algoThief, stage);
+		CaracteristicaEventHandler natacionHandler = new CaracteristicaEventHandler("Hobby del sospechos@: Natacion", algoThief, stage);
+		CaracteristicaEventHandler croquetHandler = new CaracteristicaEventHandler("Hobby del sospechos@: Croquet", algoThief, stage);
 
 		tenis.setOnAction(tenisHandler);
 		musica.setOnAction(musicaHandler);
