@@ -37,16 +37,4 @@ public class ObtenerDatosFachada {
         return (ArrayList<Policia>) this.lectorPolicias.leer();
     }
 
-
-    /*
-    public void actualizarDatosPolicias(Policia unPolicia){
-
-        this.lectorPolicias.actualizar(unPolicia);
-
-    }
-
-     */
-
-
-
 }
