@@ -6,7 +6,6 @@ import javafx.scene.control.Label;
 import javafx.scene.text.Font;
 
 public class VistaCiudad implements Observador {
-	private Label descripcion;
 	private AlgoThief juego;
 	private Label nombreCiudad;
 

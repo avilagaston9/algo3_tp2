@@ -1,8 +1,5 @@
 package edu.fiuba.algo3.interfaz.contenedores;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
 import edu.fiuba.algo3.eventos.*;
 import edu.fiuba.algo3.interfaz.Resources;
 import edu.fiuba.algo3.modelo.AlgoThief;
@@ -15,7 +12,6 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
