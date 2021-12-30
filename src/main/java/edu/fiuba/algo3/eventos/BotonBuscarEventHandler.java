@@ -17,7 +17,7 @@ public class BotonBuscarEventHandler implements EventHandler<ActionEvent> {
 
 		this.stage = new Stage(StageStyle.UNDECORATED);
 		ContenedorComputadora contenedorComputadora = new ContenedorComputadora(this.stage, algoThief);
-		this.mostrarComputadora = new Scene(contenedorComputadora, 1000, 760);
+		this.mostrarComputadora = new Scene(contenedorComputadora, 640, 480);
 	}
 
 	@Override
