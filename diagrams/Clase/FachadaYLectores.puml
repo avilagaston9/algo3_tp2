@@ -1,0 +1,34 @@
+@startuml
+class AlgoThief{
+    + new(fachada:ObtenerDatosFachada)
+}
+
+class ObtenerDatosFachada{
+    + obtenerCiudades():ArrayList
+    + obtenerLadrones():ArrayList
+    + obtenerObjetos():ArrayList
+    + obtenerPolicias():ArrayList
+
+}
+
+interface Lector{
+    + leer(): ArrayList
+}
+
+class LectorJsonCiudades{
+}
+
+class LectorJsonLadrones{}
+
+class LectorJsonPolicias{}
+
+class LectorJsonObjetos{}
+
+AlgoThief -down->"1" ObtenerDatosFachada
+ObtenerDatosFachada -down->"4" Lector
+LectorJsonCiudades .up.|> Lector
+LectorJsonLadrones .up.|> Lector
+LectorJsonLadrones .up.|> Lector
+LectorJsonPolicias .up.|> Lector
+LectorJsonObjetos .up.|> Lector
+@enduml

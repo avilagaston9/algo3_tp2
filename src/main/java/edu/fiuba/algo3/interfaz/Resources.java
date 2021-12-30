@@ -49,7 +49,7 @@ public class Resources {
 
     public static String IconoViajarACiudadRuta() { return Ruta + Imagenes + IconoViajarACiudad; }
 
-    static public String ArchivoCiudades = "ciudadesSinTerminar.json";
+    static public String ArchivoCiudades = "ciudades.json";
     static public String ArchivoLadrones = "dossiers.json";
     static public String ArchivoTesoros = "tesoros.json";
     static public String ArchivoPolicias = "policias.json";
