@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-import clases.Computadora;
-import clases.caracteristicasLadron.CaracteristicaLadron;
-import clases.ladron.Ladron;
-import clases.ladron.LadronBuilder;
+import edu.fiuba.algo3.modelo.Computadora;
+import edu.fiuba.algo3.modelo.caracteristicasLadron.CaracteristicaLadron;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ladron.LadronBuilder;
 
 public class Caso3 {
 	@Test

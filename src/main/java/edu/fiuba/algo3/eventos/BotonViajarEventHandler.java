@@ -2,9 +2,9 @@ package edu.fiuba.algo3.eventos;
 
 import java.util.ArrayList;
 
-import clases.AlgoThief;
-import clases.ciudades.Ciudad;
-import edu.fiuba.algo3.contenedores.ContenedorCiudades;
+import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.modelo.ciudades.Ciudad;
+import edu.fiuba.algo3.interfaz.contenedores.ContenedorCiudades;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;

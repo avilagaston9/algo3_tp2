@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import clases.Coordenadas;
+import edu.fiuba.algo3.modelo.Coordenadas;
 
 public class CoordenadasTest {
 

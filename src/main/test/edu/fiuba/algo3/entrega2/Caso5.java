@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.entrega2;
 
-import clases.InteraccionConArchivos.LectorDeArchivos.*;
-import clases.Policia;
-import clases.PoliciaBuilder;
-import clases.rangos.Sargento;
+import edu.fiuba.algo3.modelo.InteraccionConArchivos.*;
+import edu.fiuba.algo3.modelo.Policia;
+import edu.fiuba.algo3.modelo.PoliciaBuilder;
+import edu.fiuba.algo3.modelo.rangos.Sargento;
 import org.junit.jupiter.api.Test;
 
 public class Caso5 {

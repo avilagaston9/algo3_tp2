@@ -1,11 +1,14 @@
 package edu.fiuba.algo3;
 
-import clases.AlgoThief;
-import clases.InteraccionConArchivos.LectorDeArchivos.*;
-import edu.fiuba.algo3.vistas.VistaPrincipal;
+import edu.fiuba.algo3.interfaz.Resources;
+import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.interfaz.vistas.VistaPrincipal;
+import edu.fiuba.algo3.modelo.InteraccionConArchivos.*;
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 /**
@@ -13,14 +16,13 @@ import java.io.FileNotFoundException;
  */
 public class App extends Application {
 
-	private EscribirDatosFachada registradorDeDatos;
-
 	@Override
 	public void start(Stage stage) throws FileNotFoundException {
-
+		stage.getIcons().add(new Image(new FileInputStream(Resources.IconoAppRuta())));
 		AlgoThief algothief = this.crearModelo();
 		VistaPrincipal vistaPrincipal = new VistaPrincipal(stage, algothief);
 		vistaPrincipal.actualizar();
+		algothief.setObservador(vistaPrincipal);
 	}
 
 	public static void main(String[] args) {
@@ -30,14 +32,13 @@ public class App extends Application {
 	private AlgoThief crearModelo() {
 
 		ObtenerDatosFachada obtenedorDeDatos = this.crearObtenedorDeDatos();
-		this.registradorDeDatos = this.crearRegistadorDeDatos();
-		return new AlgoThief(obtenedorDeDatos, this.registradorDeDatos);
+		EscribirDatosFachada registradorDeDatos = this.crearRegistadorDeDatos();
+		return new AlgoThief(obtenedorDeDatos, registradorDeDatos);
 	}
 
 	private EscribirDatosFachada crearRegistadorDeDatos(){
 
-		EscritorArchivoPoliciasJson escritorPolicias = new EscritorArchivoPoliciasJson("//src//main//java//clases//" +
-				"InteraccionConArchivos//LectorDeArchivos//policias.json");
+		EscritorArchivoPoliciasJson escritorPolicias = new EscritorArchivoPoliciasJson(Resources.ArchivoPoliciasRuta());
 
 		EscribirDatosFachada escribirDatosFachada = new EscribirDatosFachada(escritorPolicias);
 
@@ -46,17 +47,13 @@ public class App extends Application {
 
 	private ObtenerDatosFachada crearObtenedorDeDatos() {
 
-		LectorArchivoCiudadesJson lectorJsonCiudades = new LectorArchivoCiudadesJson("//src//main//java//" +
-				"clases//InteraccionConArchivos//LectorDeArchivos//ciudadesSinTerminar.json");
+		LectorArchivoCiudadesJson lectorJsonCiudades = new LectorArchivoCiudadesJson(Resources.ArchivoCiudadesRuta());
 
-		LectorArchivoLadronesJson lectorJsonLadrones = new LectorArchivoLadronesJson("//src//main//java//" +
-				"clases//InteraccionConArchivos//LectorDeArchivos//dossiers.json");
+		LectorArchivoLadronesJson lectorJsonLadrones = new LectorArchivoLadronesJson(Resources.ArchivoLadronesRuta());
 
-		LectorArchivoObjetosRobadosJson lectorJsonObjetosRobados = new LectorArchivoObjetosRobadosJson("" +
-				"//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//tesoros.json");
+		LectorArchivoObjetosRobadosJson lectorJsonObjetosRobados = new LectorArchivoObjetosRobadosJson("" + Resources.ArchivoTesorosRuta());
 
-		LectorArchivoPoliciasJson lectorPolicias = new LectorArchivoPoliciasJson("//src//main//java//clases//" +
-				"InteraccionConArchivos//LectorDeArchivos//policias.json");
+		LectorArchivoPoliciasJson lectorPolicias = new LectorArchivoPoliciasJson(Resources.ArchivoPoliciasRuta());
 
 
 		return new ObtenerDatosFachada(lectorJsonCiudades, lectorJsonLadrones, lectorJsonObjetosRobados, lectorPolicias);

@@ -2,7 +2,7 @@ package edu.fiuba.algo3.pruebasUnitarias.CaracterisiticasLadronTest;
 
 import org.junit.jupiter.api.Test;
 
-import clases.caracteristicasLadron.CaracteristicaLadron;
+import edu.fiuba.algo3.modelo.caracteristicasLadron.CaracteristicaLadron;
 
 public class ComparacionEntreCaracterisiticasIgualesDevuelveTrue {
 	@Test
