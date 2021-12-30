@@ -2,7 +2,7 @@ package edu.fiuba.algo3.modelo.InteraccionConArchivos;
 
 import edu.fiuba.algo3.modelo.ciudades.Ciudad;
 import edu.fiuba.algo3.modelo.ObjetoRobado.ObjetoRobado;
-import edu.fiuba.algo3.modelo.Policia;
+import edu.fiuba.algo3.modelo.Policia.Policia;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 
 import java.util.ArrayList;

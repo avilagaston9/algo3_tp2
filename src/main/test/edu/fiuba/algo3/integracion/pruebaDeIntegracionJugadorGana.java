@@ -11,11 +11,16 @@ import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaAeropuerto;
 import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBancos;
 import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBiblioteca;
 import edu.fiuba.algo3.modelo.ObjetoRobado.*;
+import edu.fiuba.algo3.modelo.Policia.Policia;
+import edu.fiuba.algo3.modelo.Policia.PoliciaBuilder;
 import edu.fiuba.algo3.modelo.ciudades.Ciudad;
+import edu.fiuba.algo3.modelo.ciudades.CiudadBuilder;
+import edu.fiuba.algo3.modelo.ciudades.Coordenadas;
 import edu.fiuba.algo3.modelo.edificios.Aeropuerto;
 import edu.fiuba.algo3.modelo.edificios.Banco;
 import edu.fiuba.algo3.modelo.edificios.Biblioteca;
 import edu.fiuba.algo3.modelo.ladron.LadronBuilder;
+import edu.fiuba.algo3.modelo.ladron.RutaDeEscape;
 import edu.fiuba.algo3.modelo.pistas.PistaDificil;
 import edu.fiuba.algo3.modelo.pistas.PistaFacil;
 import edu.fiuba.algo3.modelo.pistas.PistaMedia;
@@ -28,7 +33,7 @@ import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.rangos.Novato;
 
-public class pruebaDeIntegraciónJugadorGana {
+public class pruebaDeIntegracionJugadorGana {
 
 	@Test
 	public void novatoRealizaLaInvestigacionYArrestaAlLadron() throws ExcepcionSinOrdenDeArresto {
@@ -329,7 +334,7 @@ public class pruebaDeIntegraciónJugadorGana {
 	}
 
 	private void cargarPistaLadron(LinkedList<Pista> pistasDevueltas, Computadora computadora) {
-		if (!pistasDevueltas.get(1).revelar().equals("Lo sentimos, no tenemos informacion del ladron")) {
+		if (!pistasDevueltas.get(1).revelar().equals("No tenemos informacion sobre su apariencia.")) {
 			CaracteristicaLadron caracteristicaLadron = new CaracteristicaLadron(pistasDevueltas.get(1).revelar());
 			computadora.cargarCaracteristica(caracteristicaLadron);
 		}

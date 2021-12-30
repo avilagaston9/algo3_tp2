@@ -2,7 +2,7 @@ package edu.fiuba.algo3.interfaz.vistas;
 
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.CalculadoraDia;
-import edu.fiuba.algo3.modelo.Observador;
+import edu.fiuba.algo3.interfaz.Observador;
 import javafx.scene.control.Label;
 
 public class VistaReloj implements Observador {

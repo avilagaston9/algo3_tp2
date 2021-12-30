@@ -5,16 +5,25 @@ import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaAeropuerto;
 import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBancos;
 import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBiblioteca;
 import edu.fiuba.algo3.modelo.InteraccionConArchivos.*;
+import edu.fiuba.algo3.modelo.InteraccionConArchivos.lectoresTest.LectorCiudadesParaTest;
+import edu.fiuba.algo3.modelo.InteraccionConArchivos.lectoresTest.LectorLadronesParaTest;
+import edu.fiuba.algo3.modelo.InteraccionConArchivos.lectoresTest.LectorObjetosParaTest;
+import edu.fiuba.algo3.modelo.InteraccionConArchivos.lectoresTest.LectorPoliciasParaTest;
 import edu.fiuba.algo3.modelo.ObjetoRobado.FabricaObjetoComun;
 import edu.fiuba.algo3.modelo.ObjetoRobado.FabricaObjetoRobado;
+import edu.fiuba.algo3.modelo.Policia.Policia;
+import edu.fiuba.algo3.modelo.Policia.PoliciaBuilder;
 import edu.fiuba.algo3.modelo.caracteristicasLadron.CaracteristicaLadron;
 import edu.fiuba.algo3.modelo.ciudades.Ciudad;
+import edu.fiuba.algo3.modelo.ciudades.CiudadBuilder;
+import edu.fiuba.algo3.modelo.ciudades.Coordenadas;
 import edu.fiuba.algo3.modelo.edificios.Aeropuerto;
 import edu.fiuba.algo3.modelo.edificios.Banco;
 import edu.fiuba.algo3.modelo.edificios.Biblioteca;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
 import edu.fiuba.algo3.modelo.ObjetoRobado.ObjetoRobado;
 import edu.fiuba.algo3.modelo.ladron.LadronBuilder;
+import edu.fiuba.algo3.modelo.ladron.RutaDeEscape;
 import edu.fiuba.algo3.modelo.pistas.PistaDificil;
 import edu.fiuba.algo3.modelo.pistas.PistaFacil;
 import edu.fiuba.algo3.modelo.pistas.PistaMedia;
@@ -274,7 +283,6 @@ public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {
         // FIN SETUP //
 
         while (!juego.tiempoInsuficiente()){
-            System.out.println(juego.tiempoTranscurridoEnHoras());
             juego.viajarA(bangkok);
             juego.viajarA(atenas);
         }
