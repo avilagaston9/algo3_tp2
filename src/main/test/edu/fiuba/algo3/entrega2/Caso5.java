@@ -6,6 +6,22 @@ public class Caso5 {
 
 	@Test
 	public void detectiveHaceSeisArrestosYAsciendeAInvestigadorLuegoRealizaInvestigacionYAtrapaAlSospechoso() {
+
+		/*
+		LectorArchivoCiudadesJson lectorCiudades = new LectorArchivoCiudadesJson("-");
+		LectorArchivoLadronesJson lectorLadrones = new LectorArchivoLadronesJson("--");
+		LectorArchivoObjetosRobadosJson lectorObjetos = new LectorArchivoObjetosRobadosJson(".");
+
+		LectorArchivoPoliciasJson lectorPolicias = new LectorArchivoPoliciasJson("C:\\Users\\nicov\\Desktop\\fiuba\\" +
+				"OOP\\tps\\TP2\\algo3_tp2\\src\\main\\java\\" +
+				"clases\\InteraccionConArchivos\\LectorDeArchivos\\policias.json");
+
+		ObtenerDatosFachada facade = new ObtenerDatosFachada(lectorCiudades, lectorLadrones, lectorObjetos, lectorPolicias);
+
+		facade.
+		
+		 */
+
 		/*
 		 * 
 		 * // Creo ciudad Coordenadas coordenadasMexico = new Coordenadas(23.634501,
