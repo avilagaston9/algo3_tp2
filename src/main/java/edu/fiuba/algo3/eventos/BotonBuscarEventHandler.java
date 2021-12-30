@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.eventos;
 
-import java.io.FileNotFoundException;
 
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.interfaz.contenedores.ContenedorComputadora;
@@ -15,21 +14,15 @@ public class BotonBuscarEventHandler implements EventHandler<ActionEvent> {
 	Scene mostrarComputadora;
 
 	public BotonBuscarEventHandler(Stage stage, AlgoThief algoThief) {
-		this.stage = new Stage(StageStyle.UNDECORATED);
 
-		try{
-			ContenedorComputadora contenedorComputadora = new ContenedorComputadora(this.stage, algoThief);
-			this.mostrarComputadora = new Scene(contenedorComputadora, 1000, 760);
-		}catch (FileNotFoundException e){
-			System.out.println("Problema al iniciar botonera computadora");
-		}
-		//this.stage.initModality(Modality.APPLICATION_MODAL);
+		this.stage = new Stage(StageStyle.UNDECORATED);
+		ContenedorComputadora contenedorComputadora = new ContenedorComputadora(this.stage, algoThief);
+		this.mostrarComputadora = new Scene(contenedorComputadora, 1000, 760);
 	}
 
 	@Override
 	public void handle(ActionEvent actionEvent) {
 		stage.setScene(mostrarComputadora);
-		//stage.setFullScreen(true);
 		stage.setFullScreenExitHint("");
 		stage.show();
 	}

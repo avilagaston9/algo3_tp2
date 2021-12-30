@@ -1,11 +1,9 @@
 package edu.fiuba.algo3.interfaz.contenedores;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import edu.fiuba.algo3.eventos.BotonBuscarSospechososEventHandler;
+import edu.fiuba.algo3.eventos.BotonBuscarEventHandler;
 import edu.fiuba.algo3.interfaz.Resources;
 import edu.fiuba.algo3.interfaz.botones.BotonIcono;
 import edu.fiuba.algo3.modelo.AlgoThief;
@@ -16,10 +14,10 @@ import edu.fiuba.algo3.interfaz.menues.BarraDeMenu;
 import edu.fiuba.algo3.interfaz.vistas.VistaCiudad;
 import edu.fiuba.algo3.interfaz.vistas.VistaOrdenArresto;
 import edu.fiuba.algo3.interfaz.vistas.VistaReloj;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -35,10 +33,15 @@ public class ContenedorPrincipal extends BorderPane {
 		this.setReloj(algothief);
 		this.setVistaCiudad(algothief);
 		this.setVistaOrdenDeArresto(algothief);
-        Image imagen = new Image(Resources.FondoJuegoRuta());
-        BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
-                BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
-        this.setBackground(new Background(imagenDeFondo));
+		this.setFondo();
+	}
+
+	private void setFondo() {
+
+		Image imagen = new Image(Resources.FondoJuegoRuta());
+		BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
+				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+		this.setBackground(new Background(imagenDeFondo));
 	}
 
 	private void setReloj(AlgoThief algothief) {
@@ -97,7 +100,7 @@ public class ContenedorPrincipal extends BorderPane {
 	private Button setBotonUsarComputadora(Stage stage, AlgoThief algoThief) {
 
 		String pathImagen = Resources.IconoUsarComputadoraRuta();
-		BotonBuscarSospechososEventHandler handlerSospechosos = new BotonBuscarSospechososEventHandler(algoThief, stage);
+		BotonBuscarEventHandler handlerSospechosos = new BotonBuscarEventHandler(stage, algoThief);
 		return new BotonIcono(pathImagen, handlerSospechosos);
 	}
 
@@ -105,5 +108,4 @@ public class ContenedorPrincipal extends BorderPane {
 		this.menuBar = new BarraDeMenu(stage);
 		this.setTop(menuBar);
 	}
-
 }
