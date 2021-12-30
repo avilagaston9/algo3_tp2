@@ -11,7 +11,7 @@ public class SinOrdenDeArresto extends Throwable implements OrdenArresto {
 
 	@Override
 	public String nombreLadronEnLaOrden() {
-		return "Sin orden de Arresto";
+		return "Ninguna orden de arresto realizada hasta el momento.";
 	}
 
 }
