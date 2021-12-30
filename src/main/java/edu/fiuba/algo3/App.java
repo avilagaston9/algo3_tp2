@@ -1,15 +1,12 @@
 package edu.fiuba.algo3;
 
-import java.io.FileNotFoundException;
-
 import clases.AlgoThief;
-import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoCiudadesJson;
-import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoLadronesJson;
-import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoObjetosRobadosJson;
-import clases.InteraccionConArchivos.LectorDeArchivos.ObtenerDatosFachada;
+import clases.InteraccionConArchivos.LectorDeArchivos.*;
 import edu.fiuba.algo3.vistas.VistaPrincipal;
 import javafx.application.Application;
 import javafx.stage.Stage;
+
+import java.io.FileNotFoundException;
 
 /**
  * JavaFX App
@@ -47,7 +44,10 @@ public class App extends Application {
 		LectorArchivoObjetosRobadosJson lectorJsonObjetosRobados = new LectorArchivoObjetosRobadosJson("" +
 				"//src//main//java//clases//InteraccionConArchivos//LectorDeArchivos//tesoros.json");
 
+		LectorArchivoPoliciasJson lectorPolicias = new LectorArchivoPoliciasJson("//src//main//java//clases//" +
+				"InteraccionConArchivos//LectorDeArchivos//policias.json");
 
-		return new ObtenerDatosFachada(lectorJsonCiudades, lectorJsonLadrones, lectorJsonObjetosRobados);
+
+		return new ObtenerDatosFachada(lectorJsonCiudades, lectorJsonLadrones, lectorJsonObjetosRobados, lectorPolicias);
 	}
 }

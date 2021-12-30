@@ -1,9 +1,7 @@
 package clases;
 
 import clases.Exceptions.ExcepcionSinOrdenDeArresto;
-import clases.InteraccionConArchivos.LectorDeArchivos.LectorArchivoPoliciasJson;
 import clases.InteraccionConArchivos.LectorDeArchivos.ObtenerDatosFachada;
-import clases.InteraccionConArchivos.LectorDeArchivos.ObtenerDatosPoliciasFachada;
 import clases.ObjetoRobado.ObjetoRobado;
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.caracteristicasLadron.CaracteristicaLadron;
@@ -39,7 +37,6 @@ public class AlgoThief {
 
 	public AlgoThief(ObtenerDatosFachada obtenedorDeDatos) {
 
-
 		this.observadores = new ArrayList<Observador>();
 		this.obtenedorDeDatos = obtenedorDeDatos;
 
@@ -72,11 +69,11 @@ public class AlgoThief {
 
 	public void setNombrePolicia(String nombrePolicia) {
 
+		//todo aca se debería crear la instancia de policia, ya sea del archivo o de 0 si no existe.
+		//todo y guardar en this.policia = nuevoPolicia;
+		//this.policia.setNombre(nombrePolicia);
 
-		LectorArchivoPoliciasJson lectorPolicias = new LectorArchivoPoliciasJson("C:\\Users\\nicov\\Desktop\\fiuba\\OOP\\tps\\TP2\\algo3_tp2\\src\\main\\java\\clases\\InteraccionConArchivos\\LectorDeArchivos\\policias.json");
-		ObtenerDatosPoliciasFachada facadePolicias = new ObtenerDatosPoliciasFachada(lectorPolicias);
-
-		ArrayList<Policia> policias = facadePolicias.obtenerPolicias();
+		ArrayList<Policia> policias = this.obtenedorDeDatos.obtenerPolicias();
 
 
 		this.policia = this.obtenerPolicia(policias, nombrePolicia);
