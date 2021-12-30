@@ -16,21 +16,21 @@ public class BotonBorrarCaracteristicaHobby extends MenuButton {
 		MenuItem natacion = new MenuItem("Natacion");
 		MenuItem croquet = new MenuItem("Croquet");
 
-		BorrarCaracteristicaEventHandler tenisHandler = new BorrarCaracteristicaEventHandler("Tenis", algothief);
-		BorrarCaracteristicaEventHandler musicaHandler = new BorrarCaracteristicaEventHandler("Musica", algothief);
-		BorrarCaracteristicaEventHandler alpinismoHandler = new BorrarCaracteristicaEventHandler("Alpinismo",
+		BorrarCaracteristicaEventHandler tenisHandler = new BorrarCaracteristicaEventHandler("Hobby del sospechos@: Tenis", algothief);
+		BorrarCaracteristicaEventHandler musicaHandler = new BorrarCaracteristicaEventHandler("Hobby del sospechos@: Musica", algothief);
+		BorrarCaracteristicaEventHandler alpinismoHandler = new BorrarCaracteristicaEventHandler("Hobby del sospechos@: Alpinismo",
 				algothief);
-		BorrarCaracteristicaEventHandler paracaidismoHandler = new BorrarCaracteristicaEventHandler("Paracaidismo",
+		BorrarCaracteristicaEventHandler paracaidismoHandler = new BorrarCaracteristicaEventHandler("Hobby del sospechos@: Paracaidismo",
 				algothief);
-		BorrarCaracteristicaEventHandler natacionHandler = new BorrarCaracteristicaEventHandler("Natacion", algothief);
-		BorrarCaracteristicaEventHandler croquetHandler = new BorrarCaracteristicaEventHandler("Croquet", algothief);
+		BorrarCaracteristicaEventHandler natacionHandler = new BorrarCaracteristicaEventHandler("Hobby del sospechos@: Natacion", algothief);
+		BorrarCaracteristicaEventHandler croquetHandler = new BorrarCaracteristicaEventHandler("Hobby del sospechos@: Croquet", algothief);
 
 		tenis.setOnAction(tenisHandler);
 		musica.setOnAction(musicaHandler);
 		alpinismo.setOnAction(alpinismoHandler);
 		paracaidismo.setOnAction(paracaidismoHandler);
-		natacion.setOnAction(paracaidismoHandler);
-		croquet.setOnAction(paracaidismoHandler);
+		natacion.setOnAction(natacionHandler);
+		croquet.setOnAction(croquetHandler);
 
 		this.getItems().addAll(tenis, musica, alpinismo, paracaidismo, natacion, croquet);
 

@@ -22,11 +22,11 @@ public class ContenedorVehiculos extends VBox {
 		BotonCerrar botonVolver = new BotonCerrar(stage, "Volver");
 		BotonBorrarCaracteristicaVehiculo botonBorrar = new BotonBorrarCaracteristicaVehiculo(algoThief);
 
-		CaracteristicaEventHandler descapotableHandler = new CaracteristicaEventHandler("Descapotable", algoThief,
+		CaracteristicaEventHandler descapotableHandler = new CaracteristicaEventHandler("Vehículo del sospechos@: Descapotable", algoThief,
 				stage);
-		CaracteristicaEventHandler limusinaHandler = new CaracteristicaEventHandler("Limusina", algoThief, stage);
-		CaracteristicaEventHandler deportivoHandler = new CaracteristicaEventHandler("Deportivo", algoThief, stage);
-		CaracteristicaEventHandler motoHandler = new CaracteristicaEventHandler("Moto", algoThief, stage);
+		CaracteristicaEventHandler limusinaHandler = new CaracteristicaEventHandler("Vehículo del sospechos@: Limusina", algoThief, stage);
+		CaracteristicaEventHandler deportivoHandler = new CaracteristicaEventHandler("Vehículo del sospechos@: Deportivo", algoThief, stage);
+		CaracteristicaEventHandler motoHandler = new CaracteristicaEventHandler("Vehículo del sospechos@: Moto", algoThief, stage);
 
 		descapotable.setOnAction(descapotableHandler);
 		limusina.setOnAction(limusinaHandler);

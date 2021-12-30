@@ -13,12 +13,12 @@ public class BotonBorrarCaracteristicaVehiculo extends MenuButton {
 		MenuItem limusina = new MenuItem("Limusina");
 		MenuItem moto = new MenuItem("Moto");
 
-		BorrarCaracteristicaEventHandler descapotableHandler = new BorrarCaracteristicaEventHandler("Descapotable",
+		BorrarCaracteristicaEventHandler descapotableHandler = new BorrarCaracteristicaEventHandler("Vehículo del sospechos@: Descapotable",
 				algothief);
-		BorrarCaracteristicaEventHandler deportivoHandler = new BorrarCaracteristicaEventHandler("Deportivo",
+		BorrarCaracteristicaEventHandler deportivoHandler = new BorrarCaracteristicaEventHandler("Vehículo del sospechos@: Deportivo",
 				algothief);
-		BorrarCaracteristicaEventHandler limusinaHandler = new BorrarCaracteristicaEventHandler("Limusina", algothief);
-		BorrarCaracteristicaEventHandler motoHandler = new BorrarCaracteristicaEventHandler("Moto", algothief);
+		BorrarCaracteristicaEventHandler limusinaHandler = new BorrarCaracteristicaEventHandler("Vehículo del sospechos@: Limusina", algothief);
+		BorrarCaracteristicaEventHandler motoHandler = new BorrarCaracteristicaEventHandler("Vehículo del sospechos@: Moto", algothief);
 
 		descapotable.setOnAction(descapotableHandler);
 		deportivo.setOnAction(deportivoHandler);

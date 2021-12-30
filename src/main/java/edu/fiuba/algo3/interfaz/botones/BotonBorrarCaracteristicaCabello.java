@@ -14,10 +14,10 @@ public class BotonBorrarCaracteristicaCabello extends MenuButton {
 		MenuItem rubio = new MenuItem("Rubio");
 		MenuItem negro = new MenuItem("Negro");
 
-		BorrarCaracteristicaEventHandler castanioHandler = new BorrarCaracteristicaEventHandler("Castaño", algothief);
-		BorrarCaracteristicaEventHandler rojoHandler = new BorrarCaracteristicaEventHandler("Rojizo", algothief);
-		BorrarCaracteristicaEventHandler rubioHandler = new BorrarCaracteristicaEventHandler("Rubio", algothief);
-		BorrarCaracteristicaEventHandler negroHandler = new BorrarCaracteristicaEventHandler("Morocho", algothief);
+		BorrarCaracteristicaEventHandler castanioHandler = new BorrarCaracteristicaEventHandler("Color de pelo del sospechos@: Castaño", algothief);
+		BorrarCaracteristicaEventHandler rojoHandler = new BorrarCaracteristicaEventHandler("Color de pelo del sospechos@: Rojizo", algothief);
+		BorrarCaracteristicaEventHandler rubioHandler = new BorrarCaracteristicaEventHandler("Color de pelo del sospechos@: Rubio", algothief);
+		BorrarCaracteristicaEventHandler negroHandler = new BorrarCaracteristicaEventHandler("Color de pelo del sospechos@: Morocho", algothief);
 
 		castanio.setOnAction(castanioHandler);
 		rojo.setOnAction(rojoHandler);
