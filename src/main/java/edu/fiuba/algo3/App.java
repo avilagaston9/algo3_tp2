@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
 public class App extends Application {
 
 	private ObtenerDatosFachada obtenedorDeDatos;
+	private EscribirDatosFachada registradorDeDatos;
 
 	@Override
 	public void start(Stage stage) throws FileNotFoundException {
@@ -30,7 +31,18 @@ public class App extends Application {
 	private AlgoThief crearModelo() {
 
 		this.obtenedorDeDatos = this.crearObtenedorDeDatos();
-		return new AlgoThief(this.obtenedorDeDatos);
+		this.registradorDeDatos = this.crearRegistadorDeDatos();
+		return new AlgoThief(this.obtenedorDeDatos, this.registradorDeDatos);
+	}
+
+	private EscribirDatosFachada crearRegistadorDeDatos(){
+
+		EscritorArchivoPoliciasJson escritorPolicias = new EscritorArchivoPoliciasJson("//src//main//java//clases//" +
+				"InteraccionConArchivos//LectorDeArchivos//policias.json");
+
+		EscribirDatosFachada escribirDatosFachada = new EscribirDatosFachada(escritorPolicias);
+
+		return escribirDatosFachada;
 	}
 
 	private ObtenerDatosFachada crearObtenedorDeDatos() {
