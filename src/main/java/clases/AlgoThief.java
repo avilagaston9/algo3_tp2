@@ -1,6 +1,7 @@
 package clases;
 
 import clases.Exceptions.ExcepcionSinOrdenDeArresto;
+import clases.InteraccionConArchivos.LectorDeArchivos.EscribirDatosFachada;
 import clases.InteraccionConArchivos.LectorDeArchivos.ObtenerDatosFachada;
 import clases.ObjetoRobado.ObjetoRobado;
 import clases.OrdenDeArresto.OrdenArresto;
@@ -19,6 +20,7 @@ import java.util.Random;
 public class AlgoThief {
 
 	private final ObtenerDatosFachada obtenedorDeDatos;
+	private final EscribirDatosFachada registradorDeDatos;
 	private ArrayList<Observador> observadores;
 	private Policia policia;
 	private Ladron ladron;
@@ -36,15 +38,12 @@ public class AlgoThief {
 	private boolean juegoIniciado;
 	private ArrayList<Ciudad> ciudades;
 
-	public AlgoThief(ObtenerDatosFachada obtenedorDeDatos) {
+	public AlgoThief(ObtenerDatosFachada obtenedorDeDatos, EscribirDatosFachada registradorDeDatos) {
 
 		this.observadores = new ArrayList<Observador>();
 		this.obtenedorDeDatos = obtenedorDeDatos;
 
-		//this.ciudades = obtenedorDeDatos.obtenerCiudades();
-		//this.ladrones = obtenedorDeDatos.obtenerLadrones();
-		//this.objetosRobados = obtenedorDeDatos.;
-		//this.listaPolicias = listaPolicias;        o quizás levantar de la fachada.
+		this.registradorDeDatos = registradorDeDatos;
 
 		this.jugadorCargado = false;
 		this.juegoGanado = false;
@@ -106,8 +105,6 @@ public class AlgoThief {
 		this.ladron.setRutaDeEscape(rutaDeEscape);
 		this.actualizarObservadores();
 	}
-
-
 
 	public void setObservador(Observador observador) {
 		this.observadores.add(observador);
@@ -279,5 +276,9 @@ public class AlgoThief {
 	public ArrayList<Ciudad> getCiudades() {
 
 		return this.ciudades;
+	}
+
+	public void guardarDatos(){
+		this.registradorDeDatos.actualizar(this.policia);
 	}
 }
