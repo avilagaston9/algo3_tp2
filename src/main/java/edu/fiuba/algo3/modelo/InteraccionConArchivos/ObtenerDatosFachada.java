@@ -14,7 +14,7 @@ public class ObtenerDatosFachada {
     private Lector lectorObjetosRobados;
     private Lector lectorPolicias;
 
-    public ObtenerDatosFachada(Lector lectorCiudades, Lector lectorLadrones, Lector lectorObjetosRobados, LectorArchivoPoliciasJson lectorPolicias){
+    public ObtenerDatosFachada(Lector lectorCiudades, Lector lectorLadrones, Lector lectorObjetosRobados, Lector lectorPolicias){
         this.lectorCiudades = lectorCiudades;
         this.lectorLadrones = lectorLadrones;
         this.lectorObjetosRobados = lectorObjetosRobados;

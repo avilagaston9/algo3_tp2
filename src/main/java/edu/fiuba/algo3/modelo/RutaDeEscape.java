@@ -41,7 +41,7 @@ public class RutaDeEscape {
 	}
 
 	public void asignarCiudad(Ladron ladron) {
-		ladron.setCiudad(this.ciudades.get(-1));
+		ladron.setCiudad(this.ciudades.get(this.ciudades.size()-1));
 	}
 
 	public void asignarCiudad(Policia policia) {

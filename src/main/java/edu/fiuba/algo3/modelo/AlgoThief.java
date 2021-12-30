@@ -88,7 +88,8 @@ public class AlgoThief {
 
 		Random random = new Random();
 		this.ladron = ladrones.get(random.nextInt(ladrones.size()));
-		this.ladron.setCiudad(rutaDeEscape.getRuta().get(rutaDeEscape.getRuta().size() - 1));
+//		this.ladron.setCiudad(rutaDeEscape.getRuta().get(rutaDeEscape.getRuta().size() - 1));
+		rutaDeEscape.asignarCiudad(ladron);
 
 		this.computadora = new Computadora(ladrones);
 
