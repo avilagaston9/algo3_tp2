@@ -68,7 +68,8 @@ public class VistaPrincipal implements Observador {
 			stage.show();
 		}else if (this.darInformacionInicial){
 
-			ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(stage, this.algoThief, this.obtenedorDatosFachada);
+			this.darInformacionInicial = false;
+			ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(this.stage, this.algoThief, this.obtenedorDatosFachada);
 			Scene escenaPrincipal = new Scene(contenedorPrincipal, 640, 480);
 
 			ContenedorInformacionInicial contenedorInfomacionInicial = new ContenedorInformacionInicial(this.stage,
@@ -76,7 +77,7 @@ public class VistaPrincipal implements Observador {
 			Scene proximaEscena = new Scene(contenedorInfomacionInicial, 640, 480);
 			this.stage.setScene(proximaEscena);
 			//stage.setFullScreen(true);
-			stage.show();
+			this.stage.show();
 		}else if(!this.algoThief.juegoEnCurso()){// el juego acaba de terminar
 
 			//aca se crea la escena jugar denuevo.

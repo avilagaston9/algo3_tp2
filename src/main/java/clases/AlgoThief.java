@@ -57,9 +57,9 @@ public class AlgoThief {
 
 	private Policia obtenerPolicia(ArrayList<Policia> listaPolicias, String nombrePolicia) {
 
-		for(int i = 0; i < listaPolicias.size(); i++){
-			if (listaPolicias.get(i).seHaceLlamar(nombrePolicia)){
-				return (listaPolicias.get(i));
+		for(Policia p : listaPolicias){
+			if (p.seHaceLlamar(nombrePolicia)){
+				return (p);
 			}
 		}
 		PoliciaBuilder policiaBuilder = new PoliciaBuilder();
@@ -69,12 +69,7 @@ public class AlgoThief {
 		return (policiaBuilder.getPolicia());
 	}
 
-	//todo quizá convendría cambiar el nombre del método a setPolicia(String nombrePolicia)
 	public void setNombrePolicia(String nombrePolicia) {
-
-		//todo aca se debería crear la instancia de policia, ya sea del archivo o de 0 si no existe.
-		//todo y guardar en this.policia = nuevoPolicia;
-		//this.policia.setNombre(nombrePolicia);
 
 
 		LectorArchivoPoliciasJson lectorPolicias = new LectorArchivoPoliciasJson("C:\\Users\\nicov\\Desktop\\fiuba\\OOP\\tps\\TP2\\algo3_tp2\\src\\main\\java\\clases\\InteraccionConArchivos\\LectorDeArchivos\\policias.json");
@@ -82,13 +77,10 @@ public class AlgoThief {
 
 		ArrayList<Policia> policias = facadePolicias.obtenerPolicias();
 
-		Policia policiaCreado = this.obtenerPolicia(policias, nombrePolicia);
 
-		this.policia = policiaCreado;
-		//this.nombrePolicia = nombrePolicia; //este atributo debe desaparecer.
+		this.policia = this.obtenerPolicia(policias, nombrePolicia);
 		this.jugadorCargado = true;
 	}
-	//todo recordatorio para el builder de policia, hay que dejarlo sin ciudadInicial seteada, y setearlo con la cantidad de arrestos correspondiente.
 
 
 	public void iniciarJuego(){
@@ -104,31 +96,17 @@ public class AlgoThief {
 		Collections.shuffle(ciudades);
 		Collections.shuffle(objetosRobados);
 
-		//Novato rango = new Novato(); //todo borrar cuando se implemente lo de policia.
-		//Rango rango = this.policia.getRango();
-		//this.objetoRobado = rango.getObjetoRobado(objetosRobados);//todo esto sería this.policia.GetRango().getObjetoRonado();
-
 		this.objetoRobado = this.policia.getRango().getObjetoRobado(objetosRobados);
 		RutaDeEscape rutaDeEscape = this.objetoRobado.crearRutaDeEscape(ciudades);
 
-		/*
-		PoliciaBuilder policiaBuilder = new PoliciaBuilder();//todo aca simplemente sería this.policia.setCiudadInicial()
-		policiaBuilder.setPrimerCiudad(rutaDeEscape.getRuta().get(0));
-		policiaBuilder.setRango(rango);
-		 */
-
 		this.policia.setCiudadActual(rutaDeEscape.getRuta().get(0));
 		this.policia.resetearTiempo();
-
-		//this.policia = policiaBuilder.getPolicia();//estos métodos desaparecen.
-		//this.policia.setNombre(this.nombrePolicia);
-		//todo hay que resetear el tiempo del policía, hay que implementar el método.
 
 		Random random = new Random();
 		this.ladron = ladrones.get(random.nextInt(ladrones.size()));
 		this.ladron.setCiudad(rutaDeEscape.getRuta().get(rutaDeEscape.getRuta().size() - 1));
 
-		this.computadora = new Computadora((ArrayList<Ladron>) ladrones);
+		this.computadora = new Computadora(ladrones);
 
 		this.ladron.setRutaDeEscape(rutaDeEscape);
 		this.actualizarObservadores();
