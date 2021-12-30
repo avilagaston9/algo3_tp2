@@ -1,12 +1,14 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
 
 import clases.Policia;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class EscritorArchivoPoliciasJson implements Escritor{
@@ -51,8 +53,20 @@ public class EscritorArchivoPoliciasJson implements Escritor{
         }
 
         JSONObject empJsonObject = (JSONObject) obj;
+        JSONArray arrayJson = (JSONArray) empJsonObject.get("policias");
 
-        empJsonObject.put("policias", policiaJson);
+        for(int i = 0; i < arrayJson.size(); i++){
+            JSONObject actual = (JSONObject) arrayJson.get(i);
+            if(actual.get("nombre").equals(identificador)){
+                actual.put("arrestos", arrestos);
+            }
+        }
+
+        try(FileWriter file = new FileWriter(this.filePath)){
+            file.write(String.valueOf(empJsonObject));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }

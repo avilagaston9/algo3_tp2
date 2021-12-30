@@ -26,7 +26,7 @@ public class Caso5 {
 
 		PoliciaBuilder policiaBuilder = new PoliciaBuilder();
 		policiaBuilder.setRango(new Sargento());
-		policiaBuilder.setNombre("Theo");
+		policiaBuilder.setNombre("Nicolas");
 		Policia policia = policiaBuilder.getPolicia();
 
 		EscribirDatosFachada facadeEscribir = new EscribirDatosFachada(escritorPolicias);
