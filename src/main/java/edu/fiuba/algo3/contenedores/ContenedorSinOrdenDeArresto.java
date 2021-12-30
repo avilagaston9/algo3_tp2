@@ -2,6 +2,7 @@ package edu.fiuba.algo3.contenedores;
 
 import clases.AlgoThief;
 import edu.fiuba.algo3.botones.BotonCerrar;
+import edu.fiuba.algo3.botones.BotonVolverAJugar;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -20,9 +21,9 @@ public class ContenedorSinOrdenDeArresto extends VBox {
 		Label texto = new Label(("¡Game Over!\n" + algothief.getNombrePolicia() + ", te haz cruzado con "
 				+ algothief.getNombreLadron() + " sin orden de arresto y se ha escapado."));
 		texto.setFont(new Font("Verdana", 14));
+		BotonVolverAJugar botonVolverAJugar = new BotonVolverAJugar(algothief);
 		BotonCerrar botonCerrar = new BotonCerrar(stage, "Salir");
 
-		this.getChildren().addAll(texto, botonCerrar);
-
+		this.getChildren().addAll(texto, botonVolverAJugar, botonCerrar);
 	}
 }

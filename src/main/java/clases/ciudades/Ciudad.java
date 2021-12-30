@@ -117,4 +117,8 @@ public class Ciudad {
 	public Edificio getBanco() {
 		return this.banco;
 	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
 }

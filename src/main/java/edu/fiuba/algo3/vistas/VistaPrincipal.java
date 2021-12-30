@@ -59,7 +59,6 @@ public class VistaPrincipal implements Observador {
 			ContenedorBienvenidos contenedorBienvenidos = new ContenedorBienvenidos(this.stage, this.algoThief);
 			Scene proximaEscena = new Scene(contenedorBienvenidos, 640, 480);
 			this.stage.setScene(proximaEscena);
-			//stage.setFullScreen(true);
 			stage.show();
 		}else if (this.darInformacionInicial){
 
@@ -71,7 +70,6 @@ public class VistaPrincipal implements Observador {
 			this.algoThief, escenaPrincipal);
 			Scene proximaEscena = new Scene(contenedorInfomacionInicial, 640, 480);
 			this.stage.setScene(proximaEscena);
-			//stage.setFullScreen(true);
 			this.stage.show();
 		}else if(!this.algoThief.juegoEnCurso()){// el juego acaba de terminar
 

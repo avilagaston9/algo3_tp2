@@ -280,4 +280,8 @@ public class AlgoThief {
 
 		return this.ciudades;
 	}
+
+	public String getDescripcionCiudadActual() {
+		return this.policia.getCiudadActual().getDescripcion();
+	}
 }

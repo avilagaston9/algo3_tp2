@@ -50,13 +50,11 @@ public class ContenedorPrincipal extends BorderPane {
 	}
 
 	private void setVistaCiudad(AlgoThief algoThief) {
-		Label cuadro = new Label();
-		cuadro.setFont(new Font("Verdana", 35));
-		VistaCiudad vistaCiudad = new VistaCiudad(algoThief, cuadro);
-
-		algoThief.setObservador(vistaCiudad);
+		Label nombreCiudad = new Label();
+		VistaCiudad vistaCiudad = new VistaCiudad(algoThief, nombreCiudad);
 		vistaCiudad.actualizar();
-		this.setCenter(cuadro);
+		this.setCenter(nombreCiudad);
+		algoThief.setObservador(vistaCiudad);
 	}
 
 	private void setVistaOrdenDeArresto(AlgoThief algothief) {

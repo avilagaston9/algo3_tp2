@@ -2,6 +2,8 @@ package edu.fiuba.algo3.contenedores;
 
 import clases.AlgoThief;
 import edu.fiuba.algo3.botones.BotonCerrar;
+import edu.fiuba.algo3.botones.BotonTerminarJuego;
+import edu.fiuba.algo3.botones.BotonVolverAJugar;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -22,8 +24,9 @@ public class ContenedorJuegoGanado extends VBox {
 				+ ", ahora está tras las rejas."));
 		texto.setFont(new Font("Verdana", 14));
 
-		BotonCerrar botonCerrar = new BotonCerrar(stage, "Salir");
+		BotonTerminarJuego botonSalirDeJuego = new BotonTerminarJuego(algothief, stage);
+		BotonVolverAJugar botonVolverAJugar = new BotonVolverAJugar(algothief);
 
-		this.getChildren().addAll(texto, botonCerrar);
+		this.getChildren().addAll(texto, botonVolverAJugar, botonSalirDeJuego);
 	}
 }
