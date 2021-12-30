@@ -3,7 +3,7 @@ package clases.ladron;
 import java.util.LinkedList;
 import java.util.Objects;
 
-import clases.Ciudad;
+import clases.ciudades.Ciudad;
 import clases.RutaDeEscape;
 import clases.Exceptions.ExcepcionSinOrdenDeArresto;
 import clases.OrdenDeArresto.OrdenArresto;

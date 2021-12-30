@@ -3,6 +3,7 @@ package clases;
 import java.util.ArrayList;
 import java.util.List;
 
+import clases.ciudades.Ciudad;
 import clases.ladron.Ladron;
 
 public class RutaDeEscape {
@@ -16,7 +17,7 @@ public class RutaDeEscape {
 		this.ciudades = new ArrayList<Ciudad>(this.ciudades.subList(0, largoRutaDeEscape - 1));
 		this.ciudades.add(0, ciudad);
 
-		setearPistasProximaCiudad();
+		this.setearPistasProximaCiudad();
 	}
 
 	private void setearPistasProximaCiudad() {

@@ -33,7 +33,8 @@ public class LectorArchivoPoliciasJson implements Lector{
             String pathCompleto = ((String) System.getProperty("user.dir") + this.filePath);
             fileReader = new FileReader(pathCompleto);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            return new ArrayList<Policia>();
         }
 
         Object obj = null;
@@ -62,11 +63,10 @@ public class LectorArchivoPoliciasJson implements Lector{
 
             policiaBuilder.setNombre((String) policiaJson.get("nombre"));
 
-            rangoBuilder.setArrestos((int)policiaJson.get("arrestos"));
+            rangoBuilder.setArrestos( Integer.parseInt(String.valueOf(policiaJson.get("arrestos"))));
             policiaBuilder.setRango(rangoBuilder.getRango());
 
             policias.add(policiaBuilder.getPolicia());
-
         }
 
         return policias;

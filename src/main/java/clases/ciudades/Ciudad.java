@@ -1,5 +1,6 @@
-package clases;
+package clases.ciudades;
 
+import clases.Coordenadas;
 import clases.edificios.Aeropuerto;
 import clases.edificios.Banco;
 import clases.edificios.Biblioteca;

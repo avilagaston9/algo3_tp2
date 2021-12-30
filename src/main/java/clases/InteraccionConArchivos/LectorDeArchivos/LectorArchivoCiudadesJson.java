@@ -1,6 +1,6 @@
 package clases.InteraccionConArchivos.LectorDeArchivos;
 
-import clases.Ciudad;
+import clases.ciudades.Ciudad;
 import clases.CiudadBuilder;
 import clases.Coordenadas;
 import clases.FabricaEdificios.FabricaAeropuerto;

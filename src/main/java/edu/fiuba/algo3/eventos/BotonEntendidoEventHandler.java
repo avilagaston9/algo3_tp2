@@ -8,17 +8,16 @@ import javafx.stage.Stage;
 
 public class BotonEntendidoEventHandler implements EventHandler<ActionEvent> {
 	Stage stage;
-	AlgoThief algoThief;
 	Scene esceneActual;
 
-	public BotonEntendidoEventHandler(Stage stage, AlgoThief algoThief, Scene proximaEscena) {
+	public BotonEntendidoEventHandler(Stage stage, Scene proximaEscena) {
 		this.stage = stage;
-		this.algoThief = algoThief;
 		this.esceneActual = proximaEscena;
 	}
 
 	@Override
 	public void handle(ActionEvent actionEvent) {
-		stage.setScene(esceneActual);
+		this.stage.setScene(esceneActual);
+		this.stage.show();
 	}
 }

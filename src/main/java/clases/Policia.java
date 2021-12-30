@@ -4,6 +4,7 @@ import clases.Exceptions.ExcepcionSinOrdenDeArresto;
 import clases.OrdenDeArresto.OrdenArresto;
 import clases.OrdenDeArresto.SinOrdenDeArresto;
 import clases.armas.Arma;
+import clases.ciudades.Ciudad;
 import clases.edificios.Edificio;
 import clases.ladron.Ladron;
 import clases.pistas.Pista;
@@ -19,19 +20,21 @@ public class Policia {
 	private int cantidadHeridasDeCuchillo;
 	private String nombre;
 
-	public Policia(Rango rango, Ciudad actual) {
+	public Policia(Rango rango, String nombre) {
 		this.tiempoTranscurrido = new Tiempo();
 		this.rango = rango;
-		this.ciudadActual = actual;
 		this.ordenDeArresto = new SinOrdenDeArresto();
 		this.cantidadHeridasDeCuchillo = 0;
+		this.setNombre(nombre);
 	}
 
-	public Policia(Rango rango) {
+	public Policia(Rango rango, Ciudad ciudadInicial){
+
 		this.tiempoTranscurrido = new Tiempo();
 		this.rango = rango;
 		this.ordenDeArresto = new SinOrdenDeArresto();
 		this.cantidadHeridasDeCuchillo = 0;
+		this.ciudadActual = ciudadInicial;
 	}
 
 	public void dormir() {

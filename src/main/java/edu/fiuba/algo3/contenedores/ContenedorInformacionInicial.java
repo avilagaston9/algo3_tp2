@@ -33,7 +33,7 @@ public class ContenedorInformacionInicial extends VBox {
 
 		Button botonEntendido = new Button("Entendido");
 
-		BotonEntendidoEventHandler botonEntendidoHandler = new BotonEntendidoEventHandler(stage, algoThief,
+		BotonEntendidoEventHandler botonEntendidoHandler = new BotonEntendidoEventHandler(stage,
 				proximaEscena);
 		botonEntendido.setOnAction(botonEntendidoHandler);
 
