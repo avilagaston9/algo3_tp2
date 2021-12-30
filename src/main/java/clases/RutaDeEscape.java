@@ -16,7 +16,7 @@ public class RutaDeEscape {
 		this.ciudades = new ArrayList<Ciudad>(this.ciudades.subList(0, largoRutaDeEscape - 1));
 		this.ciudades.add(0, ciudad);
 
-		setearPistasProximaCiudad();
+		this.setearPistasProximaCiudad();
 	}
 
 	private void setearPistasProximaCiudad() {

@@ -33,7 +33,8 @@ public class LectorArchivoPoliciasJson implements Lector{
             String pathCompleto = ((String) System.getProperty("user.dir") + this.filePath);
             fileReader = new FileReader(pathCompleto);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            return new ArrayList<Policia>();
         }
 
         Object obj = null;

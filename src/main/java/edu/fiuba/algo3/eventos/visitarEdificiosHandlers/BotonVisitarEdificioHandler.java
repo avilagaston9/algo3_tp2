@@ -28,8 +28,8 @@ public abstract class BotonVisitarEdificioHandler implements EventHandler<Action
 		ContenedorPistas contenedorPistas = new ContenedorPistas(stagePistas, pistas);
 		stagePistas.setScene(new Scene(contenedorPistas, 640, 480));
 
-		stage.close();
 		stagePistas.show();
+		stage.close();
 	}
 
 	public abstract LinkedList<Pista> visitarJuego();
