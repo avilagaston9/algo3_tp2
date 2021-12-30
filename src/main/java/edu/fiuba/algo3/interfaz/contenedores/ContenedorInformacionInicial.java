@@ -18,9 +18,9 @@ public class ContenedorInformacionInicial extends VBox {
 	public ContenedorInformacionInicial(Stage stage, AlgoThief algoThief, Scene proximaEscena) {
 
 		this.setAlignment(Pos.CENTER);
-		this.setSpacing(20);
-		this.setPadding(new Insets(25));
-		this.setAlignment(Pos.CENTER);
+		this.setSpacing(150);
+		this.setPadding(new Insets(15));
+		this.setAlignment(Pos.BOTTOM_CENTER);
 
 		this.setImagenFondo();
 		String nombreObjetoRobado = algoThief.nombreObjetoRobado();
@@ -29,12 +29,16 @@ public class ContenedorInformacionInicial extends VBox {
 		String rangoPolicia = algoThief.getRangoPolicia();
 
 		Label informacion = new Label(
-				"Bienvenido " + rangoPolicia + " " + nombrePolicia + ".\n Le ha sido asignado el caso del robo de "
-						+ nombreObjetoRobado + "\n en la ciudad de " + nombreCiudadInicial + ".");
-		informacion.setFont(new Font("Verdana", 14));
+				"Bienvenido " + rangoPolicia + " " + nombrePolicia + ".\n\n Le ha sido asignado el caso del robo de "
+						+ nombreObjetoRobado + "\n en la ciudad de " + nombreCiudadInicial + ". \n\n Buena suerte!");
+		informacion.setMaxWidth(300);
+		informacion.setWrapText(true);
+		//informacion.setFont(new Font("Verdana", 14));
+		informacion.setStyle("-fx-text-fill: black; -fx-text-alignment: center");
+
 
 		Button botonEntendido = new Button("Entendido");
-
+		botonEntendido.setMinWidth(120);
 		BotonEntendidoEventHandler botonEntendidoHandler = new BotonEntendidoEventHandler(stage,
 				proximaEscena);
 		botonEntendido.setOnAction(botonEntendidoHandler);
