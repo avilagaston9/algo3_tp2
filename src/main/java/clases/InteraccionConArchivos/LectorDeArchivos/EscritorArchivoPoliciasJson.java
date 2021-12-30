@@ -39,7 +39,7 @@ public class EscritorArchivoPoliciasJson implements Escritor{
 
         try {
             String pathCompleto = this.filePath;
-            fileReader = new FileReader(pathCompleto);
+            fileReader = new FileReader((String) System.getProperty("user.dir") + this.filePath);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
