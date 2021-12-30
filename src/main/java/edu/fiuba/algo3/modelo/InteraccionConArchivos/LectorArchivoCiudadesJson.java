@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo.InteraccionConArchivos;
 
 import edu.fiuba.algo3.modelo.ciudades.Ciudad;
-import edu.fiuba.algo3.modelo.CiudadBuilder;
-import edu.fiuba.algo3.modelo.Coordenadas;
+import edu.fiuba.algo3.modelo.ciudades.CiudadBuilder;
+import edu.fiuba.algo3.modelo.ciudades.Coordenadas;
 import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaAeropuerto;
 import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBancos;
 import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBiblioteca;

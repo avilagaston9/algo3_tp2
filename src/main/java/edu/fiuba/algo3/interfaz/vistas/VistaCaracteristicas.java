@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.modelo.Computadora;
-import edu.fiuba.algo3.modelo.Observador;
+import edu.fiuba.algo3.interfaz.Observador;
 import javafx.scene.control.Label;
 
 public class VistaCaracteristicas implements Observador {

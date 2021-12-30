@@ -3,7 +3,7 @@ package edu.fiuba.algo3.modelo.ObjetoRobado;
 import java.util.List;
 
 import edu.fiuba.algo3.modelo.ciudades.Ciudad;
-import edu.fiuba.algo3.modelo.RutaDeEscape;
+import edu.fiuba.algo3.modelo.ladron.RutaDeEscape;
 import edu.fiuba.algo3.modelo.rangos.Detective;
 import edu.fiuba.algo3.modelo.rangos.Investigador;
 import edu.fiuba.algo3.modelo.rangos.Novato;

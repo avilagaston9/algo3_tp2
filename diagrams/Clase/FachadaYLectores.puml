@@ -4,6 +4,9 @@ class AlgoThief{
 }
 
 class ObtenerDatosFachada{
+
+    + new(lectorCiudades:Lector, lectorLadrones:Lector, lectorObjetosRobados:Lector, lectorPolicias:Lector)
+
     + obtenerCiudades():ArrayList
     + obtenerLadrones():ArrayList
     + obtenerObjetos():ArrayList

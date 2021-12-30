@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.Objects;
 
 import edu.fiuba.algo3.modelo.ciudades.Ciudad;
-import edu.fiuba.algo3.modelo.RutaDeEscape;
 import edu.fiuba.algo3.modelo.Exceptions.ExcepcionSinOrdenDeArresto;
 import edu.fiuba.algo3.modelo.OrdenDeArresto.OrdenArresto;
 import edu.fiuba.algo3.modelo.caracteristicasLadron.CaracteristicaLadron;

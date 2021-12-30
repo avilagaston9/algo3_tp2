@@ -1,14 +1,18 @@
 package edu.fiuba.algo3.modelo;
 
+import edu.fiuba.algo3.interfaz.Observador;
 import edu.fiuba.algo3.modelo.Exceptions.ExcepcionSinOrdenDeArresto;
 import edu.fiuba.algo3.modelo.InteraccionConArchivos.RegistrarDatosFachada;
 import edu.fiuba.algo3.modelo.InteraccionConArchivos.ObtenerDatosFachada;
 import edu.fiuba.algo3.modelo.ObjetoRobado.ObjetoRobado;
 import edu.fiuba.algo3.modelo.OrdenDeArresto.OrdenArresto;
+import edu.fiuba.algo3.modelo.Policia.Policia;
+import edu.fiuba.algo3.modelo.Policia.PoliciaBuilder;
 import edu.fiuba.algo3.modelo.caracteristicasLadron.CaracteristicaLadron;
 import edu.fiuba.algo3.modelo.ciudades.Ciudad;
 import edu.fiuba.algo3.modelo.edificios.Edificio;
 import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ladron.RutaDeEscape;
 import edu.fiuba.algo3.modelo.pistas.Pista;
 import edu.fiuba.algo3.modelo.rangos.Novato;
 
@@ -82,7 +86,6 @@ public class AlgoThief {
 
 		Random random = new Random();
 		this.ladron = ladrones.get(random.nextInt(ladrones.size()));
-//		this.ladron.setCiudad(rutaDeEscape.getRuta().get(rutaDeEscape.getRuta().size() - 1));
 		rutaDeEscape.asignarCiudad(ladron);
 
 		this.computadora = new Computadora(ladrones);
@@ -124,24 +127,11 @@ public class AlgoThief {
 		this.actualizarObservadores();
 	}
 
-	public boolean esCiudadActual(Ciudad unaCiudad) {
-		return this.policia.esCiudadActual(unaCiudad);
-	}
-
-	public void arrestarA(Ladron unLadron) throws ExcepcionSinOrdenDeArresto {
-		this.policia.arrestarA(unLadron);
-		this.actualizarEstadoJuego();
-	}
-
 	public void emitirOrdenDeArresto(Ladron ladron) {
 		OrdenArresto orden = this.computadora.emitirOrdenDeArresto(ladron);
 		this.policia.emitirOrdenDeArresto(orden);
 		this.actualizarEstadoJuego();
 		this.actualizarObservadores();
-	}
-
-	public int cantidadArrestos() {
-		return this.policia.cantidadArrestos();
 	}
 
 	public void cargarCaracteristica(CaracteristicaLadron caracteristica) {
@@ -167,11 +157,6 @@ public class AlgoThief {
 
 	public String getNombreCiudadActual() {
 		return this.policia.getCiudadActual().getNombre();
-	}
-
-	public Ciudad getCiudadActual() {
-
-		return this.policia.getCiudadActual();
 	}
 
 	public Computadora getComputadora() {

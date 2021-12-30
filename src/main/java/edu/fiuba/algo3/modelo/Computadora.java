@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 
 import java.util.ArrayList;
 
+import edu.fiuba.algo3.interfaz.Observador;
 import edu.fiuba.algo3.modelo.OrdenDeArresto.OrdenArresto;
 import edu.fiuba.algo3.modelo.OrdenDeArresto.OrdenDeArresto;
 import edu.fiuba.algo3.modelo.caracteristicasLadron.CaracteristicaLadron;
@@ -75,9 +76,6 @@ public class Computadora {
 	}
 
 	public OrdenArresto emitirOrdenDeArresto(Ladron unLadron) {
-
-		// ArrayList<Ladron> ladronesSospechosos = new ArrayList<>();
-		// ladronesSospechosos = this.buscarSospechosos();
 
 		for (Ladron sospechoso : this.sospechosos)
 			if (sospechoso.equals(unLadron)) {

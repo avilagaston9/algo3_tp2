@@ -1,9 +1,10 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.Policia;
 
 import edu.fiuba.algo3.modelo.Exceptions.ExcepcionSinOrdenDeArresto;
 import edu.fiuba.algo3.modelo.ObjetoRobado.ObjetoRobado;
 import edu.fiuba.algo3.modelo.OrdenDeArresto.OrdenArresto;
 import edu.fiuba.algo3.modelo.OrdenDeArresto.SinOrdenDeArresto;
+import edu.fiuba.algo3.modelo.Tiempo;
 import edu.fiuba.algo3.modelo.armas.Arma;
 import edu.fiuba.algo3.modelo.ciudades.Ciudad;
 import edu.fiuba.algo3.modelo.edificios.Edificio;

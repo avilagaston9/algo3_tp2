@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo.ciudades;
 
-import edu.fiuba.algo3.modelo.Coordenadas;
 import edu.fiuba.algo3.modelo.edificios.Aeropuerto;
 import edu.fiuba.algo3.modelo.edificios.Banco;
 import edu.fiuba.algo3.modelo.edificios.Biblioteca;

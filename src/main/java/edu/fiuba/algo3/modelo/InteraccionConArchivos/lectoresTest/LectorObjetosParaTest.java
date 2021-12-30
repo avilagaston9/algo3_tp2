@@ -1,5 +1,6 @@
-package edu.fiuba.algo3.modelo.InteraccionConArchivos;
+package edu.fiuba.algo3.modelo.InteraccionConArchivos.lectoresTest;
 
+import edu.fiuba.algo3.modelo.InteraccionConArchivos.Lector;
 import edu.fiuba.algo3.modelo.ObjetoRobado.ObjetoRobado;
 
 import java.util.ArrayList;

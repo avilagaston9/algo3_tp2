@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.interfaz.vistas;
 
 import edu.fiuba.algo3.modelo.AlgoThief;
-import edu.fiuba.algo3.modelo.Observador;
+import edu.fiuba.algo3.interfaz.Observador;
 import edu.fiuba.algo3.interfaz.contenedores.*;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

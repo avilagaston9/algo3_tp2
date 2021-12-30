@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.jupiter.api.Test;
 
 import edu.fiuba.algo3.modelo.ciudades.Ciudad;
-import edu.fiuba.algo3.modelo.Coordenadas;
-import edu.fiuba.algo3.modelo.Policia;
+import edu.fiuba.algo3.modelo.ciudades.Coordenadas;
+import edu.fiuba.algo3.modelo.Policia.Policia;
 import edu.fiuba.algo3.modelo.rangos.Novato;
 
 public class Caso3 {
