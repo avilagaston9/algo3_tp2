@@ -24,12 +24,9 @@ public class AlgoThief {
 	private ObjetoRobado objetoRobado;
 	private Computadora computadora;
 
-	private boolean jugadorCargado;
 	private Boolean juegoEnCurso;
 	private Boolean juegoGanado;
 	private int limiteTiempo;
-	private String nombrePolicia;
-	private boolean juegoIniciado;
 	private ArrayList<Ciudad> ciudades;
 
 	public AlgoThief(ObtenerDatosFachada obtenedorDeDatos, EscribirDatosFachada registradorDeDatos) {
@@ -39,10 +36,8 @@ public class AlgoThief {
 
 		this.registradorDeDatos = registradorDeDatos;
 
-		this.jugadorCargado = false;
 		this.juegoGanado = false;
 		this.juegoEnCurso = false;
-		this.juegoIniciado = false;
 	}
 
 	private Policia obtenerPolicia(ArrayList<Policia> listaPolicias, String nombrePolicia) {
@@ -64,14 +59,12 @@ public class AlgoThief {
 		ArrayList<Policia> policias = this.obtenedorDeDatos.obtenerPolicias();
 
 		this.policia = this.obtenerPolicia(policias, nombrePolicia);
-		this.jugadorCargado = true;
 	}
 
 	public void iniciarJuego(){
 
 		this.juegoEnCurso = true;
 		this.juegoGanado = false;
-		this.juegoIniciado = true;
 		this.limiteTiempo = 154;
 
 		ArrayList<Ladron> ladrones = obtenedorDeDatos.obtenerLadrones();
@@ -253,16 +246,6 @@ public class AlgoThief {
 
 	public void borrarCaracteristica(CaracteristicaLadron caracteristica) {
 		this.computadora.borrarCaracteristica(caracteristica);
-	}
-
-	public boolean jugadorCargado() {
-
-		return this.jugadorCargado;
-	}
-
-	public boolean juegoIniciado() {
-
-		return this.juegoIniciado;
 	}
 
 	public ArrayList<Ciudad> getCiudades() {
