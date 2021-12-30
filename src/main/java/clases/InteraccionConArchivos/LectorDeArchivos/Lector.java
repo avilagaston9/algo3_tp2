@@ -4,16 +4,7 @@ import java.util.ArrayList;
 
 public interface Lector {
 
-	public ArrayList leer();
+	public abstract ArrayList leer();
 
-
-	/*
-	public ArrayList obtenerCiudades();
-
-	public ArrayList obtenerLadrones();
-
-	public ArrayList obtenerObjetosRobados();
-
-	 */
 
 }

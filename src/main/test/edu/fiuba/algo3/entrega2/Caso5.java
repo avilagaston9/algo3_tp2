@@ -1,5 +1,9 @@
 package edu.fiuba.algo3.entrega2;
 
+import clases.InteraccionConArchivos.LectorDeArchivos.*;
+import clases.Policia;
+import clases.PoliciaBuilder;
+import clases.rangos.Sargento;
 import org.junit.jupiter.api.Test;
 
 public class Caso5 {
@@ -7,7 +11,7 @@ public class Caso5 {
 	@Test
 	public void detectiveHaceSeisArrestosYAsciendeAInvestigadorLuegoRealizaInvestigacionYAtrapaAlSospechoso() {
 
-		/*
+
 		LectorArchivoCiudadesJson lectorCiudades = new LectorArchivoCiudadesJson("-");
 		LectorArchivoLadronesJson lectorLadrones = new LectorArchivoLadronesJson("--");
 		LectorArchivoObjetosRobadosJson lectorObjetos = new LectorArchivoObjetosRobadosJson(".");
@@ -16,11 +20,19 @@ public class Caso5 {
 				"OOP\\tps\\TP2\\algo3_tp2\\src\\main\\java\\" +
 				"clases\\InteraccionConArchivos\\LectorDeArchivos\\policias.json");
 
-		ObtenerDatosFachada facade = new ObtenerDatosFachada(lectorCiudades, lectorLadrones, lectorObjetos, lectorPolicias);
+		EscritorArchivoPoliciasJson escritorPolicias = new EscritorArchivoPoliciasJson("C:\\Users\\nicov\\Desktop" +
+				"\\fiuba\\OOP\\tps\\TP2\\algo3_tp2\\src\\main\\java\\clases\\InteraccionConArchivos\\LectorDeArchivos\\" +
+				"policias.json");
 
-		facade.
-		
-		 */
+		PoliciaBuilder policiaBuilder = new PoliciaBuilder();
+		policiaBuilder.setRango(new Sargento());
+		policiaBuilder.setNombre("Nicolas");
+		Policia policia = policiaBuilder.getPolicia();
+
+		EscribirDatosFachada facadeEscribir = new EscribirDatosFachada(escritorPolicias);
+
+		facadeEscribir.actualizar(policia);
+
 
 		/*
 		 * 
