@@ -32,17 +32,17 @@ public class App extends Application {
 	private AlgoThief crearModelo() {
 
 		ObtenerDatosFachada obtenedorDeDatos = this.crearObtenedorDeDatos();
-		EscribirDatosFachada registradorDeDatos = this.crearRegistadorDeDatos();
+		RegistrarDatosFachada registradorDeDatos = this.crearRegistadorDeDatos();
 		return new AlgoThief(obtenedorDeDatos, registradorDeDatos);
 	}
 
-	private EscribirDatosFachada crearRegistadorDeDatos(){
+	private RegistrarDatosFachada crearRegistadorDeDatos(){
 
 		EscritorArchivoPoliciasJson escritorPolicias = new EscritorArchivoPoliciasJson(Resources.ArchivoPoliciasRuta());
 
-		EscribirDatosFachada escribirDatosFachada = new EscribirDatosFachada(escritorPolicias);
+		RegistrarDatosFachada registrarDatosFachada = new RegistrarDatosFachada(escritorPolicias);
 
-		return escribirDatosFachada;
+		return registrarDatosFachada;
 	}
 
 	private ObtenerDatosFachada crearObtenedorDeDatos() {

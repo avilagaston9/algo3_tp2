@@ -2,11 +2,11 @@ package edu.fiuba.algo3.modelo.InteraccionConArchivos;
 
 import edu.fiuba.algo3.modelo.Policia;
 
-public class EscribirDatosFachada {
+public class RegistrarDatosFachada {
 
     private Escritor escritorLadrones;
 
-    public EscribirDatosFachada(Escritor escritorLadrones){
+    public RegistrarDatosFachada(Escritor escritorLadrones){
         this.escritorLadrones = escritorLadrones;
     }
 

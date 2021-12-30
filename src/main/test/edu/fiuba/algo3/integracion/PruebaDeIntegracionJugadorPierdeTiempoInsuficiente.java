@@ -265,7 +265,7 @@ public class PruebaDeIntegracionJugadorPierdeTiempoInsuficiente {
 
         Escritor escritorVacio = new EscritorParaTest();
 
-        EscribirDatosFachada fachadaEscribir = new EscribirDatosFachada(escritorVacio);
+        RegistrarDatosFachada fachadaEscribir = new RegistrarDatosFachada(escritorVacio);
 
         AlgoThief juego = new AlgoThief(fachadaLeer, fachadaEscribir);
         juego.setNombrePolicia("Theo");

@@ -20,7 +20,7 @@ public class Caso5 {
 		policiaBuilder.setNombre("Cachorro");
 		Policia policia = policiaBuilder.getPolicia();
 
-		EscribirDatosFachada facadeEscribir = new EscribirDatosFachada(escritorPolicias);
+		RegistrarDatosFachada facadeEscribir = new RegistrarDatosFachada(escritorPolicias);
 
 		facadeEscribir.actualizar(policia);
 

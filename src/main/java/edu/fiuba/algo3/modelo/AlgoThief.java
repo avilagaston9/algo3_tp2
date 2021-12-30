@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.Exceptions.ExcepcionSinOrdenDeArresto;
-import edu.fiuba.algo3.modelo.InteraccionConArchivos.EscribirDatosFachada;
+import edu.fiuba.algo3.modelo.InteraccionConArchivos.RegistrarDatosFachada;
 import edu.fiuba.algo3.modelo.InteraccionConArchivos.ObtenerDatosFachada;
 import edu.fiuba.algo3.modelo.ObjetoRobado.ObjetoRobado;
 import edu.fiuba.algo3.modelo.OrdenDeArresto.OrdenArresto;
@@ -17,7 +17,7 @@ import java.util.*;
 public class AlgoThief {
 
 	private final ObtenerDatosFachada obtenedorDeDatos;
-	private final EscribirDatosFachada registradorDeDatos;
+	private final RegistrarDatosFachada registradorDeDatos;
 	private ArrayList<Observador> observadores;
 	private Policia policia;
 	private Ladron ladron;
@@ -29,7 +29,7 @@ public class AlgoThief {
 	private int limiteTiempo;
 	private ArrayList<Ciudad> ciudades;
 
-	public AlgoThief(ObtenerDatosFachada obtenedorDeDatos, EscribirDatosFachada registradorDeDatos) {
+	public AlgoThief(ObtenerDatosFachada obtenedorDeDatos, RegistrarDatosFachada registradorDeDatos) {
 
 		this.observadores = new ArrayList<Observador>();
 		this.obtenedorDeDatos = obtenedorDeDatos;

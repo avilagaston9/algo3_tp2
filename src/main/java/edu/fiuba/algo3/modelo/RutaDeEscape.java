@@ -44,10 +44,6 @@ public class RutaDeEscape {
 		ladron.setCiudad(this.ciudades.get(this.ciudades.size()-1));
 	}
 
-	public void asignarCiudad(Policia policia) {
-		policia.setCiudad(this.ciudades.get(-1));
-	}
-
 	public ArrayList<Ciudad> getRuta() {
 		return this.ciudades;
 	}
@@ -55,5 +51,4 @@ public class RutaDeEscape {
 	public boolean pertenece(Ciudad unaCiudad) {
 		return (this.ciudades.contains(unaCiudad));
 	}
-
 }
