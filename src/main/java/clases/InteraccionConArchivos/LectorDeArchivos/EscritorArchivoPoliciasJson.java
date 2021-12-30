@@ -74,7 +74,7 @@ public class EscritorArchivoPoliciasJson implements Escritor{
         }
 
 
-        try(FileWriter file = new FileWriter(this.filePath)){
+        try(FileWriter file = new FileWriter((String) System.getProperty("user.dir") + this.filePath)){
             file.write(String.valueOf(empJsonObject));
         } catch (IOException e) {
             e.printStackTrace();
