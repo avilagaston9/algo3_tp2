@@ -22,8 +22,6 @@ public class Ladron {
 	private LinkedList<CaracteristicaLadron> caracteristicas;
 	private Ciudad ciudadFinal;
 	private RutaDeEscape rutaDeEscape;
-	// private FabricaDePistas fabrica;
-	// private Pista pista;
 
 	public Ladron(String nombre, CaracteristicaLadron cabello, CaracteristicaLadron hobby, CaracteristicaLadron sexo,
 			CaracteristicaLadron senia, CaracteristicaLadron vehiculo) {
