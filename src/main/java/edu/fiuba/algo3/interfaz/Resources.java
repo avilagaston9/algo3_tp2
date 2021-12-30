@@ -9,8 +9,8 @@ public class Resources {
 
     static public String FondoPrincipal = "background3.png";
     static public String FondoJuego = "textura.png";
-    static public String IconoJugar = "play-button.png";
-    static public String IconoSalir = "cancel.png";
+    static public String IconoJugar = "play.png";
+    static public String IconoSalir = "quit.png";
 
     static public String IconoVisitarEdificio = "clue.png";
     static public String IconoAeropuerto = "airport.png";
