@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import edu.fiuba.algo3.interfaz.Resources;
+import edu.fiuba.algo3.interfaz.botones.BotonCircular;
+import edu.fiuba.algo3.interfaz.botones.BotonRectangular;
 import edu.fiuba.algo3.modelo.AlgoThief;
 import edu.fiuba.algo3.eventos.BotonEntrarEventHandler;
 import edu.fiuba.algo3.eventos.OpcionSalirEventHandler;
@@ -14,9 +16,10 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class ContenedorBienvenidos extends VBox {
+public class ContenedorBienvenidos extends HBox {
 	private final AlgoThief algoThief;
 	Stage stage;
 
@@ -26,9 +29,9 @@ public class ContenedorBienvenidos extends VBox {
 		this.stage = stage;
 		this.algoThief = algoThief;
 		this.setAlignment(Pos.CENTER);
-		this.setSpacing(20);
+		this.setSpacing(40);
 		this.setPadding(new Insets(25));
-		this.setAlignment(Pos.CENTER);
+		this.setAlignment(Pos.BOTTOM_CENTER);
 
 		Scene escenaContenedorCargaDeNombre = this.setSceneContenedorCargaDeNombre();
 		this.setImagenBienvenida();
@@ -56,7 +59,7 @@ public class ContenedorBienvenidos extends VBox {
 			FileInputStream inputPlay = new FileInputStream(Resources.IconoJugarRuta());
 			Image imagePlay = new Image(inputPlay);
 			ImageView imageViewPlay = new ImageView(imagePlay);
-			Button botonJugar = new Button("", imageViewPlay);
+			BotonCircular botonJugar = new BotonCircular(imageViewPlay, Color.FORESTGREEN, 60, 60);
 			BotonEntrarEventHandler botonEntrarHandler = new BotonEntrarEventHandler(this.stage, escenaContenedorCargaDeNombre);
 			botonJugar.setOnAction(botonEntrarHandler);
 			this.getChildren().add(botonJugar);
@@ -69,7 +72,7 @@ public class ContenedorBienvenidos extends VBox {
 			FileInputStream inputExit = new FileInputStream(Resources.IconoSalirRuta());
 			Image imageExit = new Image(inputExit);
 			ImageView imageViewExit = new ImageView(imageExit);
-			Button botonSalir = new Button("", imageViewExit);
+			BotonCircular botonSalir = new BotonCircular(imageViewExit, Color.RED, 60, 60);
 			OpcionSalirEventHandler botonSalirHandler = new OpcionSalirEventHandler();
 			botonSalir.setOnAction(botonSalirHandler);
 			this.getChildren().add(botonSalir);
