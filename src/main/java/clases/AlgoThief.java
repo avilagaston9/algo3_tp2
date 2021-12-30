@@ -278,7 +278,7 @@ public class AlgoThief {
 		return this.ciudades;
 	}
 
-	public void guardarDatos(){
+	public void registrarDatos(){
 		this.registradorDeDatos.actualizar(this.policia);
 	}
 

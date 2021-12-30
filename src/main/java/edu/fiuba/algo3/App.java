@@ -13,14 +13,13 @@ import java.io.FileNotFoundException;
  */
 public class App extends Application {
 
-	private ObtenerDatosFachada obtenedorDeDatos;
 	private EscribirDatosFachada registradorDeDatos;
 
 	@Override
 	public void start(Stage stage) throws FileNotFoundException {
 
 		AlgoThief algothief = this.crearModelo();
-		VistaPrincipal vistaPrincipal = new VistaPrincipal(stage, algothief, this.obtenedorDeDatos);
+		VistaPrincipal vistaPrincipal = new VistaPrincipal(stage, algothief);
 		vistaPrincipal.actualizar();
 	}
 
@@ -30,9 +29,9 @@ public class App extends Application {
 
 	private AlgoThief crearModelo() {
 
-		this.obtenedorDeDatos = this.crearObtenedorDeDatos();
+		ObtenerDatosFachada obtenedorDeDatos = this.crearObtenedorDeDatos();
 		this.registradorDeDatos = this.crearRegistadorDeDatos();
-		return new AlgoThief(this.obtenedorDeDatos, this.registradorDeDatos);
+		return new AlgoThief(obtenedorDeDatos, this.registradorDeDatos);
 	}
 
 	private EscribirDatosFachada crearRegistadorDeDatos(){

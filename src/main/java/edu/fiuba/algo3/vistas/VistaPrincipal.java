@@ -11,17 +11,15 @@ public class VistaPrincipal implements Observador {
 
 	private final Stage stage;
 	private final AlgoThief algoThief;
-	private final ObtenerDatosFachada obtenedorDatosFachada;
 	private boolean darBienvenida;
 	private boolean darInformacionInicial;
 
-	public VistaPrincipal(Stage stage, AlgoThief algothief, ObtenerDatosFachada obtejedorDeDatos) {
+	public VistaPrincipal(Stage stage, AlgoThief algothief) {
 
 		this.darBienvenida = true;
 		this.darInformacionInicial = true;
 		this.stage = stage;
 		this.algoThief = algothief;
-		this.obtenedorDatosFachada = obtejedorDeDatos;
 		algothief.setObservador(this);
 	}
 
