@@ -2,9 +2,9 @@ package edu.fiuba.algo3.eventos.visitarEdificiosHandlers;
 
 import java.util.LinkedList;
 
-import clases.AlgoThief;
-import clases.pistas.Pista;
-import edu.fiuba.algo3.contenedores.ContenedorPistas;
+import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.modelo.pistas.Pista;
+import edu.fiuba.algo3.interfaz.contenedores.ContenedorPistas;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;

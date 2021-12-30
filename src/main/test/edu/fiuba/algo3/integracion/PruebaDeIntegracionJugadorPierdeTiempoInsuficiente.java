@@ -1,25 +1,21 @@
 package edu.fiuba.algo3.integracion;
 
-import clases.*;
-import clases.FabricaEdificios.FabricaAeropuerto;
-import clases.FabricaEdificios.FabricaBancos;
-import clases.FabricaEdificios.FabricaBiblioteca;
-import clases.ObjetoRobado.FabricaObjetoComun;
-import clases.ObjetoRobado.FabricaObjetoRobado;
-import clases.caracteristicasLadron.CaracteristicaLadron;
-import clases.edificios.Aeropuerto;
-import clases.edificios.Banco;
-import clases.edificios.Biblioteca;
-import clases.ladron.Ladron;
-import clases.ObjetoRobado.ObjetoRobado;
-import clases.ladron.LadronBuilder;
-import clases.pistas.PistaDificil;
-import clases.pistas.PistaFacil;
-import clases.pistas.PistaMedia;
-import clases.rangos.Novato;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
+import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaAeropuerto;
+import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBancos;
+import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBiblioteca;
+import edu.fiuba.algo3.modelo.ObjetoRobado.FabricaObjetoComun;
+import edu.fiuba.algo3.modelo.ObjetoRobado.FabricaObjetoRobado;
+import edu.fiuba.algo3.modelo.caracteristicasLadron.CaracteristicaLadron;
+import edu.fiuba.algo3.modelo.edificios.Aeropuerto;
+import edu.fiuba.algo3.modelo.edificios.Banco;
+import edu.fiuba.algo3.modelo.edificios.Biblioteca;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ObjetoRobado.ObjetoRobado;
+import edu.fiuba.algo3.modelo.ladron.LadronBuilder;
+import edu.fiuba.algo3.modelo.pistas.PistaDificil;
+import edu.fiuba.algo3.modelo.pistas.PistaFacil;
+import edu.fiuba.algo3.modelo.pistas.PistaMedia;
+import edu.fiuba.algo3.modelo.rangos.Novato;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.eventos;
 
-import clases.AlgoThief;
-import edu.fiuba.algo3.contenedores.ContenedorCabello;
+import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.interfaz.contenedores.ContenedorCabello;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;

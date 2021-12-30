@@ -2,9 +2,9 @@ package edu.fiuba.algo3.pruebasUnitarias.LadronTest;
 
 import org.junit.jupiter.api.Test;
 
-import clases.caracteristicasLadron.CaracteristicaLadron;
-import clases.ladron.Ladron;
-import clases.ladron.LadronBuilder;
+import edu.fiuba.algo3.modelo.caracteristicasLadron.CaracteristicaLadron;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ladron.LadronBuilder;
 
 public class LadronConCaracteristicaDePeloNegro {
 	@Test

@@ -1,8 +1,8 @@
 package edu.fiuba.algo3;
 
-import clases.AlgoThief;
-import clases.InteraccionConArchivos.LectorDeArchivos.*;
-import edu.fiuba.algo3.vistas.VistaPrincipal;
+import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.interfaz.vistas.VistaPrincipal;
+import edu.fiuba.algo3.modelo.InteraccionConArchivos.*;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

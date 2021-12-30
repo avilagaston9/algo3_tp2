@@ -2,8 +2,8 @@ package edu.fiuba.algo3.eventos.visitarEdificiosHandlers;
 
 import java.util.LinkedList;
 
-import clases.AlgoThief;
-import clases.pistas.Pista;
+import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.modelo.pistas.Pista;
 import javafx.stage.Stage;
 
 public class BotonVisitarBancoEventHandler extends BotonVisitarEdificioHandler {

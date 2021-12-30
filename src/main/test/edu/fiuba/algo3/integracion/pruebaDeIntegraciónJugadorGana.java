@@ -6,27 +6,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import clases.FabricaEdificios.FabricaAeropuerto;
-import clases.FabricaEdificios.FabricaBancos;
-import clases.FabricaEdificios.FabricaBiblioteca;
-import clases.ciudades.Ciudad;
-import clases.edificios.Aeropuerto;
-import clases.edificios.Banco;
-import clases.edificios.Biblioteca;
-import clases.ladron.LadronBuilder;
-import clases.pistas.PistaDificil;
-import clases.pistas.PistaFacil;
-import clases.pistas.PistaMedia;
-import clases.ObjetoRobado.*;
+import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaAeropuerto;
+import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBancos;
+import edu.fiuba.algo3.modelo.FabricaEdificios.FabricaBiblioteca;
+import edu.fiuba.algo3.modelo.ObjetoRobado.*;
+import edu.fiuba.algo3.modelo.ciudades.Ciudad;
+import edu.fiuba.algo3.modelo.edificios.Aeropuerto;
+import edu.fiuba.algo3.modelo.edificios.Banco;
+import edu.fiuba.algo3.modelo.edificios.Biblioteca;
+import edu.fiuba.algo3.modelo.ladron.LadronBuilder;
+import edu.fiuba.algo3.modelo.pistas.PistaDificil;
+import edu.fiuba.algo3.modelo.pistas.PistaFacil;
+import edu.fiuba.algo3.modelo.pistas.PistaMedia;
 import org.junit.jupiter.api.Test;
 
-import clases.*;
-import clases.Exceptions.ExcepcionSinOrdenDeArresto;
-import clases.OrdenDeArresto.OrdenArresto;
-import clases.caracteristicasLadron.CaracteristicaLadron;
-import clases.ladron.Ladron;
-import clases.pistas.Pista;
-import clases.rangos.Novato;
+import edu.fiuba.algo3.modelo.Exceptions.ExcepcionSinOrdenDeArresto;
+import edu.fiuba.algo3.modelo.OrdenDeArresto.OrdenArresto;
+import edu.fiuba.algo3.modelo.caracteristicasLadron.CaracteristicaLadron;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.pistas.Pista;
+import edu.fiuba.algo3.modelo.rangos.Novato;
 
 public class pruebaDeIntegraciónJugadorGana {
 

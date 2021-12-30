@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.eventos;
 
-import clases.AlgoThief;
-import clases.ladron.Ladron;
+import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;

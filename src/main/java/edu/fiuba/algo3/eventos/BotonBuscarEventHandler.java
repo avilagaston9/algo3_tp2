@@ -2,12 +2,11 @@ package edu.fiuba.algo3.eventos;
 
 import java.io.FileNotFoundException;
 
-import clases.AlgoThief;
-import edu.fiuba.algo3.contenedores.ContenedorComputadora;
+import edu.fiuba.algo3.modelo.AlgoThief;
+import edu.fiuba.algo3.interfaz.contenedores.ContenedorComputadora;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 

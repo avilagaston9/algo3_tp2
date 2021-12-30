@@ -1,14 +1,11 @@
 package edu.fiuba.algo3.pruebasUnitarias.computadoraTest;
 
-import java.util.ArrayList;
-
 import org.junit.jupiter.api.Test;
 
-import clases.Computadora;
-import clases.OrdenDeArresto.OrdenArresto;
-import clases.caracteristicasLadron.CaracteristicaLadron;
-import clases.ladron.Ladron;
-import clases.ladron.LadronBuilder;
+import edu.fiuba.algo3.modelo.OrdenDeArresto.OrdenArresto;
+import edu.fiuba.algo3.modelo.caracteristicasLadron.CaracteristicaLadron;
+import edu.fiuba.algo3.modelo.ladron.Ladron;
+import edu.fiuba.algo3.modelo.ladron.LadronBuilder;
 
 public class ComputadoraTest {
 	@Test
