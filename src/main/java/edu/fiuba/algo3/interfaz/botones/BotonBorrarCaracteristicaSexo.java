@@ -11,9 +11,9 @@ public class BotonBorrarCaracteristicaSexo extends MenuButton {
 		MenuItem masculino = new MenuItem("Masculino");
 		MenuItem femenino = new MenuItem("Femenino");
 
-		BorrarCaracteristicaEventHandler masculinoHandler = new BorrarCaracteristicaEventHandler("Masculino",
+		BorrarCaracteristicaEventHandler masculinoHandler = new BorrarCaracteristicaEventHandler("Sexo del sospechos@: Masculino",
 				algothief);
-		BorrarCaracteristicaEventHandler femeninoHandler = new BorrarCaracteristicaEventHandler("Femenino", algothief);
+		BorrarCaracteristicaEventHandler femeninoHandler = new BorrarCaracteristicaEventHandler("Sexo del sospechos@: Femenino", algothief);
 
 		masculino.setOnAction(masculinoHandler);
 		femenino.setOnAction(femeninoHandler);
