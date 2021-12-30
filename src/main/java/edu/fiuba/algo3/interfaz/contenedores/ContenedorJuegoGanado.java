@@ -25,6 +25,9 @@ public class ContenedorJuegoGanado extends VBox {
 		Label texto = new Label(("Felicidades, " + algothief.getNombrePolicia() + "!!! \n" + algothief.getNombreLadron()
 				+ ", ahora está tras las rejas."));
 		texto.setFont(new Font("Verdana", 14));
+		texto.setStyle("-fx-text-fill: black; -fx-text-alignment: center");
+		texto.setMaxWidth(300);
+		texto.setWrapText(true);
 
 		BotonTerminarJuego botonSalirDeJuego = new BotonTerminarJuego(algothief, stage);
 		BotonVolverAJugar botonVolverAJugar = new BotonVolverAJugar(algothief);
@@ -33,7 +36,7 @@ public class ContenedorJuegoGanado extends VBox {
 	}
 	private void setFondo() {
 
-		Image imagen = new Image(Resources.FondoJuegoRuta());
+		Image imagen = new Image(Resources.FondoInfoRuta());
 		BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
 				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 		this.setBackground(new Background(imagenDeFondo));

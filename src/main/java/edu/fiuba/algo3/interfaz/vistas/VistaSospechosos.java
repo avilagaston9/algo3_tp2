@@ -29,6 +29,7 @@ public class VistaSospechosos implements Observador {
 			stringBuilder.append(s).append("\n");
 		}
 		this.labelSospechosos.setText(stringBuilder.toString());
+		this.labelSospechosos.setStyle("-fx-text-fill: black; -fx-text-alignment: center");
 	}
 
 }

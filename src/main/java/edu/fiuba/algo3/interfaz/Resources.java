@@ -12,6 +12,8 @@ public class Resources {
     static public String FondoInfo = "laptop.png";
     static public String IconoJugar = "play.png";
     static public String IconoSalir = "quit.png";
+    static public String FondoJuegoFinalLiso = "areaJuegoVacia.png";
+
 
     static public String IconoVisitarEdificio = "clue.png";
     static public String IconoAeropuerto = "airport.png";
@@ -29,6 +31,8 @@ public class Resources {
 
     static public String IconoViajarACiudad = "planeIcon.png";
 
+
+    public static String FondoJuegoFinalLiso() { return "file:" + Ruta + Imagenes + FondoJuegoFinalLiso; }
     public static String FondoPrincipalRuta() { return "file:" + Ruta + Imagenes + FondoPrincipal; }
     public static String FondoJuegoRuta() { return "file:" + Ruta + Imagenes + FondoJuego; }
     public static String FondoInfoRuta() { return "file:" + Ruta + Imagenes + FondoInfo; }

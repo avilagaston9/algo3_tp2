@@ -24,6 +24,7 @@ public class VistaReloj implements Observador {
 		String dia = calculadoraDia.calcularDia(horasTranscurridas);
 
 		this.reloj.setText(Integer.toString(horaDelDia) + ":00\n" + dia);
+		this.reloj.setStyle("-fx-text-fill: black; -fx-text-alignment: center");
 
 	}
 }

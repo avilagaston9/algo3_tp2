@@ -20,14 +20,12 @@ public class Policia {
 	private Tiempo tiempoTranscurrido;
 	private Rango rango;
 	private OrdenArresto ordenDeArresto;
-	private int cantidadHeridasDeCuchillo;
 	private String nombre;
 
 	public Policia(Rango rango, String nombre) {
 		this.tiempoTranscurrido = new Tiempo();
 		this.rango = rango;
 		this.ordenDeArresto = new SinOrdenDeArresto();
-		this.cantidadHeridasDeCuchillo = 0;
 		this.setNombre(nombre);
 	}
 
@@ -36,7 +34,6 @@ public class Policia {
 		this.tiempoTranscurrido = new Tiempo();
 		this.rango = rango;
 		this.ordenDeArresto = new SinOrdenDeArresto();
-		this.cantidadHeridasDeCuchillo = 0;
 		this.ciudadActual = ciudadInicial;
 	}
 
@@ -89,10 +86,6 @@ public class Policia {
 		return this.rango.cantidadArrestos();
 	}
 
-	// METODO AUXILIAR PARA E2 C5.
-	public void agregarArresto() {
-		this.rango = this.rango.sumarArresto();
-	}
 
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudadActual = ciudad;
@@ -142,17 +135,14 @@ public class Policia {
 		return this.ordenDeArresto.nombreLadronEnLaOrden();
 	}
 
-	//!!!
 	public Boolean seLlama(String unNombre){
 		return (this.nombre.equals(unNombre));
 	}
 
-	//!!!
 	public Rango getRango(){
 		return (this.rango);
 	}
 
-	//!!!
 	private void resetearTiempo(){
 		this.tiempoTranscurrido = new Tiempo();
 	}
@@ -174,5 +164,8 @@ public class Policia {
 	private void resetearOrdenDeArresto() {
 
 		this.ordenDeArresto = new SinOrdenDeArresto();
+	}
+	public void agregarArresto() {
+		this.rango = this.rango.sumarArresto();
 	}
 }

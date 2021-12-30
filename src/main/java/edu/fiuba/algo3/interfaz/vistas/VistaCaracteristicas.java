@@ -29,5 +29,6 @@ public class VistaCaracteristicas implements Observador {
 			stringBuilder.append(s).append("\n");
 		}
 		this.labelCaracteristicas.setText(stringBuilder.toString());
+		this.labelCaracteristicas.setStyle("-fx-text-fill: black; -fx-text-alignment: center");
 	}
 }

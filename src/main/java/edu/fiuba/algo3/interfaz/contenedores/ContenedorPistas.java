@@ -27,6 +27,7 @@ public class ContenedorPistas extends VBox {
 		}
 		pistaLabel.setText(pista);
 		pistaLabel.setFont(new Font("Verdana", 12));
+		pistaLabel.setStyle("-fx-text-fill: black; -fx-text-alignment: center");
 		this.getChildren().add(pistaLabel);
 
 		this.setAlignment(Pos.CENTER);
@@ -41,7 +42,7 @@ public class ContenedorPistas extends VBox {
 	}
 	private void setFondo() {
 
-		Image imagen = new Image(Resources.FondoJuegoRuta());
+		Image imagen = new Image(Resources.FondoJuegoFinalLiso());
 		BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
 				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 		this.setBackground(new Background(imagenDeFondo));

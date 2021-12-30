@@ -30,7 +30,7 @@ public class ContenedorComputadora extends BorderPane {
 
 	private void setFondo() {
 
-		Image imagen = new Image(Resources.FondoJuegoRuta());
+		Image imagen = new Image(Resources.FondoJuegoFinalLiso());
 		BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
 				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 		this.setBackground(new Background(imagenDeFondo));

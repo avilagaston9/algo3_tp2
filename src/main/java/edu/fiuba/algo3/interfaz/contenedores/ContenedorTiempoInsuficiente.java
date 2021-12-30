@@ -24,6 +24,10 @@ public class ContenedorTiempoInsuficiente extends VBox {
 		Label texto = new Label(("¡Game Over!\n" + algothief.getNombrePolicia() + ", te haz quedado sin tiempo y "
 				+ algothief.getNombreLadron() + "sigue suelto."));
 		texto.setFont(new Font("Verdana", 14));
+		texto.setStyle("-fx-text-fill: black; -fx-text-alignment: center");
+		texto.setMaxWidth(300);
+		texto.setWrapText(true);
+
 		BotonVolverAJugar botonVolverAJugar = new BotonVolverAJugar(algothief);
 		BotonCerrar botonCerrar = new BotonCerrar(stage, "Salir");
 
@@ -31,7 +35,7 @@ public class ContenedorTiempoInsuficiente extends VBox {
 	}
 	private void setFondo() {
 
-		Image imagen = new Image(Resources.FondoJuegoRuta());
+		Image imagen = new Image(Resources.FondoInfoRuta());
 		BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT,
 				BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 		this.setBackground(new Background(imagenDeFondo));

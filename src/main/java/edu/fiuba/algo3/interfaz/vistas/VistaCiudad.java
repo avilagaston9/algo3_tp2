@@ -19,5 +19,6 @@ public class VistaCiudad implements Observador {
 		String nombreCiudad = juego.getNombreCiudadActual();
 		this.nombreCiudad.setText(nombreCiudad);
 		this.nombreCiudad.setFont(new Font("Verdana", 35));
+		this.nombreCiudad.setStyle("-fx-text-fill: black; -fx-text-alignment: center");
 	}
 }

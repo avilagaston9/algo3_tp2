@@ -107,18 +107,10 @@ public class AlgoThief {
 	}
 
 	// métodos para jugar
-	public LinkedList<Pista> visitar(Edificio unEdificio) {
-		LinkedList<Pista> pistas = this.policia.visitar(unEdificio, this.ladron);
-		this.actualizarEstadoJuego();
-		this.actualizarObservadores();
-		return pistas;
-	}
 
 	public int tiempoTranscurridoEnHoras() {
 		return this.policia.tiempoTranscurridoEnHoras();
 	}
-
-	// todo ¿herir con??
 
 	public void viajarA(Ciudad nuevaCiudad) {
 
@@ -163,7 +155,6 @@ public class AlgoThief {
 		return this.computadora;
 	}
 
-	// nueva alternativa
 	public LinkedList<Pista> visitarBancoActual() {
 		LinkedList<Pista> pistas = this.policia.visitarBancoActual(this.ladron);
 		this.actualizarEstadoJuego();
@@ -171,7 +162,6 @@ public class AlgoThief {
 		return pistas;
 	}
 
-	// nueva alternativa
 	public LinkedList<Pista> visitarAeropuertoActual() {
 		LinkedList<Pista> pistas = this.policia.visitarAeropuertoActual(this.ladron);
 		this.actualizarEstadoJuego();
@@ -179,7 +169,6 @@ public class AlgoThief {
 		return pistas;
 	}
 
-	// nueva alternativa
 	public LinkedList<Pista> visitarBibliotecaActual() {
 		LinkedList<Pista> pistas = this.policia.visitarBibliotecaActual(this.ladron);
 		this.actualizarEstadoJuego();
@@ -211,12 +200,10 @@ public class AlgoThief {
 	}
 
 	public boolean juegoEnCurso() {
-
 		return this.juegoEnCurso;
 	}
 
 	public boolean juegoGanado() {
-
 		return this.juegoGanado;
 	}
 
@@ -234,7 +221,6 @@ public class AlgoThief {
 	}
 
 	public ArrayList<Ciudad> getCiudades() {
-
 		return this.ciudades;
 	}
 
@@ -242,12 +228,15 @@ public class AlgoThief {
 		this.registradorDeDatos.actualizar(this.policia);
 	}
 
-	public String getDescripcionCiudadActual() {
-		return this.policia.getCiudadActual().getDescripcion();
-	}
-
 	public String getRangoPolicia() {
 
 		return this.policia.getNombreRango();
+	}
+
+	public LinkedList<Pista> visitar(Edificio unEdificio) {
+		LinkedList<Pista> pistas = this.policia.visitar(unEdificio, this.ladron);
+		this.actualizarEstadoJuego();
+		this.actualizarObservadores();
+		return pistas;
 	}
 }

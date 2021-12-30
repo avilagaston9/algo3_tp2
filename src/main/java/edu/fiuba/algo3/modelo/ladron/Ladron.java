@@ -16,7 +16,6 @@ import edu.fiuba.algo3.modelo.rangos.Sargento;
 
 public class Ladron {
 	private final String nombre;
-	private boolean arrestado;
 	private int iteradorCaracteristicas;
 	private LinkedList<CaracteristicaLadron> caracteristicas;
 	private Ciudad ciudadFinal;
@@ -25,7 +24,6 @@ public class Ladron {
 	public Ladron(String nombre, CaracteristicaLadron cabello, CaracteristicaLadron hobby, CaracteristicaLadron sexo,
 			CaracteristicaLadron senia, CaracteristicaLadron vehiculo) {
 
-		this.arrestado = false;
 		this.nombre = nombre;
 		this.iteradorCaracteristicas = 0;
 		this.caracteristicas = new LinkedList<CaracteristicaLadron>();
@@ -82,10 +80,6 @@ public class Ladron {
 		return true; // caso que cumple con la orden de arresto y con estar en la misma ciudad, el
 						// ladon puede ser arestado...
 
-		/*
-		 * if((ordenDeArresto.comparar(this)) && (ciudadPolicia == ciudadFinal)){
-		 * this.arrestado = true; return true; }
-		 */
 	}
 
 	@Override
