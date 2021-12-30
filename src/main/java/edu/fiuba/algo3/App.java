@@ -18,6 +18,7 @@ public class App extends Application {
 
 	@Override
 	public void start(Stage stage) throws FileNotFoundException {
+		stage.setResizable(false);
 		stage.getIcons().add(new Image(new FileInputStream(Resources.IconoAppRuta())));
 		AlgoThief algothief = this.crearModelo();
 		VistaPrincipal vistaPrincipal = new VistaPrincipal(stage, algothief);
