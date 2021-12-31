@@ -58,7 +58,7 @@ public class ContenedorComputadora extends BorderPane {
 		BotonIcono senia = new BotonIcono(Resources.IconoCaracteristicaSeniaRuta(),new BotonSeniaEventHandler(algothief));
 		BotonIcono vehiculo = new BotonIcono(Resources.IconoCaracteristicaVehiculoRuta(), new BotonVehiculoEventHandler(algothief));
 
-		Button buscarSospechosos = new Button("Buscar sospechosos");
+		Button buscarSospechosos = new Button("Buscar");
 		BotonBuscarSospechososEventHandler buscarSospechososButtonHandler = new BotonBuscarSospechososEventHandler(
 				algothief, stage);
 		buscarSospechosos.setOnAction(buscarSospechososButtonHandler);
